@@ -1,0 +1,203 @@
+---
+import Layout from './Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import ServiceCard from '../components/cards/ServiceCard.astro';
+import BoatCard from '../components/cards/BoatCard.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import LocationMap from '../components/sections/LocationMap.astro';
+import { getFleet } from '../lib/collections';
+
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  href: string;
+  price?: string;
+}
+
+interface Props {
+  title: string;
+  seoTitle?: string;
+  description: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroGradient?: 'ocean' | 'sunset' | 'turquoise';
+  locationName: string;
+  image?: string;
+  gallery?: string[];
+  services?: Service[];
+  directions?: string;
+  boats?: string[];
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  seoTitle,
+  description,
+  heroTitle,
+  heroSubtitle,
+  heroGradient = 'turquoise',
+  locationName,
+  image,
+  gallery = [],
+  services = [],
+  directions,
+  boats = [],
+  canonicalUrl,
+} = Astro.props;
+
+const allBoats = await getFleet();
+const locationBoats = allBoats.filter(b => boats.includes(b.id));
+---
+
+<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl}>
+  <HeroSection
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaText="Book at This Location"
+    ctaHref="/contact/"
+    ctaSecondText="All Locations"
+    ctaSecondHref="/locations/"
+    gradient={heroGradient}
+    size="medium"
+    showScrollHint={false}
+    backgroundImage={image}
+  />
+
+  <Breadcrumbs />
+
+  <div class="location-page container">
+
+    <!-- Location Content (Introduction and Body) -->
+    <section class="location-content">
+      <slot />
+    </section>
+
+    <!-- Map -->
+    <section class="location-map-section reveal">
+      <h2>Location on the Map</h2>
+      <LocationMap height="300px" />
+      {directions && (
+        <div class="directions-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>{directions}</span>
+        </div>
+      )}
+    </section>
+
+    <!-- Services available here -->
+    {services.length > 0 && (
+      <section class="location-services reveal">
+        <h2>Services Available at {locationName}</h2>
+        <div class="services-grid">
+          {services.map((svc) => (
+            <ServiceCard
+              icon={svc.icon}
+              title={svc.title}
+              description={svc.description}
+              href={svc.href}
+              price={svc.price}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Boats available here -->
+    {locationBoats.length > 0 && (
+      <section class="location-boats reveal">
+        <h2>Boats at {locationName}</h2>
+        <div class="boats-grid">
+          {locationBoats.map(boat => (
+            <BoatCard
+              name={boat.data.name}
+              type={boat.data.type}
+              priceFrom={boat.data.priceFrom}
+              slug={boat.id}
+              image={boat.data.image}
+              imagePlaceholder={boat.data.imagePlaceholder}
+              features={boat.data.features}
+              specs={[
+                { label: 'Length', value: boat.data.length },
+                { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+                { label: 'Engine', value: `${boat.data.horsepower} HP` },
+              ]}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Gallery -->
+    {gallery.length > 0 && (
+      <section class="location-gallery reveal">
+        <h2>Photos</h2>
+        <Gallery items={gallery} />
+      </section>
+    )}
+
+  </div>
+
+  <CtaBanner
+    title={`Book Your Day at ${locationName}`}
+    subtitle="Contact us to check availability and reserve your spot."
+    buttonText="Book Now"
+    buttonHref="/contact/"
+    variant="dark"
+  />
+</Layout>
+
+<style>
+  .location-page {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .location-page :global(h2) {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: var(--foreground);
+    margin: 0 0 1.25rem;
+  }
+
+  .location-page :global(p) {
+    color: var(--muted-foreground);
+    line-height: 1.75;
+    margin: 0 0 1rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .boats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .directions-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    background: var(--muted);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .directions-note svg {
+    color: var(--foreground);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+</style>

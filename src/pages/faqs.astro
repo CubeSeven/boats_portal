@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import FaqAccordion from '../components/sections/FaqAccordion.astro';
+import { getOrganizedFaqs, getSiteSettings } from '../lib/collections';
+
+const site = await getSiteSettings();
+const groupedFaqs = await getOrganizedFaqs();
+const categories = Object.keys(groupedFaqs);
+const whatsappNumber = site?.whatsapp?.replace(/[^0-9]/g, '') || '';
+const whatsappLink = whatsappNumber ? `https://wa.me/${whatsappNumber}` : '/contact/';
+
+const categoryLabels: Record<string, string> = {
+  general: 'General Info',
+  rental: 'Boat Rental',
+  safety: 'Safety & Rules',
+  payment: 'Booking & Payment',
+  location: 'Getting Here',
+};
+---
+
+<Layout 
+  title="Frequently Asked Questions — Skiathos Boats"
+  description="Common questions about renting boats, private tours, and watersports in Skiathos. All your sea adventure queries answered."
+>
+  <div class="faq-page">
+    <div class="container py-20">
+      <SectionHeading
+        label="Everything You Need to Know"
+        title="Frequently Asked Questions"
+        description="Have a question about our fleet, licenses, or itineraries? You'll likely find the answer below."
+        align="center"
+      />
+
+      <div class="faq-sections mt-12 max-w-4xl mx-auto">
+        {categories.map((cat) => (
+          <div class="faq-category mb-16">
+            <h2 class="category-title">{categoryLabels[cat] || cat.toUpperCase()}</h2>
+            <FaqAccordion items={groupedFaqs[cat]} />
+          </div>
+        ))}
+      </div>
+
+      <div class="faq-cta text-center mt-20 p-12 glass reveal">
+        <h2>Still Have Questions?</h2>
+        <p>Our team is available 7 days a week to help with your specific needs.</p>
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <a href="/contact/" class="btn-primary">Send a Message</a>
+          <a href={whatsappLink} class="btn-ghost">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .faq-page {
+    background: var(--background);
+  }
+
+  .category-title {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .category-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 1.5rem;
+    background: var(--foreground);
+    border-radius: 2px;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .faq-item {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    height: 100%;
+  }
+
+  .faq-item h3 {
+    font-size: 1.1rem;
+    color: var(--foreground);
+    margin: 0 0 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .faq-cta h2 {
+    font-size: 2rem;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+
+  .faq-cta p {
+    color: var(--muted-foreground);
+    font-size: 1.1rem;
+  }
+
+  .mt-12 { margin-top: 3rem; }
+  .mt-20 { margin-top: 5rem; }
+  .mb-16 { margin-bottom: 4rem; }
+  .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+  .p-12 { padding: 3rem; }
+  .text-center { text-align: center; }
+  .flex { display: flex; }
+  .flex-wrap { flex-wrap: wrap; }
+  .justify-center { justify-content: center; }
+  .gap-4 { gap: 1rem; }
+</style>

@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('legal', 'privacy');
+if (!entry) return Astro.redirect('/404');
+
+const { Content } = await render(entry);
+---
+
+<Layout 
+  title={`${entry.data.title} — Skiathos Boats`}
+  description={entry.data.description}
+>
+  <div class="legal-page">
+    <div class="container py-24 narrow-container">
+      <div class="legal-content prose">
+        <Content />
+      </div>
+      
+      <div class="legal-footer mt-16 pt-8 border-t">
+        <p>If you have any questions about our privacy practices, please <a href="/contact/">contact us</a>.</p>
+        <a href="/" class="btn-ghost mt-8">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .legal-page {
+    background: var(--background);
+    min-height: 80vh;
+  }
+
+  .narrow-container {
+    max-width: 800px;
+  }
+
+  .legal-content :global(h1) {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--foreground);
+    letter-spacing: -0.03em;
+  }
+
+  .legal-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    color: var(--foreground);
+  }
+
+  .legal-content :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted-foreground);
+    margin-bottom: 1.25rem;
+  }
+
+  .legal-content :global(ul) {
+    margin-bottom: 1.5rem;
+    padding-left: 1.25rem;
+  }
+
+  .legal-content :global(li) {
+    margin-bottom: 0.5rem;
+    color: var(--muted-foreground);
+    position: relative;
+  }
+
+  .legal-footer p {
+    color: var(--muted-foreground);
+    font-size: 0.95rem;
+  }
+
+  .legal-footer a {
+    color: var(--foreground);
+    text-decoration: underline;
+  }
+
+  .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+  .mt-16 { margin-top: 4rem; }
+  .pt-8 { padding-top: 2rem; }
+  .border-t { border-top: 1px solid var(--border); }
+  .prose { max-width: none; }
+</style>

@@ -1,0 +1,153 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import ServiceCard from '../../components/cards/ServiceCard.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import FaqAccordion from '../../components/sections/FaqAccordion.astro';
+import { CheckCircle2 } from 'lucide-react';
+import { getCollection } from 'astro:content';
+
+const allActivities = await getCollection('activities');
+const watersportsActivities = allActivities
+  .filter(a => a.data.category === 'watersports')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const allFaqs = await getCollection('faqs');
+const watersportsFaqs = allFaqs
+  .filter(f => f.data.category === 'watersports')
+  .map(f => f.data);
+---
+
+<Layout 
+  title="Watersports in Skiathos | Adrenaline & Fun | Skiathos Boats"
+  description="The premier watersports center in Skiathos. Based at Koukounaries, we offer jet ski, parasailing, wakeboard, water ski, and much more."
+>
+  <HeroSection
+    title="Watersports<br/>Adrenaline Center"
+    subtitle="Based on the golden sands of Koukounaries Beach. High-octane fun for the whole family, from jet skis to sunrise SUP."
+    ctaText="View Activities"
+    ctaHref="#activities"
+    ctaSecondText="Book Now"
+    ctaSecondHref="/contact/"
+    gradient="sunset"
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s9tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        label="Skiathos Adventure"
+        title="Experience the Thrill"
+        description="We operate the newest and most diverse collection of watersports in the Sporades. Operating from our specialized base at world-famous Koukounaries Beach."
+      />
+      
+      <div id="activities" class="services-grid">
+        {watersportsActivities.map(svc => (
+          <ServiceCard 
+            icon={svc.data.icon}
+            title={svc.data.title}
+            description={svc.data.description}
+            href={svc.data.href}
+            price={svc.data.price}
+            accent={svc.data.accent as any}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process / Info -->
+  <section class="section section--muted">
+    <div class="container">
+      <div class="info-layout">
+        <div class="info-content reveal">
+          <h2>Safety & Experience</h2>
+          <p>
+            At Skiathos Boats, safety is our absolute priority. We use the latest equipment from global leaders like Yamaha and Jobe, and our instructors are all certified by the Greek General Secretariat of Sports.
+          </p>
+          <div class="feature-checks">
+            <div class="check"><CheckCircle2 size={18} /> Certified Instructors</div>
+            <div class="check"><CheckCircle2 size={18} /> Newest Equipment</div>
+            <div class="check"><CheckCircle2 size={18} /> Safety Boat Monitor</div>
+            <div class="check"><CheckCircle2 size={18} /> Fully Insured</div>
+          </div>
+        </div>
+        <div class="info-faq reveal">
+          <FaqAccordion items={watersportsFaqs} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner
+    title="Ready for the Ride of Your Life?"
+    subtitle="Contact us to reserve your slot or head down to Koukounaries Beach today. Open daily 09:00 - 20:00."
+    buttonText="Check Availability"
+    buttonHref="/contact/"
+    variant="navy"
+  />
+</Layout>
+
+<style>
+  .section { padding: 5rem 0; }
+  .section--muted { background: var(--muted); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .info-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .info-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .info-content h2 {
+    font-size: 2.25rem;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+  }
+
+  .info-content p {
+    font-size: 1.1rem;
+    color: var(--muted-foreground);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .feature-checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .check {
+    font-weight: 700;
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .check :global(svg) {
+    color: var(--foreground);
+  }
+</style>

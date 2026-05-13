@@ -1,0 +1,127 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import BoatCard from '../../components/cards/BoatCard.astro';
+import { getEntry, render } from 'astro:content';
+import { getFleet } from '../../lib/collections';
+
+const entry = await getEntry('activities', 'rib-inflatable-boats');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const boats = await getFleet();
+const ribs = boats.filter(b => b.data.type === 'rib');
+
+const specs = data.specs || [];
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+  ctaTitle="Book Your RIB Adventure"
+  ctaSubtitle="Available with or without skipper. Tow point for wakeboard and tubes included on select models."
+>
+  <section>
+    <SectionHeading
+      label="Performance Boating"
+      title="Why Choose a RIB?"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+
+    {specs.length > 0 && (
+      <div class="specs-grid">
+        {specs.map(s => (
+          <div class="spec-item">
+            <span class="spec-label">{s.label}</span>
+            <span class="spec-value">{s.value}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+
+  {ribs.length > 0 && (
+    <section>
+      <SectionHeading label="Our RIB Fleet" title="Available Vessels" align="left" titleSize="md" />
+      <div class="boats-grid">
+        {ribs.map(boat => (
+          <BoatCard
+            name={boat.data.name}
+            type={boat.data.type}
+            priceFrom={boat.data.priceFrom}
+            slug={boat.id}
+            image={boat.data.image}
+            imagePlaceholder={boat.data.imagePlaceholder}
+            features={boat.data.features}
+            specs={[
+              { label: 'Length', value: boat.data.length },
+              { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+              { label: 'Engine', value: `${boat.data.horsepower} HP` },
+            ]}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading label="Pricing" title="RIB Rental Prices" align="left" titleSize="md" />
+      <PricingTable
+        rows={pricing}
+        disclaimer="License required unless skipper option selected. Security deposit €500 (card hold). Fuel deposit €100 refunded on return."
+      />
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .spec-item {
+    background: var(--muted);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .spec-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+  }
+
+  .spec-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  .boats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

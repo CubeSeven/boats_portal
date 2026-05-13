@@ -1,0 +1,59 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  pageType?: 'FAQPage' | 'none';
+}
+
+const {
+  items,
+  pageType = 'FAQPage',
+} = Astro.props;
+
+const schema = pageType === 'FAQPage' ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer,
+    },
+  })),
+} : null;
+---
+
+<div class="faq-accordion border border-border rounded-xl overflow-hidden">
+  {items.map((item, i) => (
+    <details class="faq-item group border-b border-border last:border-none" name="faq-group">
+      <summary class="faq-question flex items-center justify-between gap-4 p-5 cursor-pointer list-none font-bold text-base text-foreground bg-transparent hover:bg-neutral-100 transition-colors select-none" id={`faq-${i}`}>
+        <span>{item.question}</span>
+        <span class="faq-icon text-muted-foreground group-open:rotate-180 group-open:text-foreground transition-transform duration-300 ease-premium" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </summary>
+      <div class="accordion-grid">
+        <div class="accordion-inner">
+          <div class="faq-answer p-5 pt-0">
+            <p class="m-0 text-[0.95rem] text-muted-foreground leading-relaxed">{item.answer}</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  ))}
+</div>
+
+{schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+<style>
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+</style>

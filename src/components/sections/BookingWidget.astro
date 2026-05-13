@@ -1,0 +1,358 @@
+---
+import { getEntry } from 'astro:content';
+
+interface Props {
+  services?: string[];
+}
+
+const {
+  services = [
+    'Boat Rental (No License)',
+    'Boat Rental (With Skipper)',
+    'Private Tour',
+    'Water Taxi',
+    'Jet Ski',
+    'Parasailing',
+    'Watersports Package',
+    'Luxury Yacht Charter',
+  ],
+} = Astro.props;
+
+const siteData = await getEntry('site', 'main');
+const emailTo = siteData?.data.email || 'info@skiathosboats.com';
+const waNumber = (siteData?.data.whatsapp || '').replace(/[^0-9]/g, '') || '300000000000';
+---
+
+<div class="booking-widget">
+  <div class="booking-widget__header">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </svg>
+    <span>Request a Quote</span>
+  </div>
+
+  <form class="booking-form" aria-label="Booking request form">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="booking-service">Service</label>
+        <select id="booking-service" name="service" required>
+          <option value="" disabled selected>Select service…</option>
+          {services.map((s) => <option value={s}>{s}</option>)}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row form-row--2">
+      <div class="form-field">
+        <label for="booking-date">Date</label>
+        <input type="date" id="booking-date" name="date" required />
+      </div>
+      <div class="form-field">
+        <label for="booking-guests">Guests</label>
+        <input type="number" id="booking-guests" name="guests" min="1" max="30" placeholder="e.g. 4" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="booking-name">Your Name</label>
+        <input type="text" id="booking-name" name="name" placeholder="Full name" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="booking-email">Email</label>
+        <input type="email" id="booking-email" name="email" placeholder="you@example.com" required />
+      </div>
+    </div>
+
+    <button type="submit" class="booking-submit btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="22" y1="2" x2="11" y2="13"/>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+      <span>Request Quote</span>
+    </button>
+
+    <p class="booking-note">Free quote · No obligation · Reply within 2 hours</p>
+  </form>
+
+  <div class="booking-result" hidden>
+    <div class="booking-result__inner">
+      <svg class="booking-result__check" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+
+      <h3 class="booking-result__title">Request Ready</h3>
+      <p class="booking-result__desc">Send your booking via:</p>
+
+      <div class="booking-result__actions">
+        <a class="booking-result__btn wa-btn" href="" target="_blank" rel="noopener noreferrer" data-variant="whatsapp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a3.56 3.56 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
+
+        <a class="booking-result__btn email-btn" href="" data-variant="email">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 7l-10 7L2 7"/>
+          </svg>
+          Email
+        </a>
+      </div>
+
+      <button type="button" class="booking-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5"/>
+          <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Edit Request
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .booking-widget {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 8px 32px oklch(0 0 0 / 8%);
+  }
+
+  .booking-widget__header {
+    background: var(--foreground);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .booking-form {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .form-row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--foreground);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  input,
+  select {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+  }
+
+  input:focus,
+  select:focus {
+    border-color: var(--foreground);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--foreground);
+  }
+
+  input::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  .booking-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    height: 3.5rem; /* Substantial height for primary action */
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .booking-submit svg {
+    transition: transform var(--duration-normal) var(--ease-premium);
+  }
+
+  .booking-submit:hover svg {
+    transform: translate(2px, -2px) scale(1.1);
+  }
+
+  .booking-submit:active {
+    scale: 0.98;
+  }
+
+  .booking-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    margin: 0;
+  }
+
+  .booking-result {
+    padding: 2rem 1.5rem;
+  }
+
+  .booking-result__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .booking-result__check {
+    color: var(--foreground);
+    margin-bottom: 1rem;
+  }
+
+  .booking-result__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0 0 0.25rem;
+  }
+
+  .booking-result__desc {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin: 0 0 1.5rem;
+  }
+
+  .booking-result__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 480px) {
+    .booking-result__actions {
+      flex-direction: row;
+    }
+  }
+
+  .booking-result__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.25rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    cursor: pointer;
+    border: none;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .booking-result__btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .booking-result__btn:active {
+    transform: translateY(0);
+  }
+
+  .booking-result__btn[data-variant="whatsapp"] {
+    background: #25D366;
+    color: white;
+  }
+
+  .booking-result__btn[data-variant="email"] {
+    background: var(--foreground);
+    color: white;
+  }
+
+  .booking-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    border-radius: var(--radius-md);
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .booking-back:hover {
+    color: var(--foreground);
+    background: var(--muted);
+  }
+</style>
+
+<script define:vars={{ emailTo, waNumber }}>
+  document.querySelectorAll('.booking-widget').forEach(widget => {
+    const form = widget.querySelector('.booking-form');
+    const resultPanel = widget.querySelector('.booking-result');
+    const waBtn = widget.querySelector('.wa-btn');
+    const emailBtn = widget.querySelector('.email-btn');
+    const backBtn = widget.querySelector('.booking-back');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const service = fd.get('service');
+      const date = fd.get('date');
+      const guests = fd.get('guests') || 'Not specified';
+      const name = fd.get('name');
+      const email = fd.get('email');
+
+      const body = `Service: ${service}\nDate: ${date}\nGuests: ${guests}\nName: ${name}\nEmail: ${email}`;
+      const encodedBody = encodeURIComponent(body);
+      const encodedSubject = encodeURIComponent('Booking Request');
+
+      waBtn.href = `https://wa.me/${waNumber}?text=${encodedBody}`;
+      emailBtn.href = `mailto:${emailTo}?subject=${encodedSubject}&body=${encodedBody}`;
+
+      form.hidden = true;
+      resultPanel.hidden = false;
+    });
+
+    backBtn.addEventListener('click', () => {
+      resultPanel.hidden = true;
+      form.hidden = false;
+    });
+  });
+</script>

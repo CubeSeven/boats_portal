@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from 'astro:content';
+import RoutePage from '../../layouts/RoutePage.astro';
+
+export async function getStaticPaths() {
+  const taxiRoutes = await getCollection('routes');
+  return taxiRoutes.map(route => ({
+    params: { slug: route.id },
+    props: { route },
+  }));
+}
+
+const { route } = Astro.props;
+const { Content } = await render(route);
+---
+
+<RoutePage {...route.data} id={route.id} category="transfers">
+  <Content />
+</RoutePage>

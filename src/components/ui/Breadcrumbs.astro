@@ -1,0 +1,146 @@
+---
+interface Props {
+  currentPath?: string;
+  customCrumbs?: { label: string; href: string }[];
+}
+
+const { currentPath = Astro.url.pathname, customCrumbs } = Astro.props;
+
+// Auto-generate from URL path
+function generateCrumbs(path: string) {
+  const segments = path.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
+  const crumbs = [{ label: 'Home', href: '/' }];
+
+  const labels: Record<string, string> = {
+    'boat-rental': 'Boat Rental',
+    'no-license-required': 'No License Required',
+    'with-skipper': 'With Skipper',
+    'rib-inflatable-boats': 'RIB & Inflatables',
+    'luxury-yacht-charter': 'Luxury Yacht Charter',
+    'private-boat-tours': 'Private Boat Tours',
+    'lalaria-blue-caves': 'Lalaria & Blue Caves',
+    'mamma-mia-skopelos': 'Mamma Mia Skopelos',
+    'sunset-wine-cruise': 'Sunset Wine Cruise',
+    'tsougria-arkos-islands': 'Tsougria & Arkos',
+    'kastro-historic-tour': 'Kastro Historic Tour',
+    'around-the-island': 'Around the Island',
+    'water-taxi': 'Water Taxi',
+    'skiathos-to-volos': 'Skiathos to Volos',
+    'skiathos-to-katigiorgis': 'Skiathos to Pelion',
+    'skiathos-to-skopelos': 'Skiathos to Skopelos',
+    'airport-sea-transfers': 'Airport Transfers',
+    'watersports': 'Watersports',
+    'jet-ski-rental': 'Jet Ski',
+    'parasailing': 'Parasailing',
+    'wakeboard-water-ski': 'Wakeboard & Water Ski',
+    'tubes-inflatables': 'Tubes & Inflatables',
+    'sup-canoe-hire': 'SUP & Canoe',
+    'locations': 'Locations',
+    'koukounaries-beach': 'Koukounaries Beach',
+    'skiathos-town-port': 'Skiathos Town Port',
+    'kanapitsa-beach': 'Kanapitsa Beach',
+    'vromolimnos-beach': 'Vromolimnos Beach',
+    'fleet': 'Our Fleet',
+    'blog': 'Blog',
+    'faqs': 'FAQs',
+    'contact': 'Contact',
+  };
+
+  let accHref = '';
+  segments.forEach((seg, i) => {
+    accHref += `/${seg}`;
+    crumbs.push({
+      label: labels[seg] ?? seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+      href: i === segments.length - 1 ? '' : `${accHref}/`,
+    });
+  });
+
+  return crumbs;
+}
+
+const crumbs = customCrumbs ?? generateCrumbs(currentPath);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": crumbs.map((c, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": c.label,
+    ...(c.href ? { "item": `https://skiathosboats.com${c.href}` } : {}),
+  })),
+};
+---
+
+{crumbs.length > 1 && (
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        {crumbs.map((crumb, i) => (
+          <li>
+            {crumb.href ? (
+              <a href={crumb.href}>{crumb.label}</a>
+            ) : (
+              <span aria-current="page">{crumb.label}</span>
+            )}
+            {i < crumbs.length - 1 && (
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M4 2 L8 6 L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+)}
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<style>
+  .breadcrumbs {
+    padding: 0.75rem 0;
+    background: transparent;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .breadcrumbs a {
+    font-size: 0.8rem;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: color 0.2s;
+    opacity: 0.7;
+  }
+
+  .breadcrumbs a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .breadcrumbs span {
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+  }
+
+  .breadcrumbs svg {
+    color: var(--muted-foreground);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+</style>

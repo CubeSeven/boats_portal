@@ -1,0 +1,62 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('activities', 'wakeboard-water-ski');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const highlights = data.highlights || [];
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+>
+  <section>
+    <SectionHeading
+      label="Ride the Wake"
+      title="Professional Coaching"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+
+    {highlights.length > 0 && (
+      <div class="features">
+        {highlights.map(h => (
+          <div class="f-item"><strong>{h.title}:</strong> {h.description}</div>
+        ))}
+      </div>
+    )}
+  </section>
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Pricing"
+        title="Ski & Wake Session Rates"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable rows={pricing} disclaimer="Equipment hire (board/skis, vest, rope) is included in all prices." />
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .features { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+  .f-item { padding: 1rem; background: var(--muted); border-radius: var(--radius-md); font-size: 0.95rem; }
+  .f-item strong { color: var(--foreground); }
+</style>

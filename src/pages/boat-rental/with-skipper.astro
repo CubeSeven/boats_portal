@@ -1,0 +1,163 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import BoatCard from '../../components/cards/BoatCard.astro';
+import DynamicIcon from '../../components/ui/DynamicIcon.astro';
+import { getEntry, render } from 'astro:content';
+import { getFleet } from '../../lib/collections';
+
+const entry = await getEntry('activities', 'with-skipper');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const perks = data.perks || [];
+const itineraries = data.itineraries || [];
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+
+const allBoats = await getFleet();
+const availableBoats = allBoats.filter(b => b.data.type !== 'no-license' && b.data.available);
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+  ctaTitle="Book a Boat With Skipper"
+  ctaSubtitle="Ideal for groups, special occasions, and long-distance crossings to other islands."
+>
+  <section>
+    <SectionHeading
+      label="The Premium Option"
+      title="Why Hire With a Skipper?"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+
+    {perks.length > 0 && (
+      <div class="perks-grid">
+        {perks.map(p => (
+          <div class="perk reveal">
+            <span class="perk-icon"><DynamicIcon name={p.icon} size={24} strokeWidth={1.5} /></span>
+            <div>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+
+  {availableBoats.length > 0 && (
+    <section>
+      <SectionHeading label="Our Fleet" title="Boats Available With Skipper" align="left" titleSize="md" />
+      <div class="boats-grid">
+        {availableBoats.slice(0, 3).map(boat => (
+          <BoatCard
+            name={boat.data.name}
+            type={boat.data.type}
+            priceFrom={boat.data.priceFrom}
+            slug={boat.id}
+            image={boat.data.image}
+            imagePlaceholder={boat.data.imagePlaceholder}
+            features={boat.data.features}
+            specs={[
+              { label: 'Length', value: boat.data.length },
+              { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+              { label: 'Engine', value: `${boat.data.horsepower} HP` },
+            ]}
+          />
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/fleet/" class="btn-primary" style="padding: 0.75rem 2rem; background: var(--foreground); color: white; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; display: inline-block;">View Full Fleet</a>
+      </div>
+    </section>
+  )}
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Pricing"
+        title="Skipper Hire Prices"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable
+        rows={pricing}
+        disclaimer="All skipper hire includes: fuel, life jackets, snorkelling gear, cooler, sea maps. Route is flexible — you choose where to go."
+      />
+    </section>
+  )}
+
+  {itineraries.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Popular Itineraries"
+        title="Where Our Skippers Take You"
+        align="left"
+        titleSize="md"
+      />
+      <p>Tell your skipper what you want and they'll build the perfect day. Popular combinations include:</p>
+      <ul>
+        {itineraries.map(i => (
+          <li><strong>{i.title}</strong> — {i.description}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .perks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .perk {
+    display: flex;
+    gap: 0.85rem;
+    background: var(--muted);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .perk-icon { color: var(--foreground); flex-shrink: 0; display: flex; align-items: center; }
+
+  .perk h3 {
+    font-size: 0.95rem !important;
+    margin: 0 0 0.25rem !important;
+    font-family: var(--font-sans) !important;
+    font-weight: 700;
+  }
+
+  .perk p {
+    font-size: 0.85rem;
+    margin: 0 !important;
+    line-height: 1.55 !important;
+  }
+
+  .boats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .section-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+</style>

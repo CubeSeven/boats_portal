@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import LocationMap from '../../components/sections/LocationMap.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import DynamicIcon from '../../components/ui/DynamicIcon.astro';
+import { getCollection } from 'astro:content';
+import { getSiteSettings } from '../../lib/collections';
+
+const site = await getSiteSettings();
+const whatsappNumber = site?.whatsapp?.replace(/[^0-9]/g, '') || '';
+
+const allLocations = await getCollection('locations');
+const locations = allLocations.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout 
+  title="Our Locations in Skiathos | Skiathos Boats"
+  description="Find Skiathos Boats across the island. We operate from Skiathos Town Old Port, Koukounaries, Kanapitsa, and Vromolimnos."
+>
+  <HeroSection
+    title="Our Locations<br/>Across Skiathos"
+    subtitle="With four strategic bases around the island, we are always close to where your Aegean adventure begins."
+    ctaText="View on Map"
+    ctaHref="#map"
+    ctaSecondText="Contact Us"
+    ctaSecondHref="/contact/"
+    gradient="turquoise"
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s6tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <!-- Grid -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        label="Strategic Bases"
+        title="Find Us on the Shore"
+        description="We've selected the best locations in Skiathos to ensure easy access, calm departures, and immediate proximity to the island's best sights."
+      />
+      
+      <div class="locations-grid">
+        {locations.map(loc => (
+          <a href={`/locations/${loc.id}/`} class="location-card reveal">
+            <div class="location-card__icon">
+              <DynamicIcon name={loc.data.icon} size={40} strokeWidth={1.5} />
+            </div>
+            <div class="location-card__content">
+              <span class="location-card__status">{loc.data.status}</span>
+              <h3>{loc.data.locationName}</h3>
+              <p>{loc.data.description}</p>
+              <div class="location-card__footer">
+                <span>View Base Details →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section section--muted" id="map">
+    <div class="container">
+      <SectionHeading
+        label="Island Overview"
+        title="Interactive Base Map"
+        description="See our coverage across Skiathos. Hover over the pins to identify our operating points."
+      />
+      <div class="map-wrapper">
+        <LocationMap height="500px" />
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner
+    title="Need Help Finding Us?"
+    subtitle="Call or WhatsApp us for live directions to any of our bases. We operate daily from 09:00."
+    buttonText="WhatsApp Us"
+    buttonHref={whatsappNumber ? `https://wa.me/${whatsappNumber}` : '/contact/'}
+    variant="dark"
+  />
+</Layout>
+
+<style>
+  .section { padding: 5rem 0; }
+  .section--muted { background: var(--muted); }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .location-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px oklch(0 0 0 / 10%);
+  }
+
+  .location-card__icon {
+    padding: 2.5rem 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    color: var(--foreground);
+    background: linear-gradient(to bottom, var(--muted), transparent);
+  }
+
+  .location-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .location-card__status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--foreground);
+  }
+
+  .location-card__content h3 {
+    font-size: 1.25rem;
+    color: var(--foreground);
+    margin: 0;
+  }
+
+  .location-card__content p {
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .location-card__footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  .map-wrapper {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    padding: 1rem;
+  }
+</style>

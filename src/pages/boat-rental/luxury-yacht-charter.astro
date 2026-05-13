@@ -1,0 +1,156 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import BoatCard from '../../components/cards/BoatCard.astro';
+import { Check, Plus } from 'lucide-react';
+import { getEntry, render } from 'astro:content';
+import { getFleet } from '../../lib/collections';
+
+const entry = await getEntry('activities', 'luxury-yacht-charter');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const inclusions = data.inclusions || [];
+const itineraries = data.itineraries || [];
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+
+const allBoats = await getFleet();
+const yachts = allBoats.filter(b => b.data.type === 'yacht' && b.data.available);
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+  ctaTitle="Enquire About Yacht Charter"
+  ctaSubtitle="Custom packages for special occasions, corporate events, and extended Sporades itineraries."
+>
+  <section>
+    <SectionHeading
+      label="Premium Charters"
+      title="The Skiathos Boats Yacht Experience"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+
+    {inclusions.length > 0 && (
+      <div class="inclusion-grid">
+        {inclusions.map(inc => (
+          <div class={`inclusion-item ${inc.type}`}>
+            <span class="inclusion-icon">
+              {inc.type === 'included' ? <Check size={14} /> : <Plus size={14} />}
+            </span>
+            {inc.text}
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+
+  {yachts.length > 0 && (
+    <section>
+      <SectionHeading label="The Yacht" title="Available Yacht" align="left" titleSize="md" />
+      <div class="boats-grid">
+        {yachts.map(boat => (
+          <BoatCard
+            name={boat.data.name}
+            type={boat.data.type}
+            priceFrom={boat.data.priceFrom}
+            slug={boat.id}
+            image={boat.data.image}
+            imagePlaceholder={boat.data.imagePlaceholder}
+            features={boat.data.features}
+            specs={[
+              { label: 'Length', value: boat.data.length },
+              { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+              { label: 'Engine', value: `${boat.data.horsepower} HP` },
+            ]}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Charter Pricing"
+        title="Yacht Charter Rates"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable
+        rows={pricing}
+        disclaimer="All prices are per charter (not per person). Final rates depend on yacht selection, season, and itinerary. Contact us for a bespoke quote."
+      />
+    </section>
+  )}
+
+  {itineraries.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Sample Itineraries"
+        title="Inspiration for Your Charter"
+        align="left"
+        titleSize="md"
+      />
+      <p>Our team builds custom itineraries for every charter. Some popular options:</p>
+      <ul>
+        {itineraries.map(i => (
+          <li><strong>{i.title}</strong> — {i.description}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .inclusion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .inclusion-item {
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.825rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .inclusion-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .inclusion-item.included {
+    background: oklch(0.55 0.18 145 / 10%);
+    color: oklch(0.35 0.15 145);
+    font-weight: 600;
+  }
+
+  .inclusion-item.addon {
+    background: var(--muted);
+    color: var(--muted-foreground);
+    font-style: italic;
+  }
+
+  .boats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

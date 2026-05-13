@@ -1,0 +1,227 @@
+---
+import DynamicIcon from '../../components/ui/DynamicIcon.astro';
+import { getSortedTours, getSiteSettings } from '../../lib/collections';
+
+const allTours = await getSortedTours();
+const site = await getSiteSettings();
+
+const navItems = [
+  {
+    label: 'Boat Rental',
+    href: '/boat-rental/',
+    icon: 'sailboat',
+    children: [
+      { label: 'No License Required', href: '/boat-rental/no-license-required/', icon: 'unlock' },
+      { label: 'With Skipper', href: '/boat-rental/with-skipper/', icon: 'user-round' },
+      { label: 'RIB / Inflatables', href: '/boat-rental/rib-inflatable-boats/', icon: 'ship' },
+      { label: 'Luxury Yacht Charter', href: '/boat-rental/luxury-yacht-charter/', icon: 'crown' },
+    ],
+  },
+  {
+    label: 'Private Tours',
+    href: '/private-boat-tours/',
+    icon: 'compass',
+    children: allTours
+      .map(t => ({ label: t.data.title.split('|')[0].trim(), href: `/private-boat-tours/${t.id}/` })),
+  },
+  {
+    label: 'Watersports',
+    href: '/watersports/',
+    icon: 'waves',
+    children: [
+      { label: 'Jet Ski', href: '/watersports/jet-ski-rental/', icon: 'zap' },
+      { label: 'Parasailing', href: '/watersports/parasailing/', icon: 'wind' },
+      { label: 'Wakeboard & Water Ski', href: '/watersports/wakeboard-water-ski/', icon: 'waves' },
+      { label: 'Tubes & Inflatables', href: '/watersports/tubes-inflatables/', icon: 'circle' },
+      { label: 'SUP & Canoe', href: '/watersports/sup-canoe-hire/', icon: 'rows' },
+    ],
+  },
+  {
+    label: 'Water Taxi',
+    href: '/water-taxi/',
+    icon: 'ship',
+    children: [
+      { label: 'To Volos', href: '/water-taxi/skiathos-to-volos/', icon: 'map-pin' },
+      { label: 'To Skopelos', href: '/water-taxi/skiathos-to-skopelos/', icon: 'map-pin' },
+      { label: 'To Pelion', href: '/water-taxi/skiathos-to-katigiorgis/', icon: 'map-pin' },
+      { label: 'Airport Transfers', href: '/water-taxi/airport-sea-transfers/', icon: 'plane' },
+    ],
+  },
+  { label: 'Fleet', href: '/fleet/', icon: 'anchor' },
+  { label: 'Blog', href: '/blog/', icon: 'newspaper' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="site-header" class="sticky top-0 z-[100] bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 py-4 text-foreground shadow-sm" role="banner">
+  <div class="container flex items-center justify-between gap-6">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 no-underline shrink-0 text-current" aria-label="Skiathos Boats — Home">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="18" fill="currentColor"/>
+        <path d="M9 22 Q18 11 27 22" stroke="white" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        <path d="M7 26 H29" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="18" y1="11" x2="18" y2="22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M18 11 L24 17" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="font-sans text-xl font-medium text-current tracking-tight uppercase">Skiathos<strong class="font-black">Boats</strong></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:block flex-1" aria-label="Main navigation">
+      <ul role="list" class="flex list-none m-0 p-0 gap-1 justify-center">
+        {navItems.map((item) => (
+          <li class="relative py-2 group">
+            <a
+              href={item.href}
+              class={`flex items-center gap-2 px-4 py-2 text-foreground no-underline text-[0.8rem] font-extrabold uppercase tracking-[0.1em] rounded-md transition-all duration-300 whitespace-nowrap opacity-70 hover:opacity-100 hover:bg-neutral-100 dark:hover:bg-neutral-900 ${currentPath.startsWith(item.href) && item.href !== '/' ? 'opacity-100' : ''}`}
+              aria-haspopup={item.children ? 'true' : undefined}
+            >
+              <DynamicIcon name={item.icon} size={14} strokeWidth={2} />
+              {item.label}
+              {item.children && (
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="opacity-50 group-hover:rotate-180 transition-transform">
+                  <path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              )}
+            </a>
+            {item.children && (
+              <div class="dropdown-menu absolute top-[calc(100%-8px)] left-1/2 -translate-x-1/2 w-64 p-2 flex flex-col gap-0.5 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-border bg-white dark:bg-neutral-950 opacity-0 z-50 pointer-events-none translate-y-2 scale-[0.98] transition-all duration-300 rounded-xl" role="menu">
+                {item.children.map((child) => (
+                  <a href={child.href} role="menuitem" class={`flex items-center gap-1.5 px-4 py-2.5 rounded-md text-[0.75rem] font-bold uppercase tracking-widest text-foreground shrink-0 opacity-70 transition-all hover:opacity-100 hover:bg-neutral-100 dark:hover:bg-neutral-900 ${currentPath === child.href ? 'opacity-100 bg-neutral-100 dark:bg-neutral-900' : ''}`}>
+                    {child.icon && <DynamicIcon name={child.icon} size={12} strokeWidth={2} />}
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Desktop CTA + Mobile Toggle -->
+    <div class="flex items-center gap-4 shrink-0">
+      <a href="/contact/" class="btn btn-primary px-6 py-2 text-[0.65rem] uppercase tracking-widest hidden md:inline-flex">
+        Book Now
+      </a>
+      <button 
+        class="flex lg:hidden flex-col gap-1.5 p-2 bg-transparent border-none cursor-pointer rounded-md text-current transition-colors hover:bg-neutral-50 group" 
+        id="hamburger-btn" 
+        aria-label="Open navigation menu" 
+        aria-expanded="false" 
+        aria-controls="mobile-menu"
+      >
+        <span class="block w-6 h-[2px] bg-current rounded-full transition-all duration-300 group-[.open]:translate-y-[8px] group-[.open]:rotate-45"></span>
+        <span class="block w-6 h-[2px] bg-current rounded-full transition-all duration-300 group-[.open]:opacity-0"></span>
+        <span class="block w-6 h-[2px] bg-current rounded-full transition-all duration-300 group-[.open]:-translate-y-[8px] group-[.open]:-rotate-45"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay Menu -->
+<div class="fixed inset-0 z-[200] bg-background p-10 flex flex-col text-foreground lg:hidden" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="self-end bg-neutral-100 rounded-full w-14 h-14 flex items-center justify-center cursor-pointer text-foreground mb-12 border-none transition-transform hover:rotate-90" id="mobile-close-btn" aria-label="Close navigation menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <nav class="flex flex-col gap-4 flex-1" aria-label="Mobile navigation">
+    {navItems.map((item) => (
+      <div class="border-b border-border pb-4 mb-2">
+        <a href={item.href} class="flex items-center gap-3 text-foreground no-underline text-3xl font-black tracking-tighter py-2 uppercase italic leading-none">
+          <DynamicIcon name={item.icon} size={24} strokeWidth={2} />
+          {item.label}
+        </a>
+        {item.children && (
+          <div class="flex flex-col gap-2 pt-2 pb-4 pl-4 border-l-2 border-border mt-2">
+            {item.children.map((child) => (
+              <a href={child.href} class="flex items-center gap-2 text-muted-foreground no-underline text-[0.75rem] font-bold uppercase tracking-widest py-1 hover:text-foreground transition-colors">
+                {child.icon && <DynamicIcon name={child.icon} size={14} strokeWidth={2} />}
+                {child.label}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+    <div class="mt-auto pt-12 flex flex-col gap-4">
+      <a href="/contact/" class="btn btn-primary w-full text-center py-4 text-sm uppercase tracking-widest">Book Now</a>
+      {site?.phone && (
+        <a href={`tel:${site.phone.replace(/ /g, '')}`} class="btn btn-secondary w-full text-center py-4 text-sm uppercase tracking-widest">
+          Call {site.phone}
+        </a>
+      )}
+    </div>
+  </nav>
+</div>
+<div class="fixed inset-0 z-[199] bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm" id="mobile-backdrop"></div>
+
+<style>
+  #mobile-menu {
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  #mobile-menu.open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .dropdown-menu {
+    transform-origin: top center;
+    transition:
+      opacity 300ms var(--ease-premium),
+      transform 300ms var(--ease-premium),
+      visibility 300ms;
+  }
+
+  .group:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  #mobile-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-backdrop');
+  const closeBtn = document.getElementById('mobile-close-btn');
+
+  function openMenu() {
+    mobileMenu?.classList.add('open');
+    backdrop?.classList.add('open');
+    hamburgerBtn?.classList.add('open');
+    hamburgerBtn?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu?.classList.remove('open');
+    backdrop?.classList.remove('open');
+    hamburgerBtn?.classList.remove('open');
+    hamburgerBtn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>

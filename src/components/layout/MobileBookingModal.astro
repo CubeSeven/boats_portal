@@ -1,0 +1,1102 @@
+---
+import { getFleet, getSortedTours, getSortedServices, getSiteSettings } from '../../lib/collections';
+import { getCollection } from 'astro:content';
+
+const fleet = await getFleet();
+const tours = await getSortedTours();
+const services = await getSortedServices();
+const routes = await getCollection('routes');
+const activities = await getCollection('activities');
+const site = await getSiteSettings();
+
+const emailTo = site?.email || 'info@skiathosboats.com';
+const waNumber = (site?.whatsapp || '').replace(/[^0-9]/g, '');
+
+const fleetJSON = JSON.stringify(
+  fleet
+    .filter(b => b.data.available !== false)
+    .map(b => ({
+      id: b.id,
+      name: b.data.name,
+      type: b.data.type,
+      length: b.data.length,
+      capacity: b.data.capacity,
+      horsepower: b.data.horsepower,
+      priceFrom: b.data.priceFrom,
+      image: b.data.image,
+    }))
+);
+
+const toursJSON = JSON.stringify(
+  tours.map(t => ({
+    id: t.id,
+    title: t.data.title,
+    duration: t.data.duration,
+    description: t.data.description,
+    priceFrom: (t.data.pricing?.[0] as any)?.price || t.data.pricing?.[0]?.duration || '',
+  }))
+);
+
+const servicesJSON = JSON.stringify(
+  services.map(s => ({
+    id: s.id,
+    title: s.data.title,
+    description: s.data.description,
+    icon: s.data.icon,
+    price: s.data.price,
+  }))
+);
+
+const routesJSON = JSON.stringify(
+  routes.sort((a: any, b: any) => (a.data.order ?? 99) - (b.data.order ?? 99)).map(r => ({
+    id: r.id,
+    title: r.data.title,
+    fromLocation: r.data.fromLocation,
+    toLocation: r.data.toLocation,
+    duration: r.data.duration,
+    priceFrom: (r.data.pricing?.[0] as any)?.price || '',
+  }))
+);
+
+const watersportsJSON = JSON.stringify(
+  activities
+    .filter((a: any) => a.data.category === 'watersports')
+    .sort((a: any, b: any) => (a.data.order ?? 99) - (b.data.order ?? 99))
+    .map(a => ({
+      id: a.id,
+      title: a.data.title,
+      description: a.data.description,
+      price: a.data.price,
+    }))
+);
+---
+
+<div
+  id="booking-modal"
+  class="modal-root"
+  hidden
+  role="dialog"
+  aria-modal="true"
+  aria-label="Book Now"
+>
+  <div class="modal-backdrop" aria-hidden="true"></div>
+  <div class="modal-sheet">
+    <div class="modal-header">
+      <button class="modal-back-btn" aria-label="Go back" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <span class="modal-title">Book Now</span>
+      <button class="modal-close-btn" aria-label="Close" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-progress">
+      <span class="progress-dot active" data-step="1"></span>
+      <span class="progress-dot" data-step="2"></span>
+      <span class="progress-dot" data-step="3"></span>
+    </div>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<style is:global>
+  #booking-modal.modal-root {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  #booking-modal.modal-root[hidden] {
+    display: none;
+  }
+
+  #booking-modal .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: oklch(0 0 0 / 60%);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-premium);
+  }
+
+  #booking-modal.modal-root.open .modal-backdrop {
+    opacity: 1;
+  }
+
+  #booking-modal .modal-sheet {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: 92vh;
+    background: var(--background);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(100%);
+    transition: transform var(--duration-slow) var(--ease-premium);
+    box-shadow: 0 -8px 40px oklch(0 0 0 / 30%);
+  }
+
+  #booking-modal.modal-root.open .modal-sheet {
+    transform: translateY(0);
+  }
+
+  #booking-modal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    min-height: 48px;
+  }
+
+  #booking-modal .modal-back-btn,
+  #booking-modal .modal-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: none;
+    color: var(--foreground);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background var(--duration-fast);
+    padding: 0;
+  }
+
+  #booking-modal .modal-back-btn:hover,
+  #booking-modal .modal-close-btn:hover {
+    background: var(--muted);
+  }
+
+  #booking-modal .modal-back-btn.hidden {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  #booking-modal .modal-title {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  #booking-modal .modal-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  #booking-modal .progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all var(--duration-normal) var(--ease-premium);
+  }
+
+  #booking-modal .progress-dot.active {
+    background: var(--foreground);
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  #booking-modal .progress-dot.done {
+    background: var(--foreground);
+    opacity: 0.5;
+  }
+
+  #booking-modal .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 1rem 1.5rem;
+  }
+
+  /* Step 1: Service Grid */
+  #booking-modal .step-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
+  #booking-modal .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 0.75rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-premium);
+    text-align: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #booking-modal .service-card:active {
+    scale: 0.97;
+    background: var(--muted);
+  }
+
+  #booking-modal .service-card:hover {
+    border-color: var(--foreground);
+  }
+
+  #booking-modal .service-card.selected {
+    border-color: var(--foreground);
+    background: var(--foreground);
+    color: var(--background);
+    scale: 0.98;
+  }
+
+  #booking-modal .service-card.selected .service-card-title,
+  #booking-modal .service-card.selected .service-card-price {
+    color: var(--background);
+  }
+
+  #booking-modal .service-card svg {
+    transition: color var(--duration-fast);
+  }
+
+  #booking-modal .service-card.selected svg {
+    color: var(--background);
+  }
+
+  #booking-modal .service-card-title {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  #booking-modal .service-card-price {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+  }
+
+  /* Step 2: Category chips */
+  #booking-modal .chip-row {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0 0.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  #booking-modal .chip-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  #booking-modal .chip {
+    flex-shrink: 0;
+    padding: 0.45rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--background);
+    color: var(--foreground);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-premium);
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  #booking-modal .chip:active {
+    scale: 0.96;
+  }
+
+  #booking-modal .chip.active {
+    background: var(--foreground);
+    color: var(--background);
+    border-color: var(--foreground);
+  }
+
+  /* Step 2: Boat / Tour / Route / Activity Cards */
+  #booking-modal .sub-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  #booking-modal .sub-option-card {
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-premium);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  #booking-modal .sub-option-card:active {
+    scale: 0.97;
+  }
+
+  #booking-modal .sub-option-card.selected {
+    border-color: var(--foreground);
+    scale: 0.98;
+  }
+
+  #booking-modal .sub-option-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    background: var(--muted);
+  }
+
+  #booking-modal .sub-option-card-body {
+    padding: 0.6rem 0.65rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  #booking-modal .sub-option-card-name {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--foreground);
+    line-height: 1.2;
+  }
+
+  #booking-modal .sub-option-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    font-size: 0.65rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+  }
+
+  #booking-modal .sub-option-card-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  #booking-modal .sub-option-card-meta span::after {
+    content: '·';
+    margin-left: 0.4rem;
+    color: var(--border);
+  }
+
+  #booking-modal .sub-option-card-meta span:last-child::after {
+    display: none;
+  }
+
+  #booking-modal .sub-option-card-price {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  #booking-modal .license-badge {
+    display: inline-block;
+    padding: 0.15rem 0.4rem;
+    border-radius: 999px;
+    font-size: 0.55rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  #booking-modal .license-badge.no-license {
+    background: oklch(0.55 0.15 155);
+    color: white;
+  }
+
+  #booking-modal .license-badge.license-req {
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  #booking-modal .license-badge.rib {
+    background: oklch(0.45 0.12 230);
+    color: white;
+  }
+
+  #booking-modal .license-badge.yacht {
+    background: oklch(0.45 0.08 40);
+    color: white;
+  }
+
+  /* Tour / Route / Activity cards (single column) */
+  #booking-modal .sub-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  #booking-modal .sub-option-card-full {
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-premium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  #booking-modal .sub-option-card-full:active {
+    scale: 0.98;
+  }
+
+  #booking-modal .sub-option-card-full.selected {
+    border-color: var(--foreground);
+  }
+
+  #booking-modal .sub-option-card-full-left {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  #booking-modal .sub-option-card-full-left .sub-option-card-name {
+    font-size: 0.85rem;
+  }
+
+  #booking-modal .sub-option-card-full-desc {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    line-height: 1.3;
+  }
+
+  #booking-modal .sub-option-card-full-right {
+    text-align: right;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+  }
+
+  /* Step 3: Details form */
+  #booking-modal .step-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-top: 0.5rem;
+  }
+
+  #booking-modal .step-form .summary {
+    font-size: 0.78rem;
+    color: var(--muted-foreground);
+    padding: 0.6rem 0.75rem;
+    background: var(--muted);
+    border-radius: var(--radius-md);
+    line-height: 1.4;
+  }
+
+  #booking-modal .step-form .summary strong {
+    color: var(--foreground);
+    font-weight: 700;
+  }
+
+  #booking-modal .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  #booking-modal .form-field label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  #booking-modal .form-field input,
+  #booking-modal .form-field textarea {
+    padding: 0.7rem 0.8rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    outline: none;
+    transition: border-color var(--duration-fast);
+    width: 100%;
+  }
+
+  #booking-modal .form-field input:focus,
+  #booking-modal .form-field textarea:focus {
+    border-color: var(--foreground);
+  }
+
+  #booking-modal .form-field textarea {
+    resize: vertical;
+    min-height: 60px;
+  }
+
+  #booking-modal .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  #booking-modal .submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--foreground);
+    color: var(--background);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-premium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  #booking-modal .submit-btn:active {
+    scale: 0.98;
+  }
+
+  #booking-modal .result-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 0.5rem 0.5rem;
+    text-align: center;
+  }
+
+  #booking-modal .result-panel-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  #booking-modal .result-panel-desc {
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+  }
+
+  #booking-modal .result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  #booking-modal .result-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border-radius: var(--radius-lg);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: opacity var(--duration-fast), transform var(--duration-fast);
+  }
+
+  #booking-modal .result-btn:active {
+    transform: scale(0.98);
+  }
+
+  #booking-modal .result-btn.whatsapp {
+    background: #25D366;
+    color: white;
+  }
+
+  #booking-modal .result-btn.email {
+    background: var(--foreground);
+    color: var(--background);
+  }
+</style>
+
+<script define:vars={{
+  fleetRaw: fleetJSON,
+  toursRaw: toursJSON,
+  servicesRaw: servicesJSON,
+  routesRaw: routesJSON,
+  wspRaw: watersportsJSON,
+  emailToVal: emailTo,
+  waNumberVal: waNumber
+}}>
+  (function () {
+    const FLEET = JSON.parse(fleetRaw);
+    const TOURS = JSON.parse(toursRaw);
+    const SERVICES = JSON.parse(servicesRaw);
+    const ROUTES = JSON.parse(routesRaw);
+    const WSPORTS = JSON.parse(wspRaw);
+    const EMAIL_TO = emailToVal;
+    const WA_NUMBER = waNumberVal;
+
+    const FLEET_TYPE_LABELS = {
+      'no-license': 'No License',
+      'with-license': 'License Req',
+      'rib': 'RIB',
+      'yacht': 'Yacht',
+    };
+
+    const FLEET_FILTER_CHIPS = [
+      { label: 'No License', type: 'no-license' },
+      { label: 'License Required', type: 'with-license' },
+      { label: 'RIB', type: 'rib' },
+      { label: 'Yacht', type: 'yacht' },
+    ];
+
+    let step = 1;
+    let selectedServiceId = null;
+    let selectedSubOptionId = null;
+    let selectedSubOptionName = '';
+    let activeChipType = 'no-license';
+
+    const modal = document.getElementById('booking-modal');
+    const body = modal.querySelector('.modal-body');
+    const backBtn = modal.querySelector('.modal-back-btn');
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    const titleEl = modal.querySelector('.modal-title');
+    const backdrop = modal.querySelector('.modal-backdrop');
+    const dots = modal.querySelectorAll('.progress-dot');
+
+    function updateProgress(s) {
+      dots.forEach(d => {
+        const ds = parseInt(d.dataset.step || '0');
+        d.classList.remove('active', 'done');
+        if (ds === s) d.classList.add('active');
+        if (ds < s) d.classList.add('done');
+      });
+    }
+
+    function updateHeader(s) {
+      const titles = { 1: 'Book Now', 2: 'Select Option', 3: 'Your Details' };
+      titleEl.textContent = titles[s] || 'Book Now';
+      if (s === 1) {
+        backBtn.classList.add('hidden');
+      } else {
+        backBtn.classList.remove('hidden');
+      }
+    }
+
+    function scrollBodyTop() {
+      body.scrollTop = 0;
+    }
+
+    // ── Step 1: Services ────────────────────────────
+
+    function renderStep1() {
+      let html = '<div class="step-services">';
+      SERVICES.forEach((s) => {
+        html += `
+          <button class="service-card" data-service-id="${s.id}" type="button">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="${s.icon}"/>
+            </svg>
+            <span class="service-card-title">${s.title}</span>
+            <span class="service-card-price">${s.price}</span>
+          </button>`;
+      });
+      html += '</div>';
+      body.innerHTML = html;
+
+      body.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.dataset.serviceId;
+          if (!id) return;
+          selectedServiceId = id;
+          activeChipType = 'no-license';
+          step = 2;
+          updateProgress(2);
+          updateHeader(2);
+          renderStep2();
+          scrollBodyTop();
+        });
+      });
+    }
+
+    // ── Step 2: Sub-options ─────────────────────────
+
+    function renderStep2() {
+      if (!selectedServiceId) {
+        renderStep1();
+        return;
+      }
+
+      let html = '';
+
+      if (selectedServiceId === 'boat-rental') {
+        html += renderBoatChips();
+        html += renderBoatCards(activeChipType);
+      } else if (selectedServiceId === 'private-tours') {
+        html += renderTourCards();
+      } else if (selectedServiceId === 'water-taxi') {
+        html += renderRouteCards();
+      } else if (selectedServiceId === 'watersports') {
+        html += renderWatersportCards();
+      } else {
+        html += renderBoatCards(activeChipType);
+      }
+
+      body.innerHTML = html;
+      bindStep2Listeners();
+      scrollBodyTop();
+    }
+
+    function renderBoatChips() {
+      let html = '<div class="chip-row">';
+      FLEET_FILTER_CHIPS.forEach(chip => {
+        const count = FLEET.filter(b => b.type === chip.type).length;
+        html += `<button class="chip${chip.type === activeChipType ? ' active' : ''}" data-chip-type="${chip.type}" type="button">${chip.label} (${count})</button>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderBoatCards(filterType) {
+      const filtered = FLEET.filter(b => b.type === filterType);
+      if (filtered.length === 0) {
+        return '<p class="chip-row" style="justify-content:center;padding:2rem 0;color:var(--muted-foreground)">No boats in this category.</p>';
+      }
+      let html = '<div class="sub-options-grid">';
+      filtered.forEach(b => {
+        const badgeClass = b.type === 'no-license' ? 'license-badge no-license'
+          : b.type === 'with-license' ? 'license-badge license-req'
+          : b.type === 'rib' ? 'license-badge rib'
+          : 'license-badge yacht';
+        const badgeText = FLEET_TYPE_LABELS[b.type] || b.type;
+        const imgHtml = b.image
+          ? `<img class="sub-option-card-img" src="${b.image}" alt="${b.name}" loading="lazy" />`
+          : `<div class="sub-option-card-img" style="display:flex;align-items:center;justify-content:center;color:var(--muted-foreground);font-size:0.7rem;">No image</div>`;
+        html += `
+          <button class="sub-option-card" data-sub-id="${b.id}" data-sub-name="${b.name}" type="button">
+            ${imgHtml}
+            <div class="sub-option-card-body">
+              <span class="sub-option-card-name">${b.name}</span>
+              <div class="sub-option-card-meta">
+                <span>${b.horsepower} HP</span>
+                <span>${b.capacity}p</span>
+                <span>${b.length}</span>
+              </div>
+              <span class="sub-option-card-price">From €${b.priceFrom}</span>
+              <span class="${badgeClass}">${badgeText}</span>
+            </div>
+          </button>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderTourCards() {
+      let html = '<div class="sub-options-list">';
+      TOURS.forEach(t => {
+        html += `
+          <button class="sub-option-card-full" data-sub-id="${t.id}" data-sub-name="${t.title}" type="button">
+            <div class="sub-option-card-full-left">
+              <span class="sub-option-card-name">${t.title}</span>
+              <span class="sub-option-card-full-desc">${t.duration}</span>
+            </div>
+            <div class="sub-option-card-full-right">
+              <span class="sub-option-card-price">${t.priceFrom}</span>
+            </div>
+          </button>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderRouteCards() {
+      let html = '<div class="sub-options-list">';
+      ROUTES.forEach(r => {
+        html += `
+          <button class="sub-option-card-full" data-sub-id="${r.id}" data-sub-name="${r.fromLocation} → ${r.toLocation}" type="button">
+            <div class="sub-option-card-full-left">
+              <span class="sub-option-card-name">${r.fromLocation} → ${r.toLocation}</span>
+              <span class="sub-option-card-full-desc">${r.duration}</span>
+            </div>
+            <div class="sub-option-card-full-right">
+              <span class="sub-option-card-price">${r.priceFrom}</span>
+            </div>
+          </button>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function renderWatersportCards() {
+      let html = '<div class="sub-options-list">';
+      WSPORTS.forEach(w => {
+        html += `
+          <button class="sub-option-card-full" data-sub-id="${w.id}" data-sub-name="${w.title}" type="button">
+            <div class="sub-option-card-full-left">
+              <span class="sub-option-card-name">${w.title}</span>
+              <span class="sub-option-card-full-desc">${w.description}</span>
+            </div>
+            <div class="sub-option-card-full-right">
+              <span class="sub-option-card-price">${w.price}</span>
+            </div>
+          </button>`;
+      });
+      html += '</div>';
+      return html;
+    }
+
+    function bindStep2Listeners() {
+      // Category chips (boat rental only)
+      body.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const chipType = chip.dataset.chipType;
+          if (!chipType) return;
+          activeChipType = chipType;
+          // Re-render just the chips + cards
+          body.innerHTML = renderBoatChips() + renderBoatCards(activeChipType);
+          bindStep2Listeners();
+          // Re-select previously selected boat if it's visible
+          if (selectedSubOptionId) {
+            const prevSelected = body.querySelector(`[data-sub-id="${selectedSubOptionId}"]`);
+            if (prevSelected) prevSelected.classList.add('selected');
+          }
+        });
+      });
+
+      // Sub-option cards
+      body.querySelectorAll('[data-sub-id]').forEach(card => {
+        card.addEventListener('click', () => {
+          const subId = card.dataset.subId;
+          const subName = card.dataset.subName;
+          if (!subId || !subName) return;
+          selectedSubOptionId = subId;
+          selectedSubOptionName = subName;
+
+          // Highlight selected
+          body.querySelectorAll('[data-sub-id]').forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+
+          // Advance to step 3 after brief highlight
+          setTimeout(() => {
+            step = 3;
+            updateProgress(3);
+            updateHeader(3);
+            renderStep3();
+            scrollBodyTop();
+          }, 150);
+        });
+      });
+    }
+
+    // ── Step 3: Details ─────────────────────────────
+
+    function renderStep3() {
+      const serviceName = SERVICES.find(s => s.id === selectedServiceId)?.title || 'Service';
+      const summaryText = selectedSubOptionName
+        ? `<strong>${serviceName}</strong> · ${selectedSubOptionName}`
+        : `<strong>${serviceName}</strong>`;
+
+      body.innerHTML = `
+        <form class="step-form" id="booking-details-form">
+          <div class="summary">${summaryText}</div>
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="bf-date">Date</label>
+              <input type="date" id="bf-date" name="date" required />
+            </div>
+            <div class="form-field">
+              <label for="bf-guests">Guests</label>
+              <input type="number" id="bf-guests" name="guests" min="1" max="30" placeholder="e.g. 4" />
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="bf-name">Your Name</label>
+              <input type="text" id="bf-name" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-field">
+              <label for="bf-email">Email</label>
+              <input type="email" id="bf-email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="bf-notes">Additional Notes</label>
+            <textarea id="bf-notes" name="notes" placeholder="Anything else we should know…"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            Send Request
+          </button>
+        </form>
+        <div class="result-panel" id="booking-result" hidden>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--foreground)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span class="result-panel-title">Request Ready</span>
+          <span class="result-panel-desc">Send your booking via:</span>
+          <div class="result-actions">
+            <a class="result-btn whatsapp" href="" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp
+            </a>
+            <a class="result-btn email" href="">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M22 7l-10 7L2 7"/>
+              </svg>
+              Email
+            </a>
+          </div>
+          <button class="submit-btn" type="button" id="booking-edit" style="background:var(--muted);color:var(--foreground);margin-top:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5"/>
+              <polyline points="12 19 5 12 12 5"/>
+            </svg>
+            Edit Request
+          </button>
+        </div>
+      `;
+
+      const form = body.querySelector('#booking-details-form');
+      const result = body.querySelector('#booking-result');
+      const editBtn = body.querySelector('#booking-edit');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const date = fd.get('date') || '';
+        const guests = fd.get('guests') || 'Not specified';
+        const name = fd.get('name') || '';
+        const email = fd.get('email') || '';
+        const notes = fd.get('notes') || '';
+
+        const text = `Service: ${serviceName}\nOption: ${selectedSubOptionName}\nDate: ${date}\nGuests: ${guests}\nName: ${name}\nEmail: ${email}${notes ? '\nNotes: ' + notes : ''}`;
+        const encoded = encodeURIComponent(text);
+
+        const waLink = body.querySelector('.result-btn.whatsapp');
+        const emailLink = body.querySelector('.result-btn.email');
+        if (waLink) waLink.href = `https://wa.me/${WA_NUMBER}?text=${encoded}`;
+        if (emailLink) emailLink.href = `mailto:${EMAIL_TO}?subject=Booking%20Request&body=${encoded}`;
+
+        form.hidden = true;
+        result.hidden = false;
+      });
+
+      editBtn.addEventListener('click', () => {
+        result.hidden = true;
+        form.hidden = false;
+      });
+    }
+
+    // ── Navigation ──────────────────────────────────
+
+    function goToStep(s) {
+      step = s;
+      updateProgress(s);
+      updateHeader(s);
+      if (s === 1) {
+        renderStep1();
+      } else if (s === 2) {
+        renderStep2();
+      } else if (s === 3) {
+        renderStep3();
+      }
+      scrollBodyTop();
+    }
+
+    function open() {
+      document.body.style.overflow = 'hidden';
+      modal.hidden = false;
+      selectedServiceId = null;
+      selectedSubOptionId = null;
+      selectedSubOptionName = '';
+      activeChipType = 'no-license';
+      step = 1;
+      updateProgress(1);
+      updateHeader(1);
+      renderStep1();
+      // Trigger animation
+      requestAnimationFrame(() => {
+        modal.classList.add('open');
+      });
+    }
+
+    function close() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        modal.hidden = true;
+      }, 400); // match --duration-slow
+    }
+
+    // ── Event bindings ─────────────────────────────
+
+    closeBtn.addEventListener('click', close);
+    backdrop.addEventListener('click', close);
+
+    backBtn.addEventListener('click', () => {
+      if (step === 3) {
+        goToStep(2);
+      } else if (step === 2) {
+        goToStep(1);
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden && modal.classList.contains('open')) {
+        close();
+      }
+    });
+
+    // Expose globally for MobileCtaBar
+    window.__openBookingModal = open;
+  })();
+</script>

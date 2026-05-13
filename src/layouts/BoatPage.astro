@@ -1,0 +1,230 @@
+---
+import Layout from './Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import PricingTable from '../components/sections/PricingTable.astro';
+import FaqAccordion from '../components/sections/FaqAccordion.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import BookingWidget from '../components/sections/BookingWidget.astro';
+import { Users, Zap, Ruler, Anchor, CheckCircle2 } from 'lucide-react';
+import RelatedContent from '../components/sections/RelatedContent.astro';
+import Gallery from '../components/sections/Gallery.astro';
+
+
+interface Props {
+  name: string;
+  type: 'no-license' | 'with-license' | 'rib' | 'yacht';
+  length: string;
+  capacity: number;
+  horsepower: number;
+  priceFrom: number;
+  priceHalfDay?: number;
+  priceFullDay: number;
+  priceWeekly?: number;
+  features: string[];
+  description: string;
+  imagePlaceholder?: 'dark' | 'light' | 'muted' | 'ocean' | 'sunset' | 'turquoise';
+  gallery?: string[];
+  galleryTitle?: string;
+  available: boolean;
+  image: string;
+  id?: string;
+}
+
+const {
+  name,
+  type,
+  length,
+  capacity,
+  horsepower,
+  priceFullDay,
+  priceHalfDay,
+  priceWeekly,
+  features,
+  description,
+  imagePlaceholder = 'dark',
+  gallery,
+  galleryTitle,
+  available,
+  image,
+  id,
+} = Astro.props;
+
+const typeLabels = {
+  'no-license': 'No License Required',
+  'with-license': 'License Required',
+  'rib': 'RIB / Inflatable',
+  'yacht': 'Luxury Yacht',
+};
+
+const pricing = [
+  priceHalfDay && { duration: 'Half Day (4 hours)', price: `From €${priceHalfDay}`, notes: 'Fuel not included' },
+  { duration: 'Full Day (8 hours)', price: `From €${priceFullDay}`, notes: 'Best value', highlight: true },
+  priceWeekly && { duration: 'Weekly (7 days)', price: `From €${priceWeekly}`, notes: 'Contact for discount' },
+].filter(Boolean) as any[];
+
+const specs = [
+  { label: 'Capacity', value: `${capacity} Persons`, icon: Users },
+  { label: 'Power', value: `${horsepower} HP`, icon: Zap },
+  { label: 'Length', value: length, icon: Ruler },
+  { label: 'Type', value: typeLabels[type], icon: Anchor },
+];
+---
+
+<Layout title={`${name} | Boat Rental Skiathos`} description={description}>
+  <HeroSection
+    title={name}
+    subtitle={typeLabels[type]}
+    ctaText="Check Availability"
+    ctaHref="/contact/"
+    ctaSecondText="Back to Fleet"
+    ctaSecondHref="/fleet/"
+    gradient={imagePlaceholder}
+    size="medium"
+    backgroundImage={image}
+  />
+
+  <Breadcrumbs />
+
+  <div class="boat-page container">
+    <main class="boat-main">
+      
+      <!-- Quick Specs Bar -->
+      <section class="specs-bar reveal">
+        {specs.map(spec => (
+          <div class="spec-item">
+            <spec.icon size={20} className="spec-icon" />
+            <div class="spec-info">
+              <span class="spec-label">{spec.label}</span>
+              <span class="spec-value">{spec.value}</span>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <!-- Content Grid -->
+      <div class="content-grid">
+        <div class="description-section reveal">
+          <h2>About the {name}</h2>
+          <p class="lead">{description}</p>
+          
+          <div class="prose">
+            <slot />
+          </div>
+
+          <div class="features-section">
+            <h3>Key Features</h3>
+            <ul class="features-list">
+              {features.map(feature => (
+                <li>
+                  <CheckCircle2 size={18} className="feature-icon" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="pricing-section reveal">
+          <h2>Rental Pricing</h2>
+          <PricingTable rows={pricing} disclaimer="Prices vary by season. Fuel is calculated at the end of the rental based on consumption." />
+          
+          {!available && (
+            <div class="notice-box warning">
+              <p><strong>Note:</strong> This boat is currently under maintenance or fully booked for the upcoming week. Please contact us for alternative options.</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {gallery && gallery.length > 0 && (
+        <div class="gallery-wrapper reveal">
+          <Gallery items={gallery} title={galleryTitle || `Inside the ${name}`} />
+        </div>
+      )}
+
+    </main>
+
+    <aside class="boat-sidebar">
+      <div class="sidebar-sticky">
+        <BookingWidget services={[`Rent ${name}`, 'General Inquiry']} />
+        
+        <div class="safety-box">
+          <h4>Safety & Support</h4>
+          <p>Every rental includes a full safety briefing, GPS tracking, and 24/7 sea assistance.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <RelatedContent 
+    collection="fleet" 
+    currentId={id} 
+    type={type} 
+    title="Similar Boats You Might Like"
+    subtitle="Explore other boats in our fleet that match your needs."
+  />
+
+  <CtaBanner
+    title={`Ready to take the ${name} out?`}
+    subtitle="Book your date now. No hidden fees. Transparent pricing."
+    buttonText="Request Booking"
+    buttonHref="/contact/"
+    variant={imagePlaceholder === 'dark' ? 'navy' : 'ocean'}
+  />
+</Layout>
+
+<style>
+  .boat-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .boat-page { grid-template-columns: 1fr 340px; align-items: start; }
+  }
+
+  .boat-main { display: flex; flex-direction: column; gap: 3rem; }
+
+  /* Specs Bar */
+  .specs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
+    background: var(--foreground);
+    padding: 1.5rem 2.5rem;
+    border-radius: var(--radius-xl);
+    color: white;
+  }
+
+  .spec-item { display: flex; align-items: center; gap: 0.85rem; }
+  .spec-icon { color: var(--foreground); }
+  .spec-info { display: flex; flex-direction: column; }
+  .spec-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+  .spec-value { font-size: 1rem; font-weight: 700; }
+
+  /* Content Grid */
+  .content-grid { display: flex; flex-direction: column; gap: 4rem; }
+  
+  .lead { font-size: 1.15rem; line-height: 1.6; color: var(--foreground); margin-bottom: 2rem; }
+  
+  .features-section { margin-top: 3rem; }
+  .features-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  .features-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; color: var(--muted-foreground); }
+  .feature-icon { color: oklch(0.6 0.2 150); flex-shrink: 0; }
+
+  .notice-box { margin-top: 1.5rem; padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; }
+  .notice-box.warning { background: oklch(0.95 0.05 60); border: 1px solid oklch(0.8 0.1 60); color: oklch(0.3 0.1 60); }
+
+  .sidebar-sticky { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 2rem; }
+  
+  .safety-box { background: var(--accent); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+  .safety-box h4 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--foreground); }
+  .safety-box p { margin: 0; font-size: 0.85rem; line-height: 1.5; color: var(--muted-foreground); }
+
+  h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); color: var(--foreground); margin: 0 0 1.5rem; }
+  h3 { font-size: 1.1rem; color: var(--foreground); margin: 0 0 1rem; }
+</style>

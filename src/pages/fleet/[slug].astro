@@ -1,0 +1,23 @@
+---
+import { getFleet } from '../../lib/collections';
+import { render } from 'astro:content';
+import BoatPage from '../../layouts/BoatPage.astro';
+
+export async function getStaticPaths() {
+  const fleet = await getFleet();
+  
+  return fleet.map(boat => {
+    return {
+      params: { slug: boat.id },
+      props: { boat },
+    };
+  });
+}
+
+const { boat } = Astro.props;
+const { Content } = await render(boat);
+---
+
+<BoatPage {...boat.data} id={boat.id} gallery={boat.data.gallery}>
+  <Content />
+</BoatPage>

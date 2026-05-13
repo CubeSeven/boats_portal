@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  slug: string;
+  pubDate: string;
+  readTime: string;
+  category: string;
+  imagePlaceholder?: string;
+  image?: string;
+}
+
+const {
+  title,
+  excerpt,
+  slug,
+  pubDate,
+  readTime,
+  category,
+  image,
+} = Astro.props;
+
+const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<div class="reveal h-full">
+  <article class="card group h-full">
+    <div class="card-content">
+      <div class="h-[200px] relative overflow-hidden bg-neutral-100 border-b border-border">
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-[var(--duration-slow)] ease-[var(--ease-premium)] group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div class="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-50 transition-transform duration-[var(--duration-slow)] ease-[var(--ease-premium)] group-hover:scale-105"></div>
+        )}
+        <div class="absolute top-4 left-4 z-10">
+          <span class="bg-black text-white text-[0.6rem] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm">
+            {category}
+          </span>
+        </div>
+      </div>
+
+      <div class="card-body p-6 flex flex-col h-full">
+        <div class="flex items-center gap-2 mb-3 text-[0.65rem] font-bold text-muted-foreground uppercase tracking-widest">
+          <time datetime={pubDate}>{formattedDate}</time>
+          <span>•</span>
+          <span>{readTime}</span>
+        </div>
+
+        <h3 class="text-xl font-black tracking-tighter m-0 text-foreground mb-4 group-hover:text-black transition-colors">{title}</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed m-0 line-clamp-3 mb-8">{excerpt}</p>
+
+        <div class="mt-auto pt-6 border-t border-border/50 flex items-center justify-between">
+          <a href={`/blog/${slug}/`} class="text-sm font-bold text-foreground no-underline group-hover:underline decoration-2 underline-offset-4 decoration-black">
+            Read Article
+          </a>
+          <span class="text-foreground opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-[opacity,transform] duration-[var(--duration-normal)] ease-[var(--ease-premium)]">
+            →
+          </span>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>

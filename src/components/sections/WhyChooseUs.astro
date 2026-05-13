@@ -1,0 +1,37 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import DynamicIcon from '../ui/DynamicIcon.astro';
+
+interface Props {
+  items: Array<{
+    title: string;
+    desc: string;
+    icon: string;
+  }>;
+}
+
+const { items = [] } = Astro.props;
+---
+
+<section class="section bg-black text-white" id="why-us">
+  <div class="container">
+    <SectionHeading
+      label="The Local Experts"
+      title="Why Skiathos Boats"
+      description="We've been on this water our whole lives. Here's what that means for you."
+      align="center"
+      dark={true}
+    />
+    <div class="grid-cards mt-12">
+      {items.map((item) => (
+        <div class="flex flex-col gap-3 reveal">
+          <span class="text-white opacity-60" aria-hidden="true">
+            <DynamicIcon name={item.icon} size={28} strokeWidth={1.5} />
+          </span>
+          <h3 class="text-white text-lg font-bold">{item.title}</h3>
+          <p class="text-white/80 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

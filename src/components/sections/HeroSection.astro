@@ -1,0 +1,98 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  ctaSecondText?: string;
+  ctaSecondHref?: string;
+  gradient?: 'moody' | 'airy' | 'neutral' | 'dark' | 'ocean' | 'sunset' | 'turquoise';
+  size?: 'full' | 'medium';
+  showScrollHint?: boolean;
+  label?: string;
+  backgroundImage?: string;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText,
+  ctaHref = '#',
+  ctaSecondText,
+  ctaSecondHref = '#',
+  gradient = 'airy',
+  size = 'full',
+  showScrollHint = true,
+  label = 'Skiathos, Greece',
+  backgroundImage,
+} = Astro.props;
+
+const gradientClasses = {
+  airy: 'bg-gradient-to-tr from-white via-neutral-50 to-neutral-100',
+  moody: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950 text-white',
+  neutral: 'bg-gradient-to-br from-neutral-100 via-white to-neutral-50',
+  dark: 'bg-black text-white',
+  // Legacy aliases for backward compatibility
+  ocean: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950 text-white',
+  sunset: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950 text-white',
+  turquoise: 'bg-gradient-to-tr from-white via-neutral-50 to-neutral-100',
+};
+
+const isDark = gradient === 'moody' || gradient === 'dark' || gradient === 'ocean' || gradient === 'sunset';
+
+const sizeClasses = {
+  full: 'min-h-[100svh] py-40',
+  medium: 'min-h-[60vh] py-32',
+};
+---
+
+<section class={`relative overflow-hidden flex items-center justify-center text-center px-6 ${isDark ? 'dark' : ''} ${gradientClasses[gradient]} ${sizeClasses[size]}`} aria-label="Hero section">
+  <!-- Background image or gradient details -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    {backgroundImage ? (
+      <div class="absolute inset-0 z-0">
+        <img src={backgroundImage} alt="" class="w-full h-full object-cover scale-105" loading="eager" />
+        <div class={`absolute inset-0 bg-gradient-to-b ${isDark ? 'from-black/30 via-black/20 to-black/60' : 'from-white/30 via-white/20 to-white/60'}`}></div>
+      </div>
+    ) : (
+      <>
+        <div class="absolute w-[800px] h-[800px] rounded-full blur-[150px] opacity-10 bg-white -top-40 -right-40"></div>
+        <div class="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-5 bg-neutral-400 -bottom-40 -left-40"></div>
+      </>
+    )}
+  </div>
+
+  <div class="container relative z-10 flex flex-col items-center gap-8 max-w-4xl">
+    <span class="section-label reveal">{label}</span>
+    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] m-0 text-current reveal" set:html={title} />
+    {subtitle && <p class="text-xl md:text-2xl opacity-60 max-w-2xl m-0 leading-tight font-bold tracking-tight reveal italic">{subtitle}</p>}
+    
+    {(ctaText || ctaSecondText) && (
+      <div class="flex gap-4 flex-wrap justify-center mt-8 reveal">
+        {ctaText && (
+          <a href={ctaHref} class="bg-foreground text-background px-10 py-4 rounded-md text-sm font-black uppercase tracking-widest hover:bg-neutral-800 transition-all hover:-translate-y-1 shadow-2xl">
+            {ctaText}
+          </a>
+        )}
+        {ctaSecondText && (
+          <a href={ctaSecondHref} class="bg-transparent border-2 border-current px-10 py-4 rounded-md text-sm font-black uppercase tracking-widest hover:bg-foreground hover:text-background transition-all hover:-translate-y-1">
+            {ctaSecondText}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+
+  {showScrollHint && size === 'full' && (
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 reveal" aria-hidden="true">
+      <div class="w-6 h-10 border-2 border-current opacity-20 rounded-full relative after:content-[''] after:absolute after:top-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-current after:rounded-full after:animate-bounce"></div>
+    </div>
+  )}
+
+  <!-- Bottom dividing wave -->
+  <div class="absolute bottom-[-1px] left-0 right-0 z-10 h-20 pointer-events-none" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full block">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+    </svg>
+  </div>
+</section>

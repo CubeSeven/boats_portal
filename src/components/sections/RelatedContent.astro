@@ -1,0 +1,202 @@
+---
+import { getCollection } from 'astro:content';
+import { getFleet } from '../../lib/collections';
+import BoatCard from '../cards/BoatCard.astro';
+import ServiceCard from '../cards/ServiceCard.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Props {
+  collection: 'fleet' | 'tours' | 'services' | 'activities' | 'blog';
+  currentId?: string;
+  type?: string; // For fleet (e.g. 'no-license')
+  category?: string; // For activities or blog
+  limit?: number;
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  collection,
+  currentId,
+  type,
+  category,
+  limit = 3,
+  title = "You Might Also Like",
+  subtitle = "Explore more experiences and services tailored for you."
+} = Astro.props;
+
+let relatedItems = [];
+
+try {
+  if (collection === 'fleet') {
+    const allBoats = await getFleet();
+    relatedItems = allBoats
+      .filter(item => item.id !== currentId && item.data.available)
+      .sort((a, b) => {
+        // Priority to matching characteristics
+        if (type) {
+          const aMatch = a.data.type === type;
+          const bMatch = b.data.type === type;
+          if (aMatch && !bMatch) return -1;
+          if (!aMatch && bMatch) return 1;
+        }
+        // Then by price similarity if possible, or random
+        return Math.random() - 0.5;
+      })
+      .slice(0, limit);
+  } else if (collection === 'tours') {
+    const allTours = await getCollection('tours');
+    relatedItems = allTours
+      .filter(item => item.id !== currentId)
+      .sort((a, b) => {
+        // If we have a heroGradient or category in the future, use it.
+        // For now, prioritize by order similarity
+        return Math.random() - 0.5;
+      })
+      .slice(0, limit);
+  } else if (collection === 'services' || collection === 'activities') {
+    const allServices = await getCollection(collection as any);
+    relatedItems = allServices
+      .filter((item: any) => item.id !== currentId)
+      .sort((a, b) => {
+        // Strict category match priority
+        const aMatch = (a.data as any).category === category;
+        const bMatch = (b.data as any).category === category;
+        if (aMatch && !bMatch) return -1;
+        if (!aMatch && bMatch) return 1;
+        return Math.random() - 0.5;
+      })
+      .slice(0, limit);
+  } else if (collection === 'blog') {
+    const allPosts = await getCollection('blog');
+    relatedItems = allPosts
+      .filter(item => {
+        const itemId = item.id.split('/').pop()?.replace('.md', '') || item.id;
+        const normCurrentId = currentId?.split('/').pop()?.replace('.md', '') || currentId;
+        return itemId !== normCurrentId;
+      })
+      .sort((a, b) => {
+        // Strict category match priority
+        const aCat = a.data.category.toLowerCase();
+        const bCat = b.data.category.toLowerCase();
+        const targetCat = category?.toLowerCase();
+        
+        const aMatch = aCat === targetCat;
+        const bMatch = bCat === targetCat;
+        
+        if (aMatch && !bMatch) return -1;
+        if (!aMatch && bMatch) return 1;
+        
+        return Math.random() - 0.5;
+      })
+      .slice(0, limit);
+  }
+} catch (e) {
+  console.error(`Error fetching related items for ${collection}:`, e);
+}
+
+const isMuted = true; // Use muted background for variety
+---
+
+{relatedItems.length > 0 && (
+  <section class={`related-content section ${isMuted ? 'section--muted' : ''}`} style="padding-bottom: 15rem !important;">
+    <div class="container">
+      <div class="mb-20">
+        <SectionHeading
+          title={title}
+          description={subtitle}
+          align="center"
+        />
+      </div>
+      
+      <div class="related-grid">
+        {relatedItems.map((item) => {
+          if (collection === 'fleet') {
+            const specs = [
+              { label: 'Length', value: item.data.length },
+              { label: 'Capacity', value: `${item.data.capacity} People` },
+              { label: 'Engine', value: `${item.data.horsepower} HP` },
+            ];
+            return (
+              <BoatCard
+                name={item.data.name}
+                type={item.data.type}
+                priceFrom={item.data.priceFrom}
+                slug={item.id}
+                image={item.data.image}
+                imagePlaceholder={item.data.imagePlaceholder}
+                specs={specs}
+                features={item.data.features}
+              />
+            );
+          }
+          
+          if (collection === 'tours') {
+            return (
+              <ServiceCard
+                icon="map-pin"
+                title={item.data.title}
+                description={item.data.description}
+                href={`/private-boat-tours/${item.id}/`}
+                price={item.data.pricing?.[0]?.price || 'From €???'}
+                image={item.data.image}
+                accent="ocean"
+              />
+            );
+          }
+
+          if (collection === 'services' || collection === 'activities') {
+            return (
+              <ServiceCard
+                icon={item.data.icon}
+                title={item.data.title}
+                description={item.data.description}
+                href={item.data.href}
+                price={item.data.price}
+                accent={item.data.accent as any}
+              />
+            );
+          }
+          
+          return null;
+        })}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .section {
+    padding-top: 10rem;
+    padding-bottom: 12rem; /* Even more at bottom to separate from CTA */
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+  }
+  .section--muted {
+    background-color: var(--muted);
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 4rem; /* More space between cards too */
+  }
+  
+  @media (min-width: 768px) {
+    .related-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .related-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2.5rem;
+    }
+  }
+
+  .mb-20 {
+    margin-bottom: 5rem; /* Large gap after heading */
+  }
+</style>

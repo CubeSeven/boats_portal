@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import ServiceCard from '../../components/cards/ServiceCard.astro';
+import BoatCard from '../../components/cards/BoatCard.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import FaqAccordion from '../../components/sections/FaqAccordion.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import { getCollection, getEntry } from 'astro:content';
+import { getFleet } from '../../lib/collections';
+
+const boats = await getFleet();
+
+const allActivities = await getCollection('activities');
+const rentalCategories = allActivities
+  .filter(a => a.data.category === 'rental')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const allFaqs = await getCollection('faqs');
+const rentalFaqs = allFaqs
+  .filter(f => f.data.category === 'boat-rental')
+  .map(f => f.data);
+
+const rentalData = await getEntry('site', 'rental');
+const steps = rentalData?.data.steps || [];
+const pricingRows = rentalData?.data.pricingSummary || [];
+---
+
+<Layout
+  title="Rent a Boat in Skiathos | No License Required | Skiathos Boats"
+  description="Self-drive boat rental in Skiathos, Greece. No license needed for 30HP boats. RIBs, sailboats, and luxury yachts also available. Half-day, full-day and weekly hire."
+>
+  <HeroSection
+    title="Rent a Boat in Skiathos"
+    subtitle="Your own private boat, your own schedule. No license needed for smaller engines — just show up and sail."
+    ctaText="View Our Fleet"
+    ctaHref="/fleet/"
+    ctaSecondText="Get a Quote"
+    ctaSecondHref="/contact/"
+    gradient="ocean"
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s3tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        label="Rental Options"
+        title="Choose Your Rental Type"
+        description="From no-license beginner boats to high-speed RIBs and luxury yachts — every budget, every group."
+      />
+      <div class="cat-grid">
+        {rentalCategories.map((cat) => (
+          <ServiceCard
+            icon={cat.data.icon}
+            title={cat.data.title}
+            description={cat.data.description}
+            href={cat.data.href}
+            price={cat.data.price}
+            accent={cat.data.accent as any}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Preview -->
+  <section class="section section--muted">
+    <div class="container">
+      <SectionHeading
+        label="Our Fleet"
+        title="Available Boats"
+        description="Browse our collection of vessels, each suited to a different type of adventure."
+      />
+      <div class="fleet-grid">
+        {boats.map((boat) => (
+          <BoatCard
+            name={boat.data.name}
+            type={boat.data.type}
+            priceFrom={boat.data.priceFrom}
+            slug={boat.id}
+            image={boat.data.image}
+            imagePlaceholder={boat.data.imagePlaceholder}
+            features={boat.data.features}
+            specs={[
+              { label: 'Length', value: boat.data.length },
+              { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+              { label: 'Engine', value: `${boat.data.horsepower} HP` },
+            ]}
+          />
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/fleet/" class="btn-primary">Full Fleet Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        label="Simple Process"
+        title="How It Works"
+        description="From booking to open water in four easy steps."
+      />
+      <div class="steps-grid">
+        {steps.map((s) => (
+          <div class="step reveal">
+            <span class="step-num">{s.step}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section section--muted">
+    <div class="container" style="max-width: 800px;">
+      <SectionHeading
+        label="Transparent Pricing"
+        title="Rental Prices at a Glance"
+        description="No hidden fees. All prices include standard equipment. Fuel and security deposits apply."
+      />
+      <PricingTable
+        rows={pricingRows}
+        disclaimer="Final prices confirmed at booking. Peak season (July–August) upper rates apply. Deposits held by card, returned same day on boat return."
+      />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width: 780px;">
+      <SectionHeading
+        label="Got Questions?"
+        title="Frequently Asked Questions"
+      />
+      <FaqAccordion items={rentalFaqs} />
+    </div>
+  </section>
+
+  <CtaBanner
+    title="Ready to Rent a Boat in Skiathos?"
+    subtitle="Contact us for availability and a free quote. We reply within 2 hours."
+    buttonText="Request a Quote"
+    buttonHref="/contact/"
+    secondButtonText="View All Tours"
+    secondButtonHref="/private-boat-tours/"
+    variant="dark"
+  />
+</Layout>
+
+<style>
+  .section { padding: 5rem 0; }
+  .section--muted { background: var(--muted); }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    counter-reset: steps;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--foreground);
+    opacity: 0.5; /* Increased from 0.2 for better contrast */
+    line-height: 1;
+  }
+
+  .step h3 {
+    font-size: 1.05rem;
+    color: var(--foreground);
+    margin: 0;
+  }
+
+  .step p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .section-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+</style>

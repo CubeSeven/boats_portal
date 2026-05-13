@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import BoatCard from '../components/cards/BoatCard.astro';
+import PricingTable from '../components/sections/PricingTable.astro';
+import FaqAccordion from '../components/sections/FaqAccordion.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import { getFleet, getOrganizedFaqs, getSiteSettings } from '../lib/collections';
+import { getEntry } from 'astro:content';
+
+const boats = await getFleet();
+
+const faqsByCategory = await getOrganizedFaqs();
+const fleetFaqs = faqsByCategory['fleet'] || [];
+
+const rentalData = await getEntry('site', 'rental');
+const pricingRows = rentalData?.data.pricingSummary || [];
+---
+
+<Layout
+  title="Our Fleet — Skiathos Boats | RIBs, Yachts & Self-Drive Rentals"
+  description="Explore the full Skiathos Boats fleet. From beginner-friendly 30HP motorboats to high-speed rigid inflatables and luxury crewed yachts. Perfect for any Aegean adventure."
+>
+  <HeroSection
+    title="The Fleet"
+    subtitle="From nimble coastal explorers to high-performance offshore vessels. Find the perfect boat for your Skiathos adventure."
+    ctaText="Book a Boat"
+    ctaHref="/contact/"
+    ctaSecondText="Special Offers"
+    ctaSecondHref="/blog/"
+    gradient="ocean"
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s2tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        label="Explore Our Vessels"
+        title="Ready for the Aegean"
+        description="Every boat in our fleet is maintained to the highest safety standards and comes fully equipped for a day at sea."
+      />
+
+      <div class="grid-cards mt-12">
+        {boats.map((boat) => (
+          <BoatCard
+            name={boat.data.name}
+            type={boat.data.type}
+            priceFrom={boat.data.priceFrom}
+            slug={boat.id}
+            image={boat.data.image}
+            imagePlaceholder={boat.data.imagePlaceholder}
+            features={boat.data.features}
+            specs={[
+              { label: 'Length', value: boat.data.length },
+              { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+              { label: 'Engine', value: `${boat.data.horsepower} HP` },
+            ]}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container max-w-3xl">
+      <SectionHeading
+        label="Quick Rates"
+        title="Standard Fleet Pricing"
+        description="Base rates for our most popular vessels. Contact us for multi-day discounts and seasonal specials."
+      />
+      <PricingTable rows={pricingRows} disclaimer="Prices exclude fuel unless stated. Security deposits vary by vessel type." />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-3xl">
+      <SectionHeading
+        label="Fleet FAQ"
+        title="Vessel & Equipment Questions"
+      />
+      <FaqAccordion items={fleetFaqs} />
+    </div>
+  </section>
+
+  <CtaBanner
+    title="Which Boat is Right for You?"
+    subtitle="Tell us your group size and destination, and we'll recommend the best fit."
+    buttonText="Ask an Expert"
+    buttonHref="/contact/"
+    variant="dark"
+  />
+</Layout>
+
+<style>
+  .mt-12 { margin-top: 3rem; }
+  .max-w-3xl { max-width: 48rem; margin-inline: auto; }
+</style>

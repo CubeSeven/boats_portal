@@ -1,0 +1,29 @@
+{
+  "id": "main",
+  "phone": "+30 XXX XXX XXXX",
+  "email": "info@skiathosboats.com",
+  "whatsapp": "+30XXXXXXXXXX",
+  "address": "Skiathos Port, Skiathos 37002",
+  "socials": {
+    "instagram": "https://instagram.com/skiathosboats",
+    "facebook": "https://facebook.com/skiathosboats",
+    "tripadvisor": "https://tripadvisor.com/skiathosboats"
+  },
+  "hero": {
+    "title": "Explore Skiathos<br/>by Sea",
+    "subtitle": "Rent a self-drive boat, book an exclusive private tour, or jump on a 24/7 water taxi. The Aegean is waiting."
+  },
+  "whyUs": [
+    { "icon": "check", "title": "Fully Licensed & Insured", "desc": "All boats meet EU safety standards. Full maritime insurance on every vessel." },
+    { "icon": "map-pin", "title": "Local Expertise", "desc": "Born and raised in Skiathos. We know every beach, cove, and passage on the island." },
+    { "icon": "clock", "title": "24/7 Water Taxi", "desc": "No ferry schedule. We run transfers any time of day or night." },
+    { "icon": "star", "title": "5-Star Rated", "desc": "Over 800 five-star reviews on Google, TripAdvisor, and Booking.com." },
+    { "icon": "life-buoy", "title": "Safety First", "desc": "Full safety briefing before every rental. GPS tracking on all boats." },
+    { "icon": "phone", "title": "Always Available", "desc": "Call or WhatsApp us any time. We reply within 30 minutes during operating hours." }
+  ],
+  "seo": {
+    "siteName": "Skiathos Boats",
+    "defaultTitle": "Skiathos Boat Rental & Sea Experiences",
+    "defaultDescription": "Premium boat rental, private boat tours, water taxi and watersports in Skiathos, Greece."
+  }
+}

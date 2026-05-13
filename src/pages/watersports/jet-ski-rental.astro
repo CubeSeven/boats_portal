@@ -1,0 +1,76 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import { Check } from 'lucide-react';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('activities', 'jet-ski-rental');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const features = data.features || [];
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+>
+  <section>
+    <SectionHeading
+      label="Feel the Speed"
+      title="Yamaha WaveRunner Experience"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+
+    {features.length > 0 && (
+      <div class="perk-box">
+        <h3>What's Included?</h3>
+        <ul>
+          {features.map(p => (
+            <li>
+              <span class="perk-icon"><Check size={16} /></span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </section>
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Pricing"
+        title="Jet Ski Session Rates"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable rows={pricing} />
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .perk-box {
+    background: var(--muted);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .perk-box h3 { margin-top: 0; color: var(--foreground); }
+  .perk-box ul { list-style: none; padding: 0; }
+  .perk-box li { padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--foreground); }
+  .perk-icon { color: var(--foreground); display: flex; align-items: center; flex-shrink: 0; }
+</style>

@@ -1,0 +1,50 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('activities', 'parasailing');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+>
+  <section>
+    <SectionHeading
+      label="Fly High"
+      title="The Ultimate Viewpoint"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+  </section>
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Pricing"
+        title="Parasailing Flight Rates"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable rows={pricing} disclaimer="Price includes all gear, boat ride, and flight. GoPro video hire available on request." />
+    </section>
+  )}
+</ServicePage>
+
+<style>
+</style>

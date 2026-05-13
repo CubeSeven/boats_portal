@@ -1,0 +1,9 @@
+{
+  "title": "Boat Rental",
+  "description": "Self-drive boats from 30HP (no license) to 200HP RIB. Hourly, half-day or full-day hire.",
+  "icon": "M12 2L4 7l8 5 8-5-8-5zM4 17l8 5 8-5M4 12l8 5 8-5",
+  "href": "/boat-rental/",
+  "price": "From €150/day",
+  "accent": "ocean",
+  "order": 1
+}

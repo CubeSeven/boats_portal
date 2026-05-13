@@ -1,0 +1,120 @@
+---
+slug: "karel-odussea"
+name: "Karel Odussea"
+type: "with-license"
+length: "7.0 m"
+capacity: 9
+horsepower: 300
+priceFrom: 500
+priceHalfDay: 350
+priceFullDay: 500
+imagePlaceholder: "dark"
+order: 8
+features:
+  - "Luxury Day Cruiser"
+  - "300HP Power"
+  - "Sun Deck & Cabin"
+  - "Bluetooth Speaker"
+  - "Modern 2025 Model"
+description: "The 2025 Karel Odussea is where luxury meets power. A 300HP engine ensures you're never late to the next cove, while the high-spec cabin and sun deck provide all the comfort of a larger yacht."
+---
+---
+slug: "tiger-top-line-200"
+name: "Tiger Top Line"
+type: "with-license"
+length: "6.5 m"
+capacity: 8
+horsepower: 200
+priceFrom: 480
+priceHalfDay: 335
+priceFullDay: 480
+imagePlaceholder: "ocean"
+order: 9
+features:
+  - "Balanced Performance"
+  - "8 Person Capacity"
+  - "Bimini Shade"
+  - "Swimming Ladder"
+  - "Reliable 2024 Build"
+description: "The Top Line 200 is a perfect mid-tier rental. Fast, responsive, and spacious enough for two families, it offers a great balance of speed and comfort for a full day on the water."
+---
+---
+slug: "karel-pacific"
+name: "Karel Pacific"
+type: "with-license"
+length: "6.8 m"
+capacity: 9
+horsepower: 150
+priceFrom: 420
+priceHalfDay: 295
+priceFullDay: 420
+imagePlaceholder: "turquoise"
+order: 10
+features:
+  - "Spacious Deck Layout"
+  - "Fuel Efficient engine"
+  - "Family Friendly"
+  - "Easy Handling"
+  - "Sun Canopy"
+description: "The Karel Pacific is designed for family comfort. With high sides and a spacious walk-around deck, it's the safest and most enjoyable way to cruise the Skiathos coastline with the kids."
+---
+---
+slug: "rafael-marinello-eden"
+name: "RAFAEL (Marinello Eden)"
+type: "with-license"
+length: "6.2 m"
+capacity: 7
+horsepower: 115
+priceFrom: 420
+priceHalfDay: 295
+priceFullDay: 420
+imagePlaceholder: "dark"
+order: 11
+features:
+  - "Classic Italian Design"
+  - "115HP Outboard"
+  - "Deep Seating Area"
+  - "Sturdy Build"
+  - "GPS Tracking"
+description: "The Marinello Eden, affectionately known as RAFAEL, is a masterpiece of Italian design. Its deep hull ensures a dry ride, while the 115HP engine provides plenty of punch for coastal exploration."
+---
+---
+slug: "kostadis"
+name: "KOSTADIS"
+type: "with-license"
+length: "5.5 m"
+capacity: 6
+horsepower: 100
+priceFrom: 320
+priceHalfDay: 225
+priceFullDay: 320
+imagePlaceholder: "ocean"
+order: 12
+features:
+  - "Robust Rental Boat"
+  - "Economic Cruise"
+  - "Shade Included"
+  - "Reliable Engine"
+  - "Easy Mooring"
+description: "KOSTADIS is a reliable, straightforward motorboat perfect for those who want a simple, no-fuss day at sea. It's easy to drive, easy to park, and very economical on fuel."
+---
+---
+slug: "karel-ithaca-90hp"
+name: "Karel Ithaca (90HP)"
+type: "with-license"
+length: "5.3 m"
+capacity: 7
+horsepower: 90
+priceFrom: 290
+priceHalfDay: 200
+priceFullDay: 290
+imagePlaceholder: "turquoise"
+order: 13
+features:
+  - "Performance Light Boat"
+  - "License Required"
+  - "Agile Handling"
+  - "Sun Shade"
+  - "Safety GPS"
+description: "The Ithaca with 90HP is a pocket rocket. Light and nimble, it's the perfect boat for a small group of friends who want to hit all the best beaches without the price tag of a larger vessel."
+---

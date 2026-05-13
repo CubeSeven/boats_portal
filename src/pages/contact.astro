@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import BookingWidget from '../components/sections/BookingWidget.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import LocationMap from '../components/sections/LocationMap.astro';
+import DynamicIcon from '../components/ui/DynamicIcon.astro';
+import { getEntry, getCollection } from 'astro:content';
+
+const siteData = await getEntry('site', 'main');
+const allFaqs = await getCollection('faqs');
+const faqs = allFaqs
+  .filter(f => f.data.category === 'contact')
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
+  .map(f => f.data);
+
+const contactInfo = [
+  { icon: 'phone', label: 'Call or WhatsApp', value: siteData?.data.phone, link: `tel:${siteData?.data.phone?.replace(/ /g, '')}` },
+  { icon: 'mail', label: 'Email Us', value: siteData?.data.email, link: `mailto:${siteData?.data.email}` },
+  { icon: 'map-pin', label: 'Main Base', value: siteData?.data.address || 'Skiathos Old Port', link: '/locations/skiathos-town-port/' },
+];
+---
+
+<Layout 
+  title="Contact Us | Book Your Boat in Skiathos"
+  description="Ready to explore Skiathos? Contact us for boat rentals, private tours, or water taxi transfers. We respond to all requests within 2 hours."
+>
+  <HeroSection
+    title="Get in Touch"
+    subtitle="The first step to your Aegean adventure. Request a quote or ask us anything about our services."
+    gradient="ocean"
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s5tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="contact-form-section reveal">
+        <SectionHeading 
+          label="Inquiry Form" 
+          title="Send a Booking Request" 
+          align="left"
+        />
+        <p>Fill in the form below and our team will get back to you with availability and a final quote.</p>
+        <div class="form-wrapper">
+          <BookingWidget />
+        </div>
+      </div>
+
+      <aside class="contact-details-section">
+        <div class="contact-card reveal">
+          <h3>Direct Contact</h3>
+          <div class="info-list">
+            {contactInfo.map(item => (
+              <a href={item.link} class="info-item">
+                <span class="info-icon"><DynamicIcon name={item.icon} size={20} strokeWidth={2} /></span>
+                <div class="info-text">
+                  <span class="info-label">{item.label}</span>
+                  <span class="info-value">{item.value}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="faq-card reveal">
+          <h3>Quick Help</h3>
+          <div class="mini-faqs">
+            {faqs.map(faq => (
+              <div class="mini-faq">
+                <strong>{faq.question}</strong>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--muted">
+    <div class="container">
+      <SectionHeading 
+        label="Finding Us" 
+        title="Visit Our Main Hub" 
+      />
+      <div class="map-container reveal">
+        <LocationMap height="450px" />
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .section { padding: 5rem 0; }
+  .section--muted { background: var(--muted); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .contact-layout {
+      grid-template-columns: 1fr 380px;
+    }
+  }
+
+  .form-wrapper {
+    margin-top: 2rem;
+    padding: 2.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 10px 30px oklch(0 0 0 / 5%);
+  }
+
+  .contact-details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-card, .faq-card {
+    padding: 2rem;
+    background: var(--muted);
+    border-radius: var(--radius-2xl);
+  }
+
+  .contact-card h3, .faq-card h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+
+  .info-item:hover {
+    transform: translateX(5px);
+  }
+
+  .info-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    color: var(--foreground);
+  }
+
+  .info-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-foreground);
+  }
+
+  .info-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  .mini-faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .mini-faq strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+  }
+
+  .mini-faq p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .map-container {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import DynamicIcon from '../components/ui/DynamicIcon.astro';
+import { getEntry } from 'astro:content';
+
+const aboutData = await getEntry('site', 'about');
+const milestones = aboutData?.data.milestones || [];
+const values = aboutData?.data.values || [];
+---
+
+<Layout 
+  title="Our Story | About Skiathos Boats"
+  description="Born and raised on the waters of Skiathos. Learn about our history, our values, and why we are the island's most trusted boat rental and tour company."
+>
+  <HeroSection
+    title="Born in the<br/>Aegean"
+    subtitle="The story of a local family-run business dedicated to showing you the true soul of Skiathos by sea."
+    gradient="dark"
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s7tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <section class="section">
+    <div class="container grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
+      <div class="reveal">
+        <SectionHeading 
+          label="The Beginning" 
+          title="From a Single Kaiki to a Modern Fleet" 
+          align="left"
+        />
+        <div class="text-lg leading-relaxed text-muted-foreground space-y-6 mb-12">
+          <p>
+            Our story began over 30 years ago. Growing up in Skiathos Town, the sea wasn't just a view—it was our playground, our pantry, and eventually, our passion. What started with one small wooden boat helping friends reach Lalaria has grown into the island's most comprehensive maritime service.
+          </p>
+          <p>
+            Today, Skiathos Boats represents the perfect blend of traditional maritime knowledge and modern safety standards. We are still family-run, still local, and still as excited to see the dolphins as we were in 1995.
+          </p>
+        </div>
+        
+        <div class="flex flex-col gap-8 mt-12">
+          {milestones.map(m => (
+            <div class="flex gap-6 group">
+              <span class="text-2xl font-bold text-foreground opacity-20 group-hover:opacity-100 transition-opacity min-w-[80px]">{m.year}</span>
+              <div class="flex flex-col gap-1">
+                <h3 class="text-base font-bold text-foreground m-0">{m.title}</h3>
+                <p class="text-sm text-muted-foreground m-0 leading-relaxed">{m.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="aspect-[4/5] relative rounded-sm overflow-hidden placeholder-dark">
+          <div class="absolute bottom-8 -left-4 bg-foreground p-8 rounded-sm text-background flex flex-col shadow-2xl">
+            <strong class="text-4xl font-extrabold leading-none">30+</strong>
+            <span class="text-[0.65rem] font-bold uppercase tracking-widest mt-2">Years of History</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-black text-white">
+    <div class="container">
+      <SectionHeading 
+        label="What We Stand For" 
+        title="Our Core Values" 
+        align="center"
+      />
+      
+      <div class="grid-cards mt-16 text-center">
+        {values.map(v => (
+          <div class="reveal">
+            <div class="card group bg-white/5 border-white/10 p-12 text-center">
+              <div class="card-content">
+                <span class="inline-flex mb-6 opacity-40">
+                  <DynamicIcon name={v.icon} size={48} strokeWidth={1} />
+                </span>
+                <h3 class="text-white text-xl font-bold mb-4">{v.title}</h3>
+                <p class="text-white/60 text-sm leading-relaxed">{v.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>

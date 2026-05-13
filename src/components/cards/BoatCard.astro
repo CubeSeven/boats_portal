@@ -1,0 +1,125 @@
+---
+interface Spec {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  name: string;
+  type: string;
+  priceFrom: string | number;
+  slug: string;
+  specs: Spec[];
+  features?: string[];
+  image?: string;
+  imagePlaceholder?: string;
+}
+
+const {
+  name,
+  type,
+  priceFrom,
+  slug,
+  specs = [],
+  features = [],
+  image,
+} = Astro.props;
+
+// Combine specs and features for a richer 6-item grid
+const allDetails = [
+  ...specs,
+  ...features.map(f => ({ label: f, value: f }))
+].slice(0, 6);
+
+const isNoLicense = type.toLowerCase().includes('no-license');
+---
+
+<div class="reveal h-full">
+  <article class="card group h-full">
+    <div class="card-content">
+      <!-- 1. Full-Bleed Image Container (Proportioned stability) -->
+      <div class="relative w-full aspect-[4/3] overflow-hidden bg-muted">
+        <!-- Main Image -->
+        {image ? (
+          <img 
+            src={image} 
+            alt={name}
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[var(--duration-slow)]"
+          />
+        ) : (
+          <div class="absolute inset-0 placeholder-neutral group-hover:scale-105 transition-transform duration-[var(--duration-slow)]"></div>
+        )}
+        
+        <!-- Decorative Icon (only if no image) -->
+        {!image && (
+          <div class="absolute inset-0 flex items-center justify-center opacity-10">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M22 10a6 6 0 0 1-5 10H7a6 6 0 0 1-5-10 10.3 10.3 0 0 1 20 0z"/></svg>
+          </div>
+        )}
+
+        <!-- Badge (Grounded on the image) -->
+        <div class="absolute top-4 left-4 z-20">
+          <span class="bg-black/80 backdrop-blur-md text-white text-[0.6rem] font-black uppercase tracking-[0.15em] px-3.5 py-1.5 rounded-sm shadow-xl">
+            {isNoLicense ? 'License Not Required' : 'License Required'}
+          </span>
+        </div>
+      </div>
+
+      <!-- 2. Content Container (Breathing room hierarchy) -->
+      <div class="flex flex-col flex-1 p-7 pb-5">
+        <header class="mb-6">
+          <span class="boat-type-label">{type.replace('-', ' ')}</span>
+          <h3 class="boat-name">{name}</h3>
+        </header>
+
+        <!-- 3. Specs/Features Grid (Compact & Informative - 3x2) -->
+        <div class="grid grid-cols-3 gap-y-4 gap-x-2 mb-8 border-b border-border/40 pb-5">
+          {allDetails.map((detail) => (
+            <div class="flex items-center gap-1.5">
+              <span class="text-[0.65rem] font-bold text-current tracking-tight whitespace-nowrap overflow-hidden text-overflow-ellipsis">
+                {detail.value.split(' ')[0]}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <!-- 4. Footer (Consolidated for vertical space saving) -->
+        <div class="mt-auto flex items-center justify-between">
+          <div class="flex flex-col gap-0.5">
+            <span class="text-[0.55rem] font-black opacity-40 uppercase tracking-[0.1em]">From</span>
+            <span class="text-2xl font-black text-current tracking-tighter leading-none">
+              <span class="text-sm font-bold opacity-30 mr-0.5">€</span>{priceFrom}
+            </span>
+          </div>
+          
+          <a href={`/fleet/${slug}/`} class="btn-primary-pill group">
+            <span>Details</span>
+            <svg class="ml-1.5 group-hover:translate-x-0.5 transition-transform" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<style>
+  @reference "../../styles/global.css";
+
+  /* Use standard card class for base transition and container styling */
+
+  .boat-type-label {
+    @apply inline-block font-sans text-[0.6rem] font-black tracking-[0.2em] uppercase mb-1.5 opacity-60;
+  }
+
+  .boat-name {
+    @apply m-0 text-current font-black tracking-tighter leading-[0.95] text-2xl uppercase;
+  }
+
+  .btn-primary-pill {
+    @apply bg-foreground text-background py-3 px-6 rounded-full text-[0.7rem] font-black uppercase tracking-[0.1em] flex items-center justify-center transition-all duration-300;
+  }
+
+  .btn-primary-pill:hover {
+    @apply bg-neutral-800 scale-[1.02] shadow-lg;
+  }
+</style>

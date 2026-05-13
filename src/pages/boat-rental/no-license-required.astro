@@ -1,0 +1,189 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import BoatCard from '../../components/cards/BoatCard.astro';
+import { getEntry, render } from 'astro:content';
+import { getFleet } from '../../lib/collections';
+import { CheckCircle2, Anchor } from 'lucide-react';
+
+const entry = await getEntry('activities', 'no-license-required');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const boats = await getFleet();
+const noLicenseBoats = boats.filter(b => b.data.type === 'no-license');
+
+const features = data.features || [];
+const destinations = data.destinations || [];
+const faqs = data.faqs || [];
+const pricing = data.pricing || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+  ctaTitle="Book Your No-License Boat Today"
+  ctaSubtitle="The most popular self-drive rental in Skiathos. Available daily May–October."
+>
+  <section>
+    <SectionHeading
+      label="Perfect for Beginners"
+      title="Explore Skiathos at Your Own Pace"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+  </section>
+
+  {features.length > 0 && (
+    <section>
+      <div class="feature-list">
+        {features.map(f => (
+          <div class="feature-item">
+            <span class="feature-icon"><CheckCircle2 size={18} strokeWidth={2} /></span>
+            <span>{f}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {noLicenseBoats.length > 0 && (
+    <section>
+      <SectionHeading
+        label="No-License Fleet"
+        title="Available Boats"
+        align="left"
+        titleSize="md"
+      />
+      <div class="boats-grid">
+        {noLicenseBoats.map(boat => (
+          <BoatCard
+            name={boat.data.name}
+            type={boat.data.type}
+            priceFrom={boat.data.priceFrom}
+            slug={boat.id}
+            image={boat.data.image}
+            imagePlaceholder={boat.data.imagePlaceholder}
+            features={boat.data.features}
+            specs={[
+              { label: 'Length', value: boat.data.length },
+              { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+              { label: 'Engine', value: `${boat.data.horsepower} HP` },
+            ]}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Transparent Pricing"
+        title="30HP Boat Rental Prices"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable
+        rows={pricing}
+        disclaimer="Prices include fuel, equipment & briefing. Security deposit (€200) held on card, returned same day. Peak season surcharge may apply in August."
+      />
+    </section>
+  )}
+
+  {destinations.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Navigation Zone"
+        title="Where Can You Go?"
+        align="left"
+        titleSize="md"
+      />
+      <p>Within the 1 nautical mile coastal navigation zone, you can reach:</p>
+      <div class="destination-grid">
+        {destinations.map(d => (
+          <div class="destination">
+            <span class="dest-icon"><Anchor size={16} /></span>
+            <div>
+              <strong>{d.place}</strong>
+              <span>{d.time} from port</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+    color: var(--foreground);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .feature-item:last-child { border-bottom: none; }
+
+  .boats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .destination {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--muted);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 0.85rem;
+  }
+
+  .feature-icon { color: var(--foreground); display: flex; align-items: center; }
+
+  .dest-icon { display: flex; align-items: center; color: var(--foreground); opacity: 0.7; }
+
+  .destination div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .destination strong {
+    font-size: 0.85rem;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-weight: 700;
+  }
+
+  .destination span {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+  }
+</style>

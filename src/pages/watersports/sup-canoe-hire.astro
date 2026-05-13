@@ -1,0 +1,103 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('activities', 'sup-canoe-hire');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const highlights = data.highlights || [];
+const features = data.features || [];
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+>
+  <section>
+    <SectionHeading
+      label="Quiet Exploration"
+      title="Paddle Sports"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+
+    {highlights.length > 0 && (
+      <div class="paddle-options">
+        {highlights.map(h => (
+          <div class="paddle-card">
+            <h3>{h.title}</h3>
+            <p>{h.description}</p>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Rental Pricing"
+        title="Hire Rates"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable rows={pricing} disclaimer="Prices include all gear and safety briefing. Discounts available for multi-hour hire." />
+    </section>
+  )}
+
+  {features.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Equipment"
+        title="What's Included"
+        align="left"
+        titleSize="md"
+      />
+      <p>
+        We provide everything you need for a safe and enjoyable paddle session. Our team will give you a quick lesson on technique and local weather conditions.
+      </p>
+      <ul>
+        {features.map(f => (
+          <li>{f}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+</ServicePage>
+
+<style>
+  .paddle-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .paddle-card {
+    background: var(--muted);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+  }
+  .paddle-card h3 {
+    font-size: 1.1rem;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+  }
+  .paddle-card p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+</style>

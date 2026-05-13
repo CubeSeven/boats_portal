@@ -1,0 +1,36 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import LocationMap from './LocationMap.astro';
+
+interface Props {
+  locations: any[];
+}
+
+const { locations } = Astro.props;
+---
+
+<section class="section section-muted" id="locations">
+  <div class="container">
+    <SectionHeading
+      label="Where to Find Us"
+      title="Our Locations"
+      description="We operate from four bases around Skiathos — on the south coast, north coast, and at the town port."
+    />
+    <LocationMap height="400px" />
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-8">
+      {locations.map((loc) => (
+        <div class="reveal">
+          <a href={`/locations/${loc.id}/`} class="card group flex items-center gap-4">
+            <div class="card-content flex-row items-center gap-4 p-4">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 opacity-40"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="flex flex-col">
+                <strong class="text-sm font-bold tracking-tight">{loc.data.locationName}</strong>
+                <span class="text-[0.65rem] text-muted-foreground">{loc.data.heroSubtitle}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

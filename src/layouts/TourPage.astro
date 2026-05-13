@@ -1,0 +1,387 @@
+---
+import Layout from './Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import PricingTable from '../components/sections/PricingTable.astro';
+import FaqAccordion from '../components/sections/FaqAccordion.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import BookingWidget from '../components/sections/BookingWidget.astro';
+import BoatCard from '../components/cards/BoatCard.astro';
+import SectionHeading from '../components/ui/SectionHeading.astro';
+import { Check, X } from 'lucide-react';
+import RelatedContent from '../components/sections/RelatedContent.astro';
+import { getFleet } from '../lib/collections';
+
+interface ItineraryStop {
+  time?: string;
+  label: string;
+  description: string;
+}
+
+interface Included {
+  item: string;
+  included: boolean;
+}
+
+interface PricingRow {
+  duration: string;
+  price: string;
+  notes?: string;
+  highlight?: boolean;
+}
+
+interface FaqItem { question: string; answer: string; }
+
+interface Props {
+  title: string;
+  seoTitle?: string;
+  description: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroGradient?: 'ocean' | 'sunset' | 'turquoise';
+  duration: string;
+  capacity: string;
+  departure?: string;
+  image?: string;
+  gallery?: string[];
+  boats?: string[];
+  itinerary?: ItineraryStop[];
+  includes?: Included[];
+  pricing?: PricingRow[];
+  faqs?: FaqItem[];
+  canonicalUrl?: string;
+  id?: string;
+}
+
+const {
+  title,
+  seoTitle,
+  description,
+  heroTitle,
+  heroSubtitle,
+  heroGradient = 'ocean',
+  duration,
+  capacity,
+  departure = 'Skiathos Old Port, 09:00',
+  image,
+  gallery = [],
+  boats = [],
+  itinerary = [],
+  includes = [],
+  pricing = [],
+  faqs = [],
+  canonicalUrl,
+  id,
+} = Astro.props;
+
+const allBoats = await getFleet();
+const tourBoats = allBoats.filter(b => boats.includes(b.id));
+---
+
+<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl}>
+  <HeroSection
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaText="Book This Tour"
+    ctaHref="/contact/"
+    ctaSecondText="View All Tours"
+    ctaSecondHref="/private-boat-tours/"
+    gradient={heroGradient}
+    size="medium"
+    showScrollHint={false}
+    backgroundImage={image}
+  />
+
+  <Breadcrumbs />
+
+  <div class="tour-page container">
+    <main class="tour-main">
+
+      <!-- Tour quick stats bar -->
+      <div class="tour-stats reveal">
+        <div class="stat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><span class="stat-label">Duration</span><span class="stat-value">{duration}</span></div>
+        </div>
+        <div class="stat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div><span class="stat-label">Max Capacity</span><span class="stat-value">{capacity}</span></div>
+        </div>
+        <div class="stat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><span class="stat-label">Departure</span><span class="stat-value">{departure}</span></div>
+        </div>
+        <div class="stat stat--cta">
+          <a href="/contact/" class="btn btn-primary">Book This Tour</a>
+        </div>
+      </div>
+
+      <!-- Main content slot -->
+      <slot />
+
+      <!-- Itinerary -->
+      {itinerary.length > 0 && (
+        <section class="tour-itinerary reveal">
+          <h2>Tour Itinerary</h2>
+          <div class="timeline">
+            {itinerary.map((stop, i) => (
+              <div class="timeline-stop">
+                <div class="timeline-marker">
+                  <span class="marker-num">{i + 1}</span>
+                  {i < itinerary.length - 1 && <div class="marker-line" />}
+                </div>
+                <div class="timeline-content">
+                  {stop.time && <span class="stop-time">{stop.time}</span>}
+                  <h3>{stop.label}</h3>
+                  <p>{stop.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Included / Excluded -->
+      {includes.length > 0 && (
+        <section class="tour-includes reveal">
+          <h2>What's Included</h2>
+          <div class="includes-grid">
+            {includes.map((item) => (
+              <div class={`include-item ${item.included ? 'included' : 'excluded'}`}>
+                <span class="include-icon" aria-hidden="true">
+                  {item.included ? <Check size={16} /> : <X size={16} />}
+                </span>
+                <span>{item.item}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Pricing -->
+      {pricing.length > 0 && (
+        <section class="tour-pricing reveal">
+          <h2>Pricing</h2>
+          <PricingTable rows={pricing} disclaimer="Prices are per boat, not per person. Up to maximum capacity." />
+        </section>
+      )}
+
+      <!-- Gallery -->
+      {gallery.length > 0 && (
+        <section class="tour-gallery reveal">
+          <h2>Photo Gallery</h2>
+          <Gallery items={gallery} />
+        </section>
+      )}
+
+      <!-- Tour Boats -->
+      {tourBoats.length > 0 && (
+        <section class="tour-boats reveal">
+          <SectionHeading label="Your Vessel" title="Boats Used for This Tour" align="left" />
+          <div class="tour-boats-grid">
+            {tourBoats.map(boat => (
+              <BoatCard
+                name={boat.data.name}
+                type={boat.data.type}
+                priceFrom={boat.data.priceFrom}
+                slug={boat.id}
+                image={boat.data.image}
+                imagePlaceholder={boat.data.imagePlaceholder}
+                features={boat.data.features}
+                specs={[
+                  { label: 'Length', value: boat.data.length },
+                  { label: 'Capacity', value: `${boat.data.capacity} pers.` },
+                  { label: 'Engine', value: `${boat.data.horsepower} HP` },
+                ]}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- FAQs -->
+      {faqs.length > 0 && (
+        <section class="tour-faqs reveal">
+          <h2>Frequently Asked Questions</h2>
+          <FaqAccordion items={faqs} />
+        </section>
+      )}
+
+    </main>
+
+    <aside class="tour-sidebar">
+      <div class="sidebar-sticky">
+        <BookingWidget />
+      </div>
+    </aside>
+  </div>
+
+  <RelatedContent 
+    collection="tours" 
+    currentId={id} 
+    title="Other Tours We Recommend"
+    subtitle="Discover more hidden gems around Skiathos and the nearby islands."
+  />
+
+  <CtaBanner
+    title="Ready to Book This Tour?"
+    subtitle="Private, exclusive, unforgettable. Contact us for availability."
+    buttonText="Book Now"
+    buttonHref="/contact/"
+    secondButtonText="View All Tours"
+    secondButtonHref="/private-boat-tours/"
+    variant="dark"
+  />
+</Layout>
+
+<style>
+  .tour-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .tour-page { grid-template-columns: 1fr 340px; align-items: start; }
+  }
+
+  .tour-main { display: flex; flex-direction: column; gap: 3rem; min-width: 0; }
+
+  /* Stats bar */
+  .tour-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: var(--muted);
+    border-radius: var(--radius-xl);
+    padding: 1.25rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--foreground);
+  }
+
+  .stat div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted-foreground);
+  }
+
+  .stat-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+
+  /* Timeline */
+  .timeline { display: flex; flex-direction: column; }
+
+  .timeline-stop {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 1rem;
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marker-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--foreground);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--font-sans);
+  }
+
+  .marker-line {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin: 4px 0;
+    min-height: 24px;
+  }
+
+  .timeline-content {
+    padding-bottom: 1.5rem;
+  }
+
+  .stop-time {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--foreground);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-content h3 { font-size: 1rem; color: var(--foreground); margin: 0 0 0.4rem; }
+  .timeline-content p  { font-size: 0.875rem; color: var(--muted-foreground); margin: 0; line-height: 1.65; }
+
+  /* Includes */
+  .includes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .include-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .include-item.included { color: var(--foreground); }
+  .include-item.excluded { color: var(--muted-foreground); opacity: 0.6; }
+
+  .include-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    flex-shrink: 0;
+  }
+
+  .included .include-icon { color: oklch(0.55 0.18 145); }
+  .excluded .include-icon { color: var(--destructive); }
+
+  .sidebar-sticky { position: sticky; top: 100px; }
+
+  .tour-boats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .tour-main :global(h2) { font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--foreground); margin: 0 0 1rem; }
+  .tour-main :global(h3) { font-size: 1.1rem; color: var(--foreground); margin: 0 0 0.6rem; }
+  .tour-main :global(p)  { color: var(--muted-foreground); line-height: 1.75; margin: 0 0 1rem; }
+</style>

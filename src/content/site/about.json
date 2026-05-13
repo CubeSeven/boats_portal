@@ -1,0 +1,13 @@
+{
+  "milestones": [
+    { "year": "1995", "title": "The First Boat", "desc": "Starting with a single wooden kaiki in Skiathos port." },
+    { "year": "2005", "title": "Fleet Expansion", "desc": "Introducing the first modern 30HP boats for self-drive rentals." },
+    { "year": "2015", "title": "Watersports Debut", "desc": "Opening our premier center at Koukounaries Beach." },
+    { "year": "2026", "title": "Skiathos Boats Today", "desc": "The island’s most diverse fleet of 25+ vessels." }
+  ],
+  "values": [
+    { "icon": "waves", "title": "Ocean Custodians", "desc": "We love our waters and operate with strict eco-friendly protocols." },
+    { "icon": "shield-check", "title": "Safety Without Compromise", "desc": "Every boat is tracked by GPS and maintained to EU commercial standards." },
+    { "icon": "anchor", "title": "Authentic Greek Hospitality", "desc": "Our skippers are locals who tell the real stories of the island." }
+  ]
+}

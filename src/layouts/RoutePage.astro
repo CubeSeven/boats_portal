@@ -1,0 +1,218 @@
+---
+import Layout from './Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import PricingTable from '../components/sections/PricingTable.astro';
+import FaqAccordion from '../components/sections/FaqAccordion.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import BookingWidget from '../components/sections/BookingWidget.astro';
+import RelatedContent from '../components/sections/RelatedContent.astro';
+
+interface PricingRow {
+  duration: string;
+  price: string;
+  notes?: string;
+  highlight?: boolean;
+}
+
+interface FaqItem { question: string; answer: string; }
+
+interface Props {
+  title: string;
+  seoTitle?: string;
+  description: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroGradient?: 'ocean' | 'sunset' | 'turquoise';
+  fromLocation: string;
+  toLocation: string;
+  duration: string;
+  distance?: string;
+  availability?: string;
+  pricing?: PricingRow[];
+  faqs?: FaqItem[];
+  canonicalUrl?: string;
+  category?: string;
+  id?: string;
+}
+
+const {
+  title,
+  seoTitle,
+  description,
+  heroTitle,
+  heroSubtitle,
+  heroGradient = 'ocean',
+  fromLocation,
+  toLocation,
+  duration,
+  distance,
+  availability = '24/7, year-round',
+  pricing = [],
+  faqs = [],
+  canonicalUrl,
+  category,
+  id,
+} = Astro.props;
+---
+
+<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl}>
+  <HeroSection
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    ctaText="Book This Transfer"
+    ctaHref="/contact/"
+    ctaSecondText="All Routes"
+    ctaSecondHref="/water-taxi/"
+    gradient={heroGradient}
+    size="medium"
+    showScrollHint={false}
+    backgroundImage="/images/stock/s11tock images.jpg"
+  />
+
+  <Breadcrumbs />
+
+  <div class="route-page container">
+    <main class="route-main">
+
+      <!-- Route quick info -->
+      <div class="route-stats reveal">
+        <div class="route-stat">
+          <span class="rstat-label">From</span>
+          <span class="rstat-value">{fromLocation}</span>
+        </div>
+        <div class="route-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+        <div class="route-stat">
+          <span class="rstat-label">To</span>
+          <span class="rstat-value">{toLocation}</span>
+        </div>
+        <div class="route-divider" aria-hidden="true"></div>
+        <div class="route-stat">
+          <span class="rstat-label">Duration</span>
+          <span class="rstat-value">{duration}</span>
+        </div>
+        {distance && (
+          <div class="route-stat">
+            <span class="rstat-label">Distance</span>
+            <span class="rstat-value">{distance}</span>
+          </div>
+        )}
+        <div class="route-stat">
+          <span class="rstat-label">Available</span>
+          <span class="rstat-value">{availability}</span>
+        </div>
+      </div>
+
+      <!-- Main content slot -->
+      <slot />
+
+      <!-- Pricing -->
+      {pricing.length > 0 && (
+        <section class="route-pricing reveal">
+          <h2>Pricing</h2>
+          <PricingTable rows={pricing} disclaimer="Prices are per boat (up to 8 passengers). Private transfer — departs when you choose." />
+        </section>
+      )}
+
+      <!-- FAQs -->
+      {faqs.length > 0 && (
+        <section class="route-faqs reveal">
+          <h2>Frequently Asked Questions</h2>
+          <FaqAccordion items={faqs} />
+        </section>
+      )}
+    </main>
+
+    <aside class="route-sidebar">
+      <div class="sidebar-sticky">
+        <BookingWidget services={['Water Taxi to Volos', 'Water Taxi to Skopelos', 'Water Taxi to Pelion', 'Airport Transfer']} />
+      </div>
+    </aside>
+  </div>
+
+  <RelatedContent 
+    collection="activities" 
+    currentId={id} 
+    category={category}
+    title="More Ways to Explore"
+    subtitle="Beyond transfers, we offer a range of premium boat rentals and tours."
+  />
+
+  <CtaBanner
+    title={`Book Your ${fromLocation} → ${toLocation} Transfer`}
+    subtitle="Available 24/7. Depart when you want. Up to 8 passengers per boat."
+    buttonText="Request Transfer"
+    buttonHref="/contact/"
+    secondButtonText="Call Us Now"
+    secondButtonHref="tel:+30XXXXXXXXXX"
+    variant="navy"
+  />
+</Layout>
+
+<style>
+  .route-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .route-page { grid-template-columns: 1fr 340px; align-items: start; }
+  }
+
+  .route-main { display: flex; flex-direction: column; gap: 3rem; min-width: 0; }
+
+  /* Route stats bar */
+  .route-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    background: var(--foreground);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem 2rem;
+    color: white;
+  }
+
+  .route-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .rstat-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .rstat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .route-arrow {
+    color: var(--foreground);
+  }
+
+  .route-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
+
+  .route-main :global(h2) { font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--foreground); margin: 0 0 1rem; }
+  .route-main :global(p)  { color: var(--muted-foreground); line-height: 1.75; margin: 0 0 1rem; }
+
+  .sidebar-sticky { position: sticky; top: 100px; }
+</style>
