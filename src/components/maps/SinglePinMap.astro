@@ -1,0 +1,143 @@
+---
+export interface Props {
+  lat: number;
+  lng: number;
+  label?: string;
+  sub?: string;
+  href?: string;
+  height?: string;
+  zoom?: number;
+}
+
+const {
+  lat,
+  lng,
+  label,
+  sub,
+  href,
+  height = '350px',
+  zoom = 14,
+} = Astro.props;
+
+const mapId = `single-map-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<div
+  id={mapId}
+  class="leaflet-map"
+  style={`height: ${height}; width: 100%;`}
+  data-map-config={JSON.stringify({ lat, lng, label, sub, href, zoom })}
+>
+  <noscript>
+    <div class="map-fallback">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>Enable JavaScript to view the interactive map. Location: {label ?? `${lat}, ${lng}`}</span>
+    </div>
+  </noscript>
+</div>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+  (window as any).__leaflet__ = L;
+  console.log('[Map] Leaflet loaded, version:', L.version);
+</script>
+
+<script define:vars={{ mapId }}>
+  (function initSingleMap() {
+    const L = window.__leaflet__;
+    if (!L) {
+      console.warn('[SinglePinMap] Leaflet not ready, retrying...');
+      return requestAnimationFrame(initSingleMap);
+    }
+
+    const el = document.getElementById(mapId);
+    if (!el) {
+      console.warn('[SinglePinMap] Element not found:', mapId);
+      return;
+    }
+
+    const cfg = JSON.parse(el.dataset.mapConfig || '{}');
+    console.log('[SinglePinMap] Init', { mapId, cfg });
+    if (!cfg.lat || !cfg.lng) {
+      console.warn('[SinglePinMap] No lat/lng in config');
+      return;
+    }
+
+    const map = L.map(el, {
+      zoomControl: true,
+      scrollWheelZoom: true,
+    }).setView([cfg.lat, cfg.lng], cfg.zoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+    }).addTo(map);
+
+    const marker = L.marker([cfg.lat, cfg.lng], {
+      icon: L.divIcon({
+        html: `<div style="width:20px;height:20px;background:var(--foreground,oklch(0.15 0.02 240));color:var(--background,white);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 12px rgba(0,0,0,0.35);border:2px solid white;"></div>`,
+        className: 'custom-marker',
+        iconSize: [20, 28],
+        iconAnchor: [10, 14],
+        popupAnchor: [0, -16],
+      }),
+    }).addTo(map);
+
+    if (cfg.label) {
+      let html = `<strong>${cfg.label}</strong>`;
+      if (cfg.sub) html += `<br><span style="font-size:0.8rem;opacity:0.7">${cfg.sub}</span>`;
+      if (cfg.href) html += `<br><a href="${cfg.href}" style="font-size:0.8rem;font-weight:600;">View Details →</a>`;
+      marker.bindPopup(html).openPopup();
+    }
+
+    console.log('[SinglePinMap] Ready');
+  })();
+</script>
+
+<style>
+  .leaflet-map {
+    border-radius: var(--radius-2xl, 1rem);
+    overflow: hidden;
+    border: 1px solid var(--border, #ccc);
+    background: var(--muted, #f5f5f5);
+    z-index: 1;
+  }
+  .leaflet-map :global(.leaflet-control-zoom) {
+    border: 1px solid var(--border, #ccc);
+    border-radius: var(--radius-md, 0.5rem);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .leaflet-map :global(.leaflet-control-zoom a) {
+    color: var(--foreground, #111);
+    background: var(--card, white);
+  }
+  .leaflet-map :global(.leaflet-popup-content-wrapper) {
+    border-radius: var(--radius-lg, 0.75rem);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .leaflet-map :global(.leaflet-popup-content) {
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin: 0.5rem 0.75rem;
+    line-height: 1.5;
+  }
+  .leaflet-map :global(.leaflet-popup-tip) {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .leaflet-map :global(.custom-marker) {
+    background: transparent !important;
+    border: none !important;
+  }
+  .map-fallback {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    height: 100%;
+    color: var(--muted-foreground, #666);
+    font-size: 0.85rem;
+    background: var(--muted, #f5f5f5);
+  }
+</style>

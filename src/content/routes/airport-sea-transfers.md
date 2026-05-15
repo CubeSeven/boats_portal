@@ -7,6 +7,10 @@ heroTitle: "Airport Sea<br/>Transfers"
 heroSubtitle: "The most scenic arrival in Skiathos. Connect from the airport area directly to your seaside hotel or villa. fast, private, and refreshing."
 fromLocation: "Skiathos Airport Area"
 toLocation: "Your Destination"
+originLat: 39.1785
+originLng: 23.5032
+destLat: 39.1629
+destLng: 23.4912
 duration: "10–30 Minutes"
 distance: "Various"
 pricing:

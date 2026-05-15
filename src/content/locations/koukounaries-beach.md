@@ -10,6 +10,9 @@ heroGradient: "turquoise"
 status: "Watersports Hub"
 icon: "waves"
 directions: "Located at the designated watersports area near 'Zone 3', between the lake outlet and the main beach center."
+latitude: 39.1482
+longitude: 23.4006
+mapZoom: 15
 services:
   - icon: "waves"
     title: "Watersports Center"

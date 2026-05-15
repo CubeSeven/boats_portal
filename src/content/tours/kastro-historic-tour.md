@@ -17,18 +17,28 @@ itinerary:
   - time: "09:00"
     label: "Departure"
     description: "Heading north towards the wild side of Skiathos."
+    lat: 39.1629
+    lng: 23.4912
   - time: "10:00"
     label: "Kastro Beach"
     description: "Anchor in the cove directly below the ancient ruins. Swim in the deep, clear water."
+    lat: 39.2075
+    lng: 23.4631
   - time: "11:00"
     label: "Kastro Fortress Walk"
     description: "Optional walk up to the medieval ruins for a 360-degree view of the Aegean."
+    lat: 39.2080
+    lng: 23.4625
   - time: "12:30"
     label: "Diamandi Cove"
     description: "A hidden, rocky cove nearby for some of the island's best snorkelling."
+    lat: 39.1300
+    lng: 23.4556
   - time: "14:30"
     label: "Return"
     description: "Back to port via the scenic northern coastline."
+    lat: 39.1629
+    lng: 23.4912
 includes:
   - item: "Professional Skipper"
     included: true
@@ -56,4 +66,4 @@ faqs:
 
 Kastro was the island's capital for 500 years, built on a sheer cliff to protect residents from pirate raids. Today, it is a ghost town of ruins and ancient churches, accessible via a dramatic stony path from the beach below.
 
-Our historic tour is lead by skippers who know the stories of Kastro. You’ll explore the ruins of 300 houses and 22 churches, while enjoying some of the most dramatic coastal scenery in Greece.
+Our historic tour is lead by skippers who know the stories of Kastro. You'll explore the ruins of 300 houses and 22 churches, while enjoying some of the most dramatic coastal scenery in Greece.

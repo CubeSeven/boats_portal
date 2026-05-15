@@ -6,7 +6,7 @@ import ServiceCard from '../components/cards/ServiceCard.astro';
 import BoatCard from '../components/cards/BoatCard.astro';
 import Gallery from '../components/sections/Gallery.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
-import LocationMap from '../components/sections/LocationMap.astro';
+import LocationMap from '../components/maps/SinglePinMap.astro';
 import { getFleet } from '../lib/collections';
 
 interface Service {
@@ -30,6 +30,9 @@ interface Props {
   services?: Service[];
   directions?: string;
   boats?: string[];
+  latitude?: number;
+  longitude?: number;
+  mapZoom?: number;
   canonicalUrl?: string;
 }
 
@@ -45,6 +48,9 @@ const {
   gallery = [],
   services = [],
   directions,
+  latitude,
+  longitude,
+  mapZoom = 14,
   boats = [],
   canonicalUrl,
 } = Astro.props;
@@ -79,7 +85,14 @@ const locationBoats = allBoats.filter(b => boats.includes(b.id));
     <!-- Map -->
     <section class="location-map-section reveal">
       <h2>Location on the Map</h2>
-      <LocationMap height="300px" />
+      {latitude != null && longitude != null ? (
+        <LocationMap lat={latitude} lng={longitude} label={locationName} height="300px" zoom={mapZoom} />
+      ) : (
+        <div class="map-placeholder-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Map coordinates not yet set for this location. Add latitude/longitude in the CMS.</span>
+        </div>
+      )}
       {directions && (
         <div class="directions-note">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -199,5 +212,21 @@ const locationBoats = allBoats.filter(b => boats.includes(b.id));
     color: var(--foreground);
     flex-shrink: 0;
     margin-top: 1px;
+  }
+
+  .map-placeholder-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--muted);
+    border-radius: var(--radius-md);
+    color: var(--muted-foreground);
+    font-size: 0.85rem;
+  }
+
+  .map-placeholder-note svg {
+    color: var(--foreground);
+    flex-shrink: 0;
   }
 </style>

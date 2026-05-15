@@ -7,6 +7,10 @@ heroTitle: "Skiathos to Skopelos<br/>Water Taxi"
 heroSubtitle: "Direct island-to-island connection. No ferry schedules, no waiting. Reach Skopelos in under an hour on your own private boat."
 fromLocation: "Skiathos"
 toLocation: "Skopelos"
+originLat: 39.1629
+originLng: 23.4912
+destLat: 39.1240
+destLng: 23.7270
 duration: "30–50 Minutes"
 distance: "12–18 Nautical Miles"
 pricing:

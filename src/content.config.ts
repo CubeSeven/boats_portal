@@ -40,6 +40,11 @@ const blog = defineCollection({
     readTime: z.number(),
     category: z.enum(['guide', 'destination', 'tips', 'comparison']),
     featured: z.boolean().default(false),
+    showMap: z.boolean().default(false),
+    mapLat: z.number().optional(),
+    mapLng: z.number().optional(),
+    mapLabel: z.string().optional(),
+    mapZoom: z.number().default(14).optional(),
   }),
 });
 
@@ -142,7 +147,9 @@ const tours = defineCollection({
     itinerary: z.array(z.object({
       time: z.string(),
       label: z.string(),
-      description: z.string()
+      description: z.string(),
+      lat: z.number().optional(),
+      lng: z.number().optional(),
     })).optional(),
     includes: z.array(z.object({
       item: z.string(),
@@ -172,6 +179,10 @@ const routes = defineCollection({
     heroSubtitle: z.string(),
     fromLocation: z.string(),
     toLocation: z.string(),
+    originLat: z.number(),
+    originLng: z.number(),
+    destLat: z.number(),
+    destLng: z.number(),
     duration: z.string(),
     distance: z.string(),
     pricing: z.array(z.object({
@@ -203,6 +214,9 @@ const locations = defineCollection({
     icon: z.string().default('map-pin'),
     status: z.string().default('Operating'),
     directions: z.string().default(''),
+    latitude: z.number(),
+    longitude: z.number(),
+    mapZoom: z.number().default(14),
     boats: z.array(z.string()).optional(),
     services: z.array(z.object({
       icon: z.string(),

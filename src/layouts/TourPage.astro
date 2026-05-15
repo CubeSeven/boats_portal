@@ -9,6 +9,7 @@ import Gallery from '../components/sections/Gallery.astro';
 import BookingWidget from '../components/sections/BookingWidget.astro';
 import BoatCard from '../components/cards/BoatCard.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
+import RouteMap from '../components/maps/RouteMap.astro';
 import { Check, X } from 'lucide-react';
 import RelatedContent from '../components/sections/RelatedContent.astro';
 import { getFleet } from '../lib/collections';
@@ -139,6 +140,35 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
               </div>
             ))}
           </div>
+        </section>
+      )}
+
+      {itinerary.length > 0 && (
+        <section class="tour-map-section reveal">
+          <h2>Tour Route</h2>
+          <RouteMap
+            origin={{
+              lat: 39.1629,
+              lng: 23.4912,
+              label: departure.split(',')[0] || departure,
+              sub: 'Skiathos Port',
+            }}
+            destination={{
+              lat: 39.1629,
+              lng: 23.4912,
+              label: departure.split(',')[0] || departure,
+              sub: 'Return',
+            }}
+            waypoints={itinerary
+              .filter((stop: any) => stop.lat != null && stop.lng != null)
+              .map((stop: any) => ({
+                lat: stop.lat,
+                lng: stop.lng,
+                label: stop.label,
+                sub: stop.time,
+              }))}
+            height="400px"
+          />
         </section>
       )}
 
@@ -374,6 +404,9 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
   .excluded .include-icon { color: var(--destructive); }
 
   .sidebar-sticky { position: sticky; top: 100px; }
+
+  .tour-map-section { margin: 0; }
+  .tour-map-section :global(h2) { font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--foreground); margin: 0 0 1rem; }
 
   .tour-boats-grid {
     display: grid;

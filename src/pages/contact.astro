@@ -4,7 +4,7 @@ import HeroSection from '../components/sections/HeroSection.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import BookingWidget from '../components/sections/BookingWidget.astro';
 import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
-import LocationMap from '../components/sections/LocationMap.astro';
+import LocationMap from '../components/maps/MultiPinMap.astro';
 import DynamicIcon from '../components/ui/DynamicIcon.astro';
 import { getEntry, getCollection } from 'astro:content';
 
@@ -14,6 +14,17 @@ const faqs = allFaqs
   .filter(f => f.data.category === 'contact')
   .sort((a, b) => (a.data.order || 0) - (b.data.order || 0))
   .map(f => f.data);
+
+const allLocations = await getCollection('locations');
+const mapPins = allLocations
+  .filter(loc => loc.data.latitude != null && loc.data.longitude != null)
+  .map(loc => ({
+    lat: loc.data.latitude,
+    lng: loc.data.longitude,
+    label: loc.data.locationName,
+    sub: loc.data.heroSubtitle,
+    href: `/locations/${loc.id}/`,
+  }));
 
 const contactInfo = [
   { icon: 'phone', label: 'Call or WhatsApp', value: siteData?.data.phone, link: `tel:${siteData?.data.phone?.replace(/ /g, '')}` },
@@ -89,7 +100,7 @@ const contactInfo = [
         title="Visit Our Main Hub" 
       />
       <div class="map-container reveal">
-        <LocationMap height="450px" />
+        <LocationMap pins={mapPins} height="450px" />
       </div>
     </div>
   </section>

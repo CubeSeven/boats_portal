@@ -1,5 +1,5 @@
 ---
-import 'lightgallery/css/lightgallery-bundle.css';
+import 'glightbox/dist/css/glightbox.css';
 
 interface GalleryItem {
   src: string;
@@ -30,12 +30,13 @@ const itemCount = normalizedItems.length;
   <section class="gallery-section">
     {title && <h2 class="gallery-title">{title}</h2>}
     
-    <div class={`gallery-masonry ${itemCount < 4 ? 'gallery-masonry--small' : ''}`} id="lightgallery">
+    <div class={`gallery-masonry ${itemCount < 4 ? 'gallery-masonry--small' : ''}`}>
       {normalizedItems.map((item, i) => (
         <a
           href={item.src}
-          class="gallery-item reveal"
-          data-src={item.src}
+          class="gallery-item reveal glightbox"
+          data-gallery="gallery"
+          data-glightbox="title: "
           aria-label={`View ${item.alt} in full screen`}
           style={`transition-delay: ${i * 0.05}s`}
         >
@@ -61,29 +62,17 @@ const itemCount = normalizedItems.length;
 )}
 
 <script>
-  import lightGallery from 'lightgallery';
-  import lgZoom from 'lightgallery/plugins/zoom';
-  import lgThumbnail from 'lightgallery/plugins/thumbnail';
+  import GLightbox from 'glightbox';
+  import type { GLightbox as GLightboxNS } from 'glightbox';
+
+  let lightbox: GLightboxNS | null = null;
 
   function initGallery() {
-    const galleryEl = document.getElementById('lightgallery');
-    if (galleryEl) {
-      // Destroy existing instance if any
-      // @ts-ignore
-      if (window.lgData && window.lgData[galleryEl.getAttribute('lg-uid')]) {
-          // @ts-ignore
-          window.lgData[galleryEl.getAttribute('lg-uid')].destroy(true);
-      }
-      
-      lightGallery(galleryEl, {
-        plugins: [lgZoom, lgThumbnail],
-        speed: 500,
-        licenseKey: '0000-0000-000-0000',
-        mode: 'lg-fade',
-        download: false,
-        selector: '.gallery-item'
-      });
+    if (lightbox) {
+      lightbox.destroy();
+      lightbox = null;
     }
+    lightbox = GLightbox({ selector: '.glightbox' });
   }
 
   initGallery();
@@ -186,9 +175,9 @@ const itemCount = normalizedItems.length;
     transform: scale(1);
   }
   
-  /* Lightgallery overrides */
-  :global(.lg-backdrop) {
-    background-color: rgba(0, 0, 0, 0.95) !important;
+  /* GLightbox overrides */
+  :global(.goverlay) {
+    background: rgba(0, 0, 0, 0.95) !important;
     backdrop-filter: blur(10px);
   }
 </style>

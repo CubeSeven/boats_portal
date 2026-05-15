@@ -10,6 +10,9 @@ heroGradient: "ocean"
 status: "Main Hub"
 icon: "anchor"
 directions: "Located on the Bourtzi side of the Old Port, look for the 'Skiathos Boats' navy kiosk near the water taxi dock."
+latitude: 39.1629
+longitude: 23.4912
+mapZoom: 15
 services:
   - icon: "ship"
     title: "Private Boat Tours"

@@ -10,6 +10,9 @@ heroGradient: "ocean"
 status: "Boat Rental Point"
 icon: "ship"
 directions: "Look for our blue-roofed rental jetty located on the right side of the beach (looking at the sea)."
+latitude: 39.1372
+longitude: 23.4599
+mapZoom: 15
 services:
   - icon: "ship"
     title: "Boat Rental Point"

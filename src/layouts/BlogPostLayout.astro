@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
+import SinglePinMap from '../components/maps/SinglePinMap.astro';
 import RelatedContent from '../components/sections/RelatedContent.astro';
 
 interface Props {
@@ -13,9 +14,14 @@ interface Props {
   imagePlaceholder: string;
   image?: string;
   id?: string;
+  showMap?: boolean;
+  mapLat?: number;
+  mapLng?: number;
+  mapLabel?: string;
+  mapZoom?: number;
 }
 
-const { title, description, pubDate, readTime, category, imagePlaceholder, image, id } = Astro.props;
+const { title, description, pubDate, readTime, category, imagePlaceholder, image, id, showMap, mapLat, mapLng, mapLabel, mapZoom } = Astro.props;
 ---
 
 <Layout title={`${title} | Skiathos Boats Blog`} description={description}>
@@ -34,6 +40,18 @@ const { title, description, pubDate, readTime, category, imagePlaceholder, image
   </div>
 
   <Breadcrumbs />
+
+  {showMap && mapLat != null && mapLng != null && (
+    <div class="container-narrow" style="margin-bottom:2rem;">
+      <SinglePinMap
+        lat={mapLat}
+        lng={mapLng}
+        label={mapLabel}
+        height="300px"
+        zoom={mapZoom ?? 14}
+      />
+    </div>
+  )}
 
   <article class="blog-post container-narrow">
     <div class="content reveal">

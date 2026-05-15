@@ -1,6 +1,6 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-import LocationMap from './LocationMap.astro';
+import MultiPinMap from '../maps/MultiPinMap.astro';
 
 interface Props {
   locations: any[];
@@ -16,7 +16,20 @@ const { locations } = Astro.props;
       title="Our Locations"
       description="We operate from four bases around Skiathos — on the south coast, north coast, and at the town port."
     />
-    <LocationMap height="400px" />
+    {locations.length > 0 && (
+      <MultiPinMap
+        pins={locations
+          .filter((loc: any) => loc.data.latitude != null && loc.data.longitude != null)
+          .map((loc: any) => ({
+            lat: loc.data.latitude,
+            lng: loc.data.longitude,
+            label: loc.data.locationName,
+            sub: loc.data.heroSubtitle,
+            href: `/locations/${loc.id}/`,
+          }))}
+        height="400px"
+      />
+    )}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-8">
       {locations.map((loc) => (
         <div class="reveal">

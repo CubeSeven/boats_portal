@@ -10,6 +10,9 @@ heroGradient: "sunset"
 status: "Ski & Wake Center"
 icon: "zap"
 directions: "Our specialized base is located next to the main beach bar area, clearly marked with 'Skiathos Wake Center' branding."
+latitude: 39.1365
+longitude: 23.4462
+mapZoom: 15
 services:
   - icon: "wind"
     title: "Water Ski Slalom"

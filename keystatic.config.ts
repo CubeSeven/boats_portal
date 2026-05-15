@@ -105,6 +105,11 @@ export default config({
           defaultValue: 'guide',
         }),
         featured: fields.checkbox({ label: 'Featured', defaultValue: false }),
+        showMap: fields.checkbox({ label: 'Show Map on Page', defaultValue: false }),
+        mapLat: fields.number({ label: 'Map Latitude (e.g. 39.1527)' }),
+        mapLng: fields.number({ label: 'Map Longitude (e.g. 23.4033)' }),
+        mapLabel: fields.text({ label: 'Map Label' }),
+        mapZoom: fields.number({ label: 'Map Zoom Level', defaultValue: 14 }),
         content: fields.markdoc({
           label: 'Article Content',
           extension: 'md'
@@ -317,6 +322,8 @@ export default config({
             time: fields.text({ label: 'Time' }),
             label: fields.text({ label: 'Label' }),
             description: fields.text({ label: 'Description', multiline: true }),
+            lat: fields.number({ label: 'Map Latitude (optional)' }),
+            lng: fields.number({ label: 'Map Longitude (optional)' }),
           }),
           { label: 'Itinerary', itemLabel: props => props.fields.label.value }
         ),
@@ -363,6 +370,10 @@ export default config({
         heroSubtitle: fields.text({ label: 'Hero Subtitle' }),
         fromLocation: fields.text({ label: 'From Location' }),
         toLocation: fields.text({ label: 'To Location' }),
+        originLat: fields.number({ label: 'Origin Latitude (e.g. 39.1624)' }),
+        originLng: fields.number({ label: 'Origin Longitude (e.g. 23.4920)' }),
+        destLat: fields.number({ label: 'Destination Latitude' }),
+        destLng: fields.number({ label: 'Destination Longitude' }),
         duration: fields.text({ label: 'Duration' }),
         distance: fields.text({ label: 'Distance' }),
         pricing: fields.array(
@@ -418,6 +429,9 @@ export default config({
         icon: fields.text({ label: 'Lucide Icon Name', defaultValue: 'map-pin' }),
         status: fields.text({ label: 'Status Label', defaultValue: 'Operating' }),
         directions: fields.text({ label: 'Directions', multiline: true, defaultValue: '' }),
+        latitude: fields.number({ label: 'Latitude (e.g. 39.1624)' }),
+        longitude: fields.number({ label: 'Longitude (e.g. 23.4920)' }),
+        mapZoom: fields.number({ label: 'Map Zoom Level', defaultValue: 14 }),
         boats: fields.array(fields.text({ label: 'Fleet Boat Slug' }), {
           label: 'Boats at This Location',
           itemLabel: props => props.value,

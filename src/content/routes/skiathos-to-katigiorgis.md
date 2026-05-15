@@ -7,6 +7,10 @@ heroTitle: "Skiathos to Katigiorgis<br/>Water Taxi"
 heroSubtitle: "The shortest crossing to the mainland. Visit the beautiful Pelion coast or catch a taxi to Volos and beyond in record time."
 fromLocation: "Skiathos"
 toLocation: "Katigiorgis"
+originLat: 39.1629
+originLng: 23.4912
+destLat: 39.1650
+destLng: 23.3950
 duration: "~20 Minutes"
 distance: "5 Nautical Miles"
 pricing:

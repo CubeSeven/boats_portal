@@ -4,6 +4,7 @@ import HeroSection from '../components/sections/HeroSection.astro';
 import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import DynamicIcon from '../components/ui/DynamicIcon.astro';
+import SinglePinMap from '../components/maps/SinglePinMap.astro';
 import { getEntry } from 'astro:content';
 
 const aboutData = await getEntry('site', 'about');
@@ -93,4 +94,35 @@ const values = aboutData?.data.values || [];
     </div>
   </section>
 
+  <section class="section section--muted">
+    <div class="container">
+      <SectionHeading
+        label="Finding Us"
+        title="Where We're Based"
+        description="Visit our main hub at the Old Port of Skiathos — the heart of the island's maritime life."
+      />
+      <div class="map-container reveal">
+        <SinglePinMap
+          lat={39.1629}
+          lng={23.4912}
+          label="Skiathos Town Port"
+          sub="Main Hub & Headquarters"
+          href="/locations/skiathos-town-port/"
+          height="400px"
+          zoom={15}
+        />
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  .section { padding: 5rem 0; }
+  .section--muted { background: var(--muted); }
+  .map-container {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+</style>

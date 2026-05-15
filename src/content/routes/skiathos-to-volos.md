@@ -7,6 +7,10 @@ heroTitle: "Skiathos to Volos<br/>Water Taxi"
 heroSubtitle: "Your private bridge to the mainland. Direct, fast, and available 24/7. The ultimate solution for airport connections and tight schedules."
 fromLocation: "Skiathos"
 toLocation: "Volos"
+originLat: 39.1629
+originLng: 23.4912
+destLat: 39.3572
+destLng: 22.9432
 duration: "~60 Minutes"
 distance: "35 Nautical Miles"
 pricing:

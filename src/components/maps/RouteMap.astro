@@ -1,0 +1,192 @@
+---
+export interface RoutePoint {
+  lat: number;
+  lng: number;
+  label: string;
+  sub?: string;
+  href?: string;
+}
+
+export interface Props {
+  origin: RoutePoint;
+  destination: RoutePoint;
+  waypoints?: RoutePoint[];
+  height?: string;
+  fitBounds?: boolean;
+}
+
+const {
+  origin,
+  destination,
+  waypoints = [],
+  height = '400px',
+  fitBounds = true,
+} = Astro.props;
+
+const mapId = `route-map-${Math.random().toString(36).slice(2, 10)}`;
+const validWaypoints = waypoints.filter(w => w.lat != null && w.lng != null);
+---
+
+<div
+  id={mapId}
+  class="leaflet-map"
+  style={`height: ${height}; width: 100%;`}
+  data-map-config={JSON.stringify({
+    origin,
+    destination,
+    waypoints: validWaypoints,
+    fitBounds,
+  })}
+>
+  <noscript>
+    <div class="map-fallback">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>Enable JavaScript to view the route map from {origin.label} to {destination.label}.</span>
+    </div>
+  </noscript>
+</div>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+  (window as any).__leaflet__ = L;
+  console.log('[Map] Leaflet loaded, version:', L.version);
+</script>
+
+<script define:vars={{ mapId }}>
+  (function initRouteMap() {
+    const L = window.__leaflet__;
+    if (!L) {
+      console.warn('[RouteMap] Leaflet not ready, retrying...');
+      return requestAnimationFrame(initRouteMap);
+    }
+
+    const el = document.getElementById(mapId);
+    if (!el) {
+      console.warn('[RouteMap] Element not found:', mapId);
+      return;
+    }
+
+    const cfg = JSON.parse(el.dataset.mapConfig || '{}');
+    const { origin, destination, waypoints = [] } = cfg;
+    console.log('[RouteMap] Init', { mapId, origin, destination, waypointsCount: waypoints.length });
+    if (!origin?.lat || !destination?.lat) {
+      console.warn('[RouteMap] No origin/dest coords');
+      return;
+    }
+
+    const allPts = [origin, ...waypoints, destination];
+    const map = L.map(el, {
+      zoomControl: true,
+      scrollWheelZoom: true,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+    }).addTo(map);
+
+    const latlngs = allPts.map((p) => [p.lat, p.lng]);
+
+    L.polyline(latlngs, {
+      color: '#3b82f6',
+      weight: 3,
+      opacity: 0.7,
+      dashArray: '10 6',
+    }).addTo(map);
+
+    const startIcon = L.divIcon({
+      html: `<div style="width:28px;height:28px;background:oklch(0.55 0.18 145);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.35);border:2px solid white;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>`,
+      className: 'custom-marker',
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
+      popupAnchor: [0, -14],
+    });
+    const startM = L.marker([origin.lat, origin.lng], { icon: startIcon }).addTo(map);
+    startM.bindPopup(`<strong>${origin.label}</strong>${origin.sub ? `<br><span style="font-size:0.8rem;opacity:0.7">${origin.sub}</span>` : ''}`);
+
+    waypoints.forEach((wp, i) => {
+      const wpIcon = L.divIcon({
+        html: `<div style="width:26px;height:26px;background:var(--foreground,oklch(0.15 0.02 240));color:var(--background,white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.75rem;box-shadow:0 4px 12px rgba(0,0,0,0.35);border:2px solid white;">${i + 1}</div>`,
+        className: 'custom-marker',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13],
+        popupAnchor: [0, -13],
+      });
+      const m = L.marker([wp.lat, wp.lng], { icon: wpIcon }).addTo(map);
+      let html = `<strong>${wp.label}</strong>`;
+      if (wp.sub) html += `<br><span style="font-size:0.8rem;opacity:0.7">${wp.sub}</span>`;
+      if (wp.href) html += `<br><a href="${wp.href}" style="font-size:0.8rem;font-weight:600;">View Details →</a>`;
+      m.bindPopup(html);
+    });
+
+    const endIcon = L.divIcon({
+      html: `<div style="width:24px;height:24px;background:oklch(0.45 0.15 25);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.35);border:2px solid white;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>`,
+      className: 'custom-marker',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12],
+      popupAnchor: [0, -12],
+    });
+    const endM = L.marker([destination.lat, destination.lng], { icon: endIcon }).addTo(map);
+    let endHtml = `<strong>${destination.label}</strong>`;
+    if (destination.sub) endHtml += `<br><span style="font-size:0.8rem;opacity:0.7">${destination.sub}</span>`;
+    if (destination.href) endHtml += `<br><a href="${destination.href}" style="font-size:0.8rem;font-weight:600;">View Details →</a>`;
+    endM.bindPopup(endHtml);
+
+    if (cfg.fitBounds && allPts.length > 1) {
+      const bounds = L.latLngBounds(allPts.map((p) => [p.lat, p.lng]));
+      map.fitBounds(bounds, { padding: [40, 40], maxZoom: 15 });
+    } else {
+      map.setView([origin.lat, origin.lng], 12);
+    }
+
+    console.log('[RouteMap] Ready');
+  })();
+</script>
+
+<style>
+  .leaflet-map {
+    border-radius: var(--radius-2xl, 1rem);
+    overflow: hidden;
+    border: 1px solid var(--border, #ccc);
+    background: var(--muted, #f5f5f5);
+    z-index: 1;
+  }
+  .leaflet-map :global(.leaflet-control-zoom) {
+    border: 1px solid var(--border, #ccc);
+    border-radius: var(--radius-md, 0.5rem);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .leaflet-map :global(.leaflet-control-zoom a) {
+    color: var(--foreground, #111);
+    background: var(--card, white);
+  }
+  .leaflet-map :global(.leaflet-popup-content-wrapper) {
+    border-radius: var(--radius-lg, 0.75rem);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .leaflet-map :global(.leaflet-popup-content) {
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin: 0.5rem 0.75rem;
+    line-height: 1.5;
+  }
+  .leaflet-map :global(.leaflet-popup-tip) {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .leaflet-map :global(.custom-marker) {
+    background: transparent !important;
+    border: none !important;
+  }
+  .map-fallback {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    height: 100%;
+    color: var(--muted-foreground, #666);
+    font-size: 0.85rem;
+    background: var(--muted, #f5f5f5);
+  }
+</style>

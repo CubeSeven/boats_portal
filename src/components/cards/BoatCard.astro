@@ -74,13 +74,35 @@ const isNoLicense = type.toLowerCase().includes('no-license');
 
         <!-- 3. Specs/Features Grid (Compact & Informative - 3x2) -->
         <div class="grid grid-cols-3 gap-y-4 gap-x-2 mb-8 border-b border-border/40 pb-5">
-          {allDetails.map((detail) => (
-            <div class="flex items-center gap-1.5">
-              <span class="text-[0.65rem] font-bold text-current tracking-tight whitespace-nowrap overflow-hidden text-overflow-ellipsis">
-                {detail.value.split(' ')[0]}
-              </span>
-            </div>
-          ))}
+          {allDetails.map((detail) => {
+            const isFeature = detail.label === detail.value;
+            const normalized = detail.label.toLowerCase();
+            return (
+              <div class="flex items-start gap-2">
+                <div class="mt-0.5 opacity-60 flex-shrink-0">
+                  {normalized.includes('length') ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M6 10v4"/><path d="M10 10v4"/><path d="M14 10v4"/><path d="M18 10v4"/></svg>
+                  ) : normalized.includes('capacity') || normalized.includes('pers') ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  ) : normalized.includes('engine') || normalized.includes('hp') || normalized.includes('power') ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  ) : normalized.includes('speed') ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 18v4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M18 12h4"/><path d="m19.07 4.93-2.83 2.83"/><circle cx="12" cy="12" r="8"/></svg>
+                  ) : (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  )}
+                </div>
+                <div class="flex flex-col min-w-0">
+                  {!isFeature && (
+                    <span class="text-[0.55rem] font-black uppercase tracking-[0.1em] opacity-40 leading-none">{detail.label}</span>
+                  )}
+                  <span class="text-[0.75rem] font-bold text-current tracking-tight whitespace-nowrap overflow-hidden text-overflow-ellipsis leading-tight">
+                    {detail.value}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <!-- 4. Footer (Consolidated for vertical space saving) -->

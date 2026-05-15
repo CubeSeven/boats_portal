@@ -17,18 +17,28 @@ itinerary:
   - time: "09:00"
     label: "Departure"
     description: "Meet at Skiathos Old Port. Final equipment check and safety briefing."
+    lat: 39.1629
+    lng: 23.4912
   - time: "09:45"
     label: "Lalaria Beach"
     description: "Be the first to arrive at the white pebble paradise. Swim through the natural rock arch."
+    lat: 39.2066
+    lng: 23.4786
   - time: "11:00"
     label: "Blue Caves"
     description: "Explore the sea caves where the water glows electric blue. Perfect for swimming and photos."
+    lat: 39.2050
+    lng: 23.4750
   - time: "12:00"
     label: "Kastro Cove"
     description: "A final swimming stop beneath the medieval ruins of the ancient capital."
+    lat: 39.2075
+    lng: 23.4631
   - time: "13:30"
     label: "Return"
     description: "Arrive back at Skiathos port. Share photos and goodbye."
+    lat: 39.1629
+    lng: 23.4912
 includes:
   - item: "Professional Skipper"
     included: true

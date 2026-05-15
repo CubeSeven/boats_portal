@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import HeroSection from '../../components/sections/HeroSection.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
-import LocationMap from '../../components/sections/LocationMap.astro';
+import MultiPinMap from '../../components/maps/MultiPinMap.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
 import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
 import DynamicIcon from '../../components/ui/DynamicIcon.astro';
@@ -14,6 +14,16 @@ const whatsappNumber = site?.whatsapp?.replace(/[^0-9]/g, '') || '';
 
 const allLocations = await getCollection('locations');
 const locations = allLocations.sort((a, b) => a.data.order - b.data.order);
+
+const mapPins = locations
+  .filter(loc => loc.data.latitude != null && loc.data.longitude != null)
+  .map(loc => ({
+    lat: loc.data.latitude,
+    lng: loc.data.longitude,
+    label: loc.data.locationName,
+    sub: loc.data.heroSubtitle,
+    href: `/locations/${loc.id}/`,
+  }));
 ---
 
 <Layout 
@@ -73,7 +83,7 @@ const locations = allLocations.sort((a, b) => a.data.order - b.data.order);
         description="See our coverage across Skiathos. Hover over the pins to identify our operating points."
       />
       <div class="map-wrapper">
-        <LocationMap height="500px" />
+        <MultiPinMap pins={mapPins} height="500px" />
       </div>
     </div>
   </section>

@@ -6,6 +6,7 @@ import PricingTable from '../components/sections/PricingTable.astro';
 import FaqAccordion from '../components/sections/FaqAccordion.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import BookingWidget from '../components/sections/BookingWidget.astro';
+import RouteMap from '../components/maps/RouteMap.astro';
 import RelatedContent from '../components/sections/RelatedContent.astro';
 
 interface PricingRow {
@@ -28,6 +29,10 @@ interface Props {
   toLocation: string;
   duration: string;
   distance?: string;
+  originLat?: number;
+  originLng?: number;
+  destLat?: number;
+  destLng?: number;
   availability?: string;
   pricing?: PricingRow[];
   faqs?: FaqItem[];
@@ -47,6 +52,10 @@ const {
   toLocation,
   duration,
   distance,
+  originLat,
+  originLng,
+  destLat,
+  destLng,
   availability = '24/7, year-round',
   pricing = [],
   faqs = [],
@@ -106,6 +115,17 @@ const {
           <span class="rstat-value">{availability}</span>
         </div>
       </div>
+
+      {originLat != null && originLng != null && destLat != null && destLng != null && (
+        <section class="route-map-section reveal">
+          <h2>Route Map</h2>
+          <RouteMap
+            origin={{ lat: originLat, lng: originLng, label: fromLocation, sub: 'Departure' }}
+            destination={{ lat: destLat, lng: destLng, label: toLocation, sub: 'Arrival' }}
+            height="400px"
+          />
+        </section>
+      )}
 
       <!-- Main content slot -->
       <slot />
@@ -215,4 +235,7 @@ const {
   .route-main :global(p)  { color: var(--muted-foreground); line-height: 1.75; margin: 0 0 1rem; }
 
   .sidebar-sticky { position: sticky; top: 100px; }
+
+  .route-map-section { margin-top: 0; }
+  .route-map-section :global(h2) { font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--foreground); margin: 0 0 1rem; }
 </style>
