@@ -45,7 +45,7 @@ Most websites give you vague "from" prices. We're going to give you real numbers
 
 ## Private Tour Prices
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Private boat tours are priced per boat (not per person), making them excellent value for groups.
+Private boat tours are priced per boat (not per person), which makes them surprising value for groups. For 6 people splitting a full-day tour, you're looking at roughly €80–100 per person — and that's for a private boat, private skipper, and a custom itinerary.
 
 | Tour | Duration | Price |
 |---|---|---|
@@ -57,9 +57,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Private boat tours are 
 
 ## Water Taxi Prices
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
-
-| Route | Price (per boat, up to 8 pax) |
+Water taxi prices are per boat (up to 8 passengers) — not per person. For groups, splitting the fare makes it competitive with ferry tickets, especially when you factor in the door-to-door convenience: Price (per boat, up to 8 pax) |
 |---|---|
 | Skiathos → Volos | €350–400 |
 | Skiathos → Skopelos | €250–300 |
@@ -79,9 +77,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## Hidden Costs to Know About
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
-
-- **Fuel deposit:** €40–100 depending on boat, refunded if you return with fuel
+Knowing these upfront protects you from surprises on the dock: €40–100 depending on boat, refunded if you return with fuel
 - **Security deposit:** €200–500 held on card, released immediately on return
 - **Skipper add-on:** €80–130/day on top of rental price
 - **Snorkelling gear:** Usually included, sometimes €5/set
@@ -89,4 +85,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## How to Get the Best Price
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Book directly (not through aggregator platforms that add 15–20% commission). Book early for August dates. Book weekdays over weekends. Ask about multi-day discounts — we offer significant reductions for 3+ day rentals.
+Book directly through us, not through aggregator platforms that add 15–20% commission on top. Book early for August dates — this genuinely matters. Book weekdays over weekends for better rates and availability. And always ask about multi-day discounts: we offer significant reductions for 3+ day rentals that most people never think to ask about. [Check availability →](/boat-rental/)

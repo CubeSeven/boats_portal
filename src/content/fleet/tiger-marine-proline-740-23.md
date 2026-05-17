@@ -18,8 +18,8 @@ features:
   - "Large Storage Space"
   - "Professional Skipper Optional"
   - "Swimming Platform"
-description: "The 740 Proline is the sweet spot of our RIB fleet. Fast enough to cover the Sporades, yet efficient enough for a full day of exploration without high fuel costs. A versatile choice for families and groups."
+description: "7.4 metres, 200HP, seats 9. The sweet spot of the RIB fleet — fast enough to cover ground, efficient enough to not think about fuel. Big storage, swim platform, skipper optional."
 ---
 ## The Versatile Choice
 
-The Tiger Proline 740 is designed for those who want the performance of a large RIB with the agility of a smaller vessel. Its layout is optimized for movement, with plenty of space for gear and provisions.
+The Proline 740 is the RIB we recommend when someone wants performance but doesn't need the biggest boat in the fleet. 200HP moves 7.4 metres efficiently — you'll cover the whole south coast and the north without refuelling. Smart layout with loads of storage, a proper swim platform, and enough deck space that 9 people don't feel like sardines.

@@ -18,7 +18,7 @@ The honest answer: it depends entirely on what you want from the day.
 
 ## What Does a Skipper Actually Do?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our skippers are licensed, experienced local mariners who:
+Our skippers are licensed, experienced local mariners who have been navigating these waters since they were kids. Here's what they actually do on a typical booking:
 
 - Handle all navigation, engine operation, and anchoring
 - Know every secret beach, cave, and anchorage on the island
@@ -38,7 +38,7 @@ Skipper premium: approximately **€80–120** depending on season and duration.
 
 ## Who Should Choose a Skipper?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+Here's our honest assessment — no upsell, just what we tell people who walk into our office asking the same question:
 
 **Choose WITH skipper if you:**
 - Have never operated a boat
@@ -56,4 +56,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## Our Honest Take
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. For first-timers, couples on a special occasion, or anyone crossing to another island: the skipper pays for itself in stress reduction and local knowledge alone. For experienced boaters who know exactly where they want to go: self-drive every time.
+For first-timers, couples on a special occasion, or anyone crossing to another island: the skipper pays for itself in stress reduction and local knowledge alone. You get to enjoy the day instead of managing it. For experienced boaters who know exactly where they want to go and are comfortable with Aegean conditions: self-drive every time — it's cheaper and you get total control of the day. [Book with a skipper →](/boat-rental/with-skipper/)

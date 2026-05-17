@@ -18,9 +18,9 @@ features:
   - "Sun Deck & Cabin"
   - "Bluetooth Speaker"
   - "Modern 2025 Model"
-description: "The 2025 Karel Odussea is where luxury meets power. A 300HP engine ensures you're never late to the next cove, while the high-spec cabin and sun deck provide all the comfort of a larger yacht."
+description: "Brand new for 2025. 7 metres, 300HP, seats 9. Cabin, sun deck, Bluetooth sound. The sweet spot between a day cruiser and a small yacht — fast enough for island hopping, comfortable enough for a sunset dinner on board."
 ---
 
 ## Luxury Meets Performance
 
-New for 2025, the Odussea is designed for those who want prestige without the size of a yacht. It's fast, elegant, and perfect for sunset cruises or high-speed island hopping.
+The Odyssea is new to our fleet and already booking out. 300HP pushes 7 metres to cruising speeds that make island-hopping feel effortless. Below deck there's a cabin with actual beds. Above, a sun deck and sound system. It's the boat for a sunset cruise where you want to feel like you made an effort.

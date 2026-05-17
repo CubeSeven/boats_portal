@@ -18,9 +18,9 @@ features:
   - "Luxury Upholstery"
   - "High-Performance Engine"
   - "Extended Sun Deck"
-description: "Welcome to the future of day boating. Our 2026 Tiger Topline is a brand-new addition to the fleet, offering the latest in comfort and technology. Featuring an extended sun deck and premium seating, it's designed for pure relaxation."
+description: "Brand new for 2026. 7.8 metres, 300HP, seats 10. Extended sun deck, premium upholstery, latest tech. Skipper included — you're here to relax, not to navigate."
 ---
 
 ## 2026 Flagship Addition
 
-The 2026 Topline is one of the newest boats in Skiathos. With its mandatory skipper, you can simply step on board and enjoy a worry-free day of luxury cruising.
+The newest boat in our fleet — 2026 model, fresh off the production line. Skipper mandatory (you're paying for the experience, not the driving lesson). Extended sun deck, seating that feels more like a lounge than a boat, and a sound system that actually works. Step on, sit down, let someone else do the rest.

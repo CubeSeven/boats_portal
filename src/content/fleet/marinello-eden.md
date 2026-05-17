@@ -18,15 +18,15 @@ features:
   - "Spacious Seating Area"
   - "Bimini Sun Canopy"
   - "License or Skipper Required"
-description: "A 6.2-meter Italian-manufactured boat with a 115HP engine. Accommodates up to 7 people. Known for being spacious with plenty of seating and a canopy, it's great for day cruising."
+description: "6.2 metres of Italian design, 115HP, seats 7. Deep-V hull keeps you dry, big sun canopy, premium finishes. License required — or add a skipper and let someone else worry about the lines."
 ---
 
 ## Italian Elegance
 
-The Marinello Eden is a masterpiece of Italian design. Its deep hull ensures a dry ride, while the 115HP engine provides plenty of punch for coastal exploration. It is a spacious boat with plenty of seating and a large sun canopy, making it ideal for a day on the water.
+Italian boat builders have a reputation for making things look good, and the Marinello Eden delivers. The deep-V hull cuts through chop cleanly — you'll stay dry even when the afternoon wind picks up. With seating for 7 and a full canopy, it's the right size for two families or a big group of friends.
 
 ## Features
 
-- **Space**: Plenty of room for up to 7 passengers.
-- **Comfort**: Large sun canopy for shade during the hot Greek summer.
-- **Quality**: High-quality Italian craftsmanship and reliable marine hardware.
+- **Space**: 7 seats with room to move — not shoulder-to-shoulder.
+- **Shade**: Full bimini canopy, essential in Greek summer.
+- **Build**: Italian craftsmanship, quality hardware that holds up.

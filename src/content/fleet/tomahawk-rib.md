@@ -18,9 +18,9 @@ features:
   - "Great in Choppy Water"
   - "Ladder & Canopy"
   - "GPS Plotter"
-description: "The Tomahawk is our entry-level performance RIB. It offers the stability and safety of a rigid inflatable at a very accessible price point. Great for groups of up to 8 looking for an active day."
+description: "6 metres, 140HP, seats 8. The entry-level RIB that doesn't feel entry-level. Great in chop, GPS plotter, ladder and canopy included. For groups who want RIB stability without the big-boat budget."
 ---
 
 ## Entry-Level Performance
 
-Don't let its size fool you — the Tomahawk can handle the waves. It's the perfect 'adventure' boat for families who want to explore beyond the standard tourist spots.
+The Tomahawk punches above its weight. At 6 metres with 140HP, it's not the biggest RIB in the fleet, but the inflatable collar gives it stability that a hard-hull boat this size can't match. GPS plotter means you won't get lost. Swim ladder means you won't struggle getting back on board. For the price, it's hard to beat.

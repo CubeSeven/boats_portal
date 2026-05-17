@@ -18,9 +18,9 @@ features:
   - "Bimini Shade"
   - "Swimming Ladder"
   - "Reliable 2024 Build"
-description: "The Top Line 200 is a perfect mid-tier rental. Fast, responsive, and spacious enough for two families, it offers a great balance of speed and comfort for a full day on the water."
+description: "6.5 metres, 200HP, seats 8. The mid-tier sweet spot — responsive enough for tubing, comfortable enough for all-day cruising. Bimini shade, swim ladder, and a hull that's easy to handle."
 ---
 
 ## Reliable Mid-Range Boating
 
-A favorite for local exploration, the Top Line is sturdy and easy to handle. Its 200HP engine provides plenty of torque for pulling tubes or cruising at 25 knots.
+The Top Line 200 is the boat people come back to rent again. 200HP gives it proper acceleration — fun for towing tubes or just getting to the next cove before everyone else. Handles predictably at all speeds, which matters when you've got kids on board. Good for two families or a big group of friends who want a day that's more active than floaty.

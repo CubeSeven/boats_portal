@@ -1,7 +1,7 @@
 ---
 slug: "17-lalaria-beach-boat-only"
 title: "Lalaria Beach: Skiathos's Boat-Only Paradise — How to Visit"
-description: "Lalaria is Skiathos's most iconic beach — and you can only reach it by boat. White pebbles, turquoise water, and the famous sea arch. Here's everything you need to know."
+description: "Lalaria is Skiathos's most iconic beach — and you can only reach it by boat. White pebbles, turquoise water, and the famous sea arch. Timing, access, what to bring, and how to beat the tour boats."
 pubDate: "2026-05-03"
 readTime: 6
 category: "destination"

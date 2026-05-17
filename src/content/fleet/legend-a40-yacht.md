@@ -19,12 +19,12 @@ features:
   - "Skipper Mandatory"
   - "2 Cabins"
   - "Host / Hostess on Request"
-description: "A 12.5-meter luxury motorboat powered by twin 350HP engines. It accommodates up to 12 people and features two cabins. Step inside the Legend A40 and experience a world of elegance and convenience. The interior offers a welcoming atmosphere, complete with a galley and lounge area, perfect for dining and entertaining."
+description: "A 12.5-metre luxury motor yacht with twin 350HP engines, two cabins, and space for 12 guests. Galley kitchen, lounge area, sun deck — this is the boat you book when you want the day to feel like an event. Skipper included."
 ---
 
 ## Spacious and Stylish
 
-Step inside the Legend A40 and experience a world of elegance and convenience. The interior offers a welcoming atmosphere, complete with a galley and lounge area, perfect for dining and entertaining.
+The Legend A40 is the boat you book when a normal RIB won't cut it. Two cabins (yes, actual beds), a galley kitchen, a lounge that seats 12, and a deck layout designed for entertaining. It's not a ferry ride with snacks — it's a private venue on the water that happens to move.
 
 ## Important Notes
 

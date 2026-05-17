@@ -12,7 +12,7 @@ tags: ["Krifi Ammos", "beaches", "Skiathos", "hidden", "remote", "north coast", 
 
 ## About Krifi Ammos
 
-Krifi Ammos translates to "Hidden Sand" in Greek — and the name is earned honestly. This secluded, partly-organized sandy cove is tucked away on Skiathos's far northern coast, approximately 15 km from Skiathos Town. Surrounded by lush green hills that completely conceal it from view until you're right upon it, Krifi Ammos is Skiathos at its most secretive.
+Krifi Ammos translates to "Hidden Sand" in Greek — and the name is earned honestly. This secluded, partly-organized sandy cove sits on Skiathos's far northern coast, approximately 15 km from Skiathos Town. Surrounded by lush green hills that completely conceal it from view until you're right upon it, Krifi Ammos is Skiathos at its most secretive.
 
 ## Getting There
 

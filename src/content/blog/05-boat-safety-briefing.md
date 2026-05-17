@@ -18,7 +18,7 @@ This guide gives you the honest picture.
 
 ## Understanding the Meltemi Wind
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. The Meltemi is a strong, dry north wind that dominates the Aegean in summer, typically from late June through August. It's perfectly predictable once you know how to read the signs.
+The Meltemi is a strong, dry north wind that sweeps down from the Balkans and dominates the Aegean in summer, typically from late June through August. It's intimidating on paper, but perfectly predictable once you know how to read the signs — whitecaps forming, flag direction, the wind line moving across the water.
 
 **Key facts:**
 - Strongest between 12:00–18:00, typically calms by evening
@@ -39,12 +39,12 @@ We check and restock all equipment before every rental.
 
 ## The Safety Briefing
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Every rental starts with a mandatory safety briefing from one of our team. We cover engine start/stop, throttle control, anchoring, navigating in shallow water, and emergency procedures. No jargon — just clear, practical information.
+Every rental starts with a mandatory safety briefing from one of our team — usually at the boat, on the water, so you can hear the engine and feel the controls. We cover starting and stopping, throttle control, anchoring in sand vs rock, reading depth, and emergency procedures. No jargon — just clear, practical information you'll actually remember.
 
 ## What to Do in an Emergency
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In the event of engine failure, call us immediately on our emergency line. We monitor all rentals via GPS tracker. Hellenic Coast Guard emergency line: **108** (free from any phone).
+In the rare event of engine failure, call us immediately on our emergency line — we monitor all rentals via GPS tracker and can pinpoint your location within seconds. For serious emergencies at sea, the Hellenic Coast Guard emergency line is **108** (free from any phone, on any Greek mobile network).
 
 ## Our Verdict for Beginners
 
-If you're nervous, start with a no-license boat on a calm morning. Stick to the south coast. By lunchtime you'll be confident enough to explore further. We've never had a rental where a beginner wasn't completely comfortable within the first 30 minutes on the water.
+If you're nervous, start with a no-license boat on a calm morning. Stick to the south coast. By lunchtime you'll be confident enough to explore further. We've never had a rental where a beginner wasn't completely comfortable within the first 30 minutes on the water. [See our no-license fleet →](/boat-rental/no-license-required/)

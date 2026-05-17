@@ -18,9 +18,9 @@ features:
   - "Shade Included"
   - "Reliable Engine"
   - "Easy Mooring"
-description: "KOSTADIS is a reliable, straightforward motorboat perfect for those who want a simple, no-fuss day at sea. It's easy to drive, easy to park, and very economical on fuel."
+description: "5.5 metres, 100HP, seats 6. Straightforward, no-fuss motorboat that's easy on fuel and even easier to park. For people who want to spend the day swimming, not worrying about the boat."
 ---
 
 ## Reliable & Practical
 
-A true workhorse of the Skiathos rental market, KOSTADIS is perfect for those who want to focus on the destination rather than the vessel. It's sturdy, dependable, and provides a great view of the coast.
+Not every boat needs to be the fastest or flashiest. The Kostadis is the rental boat equivalent of a reliable car — it starts every time, sips fuel, and gets you where you're going. If your plan is 'anchor off a beach and swim all day,' this is the boat for that plan.

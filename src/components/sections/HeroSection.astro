@@ -1,4 +1,6 @@
 ---
+import Picture from '../ui/Picture.astro';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -48,7 +50,7 @@ const sizeClasses = {
   <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
     {backgroundImage ? (
       <div class="absolute inset-0 z-0 hero-zoom">
-        <img src={backgroundImage} alt="" class="w-full h-full object-cover" loading="eager" />
+        <Picture src={backgroundImage} alt="" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent"></div>
       </div>

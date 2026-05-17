@@ -18,13 +18,13 @@ features:
   - "License-Free (No License Required)"
   - "Bimini Sun Shade"
   - "Swimming Ladder"
-description: "A 5.6-meter boat with a 30HP engine, suitable for 5 people. The Quicksilver 555 Open brings modern design and best quality to the self-drive market, offering comfort and smooth driving for a family day out."
+description: "A 5.6-metre self-drive boat from one of the most respected names in small craft. 30HP engine (no license required), wide-beam hull for stability, spacious bow seating, and a proper swimming ladder. Seats 5 comfortably. The boat you want when you care about build quality."
 ---
 
 ## Modern Self-Drive Luxury
 
-Quick Silver is a well-known brand for its high-quality boats. The 555 Open brings modern design and comfortable seating to the self-drive market. It handles beautifully and provides a safe, stable platform for a day of family fun.
+Quicksilver has been building small boats for decades, and the 555 Open shows why. The wide-beam hull keeps things planted even when the wind gets up, and the bow seating layout means everyone's facing the right direction — forward, toward whatever beach you're heading to.
 
 ## Effortless Exploration
 
-Available for rent without a license, the Quicksilver 555 Open is incredibly easy to operate. With its wide-beam hull and spacious bow seating, it feels like a much larger vessel, ensuring you explore the Sporades in total comfort.
+No license, no drama. The 30HP engine is smooth and quiet, the controls are intuitive, and our briefing covers everything you need to know. If you've never driven a boat before, this is probably the easiest one in our fleet to get comfortable with.

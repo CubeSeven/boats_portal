@@ -19,7 +19,7 @@ Both are accessible only by boat. Both are jaw-dropping. So which do you visit f
 
 ## Lalaria: The White Pebble Wonder
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl vel ultricies lacinia. The beach is famous for its brilliant white oval pebbles, vivid turquoise water, and the natural rock arch (Tripia Petra) that frames the bay.
+Picture this: you approach Lalaria from the south, and the limestone cliffs rise 50 metres above you — sheer white rock plunging into water so blue it looks fake. The beach is famous for its brilliant white oval pebbles, vivid turquoise water, and the natural rock arch (Tripia Petra) that frames the bay.
 
 **Best time to visit:** Morning — before the tour boats arrive (before 11am).
 
@@ -31,7 +31,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl ve
 
 ## Kastro: The Ghost Village
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Built in the 13th century as protection against pirate raids, Kastro was the island's capital for 500 years before being abandoned in 1829.
+Kastro feels different the moment you spot it from the water — a cluster of crumbling stone houses clinging to a cliff with nothing but sea and sky behind it. Built in the 13th century as protection against pirate raids, Kastro was the island's capital for 500 years before being abandoned in 1829.
 
 **Best time to visit:** Late afternoon — the light hits the stone ruins perfectly after 4pm.
 
@@ -43,4 +43,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Built in the 13th centu
 
 ## The Verdict
 
-**Go to Lalaria first** if you're prioritising swimming and photography. **Go to Kastro first** if you want history and solitude. Ideally, do both on the same day — they're 20 minutes apart by boat.
+**Go to Lalaria first** if you're prioritising swimming and photography. **Go to Kastro first** if you want history and solitude. Ideally, do both on the same day — they're 20 minutes apart by boat. [Book a Lalaria & Blue Caves private tour →](/private-boat-tours/lalaria-blue-caves/)

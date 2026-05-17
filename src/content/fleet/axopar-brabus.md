@@ -19,19 +19,19 @@ features:
   - "Luxury Cabin & Sun Deck"
   - "Premium Sound System"
   - "Snorkelling Gear Included"
-description: "The Axopar Brabus Shadow is our flagship luxury encounter. Combining high-performance twin 600HP engines with unparalleled comfort, it is the ultimate way to experience the Aegean in total sophistication. Only available with our professional skipper."
+description: "The flagship of our fleet. Twin 300HP Mercury V8s, 11-metre hull, luxury cabin, and a sun deck meant for someone else to be jealous of. Skipper mandatory — you're here to enjoy, not to drive."
 ---
 
 ## The Ultimate Aegean Experience
 
-The Axopar Brabus represents the pinnacle of modern boat design. Known for its 'shadow' aesthetic and aggressive hull design, this vessel slices through the waves with effortless grace, even in choppy Aegean conditions.
+The Axopar Brabus is the boat people stop and stare at in the harbour. Its aggressive 'shadow' hull cuts through Aegean chop like it's not there. With twin 300HP Mercury V8s, Skopelos is 35 minutes away instead of two hours on a ferry.
 
 ## Features & Comfort
 
-- **Performance**: Reach Skopelos or Alonissos in record time without sacrificing comfort.
-- **Luxury**: High-end upholstery, social seating areas, and a spacious sun deck for tanning.
-- **Equipment**: State-of-the-art navigation, Bluetooth audio, and a fresh-water shower.
+- **Performance**: Twin 300HP Mercury V8s — Skopelos in 35 min, Alonissos in under an hour.
+- **Comfort**: High-end upholstery, social seating for 11, a sun deck you'll struggle to leave, and a fresh-water shower for rinsing off the salt.
+- **Sound**: Bluetooth audio system — play whatever you want, as loud as the Aegean allows.
 
 ## Safety & Service
 
-This vessel is exclusively offered with a professional captain (mandatory). Relax with a glass of champagne while our skipper takes you to the most secluded bays on the island.
+This boat comes with a professional captain — mandatory. That's the point. You're not driving a 600HP machine; you're sitting on the bow with a drink in your hand while someone who knows every cove on the island handles the rest.

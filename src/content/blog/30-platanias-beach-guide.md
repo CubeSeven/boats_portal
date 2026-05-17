@@ -49,7 +49,7 @@ Platanias is approximately 500 metres of golden sand. The water is exceptionally
 Anchor in 3–5 metres on sand. The beach is long and open — plenty of anchoring space. Watch for swim zones marked by buoys.
 
 ### Nearby Beaches to Combine
-- **Kolios** (300m west, 2 minutes by boat) — smaller, picturesque cove with a traditional taverna
+- **Kolios** (300m west, 2 minutes by boat) — smaller cove with a traditional taverna
 - **Agia Paraskevi** (700m east, 3 minutes by boat) — large organized beach with a church
 - **Vromolimnos** (1 km west) — beach bars and watersports
 - **Troulos** (2.5 km west) — sheltered family beach

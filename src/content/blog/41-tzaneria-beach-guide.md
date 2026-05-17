@@ -12,7 +12,7 @@ tags: ["Tzaneria", "beaches", "Skiathos", "diving", "scuba", "boat rental", "sou
 
 ## About Tzaneria Beach
 
-Tzaneria is a small, attractive sandy cove on Skiathos's south coast, approximately 7 km southwest of Skiathos Town. Nestled between Kanapitsa and Vromolimnos, it's backed by trees and is known for two things: its PADI dive centre and its well-organized, family-friendly setup. It's less busy than its neighbours, offering a more relaxed experience with the unique addition of scuba diving.
+Tzaneria is a small, attractive sandy cove on Skiathos's south coast, approximately 7 km southwest of Skiathos Town. Between Kanapitsa and Vromolimnos, backed by trees, it's known for two things: its PADI dive centre and its well-organized, family-friendly setup. It's less busy than its neighbours, offering a more relaxed experience with the unique addition of scuba diving.
 
 ## Getting There
 

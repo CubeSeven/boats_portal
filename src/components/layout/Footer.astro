@@ -135,30 +135,4 @@ const socials = [
   </div>
 </footer>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": site?.seo.siteName,
-  "url": Astro.site,
-  "telephone": site?.phone,
-  "email": site?.email,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": site?.address.split(',')[0],
-    "addressLocality": "Skiathos",
-    "addressRegion": "Thessaly",
-    "postalCode": "37002",
-    "addressCountry": "GR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "39.1624",
-    "longitude": "23.4920"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "08:00",
-    "closes": "20:00"
-  }
-})} />
+<!-- LocalBusiness schema is injected globally by Layout.astro -->

@@ -4,7 +4,7 @@ title: Luxury Yacht Charter
 seoTitle: Luxury Yacht Charter Skiathos & Sporades | Private Crewed Yachts | Skiathos Boats
 description: Private luxury yacht charter in Skiathos and the Sporades. Motor and sailing yachts with full crew, catering, and bespoke itineraries. From €950 per day.
 heroTitle: Luxury Yacht Charter<br/>in the Sporades
-heroSubtitle: The ultimate Aegean experience. Private crewed yachts, bespoke itineraries, and the kind of service that makes extraordinary days.
+heroSubtitle: Private crewed yachts, bespoke itineraries, and the level of service that turns a boat trip into something you'll still be talking about years later.
 heroGradient: sunset
 icon: gem
 href: /boat-rental/luxury-yacht-charter/

@@ -61,4 +61,4 @@ faqs:
 
 Greece is one of the few countries in the world where you can legally rent and operate a motor boat without any qualification or prior experience. Boats up to 30HP are classified as leisure craft — all you need is your passport and a sense of adventure.
 
-Our no-license fleet features modern, easy-to-handle vessels. These boats are stable, fully equipped, and perfect for families, couples, and first-time boaters exploring Skiathos' stunning coastline.
+Our no-license fleet features modern, easy-to-handle vessels. These boats are stable, fully equipped, and the best way for families, couples, and first-timers to explore the Skiathos coastline on their own terms.

@@ -1,4 +1,6 @@
 ---
+import Picture from '../ui/Picture.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -22,11 +24,12 @@ const {
     <div class="card-content">
       {image && (
         <div class="h-[160px] relative overflow-hidden border-b border-border">
-          <img
+          <Picture
             src={image}
             alt={title}
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-[var(--duration-slow)] ease-[var(--ease-premium)] group-hover:scale-105"
             loading="lazy"
+            decoding="async"
           />
         </div>
       )}

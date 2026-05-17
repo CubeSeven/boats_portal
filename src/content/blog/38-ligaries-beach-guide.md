@@ -1,7 +1,7 @@
 ---
 slug: "38-ligaries-beach-guide"
 title: "Ligaries Beach Skiathos: The Turquoise Cove Between Kastro and Kechria"
-description: "Ligaries is an idyllic sandy and pebbly beach on Skiathos's northwest coast, with stunning turquoise water and a backdrop of imposing green hills. Best visited by boat."
+description: "Ligaries is a sandy and pebbly beach on Skiathos's northwest coast, with clear turquoise water and imposing green hills as a backdrop. Between Kastro and Kechria — best visited by boat."
 pubDate: "2026-05-24"
 readTime: 5
 category: "destination"
@@ -12,7 +12,7 @@ tags: ["Ligaries", "beaches", "Skiathos", "northwest", "turquoise", "boat rental
 
 ## About Ligaries Beach
 
-Ligaries sits on Skiathos's northwest coast at approximately 11 km from Skiathos Town, positioned between Kastro Beach to the east and Kechria to the west. It's part of a spectacular stretch of north-coast beaches that includes some of the island's most beautiful and least-visited spots. With turquoise water, a mix of sand and pebbles, and imposing green hills behind, Ligaries is a stunning destination for those willing to venture beyond the south-coast bus route.
+Ligaries sits on Skiathos's northwest coast at approximately 11 km from Skiathos Town, positioned between Kastro Beach to the east and Kechria to the west. It's part of a spectacular stretch of north-coast beaches that includes some of the island's most beautiful and least-visited spots. With turquoise water, a mix of sand and pebbles, and imposing green hills behind, Ligaries rewards the trip north.
 
 ## Getting There
 
@@ -27,7 +27,7 @@ A water taxi from Skiathos Town takes about 25 minutes. Cost: approximately €4
 
 ## The Beach
 
-Ligaries is approximately 200 metres of mixed sand and pebbles with stunning turquoise water. The imposing green hills directly behind create one of the most dramatic backdrops on the north coast. The beach is partly organized — a seasonal beach bar provides basic services.
+Ligaries is approximately 200 metres of mixed sand and pebbles with vivid turquoise water. The imposing green hills directly behind create one of the most dramatic backdrops on the north coast. The beach is partly organized — a seasonal beach bar provides basic services.
 
 ### Facilities
 - Limited sunbeds (€8–10 per set, seasonal)

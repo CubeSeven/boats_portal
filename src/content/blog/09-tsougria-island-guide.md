@@ -19,17 +19,17 @@ It's one of the most popular short boat trips from Skiathos — and for good rea
 ## How to Get There
 
 ### Option 1: Day-Trip Caique (€10 per person)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Several traditional wooden caiques (open boat ferries) depart Skiathos Old Port for Tsougria every morning between 9:30–11:00. Return trips run 14:00–17:00. Simple, cheap, but limited to their schedule.
+Several traditional wooden caiques (open boat ferries) depart Skiathos Old Port for Tsougria every morning between 9:30–11:00. Return trips run 14:00–17:00. Simple, cheap, but you're on their schedule — and in August those caiques can be packed.
 
 ### Option 2: Water Taxi (€30–50 per boat)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Private water taxis from the port run on demand. You choose your departure and return time. Better if you want the island to yourselves in the early morning.
+Private water taxis from the port run on demand — call or WhatsApp us and we'll send one. You choose your departure and return time. Better if you want the island to yourselves in the early morning, before the caiques arrive.
 
 ### Option 3: Rent a Boat — Best Option
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. The 30HP Olympic 450 no-license boat reaches Tsougria in 20–25 minutes from Skiathos port. You arrive when you want, stay as long as you want, and can combine with other stops (Arkos island, Tsoungrias smaller sister, is adjacent). Total freedom.
+The 30HP Olympic 450 no-license boat reaches Tsougria in 20–25 minutes from Skiathos port. This is our recommended option: you arrive when you want, stay as long as you want, and can combine with a stop at nearby Arkos island (Tsougria's smaller sister, adjacent). Total freedom, no timetable.
 
 ## What to Do There
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+The island doesn't have much infrastructure — that's the appeal — but here's what's worth your time:
 
 - **Main beach (Mega Amos):** 200m sandy beach, calm water, seasonal snack bar. Loungers for hire.
 - **Micro Amos:** The smaller northern beach. Quieter, better snorkelling. Accessible by a 5-min path.
@@ -40,4 +40,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 Early June and September are ideal — less crowded, water still warm. In August, arrive before 9am or after 4pm to avoid the caique rush.
 
-**Distance from Skiathos port:** ~3 nautical miles (20–25 min by motorboat)
+**Distance from Skiathos port:** ~3 nautical miles (20–25 min by motorboat). [Rent a boat to Tsougria →](/boat-rental/)

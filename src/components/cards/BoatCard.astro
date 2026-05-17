@@ -1,4 +1,6 @@
 ---
+import Picture from '../ui/Picture.astro';
+
 interface Spec {
   label: string;
   value: string;
@@ -41,10 +43,12 @@ const isNoLicense = type.toLowerCase().includes('no-license');
       <div class="relative w-full aspect-[4/3] overflow-hidden bg-muted">
         <!-- Main Image -->
         {image ? (
-          <img 
-            src={image} 
+          <Picture
+            src={image}
             alt={name}
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[var(--duration-slow)]"
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <div class="absolute inset-0 placeholder-neutral group-hover:scale-105 transition-transform duration-[var(--duration-slow)]"></div>

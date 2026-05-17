@@ -18,13 +18,13 @@ features:
   - "Plenty of Seating"
   - "Large Bimini Canopy"
   - "Skipper / License Required"
-description: "A 5.8-meter boat with a 90HP engine, fitting up to 7 people. Karel, a Greek Boat Company making hardy and reliable vessels, provides plenty of seating and a canopy. Great for family day cruising."
+description: "5.8 metres, 90HP, seats 7. Greek-built, stable hull, big sun canopy. A proper family day boat — reliable, roomy, and easy to drive. License required (or add a skipper)."
 ---
 
 ## Reliable & Hardy
 
-The Karel Ithaca is a Greek-manufactured vessel known for its reliability and stable hull. It offers plenty of seating and a large sun canopy, making it an excellent choice for families or groups of friends who want to explore the coastline in comfort.
+The Karel Ithaca is what most people picture when they think 'rent a boat in Greece.' Greek-made, built to last, with enough seating for a group of friends and a big canopy for shade. The 90HP engine gives it enough punch to reach the north coast without burning through fuel.
 
 ## Family Day Cruising
 
-With its 90HP engine, the Ithaca is agile and capable, providing a smooth ride even in choppy waters. It's the perfect platform for a full day of swimming, snorkeling, and discovering hidden coves.
+The 90HP engine hits the sweet spot — fast enough to cover distance, efficient enough that you won't spend the day worrying about fuel. Stable in the turns, predictable in the chop, and easy to park. If you've got a license and a group of 5-7, this is the boat.

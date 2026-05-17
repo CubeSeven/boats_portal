@@ -1,7 +1,7 @@
 ---
 slug: "36-kastro-beach-guide"
 title: "Kastro Beach Skiathos: The Medieval Castle Beach — Boat Access Guide"
-description: "Kastro Beach sits beneath the ancient castle ruins on Skiathos's north coast. Secluded, sandy, breathtakingly scenic, and best reached by boat. Your complete guide."
+description: "Kastro Beach sits beneath the ancient castle ruins on Skiathos's north coast. Secluded, sandy, properly dramatic, and best reached by boat. Your complete guide."
 pubDate: "2026-05-22"
 readTime: 6
 category: "destination"

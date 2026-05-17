@@ -18,9 +18,9 @@ features:
   - "Family Friendly"
   - "Easy Handling"
   - "Sun Canopy"
-description: "The Karel Pacific is designed for family comfort. With high sides and a spacious walk-around deck, it's the safest and most enjoyable way to cruise the Skiathos coastline with the kids."
+description: "Built for families. 6.8 metres, 150HP, seats 9. Walk-around deck, high sides (toddler-proof), and a hull that stays flat at anchor. The boat our staff recommend to their own relatives with kids."
 ---
 
 ## Family Comfort & Safety
 
-The Pacific hull is known for being exceptionally stable at anchor. It's the boat you want if you have small children or elders on board, providing deep seating and easy access everywhere.
+The Pacific hull was designed for exactly one thing: keeping a family comfortable and dry. High sides mean small children can't wander overboard. The walk-around deck means you can move bow to stern without stepping over seats. And at anchor, it barely rocks — which matters when you've got a toddler napping under the canopy.

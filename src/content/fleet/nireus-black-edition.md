@@ -18,13 +18,13 @@ features:
   - "Ideal for Couples and Families"
   - "Sleek Black Aesthetic"
   - "30/40 HP Engine"
-description: "A 5-meter boat with a 30/40HP engine, accommodating up to 5 people. This special edition Greek-manufactured boat is ideal for couples and families who want to be their own captain without needing a license."
+description: "The best-looking no-license boat on the island. 5 metres, 30/40HP, all-black Greek-built special edition. Seats 5, handles beautifully, and looks like something that costs twice as much. For couples and families who want to turn heads at the dock."
 ---
 
 ## Style Without a License
 
-The Nireus Black Edition is the most stylish no-license boat in Skiathos. Combining a sleek black aesthetic with premium comfort features, it's proof that you don't need a license to cruise in style.
+Let's be honest — most no-license rental boats look like rental boats. The Nireus Black Edition doesn't. All-black hull, clean lines, premium trim. It's proof you can rent a boat without a license and still look like you know what you're doing.
 
 ## Perfect for Everyone
 
-Ideal for couples or small families, the Black Edition is incredibly easy to drive. We provide full training before you leave the harbor, so you can captain your own ship for the day and find your own private paradise.
+Built for couples and small families who want their own boat for the day. Easy to drive, stable at anchor, and small enough to squeeze into coves the bigger boats can't reach. Full briefing included — you'll be confident within the first 15 minutes.

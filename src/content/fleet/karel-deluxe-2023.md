@@ -18,9 +18,9 @@ features:
   - "Ideal for 2 Persons"
   - "Sun Shade"
   - "Easy to Mooring"
-description: "The Karel Sporades is our most accessible boat. Perfect for a couple on a budget who wants to escape the crowded beaches and find their own quiet spot for a swim."
+description: "Our most affordable rental. 4 metres, 30HP, seats 2. No license needed. Small enough to park anywhere, cheap enough to book on a whim. For couples who just want to get on the water without overthinking it."
 ---
 
 ## Simple & Fun
 
-Small, easy to drive, and very economical. The Karel Sporades is all about simplicity. Get the training, get the map, and go explore.
+If you've never rented a boat before and you're not sure it's for you, start here. The Karel Sporades is the smallest, easiest, and cheapest boat in our fleet — and for two people with a packed lunch and a loose plan, it's all you actually need. Pick a beach, point the bow, go.

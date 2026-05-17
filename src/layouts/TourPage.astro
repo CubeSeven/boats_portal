@@ -80,7 +80,7 @@ const allBoats = await getFleet();
 const tourBoats = allBoats.filter(b => boats.includes(b.id));
 ---
 
-<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl}>
+<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl} ogImage={image}>
   <HeroSection
     title={heroTitle}
     subtitle={heroSubtitle}
@@ -251,7 +251,7 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
     collection="tours" 
     currentId={id} 
     title="Other Tours We Recommend"
-    subtitle="Discover more hidden gems around Skiathos and the nearby islands."
+    subtitle="Discover more of Skiathos and the nearby islands."
   />
 
   <CtaBanner

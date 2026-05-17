@@ -12,7 +12,7 @@ tags: ["Elias", "Elia", "beaches", "Skiathos", "secluded", "west coast", "boat r
 
 ## About Elias Beach
 
-Elias (also called Elia or Helias) is one of Skiathos's most enchanting and remote beaches. Located 16 km west of Skiathos Town on the island's far western coast, it's a sandy cove completely surrounded by lush green hills that create a natural amphitheatre. The setting has an almost tropical feel — azure water, golden sand, and dense green vegetation cascading to the shoreline.
+Elias (also called Elia or Helias) is one of Skiathos's most remote beaches — and one of the best-looking. Located 16 km west of Skiathos Town on the island's far western coast, it's a sandy cove completely surrounded by lush green hills that create a natural amphitheatre. The setting has an almost tropical feel — clear water, golden sand, and dense green vegetation cascading to the shoreline.
 
 ## Getting There
 
@@ -27,7 +27,7 @@ A water taxi from Skiathos Town takes about 40–45 minutes. Cost: approximately
 
 ## The Beach
 
-Elias is approximately 200 metres of golden sand, with exceptionally clear azure water. It's partly organized — a small seasonal beach bar provides drinks and basic food, and there are a few sunbeds. The surrounding hills provide natural shelter and shade at different times of day.
+Elias is approximately 200 metres of golden sand, with exceptionally clear water. It's partly organized — a small seasonal beach bar provides drinks and basic food, and there are a few sunbeds. The surrounding hills provide natural shelter and shade at different times of day.
 
 ### Facilities
 - Limited sunbeds (€8–10 per set, seasonal)

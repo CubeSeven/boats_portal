@@ -17,7 +17,7 @@ When Mamma Mia filmed on location in 2007, Skiathos and Skopelos became instant 
 
 ## Departure: Skiathos Old Port
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Your journey begins at Skiathos' old port. We recommend departing by **9:00am** to avoid the midday heat and arrive at Skopelos Town before the day-tripper crowds.
+Your journey begins at Skiathos' old port — arrive 15 minutes early for your safety briefing and to meet your skipper (if you've booked one). We recommend departing by **9:00am** to avoid the midday heat and arrive at Skopelos Town before the day-tripper crowds.
 
 **Journey time:** ~50 minutes at moderate speed in the Compass 165 or Marinco RIB.
 
@@ -27,7 +27,7 @@ A secluded pebble beach on Skiathos' eastern coast, rarely visited by tourists. 
 
 ## Stop 2: Skopelos Town (50 min from port)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices. The capital of Skopelos island is a picture-perfect cube of white-washed houses cascading down to the harbour.
+The capital of Skopelos island is a picture-perfect cube of white-washed houses cascading down to the harbour. There's a quiet charm here that Skiathos Town's bustle doesn't quite match — slower pace, narrower alleys, more cats sleeping on doorsteps.
 
 - Moor at the main quay (free for day visitors)
 - Visit the harbour church (filmed in the movie)
@@ -41,6 +41,6 @@ The 215-step climb is worth every step. The tiny whitewashed chapel sits at the 
 
 ## Return: Sunset Route
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. We recommend the northern return route past Agnontas bay for a different perspective on Skopelos' coastline before crossing back to Skiathos.
+We recommend the northern return route past Agnontas bay for a different perspective on Skopelos' coastline before crossing back to Skiathos. The light on the return leg is usually extraordinary — late afternoon sun hitting the west-facing cliffs at a low angle.
 
-Estimated total trip time: **8–9 hours**. This is a full-day adventure. Depart 9am, return by 6pm.
+Estimated total trip time: **8–9 hours**. This is a full-day adventure. Depart 9am, return by 6pm. [Book the Mamma Mia private tour →](/private-boat-tours/mamma-mia-skopelos/)

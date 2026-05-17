@@ -24,7 +24,7 @@ interface Props {
 const { title, description, pubDate, readTime, category, imagePlaceholder, image, id, showMap, mapLat, mapLng, mapLabel, mapZoom } = Astro.props;
 ---
 
-<Layout title={`${title} | Skiathos Boats Blog`} description={description}>
+<Layout title={`${title} | Skiathos Boats Blog`} description={description} ogImage={image}>
   <div class="blog-post-header" style={image ? `background-image: url('${image}'); background-size: cover; background-position: center;` : `background: var(--${imagePlaceholder})`}>
     <div class="container header-content">
       <span class="category-badge">{category}</span>

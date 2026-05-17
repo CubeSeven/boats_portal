@@ -17,7 +17,7 @@ Yes — and it's one of the most popular things to do in Skiathos. Greek maritim
 
 ## What the 30HP Rule Means in Practice
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl. Pellentesque habitant morbi tristique senectus et netus.
+The rule is straightforward: any boat with an engine up to 30HP (roughly 22kW) falls under the no-license category. Above that, you need a Greek boating licence or an ICC (International Certificate of Competence). We'll check your eligibility when you book — honest advice, no hard sell.
 
 The practical implications:
 - You can cover most of Skiathos' south coast beaches
@@ -27,7 +27,7 @@ The practical implications:
 
 ## Step-by-Step: What to Bring
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua:
+You don't need much. Here's the essential checklist:
 
 1. **Valid passport or ID** — required by Greek law for all boat rentals
 2. **Credit card** — for the security deposit hold
@@ -36,8 +36,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
 ## Our No-License Fleet
 
-We currently offer the **Olympic 450 (30HP)** as our flagship no-license boat. It seats 5 comfortably, comes fully equipped with snorkelling gear, GPS, and a sun shade.
+We currently offer the **Olympic 450 (30HP)** as our flagship no-license boat. It seats 5 comfortably, comes fully equipped with snorkelling gear, GPS, and a sun shade. [Browse all no-license boats →](/boat-rental/no-license-required/)
 
 ## Safety Tips
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Always check the weather forecast before departure, stay within the designated navigation zone, and never exceed the engine's speed in shallow areas.
+We give every renter a full safety briefing before you leave the dock — covering engine operation, anchoring, and what to do if conditions change. Key rules: always check the weather forecast before departure, stay within the designated navigation zone, and never exceed the engine's speed in shallow areas.

@@ -1,5 +1,6 @@
 ---
 import 'glightbox/dist/css/glightbox.css';
+import Picture from '../ui/Picture.astro';
 
 interface GalleryItem {
   src: string;
@@ -16,11 +17,14 @@ const {
   title,
 } = Astro.props;
 
-// Normalize items
+// Normalize items — generate descriptive alt text from title context
 const normalizedItems: GalleryItem[] = items.map((item, index) => {
-  const src = typeof item === 'string' ? item : item.src;
-  const alt = typeof item === 'string' ? `Gallery image ${index + 1}` : item.alt;
-  return { src, alt };
+  if (typeof item === 'string') {
+    const context = title ? title.replace(/^Inside the /, '').replace(/^Photo Gallery: /, '') : '';
+    const alt = context ? `${context} — View ${index + 1}` : `View ${index + 1}`;
+    return { src: item, alt };
+  }
+  return item;
 });
 
 const itemCount = normalizedItems.length;
@@ -41,10 +45,11 @@ const itemCount = normalizedItems.length;
           style={`transition-delay: ${i * 0.05}s`}
         >
           <div class="gallery-thumb">
-            <img 
+            <Picture 
               src={item.src} 
               alt={item.alt} 
               loading="lazy"
+              decoding="async"
               class="gallery-img"
             />
             <div class="gallery-overlay">

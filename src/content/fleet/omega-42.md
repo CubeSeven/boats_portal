@@ -18,15 +18,13 @@ features:
   - "Reinforced Inflatable Collar"
   - "Customizable Deck Layout"
   - "Skipper Mandatory"
-description: "A 12-meter vessel with twin 350HP engines, designed for 10 passengers. This Rigid Inflatable Boat (RIB) delivers an exceptional blend of speed, stability, and offshore capability, making it ideal for recreational cruising and transport."
+description: "12 metres, twin 350HP, 10 passengers. Deep-V hull, reinforced inflatable collar, customisable deck. Built for rough water and long crossings. Skipper mandatory — and you'll want one for a boat this capable."
 ---
 
 ## Speed, Stability, and Capability
 
-This 12-meter Rigid Inflatable Boat (RIB) delivers an exceptional blend of speed, stability, and offshore capability, making it ideal for recreational cruising and transport. Powered by twin 300 HP outboard engines (upgraded to twin 350 HP), the vessel offers rapid acceleration, efficient fuel performance, and confident handling in a wide range of sea conditions.
+The Omega 42 is the boat you pick when the plan involves covering serious distance. Twin 350HP engines, a 12-metre hull, and a deep-V design that eats through rough water rather than fighting it. Reinforced inflatable collar means stability at anchor and impact protection underway. This isn't a bay-hopper — it's built for Skopelos, Alonissos, and beyond.
 
 ## Design & Comfort
 
-Its deep-V hull design ensures a smooth and controlled ride even at high speeds, while the reinforced inflatable collar provides additional buoyancy, stability, and impact protection. The spacious deck layout can be customized for seating, storage, or mission-specific equipment, allowing for comfortable passenger capacity and practical operational flexibility.
-
-Built with durability in mind, the boat features robust construction materials, high-quality marine hardware, and a helm designed for ergonomic control and clear visibility.
+The deck layout is flexible — configure for lounging, dining, or just maximum open space. Helm position gives clear visibility in all directions. And the deep-V hull means you're not bouncing across the waves; you're slicing through them. If you've been on a small boat in choppy water and hated it, this is the antidote.

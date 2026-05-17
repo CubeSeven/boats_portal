@@ -12,7 +12,7 @@ tags: ["Maratha", "beaches", "Skiathos", "quiet", "pine forest", "boat rental"]
 
 ## About Maratha Beach
 
-Maratha is a small, charming sandy beach on Skiathos's south coast, 11 km southwest of Skiathos Town. Nestled between Troulos and Koukounaries, it's often overlooked in favour of its more famous neighbours — which is exactly what makes it special. Maratha is quieter, more intimate, and surrounded by fragrant pine trees that provide natural shade on the sand.
+Maratha is a small, charming sandy beach on Skiathos's south coast, 11 km southwest of Skiathos Town. Tucked between Troulos and Koukounaries, it's often overlooked in favour of its more famous neighbours — which is exactly what makes it special. Maratha is quieter, more intimate, and surrounded by fragrant pine trees that provide natural shade on the sand.
 
 ## Getting There
 

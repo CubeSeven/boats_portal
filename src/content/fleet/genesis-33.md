@@ -18,16 +18,16 @@ features:
   - "Deep V Hull with Ventilated Steps"
   - "Anti-Dive System"
   - "Skipper Mandatory"
-description: "An 11-meter high-performance RIB with twin 350HP engines, suitable for up to 10 passengers. Tropida RIBs offer a versatile range of high-performance Greek Manufactured inflatable boats, all featuring Hypalon Neoprene tubes and Deep V hulls for stability and efficiency in rough seas."
+description: "Twin 350HP, 11 metres of Greek-built RIB, Hypalon tubes, ventilated-step hull, 70-knot top speed. Seats 10. For people who think a boat day should involve velocity. Skipper mandatory."
 ---
 
 ## High Performance & Stability
 
-Tropida RIBs offer a versatile range of high-performance Greek Manufactured inflatable boats, with Genesis model be on the Best Sellers Category (70 knots top speed, with twin engines of 350 hp), all featuring Hypalon Neoprene tubes, Deep V hulls with ventilated steps, and anti-dive systems for stability and efficiency in rough seas.
+The Tropida Genesis 33 is not subtle. Twin 350HP engines push an 11-metre hull to 70 knots. Deep-V hull with ventilated steps means it skims over chop that would rattle a lesser boat. Hypalon tubes, anti-dive bow — everything about this RIB says 'built for conditions that would scare a sailor.'
 
 ## Features
 
-- **Speed**: 70 knots top speed.
-- **Engines**: Twin 350 HP engines.
-- **Safety**: Anti-dive systems for stability.
-- **Customization**: Possibility to create a tailor-made tour.
+- **Speed**: 70 knots — Skopelos in under 30 minutes.
+- **Power**: Twin 350HP engines.
+- **Safety**: Anti-dive bow design and Hypalon tubes keep things planted.
+- **Custom**: Full tailor-made tour — tell us where you want to go.

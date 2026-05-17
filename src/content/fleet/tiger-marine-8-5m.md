@@ -17,13 +17,13 @@ features:
   - "Copes with Challenging Conditions"
   - "Spacious RIB Layout"
   - "300 HP Engine"
-description: "A 9-meter RIB with a 300HP engine, accommodating up to 9 people. The rigid inflatable boat (RIB) is an incredibly popular choice due to its versatility, speed, and ability to cope with challenging conditions."
+description: "9 metres, 300HP, seats 9. Proper offshore RIB that laughs at rough water. Popular for a reason — fast, versatile, and stable enough for long crossings. License required."
 ---
 
 ## Versatility & Speed
 
-The Tiger Marine 8.5m (9m length) is an incredibly popular choice of power boat due to its versatility, speed, and ability to cope with challenging conditions. Whether for coastal cruising or fast transfers, it provides a stable and reliable platform.
+The Tiger Marine 8.5m is our most-booked RIB, and it's not hard to see why. 300HP, 9 metres of rigid inflatable, and a hull that handles whatever the Aegean decides to do that afternoon. Fast enough for Skopelos day trips, stable enough for swimming stops in open water, and comfortable enough that nobody complains about the ride.
 
 ## Performance
 
-With a 300 HP engine, this RIB offers a great balance of power and efficiency, making it perfect for exploring the Sporades islands in comfort and safety.
+300HP hits the sweet spot — enough power to cover the Sporades without burning through fuel at a rate that makes you wince. Good for families, groups of friends, or anyone who wants to see more than just the south coast.

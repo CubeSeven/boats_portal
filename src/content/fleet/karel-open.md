@@ -18,13 +18,13 @@ features:
   - "Large Sun Shade"
   - "License-Free Options Available"
   - "30/60 HP Engine"
-description: "A 5-meter boat with a 30/60HP engine, fitting up to 5 people. The Centre Console (CC) design is hardy and reliable, with plenty of seating and shade, great for day cruising without a license."
+description: "A sturdy 5-metre Greek-built workhorse with a 30/60HP engine, seating for 5. No license needed. Centre console layout, big sun shade, and a reputation for handling whatever the day throws at it. The boat we recommend most to first-timers."
 ---
 
 ## Reliable Day Cruising
 
-The Karel Open (Centre Console) boats are built to be hardy and reliable. With plenty of seating and a large sun shade, they are the perfect choice for a day spent exploring the coastline.
+The Karel Open is the boat we put our own families on. Greek-built, designed for these waters, and tough enough to handle a full season of daily rentals without complaint. Plenty of seating, a big sun shade that actually covers everyone, and a hull that stays stable even when the afternoon Meltemi picks up.
 
 ## No License Required
 
-This boat is available for rent without a boat license, making it accessible for everyone. We provide full training and a map of the best spots, ensuring you have a safe and enjoyable adventure on the water.
+No license? No problem. The 30HP configuration means anyone can drive it — we'll give you a full briefing at the dock and a map of where to go. Within 20 minutes you'll be anchored off a beach wondering why you didn't do this years ago.

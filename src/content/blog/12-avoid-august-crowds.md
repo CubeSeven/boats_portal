@@ -18,7 +18,7 @@ But here's the thing no travel blog tells you: **5 minutes offshore, nobody is t
 
 ## The Crowd-Free Formula
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. The overcrowding problem in Skiathos is entirely a road problem. The island bus serves about 16 beaches. The other 44 are accessible only by boat. You do the math.
+The overcrowding problem in Skiathos is entirely a road problem. The island bus serves about 16 beaches. The other 44 are accessible only by boat. Do the math — the bus beaches get thousands of people a day; the boat beaches get dozens.
 
 **Step 1:** Rent a boat or book a private tour
 **Step 2:** Depart before 9am
@@ -27,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. The overcrowding proble
 
 ## North Coast: The August Secret
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. The northern coastline of Skiathos — Megali Aselinos, Kechria, Mandraki, the cliffs beneath Kastro — sees a fraction of the visitor numbers of the south coast, even in peak August.
+The northern coastline of Skiathos — Megali Aselinos, Kechria, Mandraki, the cliffs beneath Kastro — sees a fraction of the visitor numbers of the south coast, even in peak August. We're talking maybe 5 boats where the south has 50.
 
 Reasons:
 - No road access to most north coast beaches
@@ -37,9 +37,7 @@ Reasons:
 
 ## Timing Strategy
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
-
-| Time | Where to be |
+Here's the rhythm that works. Follow it and you'll wonder what everyone's complaining about: Where to be |
 |---|---|
 | 7:30–9:30am | Any beach — empty, perfect light |
 | 9:30am–12:00 | Head north as day-trippers arrive in the south |
@@ -49,4 +47,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## The August Bonus: Storm Light
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Occasional August storms pass quickly and leave behind extraordinary clarity of light. If you see a brief rain shower in the morning, don't cancel — the beach after a summer storm is unforgettable.
+Occasional August storms pass quickly and leave behind the most extraordinary light you'll ever see in Greece. If you see a brief rain shower in the morning, do not cancel — the beach after a summer storm is unforgettable. The air is cleaner, the water looks sharper, and your photos will look like they've been edited even though they haven't. [Rent a boat and escape the crowds →](/boat-rental/)

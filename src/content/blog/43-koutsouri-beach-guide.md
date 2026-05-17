@@ -12,7 +12,7 @@ tags: ["Koutsouri", "Diamanti", "beaches", "Skiathos", "secluded", "south coast"
 
 ## About Koutsouri Beach
 
-Koutsouri — also known locally as Diamanti (Diamond) — is a hidden gem on Skiathos's south coast, approximately 9 km southwest of Skiathos Town. It's tucked away between Kolios and Troulos, yet feels worlds apart. With crystalline blue water, lush green surroundings, and no facilities, it's one of the most beautiful and unspoilt beaches on the island.
+Koutsouri — also known locally as Diamanti (Diamond) — sits on Skiathos's south coast, approximately 9 km southwest of Skiathos Town, between Kolios and Troulos. It feels worlds apart from its neighbours. With clear blue water, lush green surroundings, and no facilities, it's one of the most beautiful and unspoilt beaches on the island.
 
 ## Getting There
 

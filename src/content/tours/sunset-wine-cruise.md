@@ -2,7 +2,7 @@
 slug: "sunset-wine-cruise"
 title: "Sunset Wine Cruise Skiathos | Private Evening Experience"
 seoTitle: "Skiathos Sunset Wine Cruise | Private Boat Tour with Drinks"
-description: "Experience the magic of a Skiathos sunset from the sea. Private boat cruise with local wine, snacks, and the best views of the Aegean turning gold."
+description: "A private boat cruise at golden hour with local wine, antipasti, and front-row seats to the Aegean sunset. Three hours on the water — Skiathos at its most photogenic."
 heroTitle: "Sunset Wine<br/>Cruise"
 heroSubtitle: "Watch the Aegean turn to liquid gold. An intimate, private evening experience with premium local wine and traditional delicacies."
 heroGradient: "ocean"

@@ -2,7 +2,7 @@
 slug: "around-the-island"
 title: "Around the Island Private Boat Tour Skiathos"
 seoTitle: "Around the Island Skiathos Private boat tour | Full Circumnavigation"
-description: "The ultimate Skiathos experience. A full-day private boat tour around the entire island, visiting Lalaria, Kastro, and every hidden gem."
+description: "The full Skiathos experience. A private full-day boat tour around the entire island — Lalaria, Kastro, the wild north coast, and the sandy south. Every beach, every landmark, one day."
 heroTitle: "Around the Island<br/>Grand Tour"
 heroSubtitle: "The ultimate Skiathos experience. A full 360-degree journey around the coastline, visiting every icon and every secret cove."
 heroGradient: "ocean"

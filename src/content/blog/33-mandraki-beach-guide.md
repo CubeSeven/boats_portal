@@ -1,7 +1,7 @@
 ---
 slug: "33-mandraki-beach-guide"
 title: "Mandraki Beach Skiathos: The Remote Sandy Bay on the Northwest Coast"
-description: "Mandraki is a secluded sandy beach on Skiathos's northwest coast, partly organized yet wonderfully remote. Best reached by boat. Your complete guide to this hidden gem."
+description: "Mandraki is a secluded sandy beach on Skiathos's northwest coast, partly organized yet wonderfully remote. Best reached by boat. Your complete guide to this underrated spot."
 pubDate: "2026-05-19"
 readTime: 6
 category: "destination"

@@ -1,0 +1,66 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  class: className,
+  loading = 'lazy',
+  decoding = 'async',
+  fetchpriority,
+  sizes,
+} = Astro.props;
+
+// Derive WebP path from the original src
+const ext = path.extname(src);
+const webpSrc = src.replace(ext, '.webp');
+const webpSmallSrc = src.replace(ext, '-sm.webp');
+
+// Check if WebP versions exist in public/
+const publicDir = path.join(process.cwd(), 'public');
+const webpPath = path.join(publicDir, webpSrc.replace(/^\//, ''));
+const webpSmallPath = path.join(publicDir, webpSmallSrc.replace(/^\//, ''));
+const hasWebP = fs.existsSync(webpPath);
+const hasSmallWebP = fs.existsSync(webpSmallPath);
+---
+
+{
+  hasWebP ? (
+    <picture>
+      {hasSmallWebP && (
+        <source srcset={webpSmallSrc} media="(max-width: 640px)" type="image/webp" />
+      )}
+      <source srcset={webpSrc} type="image/webp" />
+      <img
+        src={src}
+        alt={alt}
+        class={className}
+        loading={loading}
+        decoding={decoding}
+        fetchpriority={fetchpriority}
+        sizes={sizes}
+      />
+    </picture>
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      class={className}
+      loading={loading}
+      decoding={decoding}
+      fetchpriority={fetchpriority}
+      sizes={sizes}
+    />
+  )
+}

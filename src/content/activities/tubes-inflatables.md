@@ -44,6 +44,6 @@ faqs:
     answer: Depending on the inflatable, we can tow from 1 up to 8 people simultaneously. Our large Sofa is great for groups who want to stay together.
 ---
 
-Whether you want a high-speed adrenaline rush or a gentle glide across the bay, our range of towable inflatables has something for everyone. We use the latest equipment and powerful, dedicated tow-boats to give you the perfect ride.
+From high-speed wipeouts to a relaxed tow across the bay, our inflatables cover the full spectrum. We use the latest equipment and powerful, dedicated tow-boats — you choose the pace, we handle the rest.
 
 Our boat drivers are certified professionals who prioritize your safety. They use hand signals to communicate with you throughout the ride, allowing you to signal for more speed or a slower pace at any time.

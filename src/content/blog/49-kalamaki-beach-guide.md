@@ -1,7 +1,7 @@
 ---
 slug: "49-kalamaki-beach-guide"
 title: "Kalamaki Beach Skiathos: The Remote Southern Cove — Quiet and Unspoilt"
-description: "Kalamaki is a pebbled, secluded beach on Skiathos's southern coast — completely non-organized, peaceful, and tucked away between busier neighbours. Best visited by boat."
+description: "Kalamaki is a pebbled, secluded beach on Skiathos's southern coast — completely non-organized, peaceful, and squeezed between busier neighbours. Best visited by boat."
 pubDate: "2026-06-04"
 readTime: 4
 category: "destination"

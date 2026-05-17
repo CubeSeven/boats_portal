@@ -59,7 +59,7 @@ const allBoats = await getFleet();
 const locationBoats = allBoats.filter(b => boats.includes(b.id));
 ---
 
-<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl}>
+<Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl} ogImage={image}>
   <HeroSection
     title={heroTitle}
     subtitle={heroSubtitle}

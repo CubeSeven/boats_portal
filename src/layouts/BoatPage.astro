@@ -71,7 +71,28 @@ const specs = [
 ];
 ---
 
-<Layout title={`${name} | Boat Rental Skiathos`} description={description}>
+<Layout title={`${name} | Boat Rental Skiathos`} description={description} ogImage={image}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": name,
+    "description": description,
+    "image": image,
+    "category": typeLabels[type],
+    "offers": {
+      "@type": "Offer",
+      "price": priceFullDay,
+      "priceCurrency": "EUR",
+      "availability": available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "url": `${Astro.site}fleet/${Astro.props.id || ''}`
+    },
+    "brand": { "@type": "Brand", "name": "Skiathos Boats" },
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Length", "value": length },
+      { "@type": "PropertyValue", "name": "Capacity", "value": `${capacity} Persons` },
+      { "@type": "PropertyValue", "name": "Horsepower", "value": `${horsepower} HP` }
+    ]
+  })} />
   <HeroSection
     title={name}
     subtitle={typeLabels[type]}

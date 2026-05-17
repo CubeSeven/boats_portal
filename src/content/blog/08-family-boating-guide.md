@@ -16,7 +16,7 @@ Absolutely — and it's one of the best family experiences in Greece. Children o
 
 ## Age & Safety Guidelines
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl vel ultricies lacinia. Greek maritime regulations and our own safety policy:
+Greek maritime regulations cover child safety on recreational vessels, and we go beyond the minimum. Our safety policy:
 
 - **Children under 3:** Must wear an approved infant life jacket at all times while underway
 - **Children 3–12:** Must wear a life jacket while the boat is moving; can remove when anchored
@@ -31,7 +31,7 @@ For larger families (up to 10 people), the **Marinco RIB** is surprisingly good 
 
 ## Best Kid-Friendly Beaches by Boat
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+These are the beaches our own staff take their kids to:
 
 1. **Koukounaries** — Shallow, calm lagoon behind the beach. Perfect for toddlers.
 2. **Banana Beach** — Clear water, gentle gradient. Water sports available.
@@ -40,7 +40,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## What to Pack
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua:
+Beyond the obvious (sunscreen, hats, water), here's the list we send to families before their trip:
 
 - High-factor waterproof sunscreen (SPF 50+)
 - Rash vests / UV swimsuits for children
@@ -53,4 +53,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 
 ## Our Recommendation
 
-Book a **morning half-day** for your first trip with young children. Start early (8:30am), arrive at your beach before 10am, swim until midday, and be back at port before the afternoon heat arrives. A perfect, manageable introduction.
+Book a **morning half-day** for your first trip with young children. Start early (8:30am), arrive at your beach before 10am, swim until midday, and be back at port before the afternoon heat arrives. A perfect, manageable introduction. [Rent a family boat →](/boat-rental/no-license-required/)

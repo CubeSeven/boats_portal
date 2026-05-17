@@ -18,9 +18,7 @@ This checklist fixes all of that.
 
 ## The Non-Negotiables
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
-
-- **Sunscreen SPF 50+** — waterproof, and reapply every 2 hours
+These are the things we see forgotten most often at the dock — don't be the person who shows up without them: — waterproof, and reapply every 2 hours
 - **Sunglasses** — polarised for glare reduction on the water
 - **Hat** — a wide-brim hat you don't mind getting wet
 - **Water** — minimum 1.5L per person, more in August
@@ -37,9 +35,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## Snacks & Food
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit:
-
-- **Pre-made sandwiches or wraps** — simple, no-mess boat food
+You'll be hungry. We provide a cooler with ice on every rental, and most supermarkets near the port sell sealed snacks. Our recommendations: — simple, no-mess boat food
 - **Fruit** — grapes and watermelon are refreshing on the water
 - **Sealed snacks** — crisps, nuts, dried fruit
 - **Ice cooler provided** — bring ice from a supermarket en route
@@ -54,4 +50,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:
 
 ## Photography Tips
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Golden hour is real on the Aegean. If you want photos, bring a waterproof action camera or an older phone you're comfortable getting wet. The best shots happen when you're not worried about dropping something expensive.
+Golden hour on the Aegean is unreal — and your phone camera will struggle to capture it properly. Bring a waterproof action camera or an older phone you're comfortable getting wet. The best shots happen when you're not worried about dropping something expensive. [Book a boat in Skiathos →](/boat-rental/)

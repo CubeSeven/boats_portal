@@ -71,4 +71,4 @@ faqs:
 
 Lalaria is world-famous for its round white pebbles and the majestic "Tripia Petra" rock arch. Because it is completely inaccessible by land, a boat is your only ticket to this paradise. Our private tour ensures you arrive before the large commercial boats, giving you the rare chance to experience Lalaria in peace.
 
-Adjacent to the beach are the Blue Caves—Galazia Spilia and Skoteini Spilia. Here, the reflection of the sun on the white sandy bottom creates a luminous, electric-blue effect that is simply breathtaking.
+Adjacent to the beach are the Blue Caves—Galazia Spilia and Skoteini Spilia. Here, sunlight bounces off the white sandy bottom through the water, creating an electric-blue glow that photographs can't quite capture. It's one of those things you need to see for yourself.

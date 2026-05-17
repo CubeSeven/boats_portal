@@ -12,7 +12,7 @@ tags: ["Kolios", "beaches", "Skiathos", "taverna", "snorkelling", "boat rental"]
 
 ## About Kolios Beach
 
-Kolios is a modest but enchanting sandy cove on Skiathos's southern coast, 8 km from Skiathos Town. Nestled between Platanias and Vromolimnos, it's surrounded by steep pine-covered hills that create a natural amphitheatre around the water. The setting feels intimate and sheltered — one of the more picturesque spots on the south coast.
+Kolios is a modest but lovely sandy cove on Skiathos's southern coast, 8 km from Skiathos Town. Sitting between Platanias and Vromolimnos, it's surrounded by steep pine-covered hills that create a natural amphitheatre around the water. The setting feels intimate and sheltered — one of the more picturesque spots on the south coast.
 
 ## Getting There
 
