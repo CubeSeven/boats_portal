@@ -6,7 +6,7 @@ pubDate: "2026-08-01"
 readTime: 8
 category: "guide"
 imagePlaceholder: "ocean"
-image: "/images/stock/s15tock images.jpg"
+image: "/images/stock/s15tock-images.jpg"
 featured: true
 tags: ["prices", "cost", "2026", "boat rental", "Skiathos", "budget"]
 ---

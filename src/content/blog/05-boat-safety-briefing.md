@@ -6,7 +6,7 @@ pubDate: "2026-05-29"
 readTime: 9
 category: "guide"
 imagePlaceholder: "ocean"
-image: "/images/stock/s5tock images.jpg"
+image: "/images/stock/s5tock-images.jpg"
 tags: ["safety", "beginners", "Greece", "maritime law", "boat driving"]
 ---
 

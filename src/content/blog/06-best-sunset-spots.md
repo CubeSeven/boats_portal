@@ -6,7 +6,7 @@ pubDate: "2026-06-05"
 readTime: 5
 category: "destination"
 imagePlaceholder: "sunset"
-image: "/images/stock/s6tock images.jpg"
+image: "/images/stock/s6tock-images.jpg"
 tags: ["sunset", "Skiathos", "boat", "romantic", "photography"]
 ---
 

@@ -6,7 +6,7 @@ pubDate: "2026-05-08"
 readTime: 5
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/stock/s2tock images.jpg"
+image: "/images/stock/s2tock-images.jpg"
 featured: true
 tags: ["Lalaria", "Kastro", "beaches", "Skiathos"]
 ---

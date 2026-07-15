@@ -6,7 +6,7 @@ pubDate: "2026-06-12"
 readTime: 6
 category: "comparison"
 imagePlaceholder: "ocean"
-image: "/images/stock/s7tock images.jpg"
+image: "/images/stock/s7tock-images.jpg"
 tags: ["transfer", "Volos", "ferry", "transfers", "Skiathos"]
 ---
 

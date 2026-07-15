@@ -6,7 +6,7 @@ pubDate: "2026-07-17"
 readTime: 5
 category: "tips"
 imagePlaceholder: "sunset"
-image: "/images/stock/s12tock images.jpg"
+image: "/images/stock/s12tock-images.jpg"
 tags: ["August", "crowds", "quiet beaches", "tips", "Skiathos"]
 ---
 

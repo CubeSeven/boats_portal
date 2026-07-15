@@ -6,7 +6,7 @@ pubDate: "2026-06-26"
 readTime: 5
 category: "destination"
 imagePlaceholder: "ocean"
-image: "/images/stock/s9tock images.jpg"
+image: "/images/stock/s9tock-images.jpg"
 tags: ["Tsougria", "island hopping", "Skiathos", "beaches", "day trip"]
 ---
 
