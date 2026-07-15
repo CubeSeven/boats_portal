@@ -6,7 +6,7 @@ pubDate: "2026-06-19"
 readTime: 7
 category: "guide"
 imagePlaceholder: "turquoise"
-image: "/images/stock/s8tock-images.jpg"
+image: "/images/stock/Small_boat_floating_on_calm_ocean.webp"
 tags: ["family", "kids", "children", "boat rental", "Skiathos"]
 ---
 

@@ -6,7 +6,7 @@ pubDate: "2026-07-10"
 readTime: 4
 category: "tips"
 imagePlaceholder: "turquoise"
-image: "/images/stock/s11tock-images.jpg"
+image: "/images/stock/Straw_hat_rests_beside_blue_pool.webp"
 tags: ["packing", "what to bring", "boat trip", "tips", "checklist"]
 ---
 

@@ -6,7 +6,7 @@ pubDate: "2026-05-22"
 readTime: 6
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/stock/s4tock-images.jpg"
+image: "/images/stock/boat_moored_near_rocky_cliff_beach.webp"
 tags: ["secret beaches", "hidden coves", "Skiathos", "swimming"]
 ---
 

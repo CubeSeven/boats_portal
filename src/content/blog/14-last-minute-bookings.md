@@ -6,7 +6,7 @@ pubDate: "2026-07-31"
 readTime: 4
 category: "tips"
 imagePlaceholder: "ocean"
-image: "/images/stock/s14tock-images.jpg"
+image: "/images/stock/boats_moored_near_tree_covered_coast.webp"
 tags: ["last minute", "walk-in", "booking", "availability", "Skiathos"]
 ---
 

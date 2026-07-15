@@ -6,7 +6,7 @@ pubDate: "2026-07-24"
 readTime: 5
 category: "guide"
 imagePlaceholder: "turquoise"
-image: "/images/stock/s13tock-images.jpg"
+image: "/images/stock/dolphin_jumping_over_ocean_wave.webp"
 tags: ["watersports", "beaches", "jet ski", "parasailing", "Skiathos"]
 ---
 

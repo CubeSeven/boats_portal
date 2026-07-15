@@ -6,7 +6,7 @@ pubDate: "2026-05-01"
 readTime: 7
 category: "guide"
 imagePlaceholder: "ocean"
-image: "/images/stock/s1tock-images.jpg"
+image: "/images/stock/white_boat_on_calm_blue_sea.webp"
 featured: true
 tags: ["no license", "boat rental", "Greece laws", "beginners"]
 ---

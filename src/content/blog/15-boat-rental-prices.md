@@ -6,7 +6,7 @@ pubDate: "2026-08-01"
 readTime: 8
 category: "guide"
 imagePlaceholder: "ocean"
-image: "/images/stock/s15tock-images.jpg"
+image: "/images/stock/Sailboats_floating_in_coastal_bay.webp"
 featured: true
 tags: ["prices", "cost", "2026", "boat rental", "Skiathos", "budget"]
 ---

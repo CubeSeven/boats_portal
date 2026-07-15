@@ -6,7 +6,7 @@ pubDate: "2026-06-05"
 readTime: 5
 category: "destination"
 imagePlaceholder: "sunset"
-image: "/images/stock/s6tock-images.jpg"
+image: "/images/stock/boats_anchored_in_coastal_bay_sunset.webp"
 tags: ["sunset", "Skiathos", "boat", "romantic", "photography"]
 ---
 

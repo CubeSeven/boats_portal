@@ -6,7 +6,7 @@ pubDate: "2026-07-03"
 readTime: 6
 category: "comparison"
 imagePlaceholder: "ocean"
-image: "/images/stock/s10tock-images.jpg"
+image: "/images/stock/white_sailboat_sailing_on_blue_ocean.webp"
 tags: ["skipper", "captain", "boat rental", "with skipper", "Skiathos"]
 ---
 

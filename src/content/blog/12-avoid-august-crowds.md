@@ -6,7 +6,7 @@ pubDate: "2026-07-17"
 readTime: 5
 category: "tips"
 imagePlaceholder: "sunset"
-image: "/images/stock/s12tock-images.jpg"
+image: "/images/stock/aerial_view_of_beach_and_forest.webp"
 tags: ["August", "crowds", "quiet beaches", "tips", "Skiathos"]
 ---
 
