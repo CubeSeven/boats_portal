@@ -22,10 +22,25 @@ const {
   sizes,
 } = Astro.props;
 
+// Prefix site-root asset paths with the Astro base URL so images resolve on
+// GitHub Pages (https://cubeseven.github.io/boats_portal/) and any sub-path deploy.
+// Absolute/external URLs (http://, https://, //) are left untouched.
+const BASE = import.meta.env.BASE_URL || '/';
+function withBase(p: string): string {
+  if (!p) return p;
+  if (/^(https?:)?\/\//i.test(p)) return p;
+  if (p.startsWith(BASE)) return p;
+  return (BASE.endsWith('/') ? BASE.slice(0, -1) : BASE) + (p.startsWith('/') ? p : '/' + p);
+}
+
 // Derive WebP path from the original src
 const ext = path.extname(src);
 const webpSrc = src.replace(ext, '.webp');
 const webpSmallSrc = src.replace(ext, '-sm.webp');
+
+const resolvedSrc = withBase(src);
+const resolvedWebpSrc = withBase(webpSrc);
+const resolvedWebpSmallSrc = withBase(webpSmallSrc);
 
 // Check if WebP versions exist in public/
 const publicDir = path.join(process.cwd(), 'public');
@@ -39,11 +54,11 @@ const hasSmallWebP = fs.existsSync(webpSmallPath);
   hasWebP ? (
     <picture>
       {hasSmallWebP && (
-        <source srcset={encodeURI(webpSmallSrc)} media="(max-width: 640px)" type="image/webp" />
+        <source srcset={encodeURI(resolvedWebpSmallSrc)} media="(max-width: 640px)" type="image/webp" />
       )}
-      <source srcset={encodeURI(webpSrc)} type="image/webp" />
+      <source srcset={encodeURI(resolvedWebpSrc)} type="image/webp" />
       <img
-        src={encodeURI(src)}
+        src={encodeURI(resolvedSrc)}
         alt={alt}
         class={className}
         loading={loading}
@@ -54,7 +69,7 @@ const hasSmallWebP = fs.existsSync(webpSmallPath);
     </picture>
   ) : (
     <img
-      src={encodeURI(src)}
+      src={encodeURI(resolvedSrc)}
       alt={alt}
       class={className}
       loading={loading}
