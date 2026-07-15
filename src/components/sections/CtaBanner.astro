@@ -109,7 +109,7 @@ const marqueeItems = [
 
       {/* Marquee Ticker */}
       <div class="marquee-container relative w-full overflow-hidden">
-        <div class="marquee-track flex gap-4 md:gap-6 whitespace-nowrap w-max animate-marquee">
+        <div class="marquee-track flex gap-4 md:gap-6 whitespace-nowrap w-max marquee-scroll">
           {marqueeItems.map(item => (
             <div class={`inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest ${
               isDark 
@@ -158,12 +158,12 @@ const marqueeItems = [
   }
 
   /* Marquee Animation */
-  @keyframes marquee {
+  .marquee-scroll {
+    animation: marquee-play 35s linear infinite;
+  }
+  @keyframes marquee-play {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
-  }
-  .animate-marquee {
-    animation: marquee 35s linear infinite;
   }
   .marquee-container {
     mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -171,7 +171,7 @@ const marqueeItems = [
   }
   
   /* Pause animation on hover to allow reading chips easily */
-  .marquee-container:hover .animate-marquee {
+  .marquee-container:hover .marquee-scroll {
     animation-play-state: paused;
   }
 </style>
