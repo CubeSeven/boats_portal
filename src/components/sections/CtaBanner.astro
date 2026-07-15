@@ -34,6 +34,18 @@ const variantClasses = {
 };
 
 const isDark = variant === 'dark' || variant === 'navy' || variant === 'ocean' || variant === 'turquoise';
+
+const marqueeItems = [
+  "1,000+ Happy Guests Yearly",
+  "1,000+ Five-Star Reviews",
+  "Skiathos' Largest Fleet",
+  "Newest & Safest Boats",
+  "Best Local Captains & Crew",
+  "20+ Customizable Sea Routes",
+  "No License Required Options",
+  "24/7 Harbor & Sea Support",
+  "Fully Insured & GPS Tracked"
+];
 ---
 
 <div class="container">
@@ -58,7 +70,7 @@ const isDark = variant === 'dark' || variant === 'navy' || variant === 'ocean' |
     )}
 
     {/* Content Container */}
-    <div class="relative z-10">
+    <div class="relative z-10 flex flex-col">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-12">
         <div class="flex flex-col gap-4 md:gap-6 max-w-3xl reveal">
           <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight m-0 text-current">{title}</h2>
@@ -91,6 +103,36 @@ const isDark = variant === 'dark' || variant === 'navy' || variant === 'ocean' |
           )}
         </div>
       </div>
+
+      {/* Ticker Divider */}
+      <div class={`w-full h-px mt-10 mb-8 ${isDark ? 'bg-white/10' : 'bg-black/10'}`}></div>
+
+      {/* Marquee Ticker */}
+      <div class="marquee-container relative w-full overflow-hidden">
+        <div class="marquee-track flex gap-4 md:gap-6 whitespace-nowrap w-max animate-marquee">
+          {marqueeItems.map(item => (
+            <div class={`inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest ${
+              isDark 
+                ? 'bg-white/5 border-white/10 text-white/90 backdrop-blur-md' 
+                : 'bg-black/5 border-black/10 text-black/85 backdrop-blur-md'
+            }`}>
+              <span class={`w-1.5 h-1.5 rounded-full shrink-0 ${isDark ? 'bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)]' : 'bg-cyan-600'}`}></span>
+              {item}
+            </div>
+          ))}
+          {/* Duplicated once for seamless infinite scrolling */}
+          {marqueeItems.map(item => (
+            <div class={`inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full border text-[0.65rem] font-bold uppercase tracking-widest ${
+              isDark 
+                ? 'bg-white/5 border-white/10 text-white/90 backdrop-blur-md' 
+                : 'bg-black/5 border-black/10 text-black/85 backdrop-blur-md'
+            }`}>
+              <span class={`w-1.5 h-1.5 rounded-full shrink-0 ${isDark ? 'bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)]' : 'bg-cyan-600'}`}></span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 </div>
@@ -113,5 +155,23 @@ const isDark = variant === 'dark' || variant === 'navy' || variant === 'ocean' |
   .btn-outline-glass:hover {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+  .marquee-container {
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  }
+  
+  /* Pause animation on hover to allow reading chips easily */
+  .marquee-container:hover .animate-marquee {
+    animation-play-state: paused;
   }
 </style>
