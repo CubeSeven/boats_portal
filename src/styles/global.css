@@ -486,4 +486,14 @@
     letter-spacing: 0.15em;
     color: rgba(255,255,255,0.5);
   }
+
+  /* Global Marquee Animation Rules */
+  @keyframes marquee-play {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-scroll {
+    animation: marquee-play 35s linear infinite !important;
+  }
 }
