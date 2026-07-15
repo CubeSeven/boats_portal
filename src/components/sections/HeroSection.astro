@@ -29,16 +29,18 @@ const {
   backgroundImage,
 } = Astro.props;
 
-const gradientClasses = {
-  airy: 'bg-gradient-to-tr from-white via-neutral-50 to-neutral-100',
+const gradientClasses: Record<string, string> = {
+  airy: 'bg-gradient-to-br from-neutral-900 via-neutral-950 to-black',
   moody: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950',
-  neutral: 'bg-gradient-to-br from-neutral-100 via-white to-neutral-50',
+  neutral: 'bg-gradient-to-br from-neutral-900 via-neutral-950 to-black',
   dark: 'bg-black',
-  light: 'bg-white',
-  muted: 'bg-muted/30',
-  ocean: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950',
-  sunset: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950',
-  turquoise: 'bg-gradient-to-tr from-white via-neutral-50 to-neutral-100',
+  light: 'bg-gradient-to-br from-neutral-900 via-neutral-950 to-black',
+  muted: 'bg-neutral-900',
+  ocean: 'bg-gradient-to-br from-slate-900 via-slate-950 to-black',
+  sunset: 'bg-gradient-to-br from-neutral-900 via-black to-neutral-950',
+  turquoise: 'bg-gradient-to-br from-slate-900 via-neutral-900 to-black',
+  gold: 'bg-gradient-to-br from-stone-900 via-neutral-950 to-black',
+  navy: 'bg-gradient-to-br from-slate-950 via-blue-950/20 to-black',
 };
 
 const sizeClasses = {
@@ -47,7 +49,7 @@ const sizeClasses = {
 };
 ---
 
-<section class={`relative overflow-hidden flex items-end justify-start text-left px-6 md:px-10 text-white ${gradientClasses[gradient]} ${sizeClasses[size]}`} aria-label="Hero section">
+<section class={`relative overflow-hidden flex items-end justify-start text-left px-6 md:px-10 text-white ${gradientClasses[gradient] || gradientClasses.moody} ${sizeClasses[size]}`} aria-label="Hero section">
   <!-- Background image -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
     {backgroundImage ? (
