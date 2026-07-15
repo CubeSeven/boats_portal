@@ -24,8 +24,8 @@ Agia Eleni is one of the last beaches on Skiathos's southwestern coast, 14 km fr
 ### By Boat
 Agia Eleni faces southwest with a sandy bottom. Anchoring is straightforward in 3–6 metres. From Skiathos Port, a 30HP rental boat reaches Agia Eleni in approximately 40–45 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 30 minutes. Cost: approximately €45–55.
+### Transfer
+A transfer from Skiathos Town takes about 30 minutes. Cost: approximately €45–55.
 
 ## The Beach
 
@@ -53,7 +53,7 @@ Anchor in 3–5 metres on sand. The bay is open to the southwest but generally c
 - **Xenia** (1 km east) — quiet beach near Koukounaries
 - **Agistros** (approximately 2 km further west) — secluded, lush green setting
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 40–45 minutes from port. The full south-coast route. One of the more rewarding long-distance day trips.
 - **Skippered full-day tour:** Explore the entire southwest coast — Koukounaries, Banana, Agia Eleni, and beyond. Your captain knows every cove.

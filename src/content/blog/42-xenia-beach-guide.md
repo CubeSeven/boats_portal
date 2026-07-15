@@ -24,8 +24,8 @@ Xenia is a charming sandy beach on Skiathos's southwestern coast, approximately 
 ### By Boat
 Xenia faces southwest with a sandy bottom — excellent for anchoring. From Skiathos Port, a 30HP rental boat reaches Xenia in approximately 40–45 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 30 minutes. Cost: approximately €40–50.
+### Transfer
+A transfer from Skiathos Town takes about 30 minutes. Cost: approximately €40–50.
 
 ## The Beach
 
@@ -54,7 +54,7 @@ The bay is open to the southwest. Anchor in 3–5 metres on sand. More space tha
 - **Agia Eleni** (1 km west) — organized beach with nudist-friendly sections
 - **Maratha** (3 km east) — quiet, pine-backed beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 40–45 minutes from port. The perfect base for exploring the Koukounaries area without the crowds.
 - **Skippered day trip:** Combine Xenia with Koukounaries and Banana. Enjoy the best of all worlds.

@@ -24,8 +24,8 @@ Xanemos is one of the few accessible beaches on Skiathos's rugged north coast, l
 ### By Boat
 Xanemos faces north-northeast. Anchoring here depends heavily on weather — in calm conditions (under 2 Beaufort), it's fine in 3–5 metres on sand. In any north or northeast wind, anchoring is not advisable as the bay is exposed. From Skiathos Port, a rental boat reaches Xanemos in approximately 15–20 minutes by going east around the Bourtzi peninsula and then north.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 12 minutes. Cost: approximately €25–30.
+### Transfer
+A transfer from Skiathos Town takes about 12 minutes. Cost: approximately €25–30.
 
 ## The Beach
 
@@ -53,7 +53,7 @@ Certain sections of Xanemos are known for nudism, particularly the quieter ends.
 - **Psarochoma** (east of Xanemos) — isolated cove
 - **Skiathos Town** (return south around the peninsula, 15 minutes) — for lunch and supplies
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Our team will advise on weather suitability before you depart. Xanemos is only recommended in calm conditions.
 - **Skippered north-coast tour:** Let our captain assess conditions and take you to the best north-coast beaches safely. Includes Lalaria, Xanemos, and Kastro.

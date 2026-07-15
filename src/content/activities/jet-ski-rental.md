@@ -1,17 +1,18 @@
 ---
 slug: jet-ski-rental
 title: Jet Ski Rental
-seoTitle: Jet Ski Hire Skiathos | High Speed WaveRunners | Skiathos Boats
+seoTitle: Jet Ski Hire Skiathos | High Speed WaveRunners | Sea Skiathos
 description: Rent a high-speed Jet Ski in Skiathos at Koukounaries Beach. New WaveRunners, safest operating zone, and expert safety briefing. No license required for rental.
 heroTitle: Jet Ski Rental<br/>in Skiathos
 heroSubtitle: Speed, spray, and pure adrenaline. Zip across the sapphire waters of Koukounaries on our latest Yamaha WaveRunners.
 heroGradient: ocean
-icon: zap
+icon: rocket
 href: /watersports/jet-ski-rental/
-price: From €60
+price: From €50
 accent: ocean
 category: watersports
 order: 1
+image: "/images/watersports/jet-ski/hero.jpg"
 features:
   - Full safety briefing & operation training
   - High-buoyancy life jackets
@@ -20,7 +21,7 @@ features:
   - Safety boat monitoring during your session
 pricing:
   - duration: 15 Minutes
-    price: From €60
+    price: From €50
     notes: Solo or Tandem (2 pax)
   - duration: 30 Minutes
     price: From €110

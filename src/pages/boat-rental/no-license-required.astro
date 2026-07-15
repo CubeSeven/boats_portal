@@ -5,9 +5,9 @@ import SectionHeading from '../../components/ui/SectionHeading.astro';
 import BoatCard from '../../components/cards/BoatCard.astro';
 import { getEntry, render } from 'astro:content';
 import { getFleet } from '../../lib/collections';
-import { CheckCircle2, Anchor } from 'lucide-react';
 
 const entry = await getEntry('activities', 'no-license-required');
+if (!entry) throw new Error('Activity "no-license-required" not found');
 const { Content } = await render(entry);
 const data = entry.data;
 
@@ -48,7 +48,7 @@ const pricing = data.pricing || [];
       <div class="feature-list">
         {features.map(f => (
           <div class="feature-item">
-            <span class="feature-icon"><CheckCircle2 size={18} strokeWidth={2} /></span>
+            <span class="feature-icon"><svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={2} stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
             <span>{f}</span>
           </div>
         ))}
@@ -70,6 +70,8 @@ const pricing = data.pricing || [];
             name={boat.data.name}
             type={boat.data.type}
             priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
             slug={boat.id}
             image={boat.data.image}
             imagePlaceholder={boat.data.imagePlaceholder}
@@ -95,7 +97,7 @@ const pricing = data.pricing || [];
       />
       <PricingTable
         rows={pricing}
-        disclaimer="Prices include fuel, equipment & briefing. Security deposit (€200) held on card, returned same day. Peak season surcharge may apply in August."
+        disclaimer="Prices might change based on seasonal availability. Fuel is not included in the price shown and is calculated at the end of the rental based on consumption. Security deposit (€200) held on card, returned same day. Peak season surcharge may apply in August."
       />
     </section>
   )}
@@ -112,7 +114,7 @@ const pricing = data.pricing || [];
       <div class="destination-grid">
         {destinations.map(d => (
           <div class="destination">
-            <span class="dest-icon"><Anchor size={16} /></span>
+            <span class="dest-icon"><svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v16"/><path d="m19 13 2-1a9 9 0 0 1-18 0l2 1"/><path d="M9 11h6"/><circle cx="12" cy="4" r="2"/></svg></span>
             <div>
               <strong>{d.place}</strong>
               <span>{d.time} from port</span>

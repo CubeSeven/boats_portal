@@ -6,7 +6,7 @@ pubDate: "2026-05-31"
 readTime: 4
 category: "destination"
 imagePlaceholder: "ocean"
-image: "/images/beaches/katharina.jpg"
+image: "/images/beaches/tsougria.jpg"
 tags: ["Katharina", "beaches", "Skiathos", "tamarisk", "secluded", "boat rental", "south coast"]
 ---
 
@@ -22,8 +22,8 @@ A narrow, unmarked path leads to Katharina from the coast road between Maratha a
 ### By Boat
 The best way to visit. Katharina faces south into a small bay. From Skiathos Port, a 30HP rental boat reaches Katharina in approximately 35 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 25 minutes. Cost: approximately €35–45.
+### Transfer
+A transfer from Skiathos Town takes about 25 minutes. Cost: approximately €35–45.
 
 ## The Beach
 
@@ -46,7 +46,7 @@ The small bay is sheltered and calm. Anchor in 3–4 metres on sand. Space for 1
 - **Koukounaries** (1.5 km west, 5 minutes by boat) — the island's most famous beach
 - **Troulos** (2 km east) — sheltered family beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 35 minutes from port. A perfect quiet stop on the south-coast route.
 - **Skippered day trip:** Your captain will drop you at Katharina for a private swim under the tamarisk trees.

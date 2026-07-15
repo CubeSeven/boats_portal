@@ -21,8 +21,8 @@ It's one of the most popular short boat trips from Skiathos — and for good rea
 ### Option 1: Day-Trip Caique (€10 per person)
 Several traditional wooden caiques (open boat ferries) depart Skiathos Old Port for Tsougria every morning between 9:30–11:00. Return trips run 14:00–17:00. Simple, cheap, but you're on their schedule — and in August those caiques can be packed.
 
-### Option 2: Water Taxi (€30–50 per boat)
-Private water taxis from the port run on demand — call or WhatsApp us and we'll send one. You choose your departure and return time. Better if you want the island to yourselves in the early morning, before the caiques arrive.
+### Option 2: Transfer (€30–50 per boat)
+Private transfers from the port run on demand — call or WhatsApp us and we'll send one. You choose your departure and return time. Better if you want the island to yourselves in the early morning, before the caiques arrive.
 
 ### Option 3: Rent a Boat — Best Option
 The 30HP Olympic 450 no-license boat reaches Tsougria in 20–25 minutes from Skiathos port. This is our recommended option: you arrive when you want, stay as long as you want, and can combine with a stop at nearby Arkos island (Tsougria's smaller sister, adjacent). Total freedom, no timetable.

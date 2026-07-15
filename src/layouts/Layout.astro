@@ -16,13 +16,13 @@ interface Props {
 const site = await getSiteSettings();
 
 const {
-  title = site?.seo?.defaultTitle || 'Skiathos Boats — Boat Rental & Sea Experiences',
-  description = site?.seo?.defaultDescription || 'Premium boat rental, private boat tours, water taxi, and watersports in Skiathos, Greece.',
+  title = site?.seo?.defaultTitle || 'Sea Skiathos — Boat Rental & Sea Experiences',
+  description = site?.seo?.defaultDescription || 'Premium boat rental, private boat tours, transfer, and watersports in Skiathos, Greece.',
   canonicalUrl = Astro.url.href,
   ogImage = '/og-default.jpg',
 } = Astro.props;
 
-const siteName = site?.seo?.siteName || 'Skiathos Boats';
+const siteName = site?.seo?.siteName || 'Sea Skiathos';
 const siteUrl = 'https://skiathosboats.com';
 
 const schema = {

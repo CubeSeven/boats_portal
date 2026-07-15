@@ -2,15 +2,17 @@
 import Picture from '../ui/Picture.astro';
 
 interface Props {
+  icon?: string;
   title: string;
   description: string;
   href: string;
   price?: string;
   image?: string;
-  accent?: 'blue' | 'yellow' | 'green' | 'red' | 'purple' | 'black' | 'muted';
+  accent?: 'blue' | 'yellow' | 'green' | 'red' | 'purple' | 'black' | 'muted' | 'ocean' | 'turquoise' | 'gold' | 'navy' | 'sunset';
 }
 
 const {
+  icon,
   title,
   description,
   href,

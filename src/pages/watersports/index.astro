@@ -4,9 +4,9 @@ import HeroSection from '../../components/sections/HeroSection.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
 import ServiceCard from '../../components/cards/ServiceCard.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import ReviewSlider from '../../components/sections/ReviewSlider.astro';
 import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
 import FaqAccordion from '../../components/sections/FaqAccordion.astro';
-import { CheckCircle2 } from 'lucide-react';
 import { getCollection } from 'astro:content';
 
 const allActivities = await getCollection('activities');
@@ -18,11 +18,17 @@ const allFaqs = await getCollection('faqs');
 const watersportsFaqs = allFaqs
   .filter(f => f.data.category === 'watersports')
   .map(f => f.data);
+
+const allTestimonials = await getCollection('testimonials');
+const testimonials = allTestimonials
+  .map((entry) => entry.data)
+  .sort((a, b) => (b.featured === true ? 1 : 0) - (a.featured === true ? 1 : 0))
+  .slice(0, 10);
 ---
 
 <Layout 
-  title="Watersports in Skiathos | Adrenaline & Fun | Skiathos Boats"
-  description="The premier watersports center in Skiathos. Based at Koukounaries, we offer jet ski, parasailing, wakeboard, water ski, and much more."
+  title="Watersports in Skiathos | Adrenaline & Fun | Sea Skiathos"
+  description="The premier watersports center in Skiathos. Based at Koukounaries, we offer jet ski, jet car, wakeboard, water ski, SUP, tubes, and pedalo hire. Much more available."
 >
   <HeroSection
     title="Watersports<br/>Adrenaline Center"
@@ -34,7 +40,7 @@ const watersportsFaqs = allFaqs
     gradient="sunset"
     size="medium"
     showScrollHint={false}
-    backgroundImage="/images/stock/s9tock images.jpg"
+    backgroundImage="/images/stock/s6tock images.webp"
   />
 
   <Breadcrumbs />
@@ -70,13 +76,13 @@ const watersportsFaqs = allFaqs
         <div class="info-content reveal">
           <h2>Safety & Experience</h2>
           <p>
-            At Skiathos Boats, safety is our absolute priority. We use the latest equipment from global leaders like Yamaha and Jobe, and our instructors are all certified by the Greek General Secretariat of Sports.
+            At Sea Skiathos, safety is our absolute priority. We use the latest equipment from global leaders like Yamaha and Jobe, and our instructors are all certified by the Greek General Secretariat of Sports.
           </p>
           <div class="feature-checks">
-            <div class="check"><CheckCircle2 size={18} /> Certified Instructors</div>
-            <div class="check"><CheckCircle2 size={18} /> Newest Equipment</div>
-            <div class="check"><CheckCircle2 size={18} /> Safety Boat Monitor</div>
-            <div class="check"><CheckCircle2 size={18} /> Fully Insured</div>
+            <div class="check"><svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Certified Instructors</div>
+            <div class="check"><svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Newest Equipment</div>
+            <div class="check"><svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Safety Boat Monitor</div>
+            <div class="check"><svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Fully Insured</div>
           </div>
         </div>
         <div class="info-faq reveal">
@@ -87,12 +93,15 @@ const watersportsFaqs = allFaqs
   </section>
 
   <CtaBanner
-    title="Ready for the Ride of Your Life?"
-    subtitle="Contact us to reserve your slot or head down to Koukounaries Beach today. Open daily 09:00 - 20:00."
+    title="Ready for Takeoff?"
+    subtitle="Book your session online or walk right in — we're open 9am–7pm daily."
     buttonText="Check Availability"
     buttonHref="/contact/"
     variant="navy"
+    backgroundImage="/images/stock/s14tock images.webp"
   />
+
+  <ReviewSlider reviews={testimonials} serviceFilter="Watersports" />
 </Layout>
 
 <style>

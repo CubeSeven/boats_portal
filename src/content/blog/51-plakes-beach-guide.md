@@ -36,7 +36,7 @@ The small harbour at Plakes accommodates local fishing boats and small pleasure 
 
 Since Plakes is in Skiathos Town, boat access is essentially returning to port. It's the starting and ending point for every boat trip on the island, not a destination in itself. However, its harbour facilities make it a convenient meeting point.
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Our base is in Skiathos Port** — Plakes is a 5-minute walk from our location. Pick up your rental boat and return for a post-swim coffee at one of the harbour cafes.
 - **Post-cruise refreshment:** Return from your boat trip, tie up, and walk straight to Plakes for a swim and a drink at the water's edge.

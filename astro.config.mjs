@@ -1,24 +1,25 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import keystatic from '@keystatic/astro';
-import node from '@astrojs/node';
+
+const IS_GITHUB_PAGES = process.env.GITHUB_PAGES === 'true';
 
 export default defineConfig({
-  site: 'https://skiathosboats.com',
+  site: IS_GITHUB_PAGES ? 'https://cubeseven.github.io' : 'https://skiathosboats.com',
+  base: IS_GITHUB_PAGES ? '/boats_portal' : '',
   output: 'static',
-  trailingSlash: 'always',
-  adapter: node({
-    mode: 'standalone'
-  }),
+  trailingSlash: 'ignore',
   integrations: [
-    react(),
     sitemap(),
-    keystatic(),
   ],
+  devToolbar: {
+    enabled: false,
+  },
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ['astro/runtime/client/dev-toolbar/entrypoint.js'],
+    },
   },
 });

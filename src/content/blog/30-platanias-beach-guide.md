@@ -24,8 +24,8 @@ Platanias is a long, attractive sandy beach on Skiathos's south coast, 8 km from
 ### By Boat
 Platanias faces south with a sandy bottom — easy anchoring in 3–6 metres. From Skiathos Port, a 30HP rental boat reaches Platanias in approximately 20–25 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
 
 ## The Beach
 
@@ -54,7 +54,7 @@ Anchor in 3–5 metres on sand. The beach is long and open — plenty of anchori
 - **Vromolimnos** (1 km west) — beach bars and watersports
 - **Troulos** (2.5 km west) — sheltered family beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 20–25 minutes from port. Easy south-coast route.
 - **Skippered south-coast tour:** Combine Platanias with Kolios, Agia Paraskevi, and Vromolimnos.

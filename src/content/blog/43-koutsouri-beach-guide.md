@@ -6,7 +6,7 @@ pubDate: "2026-05-29"
 readTime: 5
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/koutsouri.jpg"
+image: "/images/beaches/kolios.jpg"
 tags: ["Koutsouri", "Diamanti", "beaches", "Skiathos", "secluded", "south coast", "boat rental"]
 ---
 
@@ -22,8 +22,8 @@ A narrow, steep footpath leads down to Koutsouri from the main coast road. The p
 ### By Boat
 This is the easiest and most rewarding way to visit. Koutsouri faces south into a small, secluded cove. From Skiathos Port, a 30HP rental boat reaches Koutsouri in approximately 25–30 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 20 minutes. Cost: approximately €30–40.
+### Transfer
+A transfer from Skiathos Town takes about 20 minutes. Cost: approximately €30–40.
 
 ## The Beach
 
@@ -50,7 +50,7 @@ The cove is small and offers good shelter. Anchor in 3–5 metres. Space is limi
 - **Troulos** (2 km west) — sheltered family beach
 - **Agia Paraskevi** (3 km east) — large organized beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 25–30 minutes from port. The perfect undiscovered cove for a private swim.
 - **Skippered hidden-cove tour:** Your captain knows every secret cove on the south coast — Koutsouri is a highlight.

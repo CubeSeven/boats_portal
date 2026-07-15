@@ -23,12 +23,12 @@ const {
   fitBounds = true,
 } = Astro.props;
 
-const mapId = `route-map-${Math.random().toString(36).slice(2, 10)}`;
 const validWaypoints = waypoints.filter(w => w.lat != null && w.lng != null);
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 <div
-  id={mapId}
   class="leaflet-map"
   style={`height: ${height}; width: 100%;`}
   data-map-config={JSON.stringify({
@@ -46,34 +46,14 @@ const validWaypoints = waypoints.filter(w => w.lat != null && w.lng != null);
   </noscript>
 </div>
 
-<script>
-  import L from 'leaflet';
-  import 'leaflet/dist/leaflet.css';
-  (window as any).__leaflet__ = L;
-  console.log('[Map] Leaflet loaded, version:', L.version);
-</script>
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<script define:vars={{ mapId }}>
-  (function initRouteMap() {
-    const L = window.__leaflet__;
-    if (!L) {
-      console.warn('[RouteMap] Leaflet not ready, retrying...');
-      return requestAnimationFrame(initRouteMap);
-    }
-
-    const el = document.getElementById(mapId);
-    if (!el) {
-      console.warn('[RouteMap] Element not found:', mapId);
-      return;
-    }
-
+<script is:inline>
+  // RouteMap initialization — uses global L from CDN (avoids module bundling conflicts with GLightbox)
+  function initRouteMap(el) {
     const cfg = JSON.parse(el.dataset.mapConfig || '{}');
     const { origin, destination, waypoints = [] } = cfg;
-    console.log('[RouteMap] Init', { mapId, origin, destination, waypointsCount: waypoints.length });
-    if (!origin?.lat || !destination?.lat) {
-      console.warn('[RouteMap] No origin/dest coords');
-      return;
-    }
+    if (!origin?.lat || !destination?.lat) return;
 
     const allPts = [origin, ...waypoints, destination];
     const map = L.map(el, {
@@ -81,19 +61,56 @@ const validWaypoints = waypoints.filter(w => w.lat != null && w.lng != null);
       scrollWheelZoom: true,
     });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     }).addTo(map);
 
     const latlngs = allPts.map((p) => [p.lat, p.lng]);
 
-    L.polyline(latlngs, {
-      color: '#3b82f6',
-      weight: 3,
-      opacity: 0.7,
-      dashArray: '10 6',
-    }).addTo(map);
+    // Generate curved sea route using quadratic Bezier between consecutive points
+    function generateCurvedPath(points) {
+      if (points.length < 2) return points;
+      const curvePoints = [];
+      for (let i = 0; i < points.length - 1; i++) {
+        const a = points[i];
+        const b = points[i + 1];
+        // Skip curve if points are identical (avoids division by zero → NaN)
+        if (a[0] === b[0] && a[1] === b[1]) {
+          curvePoints.push(a);
+          continue;
+        }
+        const midLat = (a[0] + b[0]) / 2;
+        const midLng = (a[1] + b[1]) / 2;
+        const dx = b[1] - a[1];
+        const dy = b[0] - a[0];
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const offsetMag = dist * 0.15;
+        const perpLat = dx / dist;
+        const perpLng = -dy / dist;
+        const biasLat = perpLat < 0 ? perpLat * 1.5 : perpLat * 0.5;
+        const biasLng = perpLng > 0 ? perpLng * 1.5 : perpLng * 0.5;
+        const ctrlLat = midLat + biasLat * offsetMag;
+        const ctrlLng = midLng + biasLng * offsetMag;
+        const steps = 16;
+        for (let t = 0; t < steps; t++) {
+          const s = t / steps;
+          const lat = (1 - s) * (1 - s) * a[0] + 2 * (1 - s) * s * ctrlLat + s * s * b[0];
+          const lng = (1 - s) * (1 - s) * a[1] + 2 * (1 - s) * s * ctrlLng + s * s * b[1];
+          curvePoints.push([lat, lng]);
+        }
+      }
+      curvePoints.push(points[points.length - 1]);
+      return curvePoints;
+    }
+
+    // Draw curved route connecting the itinerary stops
+    const routeLatLngs = generateCurvedPath(latlngs);
+
+    // Glow layer
+    L.polyline(routeLatLngs, { color: '#3b82f6', weight: 6, opacity: 0.2 }).addTo(map);
+    // Main route line
+    L.polyline(routeLatLngs, { color: '#3b82f6', weight: 3, opacity: 0.8, dashArray: '10 6' }).addTo(map);
 
     const startIcon = L.divIcon({
       html: `<div style="width:28px;height:28px;background:oklch(0.55 0.18 145);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.35);border:2px solid white;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg></div>`,
@@ -140,8 +157,62 @@ const validWaypoints = waypoints.filter(w => w.lat != null && w.lng != null);
       map.setView([origin.lat, origin.lng], 12);
     }
 
-    console.log('[RouteMap] Ready');
-  })();
+    // Fix tile rendering — the map may be inside a .reveal container
+    // that starts at opacity:0 with 0 size. invalidateSize must fire
+    // AFTER the reveal animation makes the container visible.
+    function fixSize() {
+      map.invalidateSize();
+    }
+    requestAnimationFrame(() => requestAnimationFrame(fixSize));
+    setTimeout(fixSize, 100);
+    setTimeout(fixSize, 500);
+    setTimeout(fixSize, 1500);
+
+    // Watch for the reveal container becoming visible
+    const revealParent = el.closest('.reveal');
+    if (revealParent && !revealParent.classList.contains('visible')) {
+      const observer = new MutationObserver(() => {
+        if (revealParent.classList.contains('visible')) {
+          map.invalidateSize();
+          observer.disconnect();
+        }
+      });
+      observer.observe(revealParent, { attributes: true, attributeFilter: ['class'] });
+    }
+  }
+
+  // Initialize all route maps on the page — deferred until container is visible
+  function initAllMaps() {
+    document.querySelectorAll('.leaflet-map[data-map-config]').forEach((el) => {
+      if (el.dataset.mapInitialized) return;
+      el.dataset.mapInitialized = 'true';
+      
+      // Always defer to next frame to ensure CSS layout is complete
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          try {
+            initRouteMap(el);
+          } catch (e) {
+            console.error('[RouteMap] Init failed:', e);
+          }
+        });
+      });
+    });
+  }
+
+  // Defer to next tick so other module scripts (Gallery/GLightbox) finish first
+  // Also wait for Leaflet CDN to load
+  function start() {
+    if (typeof L === 'undefined') {
+      return setTimeout(start, 50);
+    }
+    setTimeout(initAllMaps, 0);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 </script>
 
 <style>

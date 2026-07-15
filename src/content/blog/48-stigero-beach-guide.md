@@ -22,8 +22,8 @@ None. There is no road or path to Stigero. Boat access is the only option.
 ### By Boat
 Stigero is on the eastern side of the island. From Skiathos Port, a rental boat reaches Stigero in approximately 15–20 minutes by heading east and then south along the eastern coastline. The cove is small and easy to miss — keep a close eye on the rocky shoreline.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 15 minutes. Cost: approximately €20–30.
+### Transfer
+A transfer from Skiathos Town takes about 15 minutes. Cost: approximately €20–30.
 
 ## The Beach
 
@@ -42,7 +42,7 @@ The small cove offers some shelter. Anchor in 3–5 metres. Space for 1–2 boat
 - **Tsougria Island** (visible offshore to the south, 15–20 minutes by boat) — organized island beaches
 - **Skiathos Town** (return west, 15 minutes) — for lunch, supplies, sightseeing
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** A short, interesting trip from port to the island's less-visited eastern side.
 - **Skippered private-beach tour:** Your captain will take you to Stigero and other secluded east-coast coves, then on to Tsougria.

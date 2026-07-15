@@ -1,6 +1,6 @@
 ---
 slug: "agia-paraskevi-beach"
-title: "Agia Paraskevi Beach Base | Skiathos Boats"
+title: "Agia Paraskevi Beach Base | Sea Skiathos"
 seoTitle: "Agia Paraskevi Beach Boat Hire & Water Sports | Skiathos"
 description: "Join us at Agia Paraskevi Beach on the south coast. Offering boat rentals, watersports, and coastal adventures from one of Skiathos' most beautiful beaches."
 heroTitle: "Agia Paraskevi<br/>Beach Base"
@@ -9,7 +9,7 @@ locationName: "Agia Paraskevi Beach"
 heroGradient: "turquoise"
 status: "Beach Base"
 icon: "waves"
-directions: "Our base is located at the center of Agia Paraskevi Beach, clearly marked with Skiathos Boats branding. Accessible via the main coastal road."
+directions: "Our base is located at the center of Agia Paraskevi Beach, clearly marked with Sea Skiathos branding. Accessible via the main coastal road."
 latitude: 39.1419
 longitude: 23.4404
 mapZoom: 15
@@ -30,10 +30,6 @@ services:
     href: "/private-boat-tours/"
     price: "From €200"
 order: 4
-image: "/images/stock/s24tock images.jpg"
-gallery:
-  - "/images/stock/s25tock images.jpg"
-  - "/images/stock/s26tock images.jpg"
 ---
 
 ## A Complete Beach Base

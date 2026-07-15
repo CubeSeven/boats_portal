@@ -18,15 +18,15 @@ const {
   height = '350px',
   zoom = 14,
 } = Astro.props;
-
-const mapId = `single-map-${Math.random().toString(36).slice(2, 10)}`;
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 <div
-  id={mapId}
   class="leaflet-map"
   style={`height: ${height}; width: 100%;`}
   data-map-config={JSON.stringify({ lat, lng, label, sub, href, zoom })}
+  data-map-type="single"
 >
   <noscript>
     <div class="map-fallback">
@@ -36,42 +36,18 @@ const mapId = `single-map-${Math.random().toString(36).slice(2, 10)}`;
   </noscript>
 </div>
 
-<script>
-  import L from 'leaflet';
-  import 'leaflet/dist/leaflet.css';
-  (window as any).__leaflet__ = L;
-  console.log('[Map] Leaflet loaded, version:', L.version);
-</script>
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<script define:vars={{ mapId }}>
-  (function initSingleMap() {
-    const L = window.__leaflet__;
-    if (!L) {
-      console.warn('[SinglePinMap] Leaflet not ready, retrying...');
-      return requestAnimationFrame(initSingleMap);
-    }
-
-    const el = document.getElementById(mapId);
-    if (!el) {
-      console.warn('[SinglePinMap] Element not found:', mapId);
-      return;
-    }
-
+<script is:inline>
+  function initSingleMap(el) {
     const cfg = JSON.parse(el.dataset.mapConfig || '{}');
-    console.log('[SinglePinMap] Init', { mapId, cfg });
-    if (!cfg.lat || !cfg.lng) {
-      console.warn('[SinglePinMap] No lat/lng in config');
-      return;
-    }
+    if (!cfg.lat || !cfg.lng) return;
 
-    const map = L.map(el, {
-      zoomControl: true,
-      scrollWheelZoom: true,
-    }).setView([cfg.lat, cfg.lng], cfg.zoom);
+    const map = L.map(el, { zoomControl: true, scrollWheelZoom: true }).setView([cfg.lat, cfg.lng], cfg.zoom);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     }).addTo(map);
 
     const marker = L.marker([cfg.lat, cfg.lng], {
@@ -91,8 +67,44 @@ const mapId = `single-map-${Math.random().toString(36).slice(2, 10)}`;
       marker.bindPopup(html).openPopup();
     }
 
-    console.log('[SinglePinMap] Ready');
-  })();
+    setTimeout(() => map.invalidateSize(), 100);
+    setTimeout(() => map.invalidateSize(), 500);
+    setTimeout(() => map.invalidateSize(), 1500);
+
+    // Watch for reveal container becoming visible
+    const revealParent = el.closest('.reveal');
+    if (revealParent && !revealParent.classList.contains('visible')) {
+      const observer = new MutationObserver(() => {
+        if (revealParent.classList.contains('visible')) {
+          map.invalidateSize();
+          observer.disconnect();
+        }
+      });
+      observer.observe(revealParent, { attributes: true, attributeFilter: ['class'] });
+    }
+  }
+
+  function initAllSingleMaps() {
+    document.querySelectorAll('.leaflet-map[data-map-type="single"]').forEach((el) => {
+      if (el.dataset.mapInitialized) return;
+      el.dataset.mapInitialized = 'true';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          try { initSingleMap(el); } catch (e) { console.error('[SinglePinMap] Init failed:', e); }
+        });
+      });
+    });
+  }
+
+  function start() {
+    if (typeof L === 'undefined') return setTimeout(start, 50);
+    setTimeout(initAllSingleMaps, 0);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 </script>
 
 <style>

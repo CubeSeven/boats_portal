@@ -6,20 +6,22 @@ length: "9 m"
 capacity: 9
 horsepower: 300
 priceFrom: 650
-priceHalfDay: 470
 priceFullDay: 650
 imagePlaceholder: "dark"
-image: "/images/fleet/tiger-marine-1.jpg"
-gallery: ["/images/fleet/tiger-marine-1.jpg", "/images/fleet/tiger-marine-2.jpg", "/images/fleet/tiger-marine-3.jpg", "/images/fleet/tiger-marine-4.jpg", "/images/fleet/tiger-marine-5.jpg", "/images/fleet/tiger-marine-6.jpg", "/images/fleet/tiger-marine-7.jpg", "/images/fleet/tiger-marine-8.jpg", "/images/fleet/tiger-marine-9.jpg", "/images/fleet/tiger-marine-10.jpg", "/images/fleet/tiger-marine-11.jpg"]
+image: "/images/fleet/tiger-marine-5.jpg"
+gallery: ["/images/fleet/tiger-marine-2.jpg", "/images/fleet/tiger-marine-3.jpg", "/images/fleet/tiger-marine-4.jpg", "/images/fleet/tiger-marine-5.jpg", "/images/fleet/tiger-marine-6.jpg", "/images/fleet/tiger-marine-7.jpg", "/images/fleet/tiger-marine-8.jpg", "/images/fleet/tiger-marine-9.jpg", "/images/fleet/tiger-marine-10.jpg", "/images/fleet/tiger-marine-11.jpg"]
 order: 4
 features:
-  - "Versatile Power Boat"
-  - "Copes with Challenging Conditions"
-  - "Spacious RIB Layout"
-  - "300 HP Engine"
+  - "Bimini"
+  - "Swim Platform"
+  - "GPS Plotter"
+  - "Snorkelling Equipment"
+  - "External Speakers"
+  - "Large Storage"
+  - "Bathing Ladder"
+  - "Ice Box"
 description: "9 metres, 300HP, seats 9. Proper offshore RIB that laughs at rough water. Popular for a reason — fast, versatile, and stable enough for long crossings. License required."
 ---
-
 ## Versatility & Speed
 
 The Tiger Marine 8.5m is our most-booked RIB, and it's not hard to see why. 300HP, 9 metres of rigid inflatable, and a hull that handles whatever the Aegean decides to do that afternoon. Fast enough for Skopelos day trips, stable enough for swimming stops in open water, and comfortable enough that nobody complains about the ride.

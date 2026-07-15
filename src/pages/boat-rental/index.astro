@@ -1,13 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import HeroSection from '../../components/sections/HeroSection.astro';
+import PageHeader from '../../components/layout/PageHeader.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
 import ServiceCard from '../../components/cards/ServiceCard.astro';
 import BoatCard from '../../components/cards/BoatCard.astro';
 import PricingTable from '../../components/sections/PricingTable.astro';
 import FaqAccordion from '../../components/sections/FaqAccordion.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
-import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
+import ReviewSlider from '../../components/sections/ReviewSlider.astro';
+import DynamicIcon from '../../components/ui/DynamicIcon.astro';
 import { getCollection, getEntry } from 'astro:content';
 import { getFleet } from '../../lib/collections';
 
@@ -25,36 +26,28 @@ const rentalFaqs = allFaqs
 
 const rentalData = await getEntry('site', 'rental');
 const steps = rentalData?.data.steps || [];
-const pricingRows = rentalData?.data.pricingSummary || [];
+const pricingRows = rentalData?.data.pricingSummary ?? [];
+
+const allTestimonials = await getCollection('testimonials');
+const testimonials = allTestimonials
+  .map((entry) => entry.data)
+  .sort((a, b) => (b.featured === true ? 1 : 0) - (a.featured === true ? 1 : 0))
+  .slice(0, 10);
 ---
 
 <Layout
-  title="Rent a Boat in Skiathos | No License Required | Skiathos Boats"
+  title="Rent a Boat in Skiathos | No License Required | Sea Skiathos"
   description="Self-drive boat rental in Skiathos, Greece. No license needed for 30HP boats. RIBs, sailboats, and luxury yachts also available. Half-day, full-day and weekly hire."
 >
-  <HeroSection
+  <PageHeader
     title="Rent a Boat in Skiathos"
     subtitle="Your own private boat, your own schedule. No license needed for smaller engines — just show up and sail."
-    ctaText="View Our Fleet"
-    ctaHref="/fleet/"
-    ctaSecondText="Get a Quote"
-    ctaSecondHref="/contact/"
-    gradient="ocean"
-    size="medium"
-    showScrollHint={false}
-    backgroundImage="/images/stock/s3tock images.jpg"
+    showBreadcrumbs={false}
   />
-
-  <Breadcrumbs />
 
   <!-- Categories -->
   <section class="section">
     <div class="container">
-      <SectionHeading
-        label="Rental Options"
-        title="Choose Your Rental Type"
-        description="From no-license beginner boats to high-speed RIBs and luxury yachts — every budget, every group."
-      />
       <div class="cat-grid">
         {rentalCategories.map((cat) => (
           <ServiceCard
@@ -84,6 +77,8 @@ const pricingRows = rentalData?.data.pricingSummary || [];
             name={boat.data.name}
             type={boat.data.type}
             priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
             slug={boat.id}
             image={boat.data.image}
             imagePlaceholder={boat.data.imagePlaceholder}
@@ -113,7 +108,13 @@ const pricingRows = rentalData?.data.pricingSummary || [];
       <div class="steps-grid">
         {steps.map((s) => (
           <div class="step reveal">
-            <span class="step-num">{s.step}</span>
+            <span class="step-num">
+              {s.icon ? (
+                <DynamicIcon name={s.icon} size={28} strokeWidth={1.5} />
+              ) : (
+                s.step
+              )}
+            </span>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
           </div>
@@ -132,7 +133,7 @@ const pricingRows = rentalData?.data.pricingSummary || [];
       />
       <PricingTable
         rows={pricingRows}
-        disclaimer="Final prices confirmed at booking. Peak season (July–August) upper rates apply. Deposits held by card, returned same day on boat return."
+        disclaimer="Prices might change based on seasonal availability. Fuel is not included in the price shown and is calculated at the end of the rental based on consumption. Deposits held by card, returned same day on boat return."
       />
     </div>
   </section>
@@ -156,7 +157,10 @@ const pricingRows = rentalData?.data.pricingSummary || [];
     secondButtonText="View All Tours"
     secondButtonHref="/private-boat-tours/"
     variant="dark"
+    backgroundImage="/images/stock/s20tock images.webp"
   />
+
+  <ReviewSlider reviews={testimonials} serviceFilter="Boat Rental" />
 </Layout>
 
 <style>
@@ -177,38 +181,43 @@ const pricingRows = rentalData?.data.pricingSummary || [];
 
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    counter-reset: steps;
   }
 
   .step {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    position: relative;
+    gap: 0.75rem;
+    padding: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    transition: transform 0.3s ease;
+  }
+
+  .step:hover {
+    transform: translateY(-5px);
   }
 
   .step-num {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    font-weight: 700;
     color: var(--foreground);
-    opacity: 0.5; /* Increased from 0.2 for better contrast */
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
   }
 
   .step h3 {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     color: var(--foreground);
     margin: 0;
   }
 
   .step p {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--muted-foreground);
     margin: 0;
-    line-height: 1.65;
+    line-height: 1.6;
   }
 
   .section-cta {

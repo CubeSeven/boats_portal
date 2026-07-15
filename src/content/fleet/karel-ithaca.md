@@ -5,22 +5,20 @@ type: "with-license"
 length: "5.8 m"
 capacity: 7
 horsepower: 90
-priceFrom: 280
-priceHalfDay: 200
-priceFullDay: 280
+priceFrom: 350
+priceFullDay: 350
 imagePlaceholder: "turquoise"
 image: "/images/fleet/karel-ithaca-1.jpg"
-gallery: ["/images/fleet/karel-ithaca-1.jpg", "/images/fleet/karel-ithaca-2.jpg", "/images/fleet/karel-ithaca-3.jpg", "/images/fleet/karel-ithaca-4.jpg", "/images/fleet/karel-ithaca-5.jpg", "/images/fleet/karel-ithaca-6.jpg", "/images/fleet/karel-ithaca-7.jpg", "/images/fleet/karel-ithaca-8.jpg", "/images/fleet/karel-ithaca-9.jpg", "/images/fleet/karel-ithaca-10.jpg", "/images/fleet/karel-boat-ithaca-1.jpg", "/images/fleet/karel-boat-ithaca-2.jpg", "/images/fleet/karel-boat-ithaca-3.jpg", "/images/fleet/karel-boat-ithaca-4.jpg", "/images/fleet/karel-boat-ithaca-5.jpg"]
+gallery: ["/images/fleet/karel-ithaca-2.jpg", "/images/fleet/karel-ithaca-4.jpg", "/images/fleet/karel-ithaca-5.jpg", "/images/fleet/karel-ithaca-6.jpg", "/images/fleet/karel-ithaca-7.jpg", "/images/fleet/karel-ithaca-8.jpg", "/images/fleet/karel-ithaca-9.jpg", "/images/fleet/karel-ithaca-10.jpg", "/images/fleet/karel-boat-ithaca-1.jpg", "/images/fleet/karel-boat-ithaca-2.jpg", "/images/fleet/karel-boat-ithaca-3.jpg", "/images/fleet/karel-boat-ithaca-4.jpg", "/images/fleet/karel-boat-ithaca-5.jpg"]
 order: 11
 features:
-  - "Greek Manufactured Reliability"
-  - "Hardy and Stable Hull"
-  - "Plenty of Seating"
   - "Large Bimini Canopy"
-  - "Skipper / License Required"
+  - "Ice Box"
+  - "Swim Ladder"
+  - "Snorkelling Equipment"
+  - "GPS Plotter"
 description: "5.8 metres, 90HP, seats 7. Greek-built, stable hull, big sun canopy. A proper family day boat — reliable, roomy, and easy to drive. License required (or add a skipper)."
 ---
-
 ## Reliable & Hardy
 
 The Karel Ithaca is what most people picture when they think 'rent a boat in Greece.' Greek-made, built to last, with enough seating for a group of friends and a big canopy for shade. The 90HP engine gives it enough punch to reach the north coast without burning through fuel.

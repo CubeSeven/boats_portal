@@ -1,15 +1,14 @@
 {
   "steps": [
-    { "step": "01", "title": "Choose Your Boat", "desc": "Browse our fleet and pick the vessel that fits your group size, license situation, and budget." },
-    { "step": "02", "title": "Request a Quote", "desc": "Fill in our quick form or call/WhatsApp us. We confirm availability and pricing within 2 hours." },
-    { "step": "03", "title": "Safety Briefing", "desc": "Arrive at the dock — we walk you through everything. Controls, navigation, anchoring, emergency procedures." },
-    { "step": "04", "title": "Set Sail", "desc": "The Aegean is yours. GPS on board, sea map provided, and our team available by phone throughout your day." }
+    { "step": "01", "icon": "search", "title": "Choose Your Boat", "desc": "Browse our fleet and pick the vessel that fits your group size, license situation, and budget." },
+    { "step": "02", "icon": "message-square", "title": "Request a Quote", "desc": "Fill in our quick form or call/WhatsApp us. We confirm availability and pricing within 2 hours." },
+    { "step": "03", "icon": "shield-check", "title": "Safety Briefing", "desc": "Arrive at the dock — we walk you through everything. Controls, navigation, anchoring, emergency procedures." },
+    { "step": "04", "icon": "navigation", "title": "Set Sail", "desc": "The Aegean is yours. GPS on board, sea map provided, and our team available by phone throughout your day." }
   ],
   "pricingSummary": [
-    { "duration": "Half Day (4 hours)", "price": "From €110", "notes": "Morning or afternoon slot" },
-    { "duration": "Full Day (8 hours)", "price": "From €150", "notes": "No-license to 50HP range", "highlight": true },
-    { "duration": "Full Day — RIB 200HP", "price": "From €290", "notes": "Includes skipper option" },
-    { "duration": "2-Day Rental", "price": "From €280", "notes": "Significant discount applied" },
-    { "duration": "Weekly Charter", "price": "From €900", "notes": "Contact us for custom quote" }
+    { "duration": "No-License Boats (≤30HP)", "price": "From €180", "notes": "Full day rate. Half day on request.", "highlight": true },
+    { "duration": "License Required & Small RIBs", "price": "From €350", "notes": "Full day rate. Half day on request." },
+    { "duration": "Large RIBs (200HP+)", "price": "From €650", "notes": "Full day rate. Half day on request." },
+    { "duration": "Top Boats & Yachts", "price": "From €1,200", "notes": "Full day rate. Half day on request." }
   ]
 }

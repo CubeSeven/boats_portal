@@ -3,11 +3,11 @@ import ServicePage from '../../layouts/ServicePage.astro';
 import PricingTable from '../../components/sections/PricingTable.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
 import BoatCard from '../../components/cards/BoatCard.astro';
-import { Check, Plus } from 'lucide-react';
 import { getEntry, render } from 'astro:content';
 import { getFleet } from '../../lib/collections';
 
 const entry = await getEntry('activities', 'luxury-yacht-charter');
+if (!entry) throw new Error('Activity "luxury-yacht-charter" not found');
 const { Content } = await render(entry);
 const data = entry.data;
 
@@ -36,7 +36,7 @@ const yachts = allBoats.filter(b => b.data.type === 'yacht' && b.data.available)
   <section>
     <SectionHeading
       label="Premium Charters"
-      title="The Skiathos Boats Yacht Experience"
+      title="The Sea Skiathos Yacht Experience"
       align="left"
       titleSize="md"
     />
@@ -47,7 +47,11 @@ const yachts = allBoats.filter(b => b.data.type === 'yacht' && b.data.available)
         {inclusions.map(inc => (
           <div class={`inclusion-item ${inc.type}`}>
             <span class="inclusion-icon">
-              {inc.type === 'included' ? <Check size={14} /> : <Plus size={14} />}
+              {inc.type === 'included' ? (
+                <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              ) : (
+                <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+              )}
             </span>
             {inc.text}
           </div>
@@ -65,6 +69,8 @@ const yachts = allBoats.filter(b => b.data.type === 'yacht' && b.data.available)
             name={boat.data.name}
             type={boat.data.type}
             priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
             slug={boat.id}
             image={boat.data.image}
             imagePlaceholder={boat.data.imagePlaceholder}
@@ -90,7 +96,7 @@ const yachts = allBoats.filter(b => b.data.type === 'yacht' && b.data.available)
       />
       <PricingTable
         rows={pricing}
-        disclaimer="All prices are per charter (not per person). Final rates depend on yacht selection, season, and itinerary. Contact us for a bespoke quote."
+        disclaimer="Prices might change based on seasonal availability. Fuel is not included in the price shown and is calculated at the end of the rental based on consumption. All prices are per charter (not per person). Final rates depend on yacht selection, season, and itinerary. Contact us for a bespoke quote."
       />
     </section>
   )}

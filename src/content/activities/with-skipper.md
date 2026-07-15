@@ -1,12 +1,12 @@
 ---
 slug: with-skipper
 title: With Skipper
-seoTitle: Skiathos Boat Hire With Skipper & Captain | From €280 | Skiathos Boats
+seoTitle: Skiathos Boat Hire With Skipper & Captain | From €280 | Sea Skiathos
 description: Hire a private boat with a professional skipper in Skiathos. No driving, no stress — your expert local captain handles everything while you relax and explore.
 heroTitle: Private Boat With<br/>Your Own Captain
 heroSubtitle: Our professional local skippers take the wheel so you can relax, explore, and enjoy every moment. No license, no stress.
 heroGradient: turquoise
-icon: compass
+icon: userround
 href: /boat-rental/with-skipper/
 price: From €280/day
 accent: gold
@@ -35,9 +35,9 @@ itineraries:
   - title: The Sunset Cruise
     description: Evening departure, circumnavigation of the island's western tip, back at dusk
 pricing:
-  - duration: Half Day (4 hours) — Compass 165
-    price: From €200
-    notes: Boat + skipper included
+  - duration: Half Day (4 hours)
+    price: Contact Us
+    notes: Boat + skipper included. Enquire for rates.
   - duration: Full Day (8 hours) — Compass 165
     price: From €280
     notes: Most popular

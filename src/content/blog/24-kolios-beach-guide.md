@@ -24,8 +24,8 @@ Kolios is a modest but lovely sandy cove on Skiathos's southern coast, 8 km from
 ### By Boat
 Kolios faces south directly into a small, deep cove. The wind shelter here is excellent — the hills behind the beach block northerlies completely. Anchor in 3–5 metres on sand. From Skiathos Port, a 30HP rental boat reaches Kolios in approximately 20–25 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
 
 ## The Beach
 
@@ -59,7 +59,7 @@ Kolios provides excellent shelter. The cove is deep enough for multiple boats to
 - **Agia Paraskevi** (1.5 km west) — large organized beach
 - **Troulos** (3 km west) — sheltered family beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 20–25 minutes from port. Easy south-coast route. Good anchoring conditions.
 - **Skippered south-coast dining cruise:** Stop at Kolios for lunch at the taverna, then explore nearby coves in the afternoon.

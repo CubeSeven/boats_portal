@@ -9,10 +9,6 @@ heroGradient: "ocean"
 duration: "3 Hours"
 capacity: "Up to 10 persons"
 order: 5
-image: "/images/stock/s20tock images.jpg"
-gallery:
-  - "/images/stock/s21tock images.jpg"
-  - "/images/stock/s22tock images.jpg"
 itinerary:
   - time: "17:30"
     label: "Departure"
@@ -60,6 +56,9 @@ faqs:
     answer: "We serve premium local bottled wines from small producers in the Sporades or mainland Greece. Usually a crisp dry white or a pale rosé."
   - question: "Is it suitable for children?"
     answer: "While very romantic for couples, it's a calm and beautiful trip for families too. We provide non-alcoholic alternatives for children."
+image: "/images/tours/sunset-wine-cruise.webp"
+gallery: ["/images/tours/sunset-wine-cruise-gallery-1.webp", "/images/tours/sunset-wine-cruise-gallery-2.webp", "/images/tours/sunset-wine-cruise-gallery-3.webp"]
+
 ---
 
 ## Evening Magic on the Water

@@ -1,0 +1,52 @@
+---
+import ServicePage from '../../layouts/ServicePage.astro';
+import PricingTable from '../../components/sections/PricingTable.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('activities', 'jet-car');
+if (!entry) throw new Error('Activity "jet-car" not found');
+const { Content } = await render(entry);
+const data = entry.data;
+
+const pricing = data.pricing || [];
+const faqs = data.faqs || [];
+---
+
+<ServicePage
+  id={entry.id}
+  category={data.category}
+  title={data.seoTitle}
+  seoTitle={data.seoTitle}
+  description={data.description}
+  heroTitle={data.heroTitle}
+  heroSubtitle={data.heroSubtitle}
+  heroGradient={data.heroGradient as any}
+  faqs={faqs}
+  backgroundImage={data.image}
+>
+  <section>
+    <SectionHeading
+      label="Wave Rider"
+      title="Drive a Sports Car on Water"
+      align="left"
+      titleSize="md"
+    />
+    <Content />
+  </section>
+
+  {pricing.length > 0 && (
+    <section>
+      <SectionHeading
+        label="Pricing"
+        title="Jet Car Session Rates"
+        align="left"
+        titleSize="md"
+      />
+      <PricingTable rows={pricing} disclaimer="Price is per vehicle (up to 2 passengers) and includes safety training, fuel, and life jackets." />
+    </section>
+  )}
+</ServicePage>
+
+<style>
+</style>

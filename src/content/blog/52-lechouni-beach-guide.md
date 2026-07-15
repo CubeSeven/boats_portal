@@ -6,7 +6,7 @@ pubDate: "2026-06-07"
 readTime: 4
 category: "destination"
 imagePlaceholder: "muted"
-image: "/images/beaches/lechouni.jpg"
+image: "/images/beaches/megas-gialos.jpg"
 tags: ["Lechouni", "beaches", "Skiathos", "remote", "north coast", "rocky", "boat rental"]
 ---
 
@@ -22,8 +22,8 @@ A rough, unmarked path leads to Lechouni from the interior. The route is challen
 ### By Boat
 Lechouni faces north into a small bay. From Skiathos Port, a rental boat reaches Lechouni in approximately 20–25 minutes by heading north from the port area. The north-coast exposure means it's weather-dependent.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes in calm conditions. Cost: approximately €25–35.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes in calm conditions. Cost: approximately €25–35.
 
 ## The Beach
 
@@ -43,7 +43,7 @@ Lechouni is approximately 120 metres of sand, surrounded by rocky hills. The wat
 - **Lalaria** (further east along the coast, ~15 minutes) — the famous boat-only beach
 - **Skiathos Town** (return south, 20 minutes)
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** For experienced, weather-aware self-drivers. Our team provides a full safety briefing.
 - **Skippered north-coast tour:** Your captain selects the day's north-coast stops based on conditions.

@@ -1,9 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import HeroSection from '../../components/sections/HeroSection.astro';
-import SectionHeading from '../../components/ui/SectionHeading.astro';
+import PageHeader from '../../components/layout/PageHeader.astro';
 import BlogCard from '../../components/cards/BlogCard.astro';
-import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
 import { getCollection } from 'astro:content';
 
@@ -13,34 +11,23 @@ const sortedPosts = (allPosts || []).sort((a, b) => b.data.pubDate.valueOf() - a
 const featuredPost = sortedPosts.length > 0 ? (sortedPosts.find(p => p.data.featured) || sortedPosts[0]) : null;
 const remainingPosts = featuredPost ? sortedPosts.filter(p => p.id !== featuredPost.id) : sortedPosts;
 
-const categories = ['guide', 'tips', 'itinerary', 'maritime'];
+const categories = ['guide', 'tips', 'destination', 'comparison'];
 ---
 
 <Layout 
-  title="Skiathos Travel Blog & Boat Guide | Skiathos Boats"
+  title="Skiathos Travel Blog & Boat Guide | Sea Skiathos"
   description="Expert tips, hidden beach guides, and boating itineraries for Skiathos. Our local blog helps you plan the perfect day on the Aegean."
 >
-  <HeroSection
-    title="Skiathos Sea<br/>Journal"
+  <PageHeader
+    title="Skiathos Sea Journal"
     subtitle="Insider guides, hidden coves, and expert boating tips from the locals who know the island best."
-    gradient="moody"
-    size="medium"
-    showScrollHint={false}
-    backgroundImage="/images/stock/s12tock images.jpg"
+    showBreadcrumbs={false}
   />
-
-  <Breadcrumbs />
 
   <section class="section">
     <div class="container">
       {featuredPost && (
         <>
-          <SectionHeading 
-            label="Featured Article" 
-            title="Must Read for Skiathos Visitors" 
-            align="left"
-          />
-          
           <div class="featured-post reveal">
             <a href={`/blog/${featuredPost.id}/`} class="featured-card">
               <div class="featured-card__image" style={featuredPost.data.image ? `background-image: url('${featuredPost.data.image}'); background-size: cover; background-position: center;` : `background: linear-gradient(135deg, var(--color-black), var(--color-gray-900))`}></div>
@@ -68,7 +55,7 @@ const categories = ['guide', 'tips', 'itinerary', 'maritime'];
               excerpt={post.data.description}
               slug={post.id}
               pubDate={post.data.pubDate.toISOString()}
-              readTime={post.data.readTime}
+              readTime={String(post.data.readTime)}
               category={post.data.category}
               imagePlaceholder={post.data.imagePlaceholder}
               image={post.data.image}
@@ -86,11 +73,6 @@ const categories = ['guide', 'tips', 'itinerary', 'maritime'];
             </div>
           </div>
           
-          <div class="sidebar-box sticky-sidebar">
-            <h3>Need a Boat?</h3>
-            <p>Ready to put these tips into practice? Rent a boat or book a tour today.</p>
-            <a href="/contact/" class="btn-primary w-full">Check Availability</a>
-          </div>
         </aside>
       </div>
     </div>
@@ -102,6 +84,7 @@ const categories = ['guide', 'tips', 'itinerary', 'maritime'];
     buttonText="Contact the Experts"
     buttonHref="/contact/"
     variant="turquoise"
+    backgroundImage="/images/stock/s19tock images.webp"
   />
 </Layout>
 

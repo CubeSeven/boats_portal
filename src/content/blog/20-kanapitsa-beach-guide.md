@@ -26,8 +26,8 @@ Kanapitsa Bay faces due south, making it well-protected from the northerly melte
 
 From Skiathos Port, a 30HP rental boat reaches Kanapitsa in approximately 15–20 minutes. You'll pass Megali Ammos, Ftelia, Vassilias, and Achladies along the way.
 
-### Water Taxi
-A water taxi from Skiathos Town reaches Kanapitsa in about 12 minutes. Cost is approximately €25–35.
+### Transfer
+A transfer from Skiathos Town reaches Kanapitsa in about 12 minutes. Cost is approximately €25–35.
 
 ## The Beach Experience
 
@@ -69,7 +69,7 @@ Anchor in 3–5 metres on sand in the centre of the cove. The bay is well-protec
 
 Just around the headland to the west is Tzaneria Beach — a smaller, more intimate cove that's popular with scuba divers. Tzaneria has a dive centre offering PADI courses and guided dives. Even if you're not diving, the snorkelling around the rocky headland between Kanapitsa and Tzaneria is excellent.
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Reaches Kanapitsa in 15–20 minutes. Easy anchoring. The south coast route is straightforward for beginners.
 - **Skippered half-day trips:** Combine Kanapitsa, Tzaneria, Vromolimnos, and Kolios with a captain who knows the best swimming spots.

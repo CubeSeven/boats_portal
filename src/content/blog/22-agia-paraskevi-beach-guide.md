@@ -24,8 +24,8 @@ Agia Paraskevi is named after the small whitewashed chapel that sits at the east
 ### By Boat
 The beach faces south-southwest with gentle exposure. The sandy bottom makes for easy anchoring in 3–6 metres of water. From Skiathos Port, a rental boat reaches Agia Paraskevi in approximately 22–28 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
 
 ## The Beach
 
@@ -69,7 +69,7 @@ Anchor in 3–5 metres on the sandy bottom. The beach faces southwest and is gen
 - **Platanias** (1 km east) — long sandy beach with hotels
 - **Troulos** (2 km west) — popular family beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 22–28 minutes from port. Straightforward south-coast route. Easy anchoring.
 - **Family-friendly skippered tours:** Half-day trips with stops at Agia Paraskevi and nearby beaches. Your captain knows the safest swimming spots for children.

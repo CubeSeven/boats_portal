@@ -9,10 +9,6 @@ heroGradient: "sunset"
 duration: "Full Day (8–9h)"
 capacity: "Up to 8 persons"
 order: 4
-image: "/images/stock/s19tock images.jpg"
-gallery:
-  - "/images/stock/s20tock images.jpg"
-  - "/images/stock/s21tock images.jpg"
 itinerary:
   - time: "09:00"
     label: "Skiathos Departure"
@@ -59,7 +55,7 @@ includes:
     included: false
 pricing:
   - duration: "Full Day Private (8.5h)"
-    price: "From €500"
+    price: "From €600"
     notes: "Max 8 persons"
     highlight: true
 faqs:
@@ -67,6 +63,9 @@ faqs:
     answer: "It is 110 steps up a stone path. It takes about 10-15 minutes. It is manageable for most people but requires decent footwear."
   - question: "Will we see the filming locations?"
     answer: "Yes, our skipper will point out the key locations used in the 2008 movie, including the \"Don't go sharing your devotion\" jetty area."
+image: "/images/tours/mamma-mia-skopelos.webp"
+gallery: ["/images/tours/mamma-mia-skopelos-gallery-1.webp", "/images/tours/mamma-mia-skopelos-gallery-2.webp", "/images/tours/mamma-mia-chapel.jpg"]
+
 ---
 
 ## Abba, Blue Water, and Movie Magic

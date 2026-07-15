@@ -1,14 +1,14 @@
 ---
 slug: "privacy"
 title: "Privacy Policy"
-description: "How we handle your data at Skiathos Boats."
+description: "How we handle your data at Sea Skiathos."
 ---
 
 # Privacy Policy
 
 Last Updated: April 2026
 
-At Skiathos Boats, we are committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal information when you use our website and services.
+At Sea Skiathos, we are committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal information when you use our website and services.
 
 ## 1. Information We Collect
 We collect information you provide directly to us when you:

@@ -10,7 +10,6 @@ import BookingWidget from '../components/sections/BookingWidget.astro';
 import BoatCard from '../components/cards/BoatCard.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import RouteMap from '../components/maps/RouteMap.astro';
-import { Check, X } from 'lucide-react';
 import RelatedContent from '../components/sections/RelatedContent.astro';
 import { getFleet } from '../lib/collections';
 
@@ -35,12 +34,13 @@ interface PricingRow {
 interface FaqItem { question: string; answer: string; }
 
 interface Props {
+  [key: string]: any;
   title: string;
   seoTitle?: string;
   description: string;
   heroTitle: string;
   heroSubtitle?: string;
-  heroGradient?: 'ocean' | 'sunset' | 'turquoise';
+  heroGradient?: string;
   duration: string;
   capacity: string;
   departure?: string;
@@ -88,7 +88,7 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
     ctaHref="/contact/"
     ctaSecondText="View All Tours"
     ctaSecondHref="/private-boat-tours/"
-    gradient={heroGradient}
+    gradient={heroGradient as any}
     size="medium"
     showScrollHint={false}
     backgroundImage={image}
@@ -144,7 +144,7 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
       )}
 
       {itinerary.length > 0 && (
-        <section class="tour-map-section reveal">
+        <section class="tour-map-section">
           <h2>Tour Route</h2>
           <RouteMap
             origin={{
@@ -167,6 +167,7 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
                 label: stop.label,
                 sub: stop.time,
               }))}
+            
             height="400px"
           />
         </section>
@@ -180,7 +181,11 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
             {includes.map((item) => (
               <div class={`include-item ${item.included ? 'included' : 'excluded'}`}>
                 <span class="include-icon" aria-hidden="true">
-                  {item.included ? <Check size={16} /> : <X size={16} />}
+                  {item.included ? (
+                    <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  ) : (
+                    <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                  )}
                 </span>
                 <span>{item.item}</span>
               </div>
@@ -215,6 +220,8 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
                 name={boat.data.name}
                 type={boat.data.type}
                 priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
                 slug={boat.id}
                 image={boat.data.image}
                 imagePlaceholder={boat.data.imagePlaceholder}
@@ -242,7 +249,7 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
 
     <aside class="tour-sidebar">
       <div class="sidebar-sticky">
-        <BookingWidget />
+        <BookingWidget initialService="private-tours" initialSubId={id} />
       </div>
     </aside>
   </div>
@@ -262,6 +269,7 @@ const tourBoats = allBoats.filter(b => boats.includes(b.id));
     secondButtonText="View All Tours"
     secondButtonHref="/private-boat-tours/"
     variant="dark"
+    backgroundImage={image}
   />
 </Layout>
 

@@ -11,19 +11,19 @@
   },
   "hero": {
     "title": "Explore Skiathos<br/>by Sea",
-    "subtitle": "Rent a self-drive boat, book an exclusive private tour, or jump on a 24/7 water taxi. The Aegean is waiting."
+    "subtitle": "Rent a self-drive boat, book an exclusive private tour, or jump on a 24/7 transfer. The Aegean is waiting."
   },
   "whyUs": [
-    { "icon": "check", "title": "Fully Licensed & Insured", "desc": "All boats meet EU safety standards. Full maritime insurance on every vessel." },
-    { "icon": "map-pin", "title": "Local Expertise", "desc": "Born and raised in Skiathos. We know every beach, cove, and passage on the island." },
-    { "icon": "clock", "title": "24/7 Water Taxi", "desc": "No ferry schedule. We run transfers any time of day or night." },
-    { "icon": "star", "title": "5-Star Rated", "desc": "Over 800 five-star reviews on Google, TripAdvisor, and Booking.com." },
-    { "icon": "life-buoy", "title": "Safety First", "desc": "Full safety briefing before every rental. GPS tracking on all boats." },
-    { "icon": "phone", "title": "Always Available", "desc": "Call or WhatsApp us any time. We reply within 30 minutes during operating hours." }
+    { "icon": "anchor", "title": "Curated Fleet, Guaranteed Prices", "desc": "We hand-pick every boat, service, and tour we offer. The price and availability you get from us is the price and availability of the operator — we honor every booking request we send out." },
+    { "icon": "shieldcheck", "title": "No Hidden Fees, No Middlemen", "desc": "No platform commissions, no third-party markups, no surprise charges. We work directly with each operator's booking system and pass the real price through to you." },
+    { "icon": "phone", "title": "One Team, Fully Responsible", "desc": "We are accountable for your booking from the first message to the day you step off the boat. One point of contact, no run-around between companies." },
+    { "icon": "rows", "title": "Mix & Match Any Service", "desc": "Boat rental in the morning, a private tour in the afternoon, a transfer at midnight — combine any of our services into one seamless plan. If it's available, we'll put it together for you." },
+    { "icon": "unlock", "title": "Direct Access, Not a Broker", "desc": "We don't act as an agent adding a layer between you and the business. We eliminate that layer — connecting you straight to the operator while we handle every detail of the coordination." },
+    { "icon": "lifebuoy", "title": "Support Throughout Your Trip", "desc": "We don't disappear after you click 'book'. We support you throughout the entire experience — itinerary changes, weather, special requests, last-minute add-ons — we're on the line." }
   ],
   "seo": {
-    "siteName": "Skiathos Boats",
-    "defaultTitle": "Skiathos Boat Rental | Self-Drive, Private Tours & Water Taxi",
-    "defaultDescription": "Rent a boat in Skiathos directly from the island's largest fleet. No license needed for 30HP boats. Private tours, 24/7 water taxi, and watersports. Book directly — no platform fees."
+    "siteName": "Sea Skiathos",
+    "defaultTitle": "Skiathos Boat Rental | Self-Drive, Private Tours & Transfer",
+    "defaultDescription": "Rent a boat in Skiathos directly from the island's largest fleet. No license needed for 30HP boats. Private tours, 24/7 transfer, and watersports. Book directly — no platform fees."
   }
 }

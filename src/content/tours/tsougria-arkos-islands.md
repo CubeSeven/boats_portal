@@ -1,7 +1,7 @@
 ---
 slug: "tsougria-arkos-islands"
 title: "Tsougria & Arkos Islands Private Boat Tour"
-seoTitle: "Skiathos Tsougria & Arkos Islands Private Boat Trip | Skiathos Boats"
+seoTitle: "Skiathos Tsougria & Arkos Islands Private Boat Trip | Sea Skiathos"
 description: "Discover the uninhabited paradise islands of Tsougria and Arkos. Crystal water, sandy beaches, and incredible snorkelling just minutes from Skiathos."
 heroTitle: "Tsougria &<br/>Arkos Islands"
 heroSubtitle: "The Caribbean of Greece. Two paradise islands with turquoise water and golden sand, just minutes from the port."
@@ -9,10 +9,6 @@ heroGradient: "turquoise"
 duration: "4–5 Hours"
 capacity: "Up to 10 persons"
 order: 6
-image: "/images/stock/s21tock images.jpg"
-gallery:
-  - "/images/stock/s22tock images.jpg"
-  - "/images/stock/s23tock images.jpg"
 itinerary:
   - time: "10:00"
     label: "Departure"
@@ -63,6 +59,9 @@ faqs:
     answer: "Yes, both Arkos and Tsougria have seasonal beach bars/tavernas that serve drinks and light food. They are usually open from June to September."
   - question: "Can we visit both islands in one trip?"
     answer: "Yes, they are very close together. We usually divide the time equally between them, but the choice is yours."
+image: "/images/tours/tsougria-arkos-islands.webp"
+gallery: ["/images/tours/tsougria-arkos-islands-gallery-1.webp", "/images/tours/tsougria-arkos-islands-gallery-2.webp"]
+
 ---
 
 ## Paradise on Your Doorstep

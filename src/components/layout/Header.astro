@@ -5,7 +5,14 @@ import { getSortedTours, getSiteSettings } from '../../lib/collections';
 const allTours = await getSortedTours();
 const site = await getSiteSettings();
 
-const navItems = [
+type NavItem = {
+  label: string;
+  href: string;
+  icon?: string;
+  children?: NavItem[];
+};
+
+const navItems: NavItem[] = [
   {
     label: 'Boat Rental',
     href: '/boat-rental/',
@@ -29,22 +36,23 @@ const navItems = [
     href: '/watersports/',
     icon: 'waves',
     children: [
-      { label: 'Jet Ski', href: '/watersports/jet-ski-rental/', icon: 'zap' },
-      { label: 'Parasailing', href: '/watersports/parasailing/', icon: 'wind' },
+      { label: 'Jet Ski', href: '/watersports/jet-ski-rental/', icon: 'rocket' },
+      { label: 'Jet Car', href: '/watersports/jet-car/', icon: 'car' },
       { label: 'Wakeboard & Water Ski', href: '/watersports/wakeboard-water-ski/', icon: 'waves' },
-      { label: 'Tubes & Inflatables', href: '/watersports/tubes-inflatables/', icon: 'circle' },
-      { label: 'SUP & Canoe', href: '/watersports/sup-canoe-hire/', icon: 'rows' },
+      { label: 'Tubes & Inflatables', href: '/watersports/tubes-inflatables/', icon: 'lifebuoy' },
+      { label: 'SUP & Canoe', href: '/watersports/sup-canoe-hire/', icon: 'waves' },
+      { label: 'Pedalo', href: '/watersports/pedalo/', icon: 'bike' },
     ],
   },
   {
-    label: 'Water Taxi',
-    href: '/water-taxi/',
+    label: 'Transfer',
+    href: '/transfers/',
     icon: 'ship',
     children: [
-      { label: 'To Volos', href: '/water-taxi/skiathos-to-volos/', icon: 'map-pin' },
-      { label: 'To Skopelos', href: '/water-taxi/skiathos-to-skopelos/', icon: 'map-pin' },
-      { label: 'To Pelion', href: '/water-taxi/skiathos-to-katigiorgis/', icon: 'map-pin' },
-      { label: 'Airport Transfers', href: '/water-taxi/airport-sea-transfers/', icon: 'plane' },
+      { label: 'To Volos', href: '/transfers/skiathos-to-volos/', icon: 'map-pin' },
+      { label: 'To Skopelos', href: '/transfers/skiathos-to-skopelos/', icon: 'map-pin' },
+      { label: 'To Pelion', href: '/transfers/skiathos-to-katigiorgis/', icon: 'map-pin' },
+      { label: 'Airport Transfers', href: '/transfers/airport-sea-transfers/', icon: 'plane' },
     ],
   },
   { label: 'Fleet', href: '/fleet/', icon: 'anchor' },
@@ -57,15 +65,9 @@ const currentPath = Astro.url.pathname;
 <header id="site-header" class="sticky top-0 z-[100] bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 py-4 text-foreground shadow-sm" role="banner">
   <div class="container flex items-center justify-between gap-6">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 no-underline shrink-0 text-current" aria-label="Skiathos Boats — Home">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <circle cx="18" cy="18" r="18" fill="currentColor"/>
-        <path d="M9 22 Q18 11 27 22" stroke="white" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        <path d="M7 26 H29" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="18" y1="11" x2="18" y2="22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M18 11 L24 17" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span class="font-sans text-xl font-medium text-current tracking-tight uppercase">Skiathos<strong class="font-black">Boats</strong></span>
+    <a href="/" class="flex items-center gap-2 no-underline shrink-0 text-current" aria-label="Sea Skiathos — Home">
+      <img src="/sea_skiathos.svg" width="36" height="36" class="h-9 w-auto shrink-0" alt="Sea Skiathos" />
+      <span class="font-sans text-xl font-medium text-current tracking-tight uppercase">Sea<strong class="font-black">Skiathos</strong></span>
     </a>
 
     <!-- Desktop Nav -->
@@ -78,7 +80,7 @@ const currentPath = Astro.url.pathname;
               class={`flex items-center gap-2 px-4 py-2 text-foreground no-underline text-[0.8rem] font-extrabold uppercase tracking-[0.1em] rounded-md transition-all duration-300 whitespace-nowrap opacity-70 hover:opacity-100 hover:bg-neutral-100 dark:hover:bg-neutral-900 ${currentPath.startsWith(item.href) && item.href !== '/' ? 'opacity-100' : ''}`}
               aria-haspopup={item.children ? 'true' : undefined}
             >
-              <DynamicIcon name={item.icon} size={14} strokeWidth={2} />
+              <DynamicIcon name={item.icon || "circle"} size={14} strokeWidth={2} />
               {item.label}
               {item.children && (
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="opacity-50 group-hover:rotate-180 transition-transform">
@@ -103,7 +105,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Desktop CTA + Mobile Toggle -->
     <div class="flex items-center gap-4 shrink-0">
-      <a href="/contact/" class="btn btn-primary px-6 py-2 text-[0.65rem] uppercase tracking-widest hidden md:inline-flex">
+      <a onclick="window.__openBookingModal();return false" href="/contact/" class="btn btn-primary px-6 py-2 text-[0.65rem] uppercase tracking-widest hidden md:inline-flex">
         Book Now
       </a>
       <button 
@@ -131,24 +133,40 @@ const currentPath = Astro.url.pathname;
 
   <nav class="flex flex-col gap-4 flex-1" aria-label="Mobile navigation">
     {navItems.map((item) => (
-      <div class="border-b border-border pb-4 mb-2">
-        <a href={item.href} class="flex items-center gap-3 text-foreground no-underline text-3xl font-black tracking-tighter py-2 uppercase italic leading-none">
-          <DynamicIcon name={item.icon} size={24} strokeWidth={2} />
-          {item.label}
-        </a>
-        {item.children && (
-          <div class="flex flex-col gap-2 pt-2 pb-4 pl-4 border-l-2 border-border mt-2">
-            {item.children.map((child) => (
-              <a href={child.href} class="flex items-center gap-2 text-muted-foreground no-underline text-[0.75rem] font-bold uppercase tracking-widest py-1 hover:text-foreground transition-colors">
-                {child.icon && <DynamicIcon name={child.icon} size={14} strokeWidth={2} />}
-                {child.label}
+      <div class="border-b border-border pb-3 mb-1">
+        {item.children ? (
+          <div>
+            <button class="mobile-nav-toggle flex items-center justify-between w-full text-foreground bg-transparent border-none text-3xl font-black tracking-tighter py-2 uppercase italic leading-none text-left cursor-pointer select-none">
+              <span class="flex items-center gap-3 pointer-events-none">
+                <DynamicIcon name={item.icon || "circle"} size={24} strokeWidth={2} />
+                {item.label}
+              </span>
+              <svg width="20" height="20" viewBox="0 0 12 12" fill="none" class="mobile-chevron transition-transform duration-300 pointer-events-none">
+                <path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="mobile-submenu hidden flex-col gap-2.5 pt-3 pb-2 pl-4 border-l border-neutral-300 mt-2">
+              <a href={item.href} class="flex items-center gap-2 text-muted-foreground no-underline text-[0.75rem] font-bold uppercase tracking-widest py-1 hover:text-foreground transition-colors">
+                <DynamicIcon name="rows" size={14} strokeWidth={2} />
+                Overview / All {item.label}
               </a>
-            ))}
+              {item.children.map((child) => (
+                <a href={child.href} class="flex items-center gap-2 text-muted-foreground no-underline text-[0.75rem] font-bold uppercase tracking-widest py-1 hover:text-foreground transition-colors">
+                  {child.icon && <DynamicIcon name={child.icon} size={14} strokeWidth={2} />}
+                  {child.label}
+                </a>
+              ))}
+            </div>
           </div>
+        ) : (
+          <a href={item.href} class="flex items-center gap-3 text-foreground no-underline text-3xl font-black tracking-tighter py-2 uppercase italic leading-none">
+            <DynamicIcon name={item.icon || "circle"} size={24} strokeWidth={2} />
+            {item.label}
+          </a>
         )}
       </div>
     ))}
-    <div class="mt-auto pt-12 flex flex-col gap-4">
+    <div class="mt-auto pt-8 flex flex-col gap-3">
       <a href="/contact/" class="btn btn-primary w-full text-center py-4 text-sm uppercase tracking-widest">Book Now</a>
       {site?.phone && (
         <a href={`tel:${site.phone.replace(/ /g, '')}`} class="btn btn-secondary w-full text-center py-4 text-sm uppercase tracking-widest">
@@ -161,11 +179,21 @@ const currentPath = Astro.url.pathname;
 <div class="fixed inset-0 z-[199] bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm" id="mobile-backdrop"></div>
 
 <style>
+  #site-header {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  #site-header.header-hidden {
+    transform: translateY(-100%);
+  }
+
   #mobile-menu {
     transform: translateX(100%);
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    max-height: 100vh;
+    overflow-y: auto;
   }
   
   #mobile-menu.open {
@@ -221,7 +249,64 @@ const currentPath = Astro.url.pathname;
   closeBtn?.addEventListener('click', closeMenu);
   backdrop?.addEventListener('click', closeMenu);
 
+  // Mobile navigation accordion toggles
+  const mobileToggles = document.querySelectorAll('.mobile-nav-toggle');
+  mobileToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const submenu = toggle.nextElementSibling;
+      const chevron = toggle.querySelector('.mobile-chevron');
+      
+      // Close other submenus first (accordion behavior)
+      mobileToggles.forEach(otherToggle => {
+        if (otherToggle !== toggle) {
+          const otherSubmenu = otherToggle.nextElementSibling;
+          const otherChevron = otherToggle.querySelector('.mobile-chevron');
+          otherSubmenu?.classList.add('hidden');
+          otherSubmenu?.classList.remove('flex');
+          otherChevron?.classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current submenu
+      if (submenu) {
+        const isHidden = submenu.classList.contains('hidden');
+        if (isHidden) {
+          submenu.classList.remove('hidden');
+          submenu.classList.add('flex');
+          chevron?.classList.add('rotate-180');
+        } else {
+          submenu.classList.add('hidden');
+          submenu.classList.remove('flex');
+          chevron?.classList.remove('rotate-180');
+        }
+      }
+    });
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
   });
+
+  // Mobile header auto-hide on scroll
+  const header = document.getElementById('site-header');
+  let lastScrollY = window.scrollY;
+  
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth >= 1024 || mobileMenu?.classList.contains('open')) {
+      header?.classList.remove('header-hidden');
+      return;
+    }
+    
+    const currentScrollY = window.scrollY;
+    
+    // Hide header when scrolling down past 100px
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      header?.classList.add('header-hidden');
+    } else {
+      // Show header when scrolling up
+      header?.classList.remove('header-hidden');
+    }
+    
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 </script>

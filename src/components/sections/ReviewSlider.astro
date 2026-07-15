@@ -1,0 +1,355 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+interface Review {
+  quote: string;
+  author: string;
+  location?: string;
+  rating: number;
+  service?: string;
+}
+
+interface Props {
+  reviews: Review[];
+  title?: string;
+  label?: string;
+  description?: string;
+  /** Filter reviews by service type */
+  serviceFilter?: string;
+}
+
+const {
+  reviews,
+  title = 'Guest Reviews',
+  label = 'What Our Guests Say',
+  description = 'Real experiences from real travelers. Over 800 five-star reviews across Google, TripAdvisor, and Booking.',
+  serviceFilter,
+} = Astro.props;
+
+// Filter by service if specified
+let filtered = reviews;
+if (serviceFilter) {
+  const matched = reviews.filter(r => r.service === serviceFilter);
+  // If we have enough filtered reviews, use them; otherwise use all
+  filtered = matched.length >= 4 ? matched : reviews;
+}
+
+// Limit to 10
+const displayReviews = filtered.slice(0, 10);
+const sliderId = `review-slider-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+{displayReviews.length > 0 && (
+  <section class="review-section section">
+    <div class="container">
+      <SectionHeading label={label} title={title} description={description} />
+
+      <div class="review-slider-wrapper">
+        <!-- Prev button -->
+        <button class="review-nav review-nav-prev" aria-label="Previous review" data-slider-id={sliderId}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        <!-- Scrollable track -->
+        <div class="review-track" id={sliderId} data-review-count={displayReviews.length}>
+          {displayReviews.map((review, i) => (
+            <article class="review-card" data-index={i}>
+              <!-- Stars -->
+              <div class="review-stars" aria-label={`${review.rating} out of 5 stars`}>
+                {Array.from({ length: 5 }).map((_, idx) => (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill={idx < review.rating ? 'currentColor' : 'none'}
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    class={idx < review.rating ? 'star-filled' : 'star-empty'}
+                  >
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
+              </div>
+
+              <!-- Quote -->
+              <blockquote class="review-quote">
+                <p>{review.quote}</p>
+              </blockquote>
+
+              <!-- Author -->
+              <div class="review-author">
+                <div class="review-avatar">{review.author.charAt(0)}</div>
+                <div class="review-author-info">
+                  <cite class="review-name">{review.author}</cite>
+                  {review.location && <span class="review-location">{review.location}</span>}
+                  {review.service && <span class="review-service">{review.service}</span>}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- Next button -->
+        <button class="review-nav review-nav-next" aria-label="Next review" data-slider-id={sliderId}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="review-dots" data-slider-id={sliderId}>
+        {displayReviews.map((_, i) => (
+          <button
+            class={`review-dot ${i === 0 ? 'active' : ''}`}
+            data-slider-id={sliderId}
+            data-index={i}
+            aria-label={`Go to review ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  @reference "../../styles/global.css";
+
+  .review-section {
+    background: var(--muted, #f5f5f5);
+  }
+
+  .review-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .review-track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.5rem 0;
+    flex: 1;
+    scroll-padding-left: 0;
+  }
+
+  .review-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-card {
+    flex: 0 0 auto;
+    width: min(90%, 380px);
+    scroll-snap-align: start;
+    background: var(--card, white);
+    border: 1px solid var(--border, #e5e5e5);
+    border-radius: var(--radius-xl, 1rem);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (min-width: 768px) {
+    .review-card {
+      width: calc((100% - 2rem) / 3);
+      max-width: 420px;
+    }
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 0.15rem;
+    color: #f59e0b;
+  }
+
+  .star-empty {
+    opacity: 0.2;
+  }
+
+  .review-quote {
+    margin: 0;
+    flex: 1;
+  }
+
+  .review-quote p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--foreground, #111);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border, #e5e5e5);
+  }
+
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--foreground, #111);
+    color: var(--background, white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .review-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .review-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--foreground, #111);
+  }
+
+  .review-location {
+    font-size: 0.75rem;
+    color: var(--muted-foreground, #666);
+  }
+
+  .review-service {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-foreground, #666);
+    opacity: 0.7;
+  }
+
+  /* Navigation buttons */
+  .review-nav {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border, #e5e5e5);
+    background: var(--card, white);
+    color: var(--foreground, #111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .review-nav:hover {
+    background: var(--foreground, #111);
+    color: var(--background, white);
+    border-color: var(--foreground, #111);
+  }
+
+  .review-nav:active {
+    transform: scale(0.95);
+  }
+
+  /* Hide nav on mobile — use swipe */
+  @media (max-width: 767px) {
+    .review-nav {
+      display: none;
+    }
+  }
+
+  /* Dots */
+  .review-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .review-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border, #ccc);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+  }
+
+  .review-dot.active {
+    background: var(--foreground, #111);
+    width: 24px;
+    border-radius: 4px;
+  }
+</style>
+
+<script is:inline>
+  (function initReviewSliders() {
+    document.querySelectorAll('.review-track').forEach(track => {
+      const sliderId = track.id;
+      const cards = track.querySelectorAll('.review-card');
+      const dots = document.querySelectorAll(`.review-dot[data-slider-id="${sliderId}"]`);
+      const prevBtn = document.querySelector(`.review-nav-prev[data-slider-id="${sliderId}"]`);
+      const nextBtn = document.querySelector(`.review-nav-next[data-slider-id="${sliderId}"]`);
+
+      function getCardWidth() {
+        if (cards.length === 0) return 380;
+        const card = cards[0];
+        const gap = 16;
+        return card.offsetWidth + gap;
+      }
+
+      function scrollByCards(dir) {
+        track.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' });
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => scrollByCards(-1));
+      if (nextBtn) nextBtn.addEventListener('click', () => scrollByCards(1));
+
+      // Update dots on scroll
+      let scrollTimeout;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const cardWidth = getCardWidth();
+          const currentIndex = Math.round(track.scrollLeft / cardWidth);
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+          });
+        }, 100);
+      });
+
+      // Click dots to scroll
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          track.scrollTo({ left: i * getCardWidth(), behavior: 'smooth' });
+        });
+      });
+
+      // Keyboard navigation
+      track.setAttribute('tabindex', '0');
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByCards(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); scrollByCards(1); }
+      });
+    });
+  })();
+</script>

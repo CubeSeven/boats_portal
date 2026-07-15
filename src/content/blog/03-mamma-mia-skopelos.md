@@ -6,7 +6,7 @@ pubDate: "2026-05-15"
 readTime: 8
 category: "destination"
 imagePlaceholder: "sunset"
-image: "/images/stock/s3tock images.jpg"
+image: "/images/blog/mamma-mia-chapel.jpg"
 featured: true
 tags: ["Mamma Mia", "Skopelos", "Skiathos", "tour", "itinerary"]
 ---

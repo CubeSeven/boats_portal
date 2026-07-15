@@ -5,19 +5,21 @@ type: "rib"
 length: "7.4 m"
 capacity: 9
 horsepower: 200
-priceFrom: 580
-priceHalfDay: 400
-priceFullDay: 580
+priceFrom: 650
+priceFullDay: 650
 imagePlaceholder: "turquoise"
 image: "/images/fleet/tiger-marine-proline-740-23-1.jpg"
-gallery: ["/images/fleet/tiger-marine-proline-740-23-1.jpg", "/images/fleet/tiger-marine-proline-740-23-2.jpg", "/images/fleet/tiger-marine-proline-740-23-3.jpg", "/images/fleet/tiger-marine-proline-740-23-4.jpg", "/images/fleet/tiger-marine-proline-740-23-5.jpg"]
+gallery: ["/images/fleet/tiger-marine-proline-740-23-2.jpg", "/images/fleet/tiger-marine-proline-740-23-3.jpg", "/images/fleet/tiger-marine-proline-740-23-4.jpg", "/images/fleet/tiger-marine-proline-740-23-5.jpg"]
 order: 7
 features:
-  - "Economic High Performance"
-  - "Versatile RIB Design"
-  - "Large Storage Space"
-  - "Professional Skipper Optional"
-  - "Swimming Platform"
+  - "Bimini"
+  - "Swim Platform"
+  - "Ice Box"
+  - "Large Storage"
+  - "GPS Plotter"
+  - "Snorkelling Equipment"
+  - "Swim Ladder"
+  - "External Speakers"
 description: "7.4 metres, 200HP, seats 9. The sweet spot of the RIB fleet — fast enough to cover ground, efficient enough to not think about fuel. Big storage, swim platform, skipper optional."
 ---
 ## The Versatile Choice

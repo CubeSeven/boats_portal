@@ -34,8 +34,8 @@ Drop anchor in 3–6 metres of water approximately 50–100 metres from shore. T
 ### Boat Rental
 A 30HP boat from Skiathos Port reaches Koukounaries in approximately 40–45 minutes following the south coast. The route takes you past Megali Ammos, Achladies, Kanapitsa, Vromolimnos, and Troulos — giving you a scenic tour along the way.
 
-### Water Taxi
-A private water taxi from Skiathos Town to Koukounaries takes about 25–30 minutes and costs approximately €40–60 for up to 8 people. You choose your own departure and return time.
+### Transfer
+A private transfer from Skiathos Town to Koukounaries takes about 25–30 minutes and costs approximately €40–60 for up to 8 people. You choose your own departure and return time.
 
 ### Combine With
 - Banana Beach (5 minutes west by boat)
@@ -53,7 +53,7 @@ Koukounaries is fully organized with:
 - Wheelchair-accessible boardwalks
 - Lifeguard on duty (peak season)
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive boat rental:** Take one of our 30HP no-license boats and explore the entire south coast at your own pace. Koukounaries is a highlight stop.
 - **Skippered day trips:** Let our captain handle everything. Spend 2 hours at Koukounaries, then explore Banana, Agia Eleni, and hidden coves on the way back.

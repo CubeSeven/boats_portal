@@ -24,8 +24,8 @@ Vassilias sits on Skiathos's south coast, approximately 6 km from Skiathos Town.
 ### By Boat
 Vassilias is a small cove facing south. Anchoring is in 3–5 metres on sand. From Skiathos Port, a rental boat reaches Vassilias in just 10–12 minutes, making it one of the quickest boat-accessible beaches.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 8 minutes. Cost: approximately €20–25.
+### Transfer
+A transfer from Skiathos Town takes about 8 minutes. Cost: approximately €20–25.
 
 ## The Beach
 
@@ -59,10 +59,10 @@ Small cove, limited anchoring space. Drop in 3–4 metres on sand. Best to arriv
 - **Ftelia** (2 km east) — small, quiet beach with a small harbour
 - **Kanapitsa** (3 km west) — major watersports hub
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Just 10–12 minutes from port. The fastest beach escape by boat.
-- **Quick morning/afternoon water taxi:** Direct transfers for a half-day beach trip.
+- **Quick morning/afternoon transfer:** Direct transfers for a half-day beach trip.
 - **South-coast hopping:** Combine Vassilias with Achladies, Kanapitsa, and Tzaneria on a half-day self-drive itinerary.
 
 ## Best Time to Visit

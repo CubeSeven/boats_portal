@@ -1,12 +1,12 @@
 ---
 slug: no-license-required
 title: No License Required
-seoTitle: Skiathos Boat Rental No License Required | Self-Drive from €150 | Skiathos Boats
+seoTitle: Skiathos Boat Rental No License Required | Self-Drive from €150 | Sea Skiathos
 description: Rent a boat in Skiathos with no license or experience needed. Our 30HP boats are legal to drive without any certificate in Greece. From €150 per day.
 heroTitle: No License?<br/>No Problem.
 heroSubtitle: Anyone can rent and drive our 30HP boats in Greece — no certificate, no experience needed. Just show up and explore.
 heroGradient: ocean
-icon: ship
+icon: unlock
 href: /boat-rental/no-license-required/
 price: From €150/day
 accent: ocean
@@ -34,8 +34,8 @@ destinations:
     time: 12 min
 pricing:
   - duration: Half Day (4 hours)
-    price: From €110
-    notes: Morning (9am–1pm) or afternoon (1pm–5pm)
+    price: Contact Us
+    notes: Morning (9am–1pm) or afternoon (1pm–5pm) depending on availability
   - duration: Full Day (8 hours)
     price: From €150
     notes: 9am–5pm, most popular

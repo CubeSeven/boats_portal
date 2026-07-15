@@ -25,15 +25,16 @@ const {
   centerLng,
 } = Astro.props;
 
-const mapId = `multi-map-${Math.random().toString(36).slice(2, 10)}`;
 const validPins = pins.filter(p => p.lat != null && p.lng != null);
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 <div
-  id={mapId}
   class="leaflet-map"
   style={`height: ${height}; width: 100%;`}
   data-map-config={JSON.stringify({ pins: validPins, zoom, fitBounds, centerLat, centerLng })}
+  data-map-type="multi"
 >
   <noscript>
     <div class="map-fallback">
@@ -43,47 +44,23 @@ const validPins = pins.filter(p => p.lat != null && p.lng != null);
   </noscript>
 </div>
 
-<script>
-  import L from 'leaflet';
-  import 'leaflet/dist/leaflet.css';
-  (window as any).__leaflet__ = L;
-  console.log('[Map] Leaflet loaded, version:', L.version);
-</script>
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<script define:vars={{ mapId }}>
-  (function initMultiMap() {
-    const L = window.__leaflet__;
-    if (!L) {
-      console.warn('[MultiPinMap] Leaflet not ready, retrying...');
-      return requestAnimationFrame(initMultiMap);
-    }
-
-    const el = document.getElementById(mapId);
-    if (!el) {
-      console.warn('[MultiPinMap] Element not found:', mapId);
-      return;
-    }
-
+<script is:inline>
+  function initMultiMap(el) {
     const cfg = JSON.parse(el.dataset.mapConfig || '{}');
     const pins = cfg.pins || [];
-    console.log('[MultiPinMap] Init', { mapId, pinCount: pins.length, pins });
-    if (pins.length === 0) {
-      console.warn('[MultiPinMap] No pins in config');
-      return;
-    }
+    if (pins.length === 0) return;
 
     const initialCenter = cfg.centerLat != null
       ? [cfg.centerLat, cfg.centerLng ?? pins[0].lng]
       : [pins[0].lat, pins[0].lng];
 
-    const map = L.map(el, {
-      zoomControl: true,
-      scrollWheelZoom: true,
-    }).setView(initialCenter, cfg.zoom);
+    const map = L.map(el, { zoomControl: true, scrollWheelZoom: true }).setView(initialCenter, cfg.zoom);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     }).addTo(map);
 
     const pinIcon = L.divIcon({
@@ -107,8 +84,44 @@ const validPins = pins.filter(p => p.lat != null && p.lng != null);
       map.fitBounds(bounds, { padding: [40, 40], maxZoom: 15 });
     }
 
-    console.log('[MultiPinMap] Ready');
-  })();
+    setTimeout(() => map.invalidateSize(), 100);
+    setTimeout(() => map.invalidateSize(), 500);
+    setTimeout(() => map.invalidateSize(), 1500);
+
+    // Watch for reveal container becoming visible
+    const revealParent = el.closest('.reveal');
+    if (revealParent && !revealParent.classList.contains('visible')) {
+      const observer = new MutationObserver(() => {
+        if (revealParent.classList.contains('visible')) {
+          map.invalidateSize();
+          observer.disconnect();
+        }
+      });
+      observer.observe(revealParent, { attributes: true, attributeFilter: ['class'] });
+    }
+  }
+
+  function initAllMultiMaps() {
+    document.querySelectorAll('.leaflet-map[data-map-type="multi"]').forEach((el) => {
+      if (el.dataset.mapInitialized) return;
+      el.dataset.mapInitialized = 'true';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          try { initMultiMap(el); } catch (e) { console.error('[MultiPinMap] Init failed:', e); }
+        });
+      });
+    });
+  }
+
+  function start() {
+    if (typeof L === 'undefined') return setTimeout(start, 50);
+    setTimeout(initAllMultiMaps, 0);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 </script>
 
 <style>

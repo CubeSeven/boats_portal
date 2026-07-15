@@ -1,12 +1,12 @@
 ---
 slug: tubes-inflatables
 title: Tubes & Inflatables
-seoTitle: Skiathos Tubes & Towables | Crazy Sofa, Donuts & Banana | Skiathos Boats
+seoTitle: Skiathos Tubes & Towables | Crazy Sofa, Donuts & Banana | Sea Skiathos
 description: The most fun you can have on the water. Ride the Crazy Sofa, Ringos, or Big Mable behind our high-performance tow boats. Group fun for all ages.
 heroTitle: Hold On<br/>Tight.
 heroSubtitle: Pure adrenaline and laughter. Our towable inflatables are the highlight of any beach day for families and friends.
 heroGradient: turquoise
-icon: smile
+icon: lifebuoy
 href: /watersports/tubes-inflatables/
 price: From €25/person
 accent: gold

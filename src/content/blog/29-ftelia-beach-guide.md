@@ -24,8 +24,8 @@ Ftelia is a compact sandy beach on Skiathos's south coast, approximately 2 km we
 ### By Boat
 Ftelia faces south and is easy to access by boat. The small harbour at the western end provides docking options for small boats. The sandy bottom in the bay offers good anchoring in 3–5 metres. From Skiathos Port, a rental boat reaches Ftelia in just 5–8 minutes.
 
-### Water Taxi
-A water taxi from the port takes about 5 minutes. Cost: approximately €15–20.
+### Transfer
+A transfer from the port takes about 5 minutes. Cost: approximately €15–20.
 
 ## The Beach
 
@@ -60,10 +60,10 @@ Anchor in 3–4 metres on sand in the bay. The harbour at the western end has li
 - **Achladies** (3 km west) — full facilities and watersports
 - **Skiathos Town** (2 km east) — return to port for lunch or shopping
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 5–8 minutes from port. Effectively the closest beach stop after leaving the harbour.
-- **Quick water taxi:** Near-instant transfer from port.
+- **Quick transfer:** Near-instant transfer from port.
 - **Half-day mini-cruise:** Combine Ftelia, Megali Ammos, and Vassilias in a 2–3 hour morning or afternoon trip.
 
 ## Best Time to Visit

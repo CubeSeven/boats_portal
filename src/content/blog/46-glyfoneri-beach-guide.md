@@ -22,8 +22,8 @@ A rough track leads to Glyfoneri from the east coast road. The track is unpaved 
 ### By Boat
 Glyfoneri faces northeast and is exposed to the prevailing northerlies. It can only be visited by boat in calm conditions (wind under 2 Beaufort). From Skiathos Port, a rental boat reaches Glyfoneri in approximately 20–25 minutes by heading east around the Bourtzi peninsula and then north past the airport peninsula.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes in calm conditions. Cost: approximately €25–35.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes in calm conditions. Cost: approximately €25–35.
 
 ## The Beach
 
@@ -47,7 +47,7 @@ This isn't a comfort beach. It's a wilderness experience. You visit Glyfoneri fo
 - **Psarochoma** (nearby to the south) — isolated sandy cove
 - **Skiathos Town** (return south, 20 minutes) — for civilization
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Our team will advise on weather suitability. Glyfoneri is for experienced self-drivers on calm days.
 - **Skippered north-coast adventure:** Your captain will assess conditions and recommend the best wild north-coast stops for the day.

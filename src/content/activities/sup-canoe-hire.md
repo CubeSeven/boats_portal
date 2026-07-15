@@ -1,17 +1,18 @@
 ---
 slug: sup-canoe-hire
 title: SUP & Canoe Hire
-seoTitle: Stand Up Paddleboard (SUP) & Canoe Hire | Skiathos Boats
+seoTitle: Stand Up Paddleboard (SUP) & Canoe Hire | Sea Skiathos
 description: Rent a paddleboard or canoe and explore the coastline at your own pace. Quiet, eco-friendly, and a great way to discover hidden coves.
 heroTitle: Paddle the<br/>Aegean.
 heroSubtitle: The quietest way to explore the coast. Glide over clear water and discover hidden caves and secret beaches reachable only by water.
 heroGradient: ocean
-icon: palmtree
+icon: waves
 href: /watersports/sup-canoe-hire/
 price: From €20/hour
 accent: turquoise
 category: watersports
 order: 5
+image: "/images/watersports/sup-canoe/sup-canoe.jpg"
 features:
   - High-quality paddles and safety leashes
   - Waterproof bags for your phone and keys

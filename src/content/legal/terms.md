@@ -1,7 +1,7 @@
 ---
 slug: "terms"
 title: "Terms & Conditions"
-description: "Rules and regulations for renting with Skiathos Boats."
+description: "Rules and regulations for renting with Sea Skiathos."
 ---
 
 # Terms & Conditions
@@ -30,4 +30,4 @@ By using our website and services, you agree to comply with and be bound by the 
 - A full safety briefing will be provided before departure; guests must attend and confirm understanding.
 
 ## 5. Limitation of Liability
-Skiathos Boats is not responsible for any personal injuries or loss of property during the rental period, except where required by law.
+Sea Skiathos is not responsible for any personal injuries or loss of property during the rental period, except where required by law.

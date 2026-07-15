@@ -1,4 +1,6 @@
 ---
+import Picture from '../ui/Picture.astro';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -6,7 +8,8 @@ interface Props {
   buttonHref?: string;
   secondButtonText?: string;
   secondButtonHref?: string;
-  variant?: 'dark' | 'light' | 'muted';
+  variant?: 'dark' | 'light' | 'muted' | 'navy' | 'ocean' | 'turquoise';
+  backgroundImage?: string;
 }
 
 const {
@@ -17,18 +20,28 @@ const {
   secondButtonText,
   secondButtonHref = '#',
   variant = 'dark',
+  backgroundImage,
 } = Astro.props;
 
 const variantClasses = {
   dark: 'bg-black text-white',
   light: 'bg-white text-black border border-border/50',
   muted: 'bg-muted/30 text-foreground',
+  navy: 'bg-black text-white',
+  ocean: 'bg-black text-white',
+  turquoise: 'bg-muted/30 text-foreground',
 };
 ---
 
-<div class="container">
+<div class="container hidden md:block">
   <section class={`relative overflow-hidden my-12 md:my-32 rounded-[2rem] ${variantClasses[variant]}`} aria-label="Call to action">
-    {variant === 'dark' && (
+    {backgroundImage && (
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <Picture src={backgroundImage} alt="" class="w-full h-full object-cover opacity-35" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20"></div>
+      </div>
+    )}
+    {variant === 'dark' && !backgroundImage && (
       <div class="absolute inset-0 pointer-events-none opacity-20" aria-hidden="true">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,_var(--color-gray-800),_transparent)]"></div>
       </div>

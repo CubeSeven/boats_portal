@@ -1,9 +1,9 @@
 ---
 slug: "skiathos-to-skopelos"
-title: "Water Taxi Skiathos to Skopelos | Island to Island Transfer"
-seoTitle: "Water Taxi Skiathos to Skopelos | Direct Boat Transfers"
+title: "Transfer Skiathos to Skopelos | Island to Island Transfer"
+seoTitle: "Transfer Skiathos to Skopelos | Direct Boat Transfers"
 description: "Direct private boat transfers between Skiathos and Skopelos. Skip the ferry and reach Glossa or Skopelos Town in 30-50 minutes. Available 24/7 for up to 8 pax."
-heroTitle: "Skiathos to Skopelos<br/>Water Taxi"
+heroTitle: "Skiathos to Skopelos<br/>Transfer"
 heroSubtitle: "Direct island-to-island connection. No ferry schedules, no waiting. Reach Skopelos in under an hour on your own private boat."
 fromLocation: "Skiathos"
 toLocation: "Skopelos"
@@ -11,6 +11,13 @@ originLat: 39.1629
 originLng: 23.4912
 destLat: 39.1240
 destLng: 23.7270
+waypoints:
+  - label: "Open Crossing"
+    lat: 39.1400
+    lng: 23.6100
+  - label: "Approaching Skopelos"
+    lat: 39.1300
+    lng: 23.6800
 duration: "30–50 Minutes"
 distance: "12–18 Nautical Miles"
 pricing:
@@ -35,7 +42,7 @@ faqs:
 
 ## Seamless Island Hopping
 
-Skiathos and Skopelos may be neighbors, but ferry connections can often be infrequent or poorly timed for your arrival. Our water taxi service eliminates the gap, providing a 24/7 bridge between the two islands.
+Skiathos and Skopelos may be neighbors, but ferry connections can often be infrequent or poorly timed for your arrival. Our transfer service eliminates the gap, providing a 24/7 bridge between the two islands.
 
 Whether you are moving between hotels, visiting Skopelos for a day trip to the Mamma Mia locations, or meeting friends for dinner, we provide a fast and scenic crossing on your own terms.
 

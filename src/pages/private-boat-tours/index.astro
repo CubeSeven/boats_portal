@@ -2,13 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import HeroSection from '../../components/sections/HeroSection.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
-import ServiceCard from '../../components/cards/ServiceCard.astro';
+import TourCard from '../../components/cards/TourCard.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
 import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
-import TestimonialCard from '../../components/cards/TestimonialCard.astro';
-import { Anchor, UserRound, Wine } from 'lucide-react';
+import ReviewSlider from '../../components/sections/ReviewSlider.astro';
 import { getSortedTours } from '../../lib/collections';
-import { getEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 // Load content from CMS
 const tours = await getSortedTours();
@@ -16,9 +15,9 @@ const tours = await getSortedTours();
 // Get featured testimonials from CMS
 const allTestimonials = await getCollection('testimonials');
 const testimonials = allTestimonials
-  .filter(t => t.data.featured && t.data.service.toLowerCase().includes('tour'))
-  .slice(0, 3)
-  .map(t => t.data);
+  .map((entry) => entry.data)
+  .sort((a, b) => (b.featured === true ? 1 : 0) - (a.featured === true ? 1 : 0))
+  .slice(0, 10);
 ---
 
 <Layout 
@@ -35,7 +34,7 @@ const testimonials = allTestimonials
     gradient="turquoise"
     size="medium"
     showScrollHint={false}
-    backgroundImage="/images/stock/s4tock images.jpg"
+    backgroundImage="/images/stock/s3tock images.webp"
   />
 
   <Breadcrumbs />
@@ -51,17 +50,17 @@ const testimonials = allTestimonials
       
       <div class="features-grid">
         <div class="feature reveal">
-          <div class="feature-icon"><Anchor size={32} strokeWidth={1.5} /></div>
+          <div class="feature-icon"><svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={1.5} stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg></div>
           <h3>Tailored Itinerary</h3>
           <p>Want to stay longer at Lalaria? Skip a busy spot? It's your boat. You decide where we stop and for how long.</p>
         </div>
         <div class="feature reveal">
-          <div class="feature-icon"><UserRound size={32} strokeWidth={1.5} /></div>
+          <div class="feature-icon"><svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={1.5} stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
           <h3>Expert Local Skipper</h3>
           <p>Our skippers know the secret coves the big boats can't reach and the best times to avoid the crowds.</p>
         </div>
         <div class="feature reveal">
-          <div class="feature-icon"><Wine size={32} strokeWidth={1.5} /></div>
+          <div class="feature-icon"><svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width={1.5} stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></svg></div>
           <h3>Premium Service</h3>
           <p>Chilled water, snorkelling gear, and high-quality safety equipment are included in every private tour.</p>
         </div>
@@ -80,34 +79,21 @@ const testimonials = allTestimonials
       
       <div class="tours-grid">
         {tours.map(tour => (
-          <ServiceCard
-            image={tour.data.image}
-            icon={tour.data.icon}
+          <TourCard
             title={tour.data.title}
             description={tour.data.description}
             href={`/private-boat-tours/${tour.id}/`}
             price={tour.data.pricing?.[0]?.price}
-            accent={tour.data.heroGradient as any}
+            image={tour.data.image}
+            badge={tour.data.duration}
           />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section">
-    <div class="container">
-      <SectionHeading
-        label="Guest Feedback"
-        title="What Our Guests Say"
-      />
-      <div class="testimonials-grid">
-        {testimonials.map(t => (
-          <TestimonialCard {...t} />
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- Reviews -->
+  <ReviewSlider reviews={testimonials} serviceFilter="Private Tour" />
 
   <CtaBanner
     title="Ready for a Private Adventure?"
@@ -115,6 +101,7 @@ const testimonials = allTestimonials
     buttonText="Check Availability"
     buttonHref="/contact/"
     variant="dark"
+    backgroundImage="/images/stock/s11tock images.webp"
   />
 </Layout>
 
@@ -166,12 +153,6 @@ const testimonials = allTestimonials
   .tours-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
   }
 </style>

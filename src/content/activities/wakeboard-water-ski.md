@@ -1,7 +1,7 @@
 ---
 slug: wakeboard-water-ski
 title: Wakeboard & Ski
-seoTitle: Wakeboard & Water Skiing Skiathos | Lessons & Slalom | Skiathos Boats
+seoTitle: Wakeboard & Water Skiing Skiathos | Lessons & Slalom | Sea Skiathos
 description: Master the wake in Skiathos. Professional wakeboard and water ski coaching at Vromolimnos and Koukounaries. High-power tow boats and expert instructors.
 heroTitle: Wakeboard &<br/>Water Skiing
 heroSubtitle: Flat water, high torque, and expert coaching. From your first attempt to clearing the slalom course.
@@ -39,6 +39,6 @@ faqs:
     answer: Early morning at Vromolimnos for glassy water, or afternoon at Koukounaries for more playful wake conditions.
 ---
 
-Whether you are a seasoned slalom skier or a complete beginner looking to stand up on a wakeboard for the first time, Skiathos Boats provides the best conditions in the Sporades.
+Whether you are a seasoned slalom skier or a complete beginner looking to stand up on a wakeboard for the first time, Sea Skiathos provides the best conditions in the Sporades.
 
 We operate from two primary bases: **Vromolimnos** (specializing in glassy morning slalom) and **Koukounaries** (perfect for afternoon wakeboarding sessions). Our high-power MasterCraft and Correct Craft tow boats ensure the perfect wake every time.

@@ -24,8 +24,8 @@ Achladies (sometimes spelled Ahladies) is the first major beach on Skiathos's so
 ### By Boat
 Achladies Bay is a natural cove facing south, well-protected from the prevailing northerly winds. The sandy bottom holds anchors well in 3–5 metres of water. From Skiathos Port, a rental boat reaches Achladies in just 10–15 minutes — making it the perfect first stop on a south-coast cruise.
 
-### Water Taxi
-A water taxi from Skiathos Port takes under 10 minutes and costs approximately €20–30.
+### Transfer
+A transfer from Skiathos Port takes under 10 minutes and costs approximately €20–30.
 
 ## The Beach
 
@@ -57,7 +57,7 @@ The bay is a natural cove with good protection. Anchor in 3–5 metres over sand
 - **Kanapitsa** (2 km west) — well-organized with watersports
 - **Tzaneria** (just past Kanapitsa, 3 km west) — popular with divers
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Achladies is only 10–15 minutes from our base. Perfect for families who want a quick, easy beach day without the bus.
 - **Water taxi:** Fast, direct transfers. We'll drop you at the beach and pick you up when you're ready.

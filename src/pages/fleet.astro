@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/sections/HeroSection.astro';
+import PageHeader from '../components/layout/PageHeader.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import BoatCard from '../components/cards/BoatCard.astro';
 import PricingTable from '../components/sections/PricingTable.astro';
 import FaqAccordion from '../components/sections/FaqAccordion.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
-import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import ReviewSlider from '../components/sections/ReviewSlider.astro';
 import { getFleet, getOrganizedFaqs, getSiteSettings } from '../lib/collections';
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 
 const boats = await getFleet();
 
@@ -16,42 +16,35 @@ const faqsByCategory = await getOrganizedFaqs();
 const fleetFaqs = faqsByCategory['fleet'] || [];
 
 const rentalData = await getEntry('site', 'rental');
-const pricingRows = rentalData?.data.pricingSummary || [];
+const pricingRows = rentalData?.data.pricingSummary ?? [];
+
+const allTestimonials = await getCollection('testimonials');
+const testimonials = allTestimonials
+  .map((entry) => entry.data)
+  .sort((a, b) => (b.featured === true ? 1 : 0) - (a.featured === true ? 1 : 0))
+  .slice(0, 10);
 ---
 
 <Layout
-  title="Our Fleet — Skiathos Boats | RIBs, Yachts & Self-Drive Rentals"
-  description="Explore the full Skiathos Boats fleet. From beginner-friendly 30HP motorboats to high-speed rigid inflatables and luxury crewed yachts. Perfect for any Aegean adventure."
+  title="Our Fleet — Sea Skiathos | RIBs, Yachts & Self-Drive Rentals"
+  description="Explore the full Sea Skiathos fleet. From beginner-friendly 30HP motorboats to high-speed rigid inflatables and luxury crewed yachts. Perfect for any Aegean adventure."
 >
-  <HeroSection
+  <PageHeader
     title="The Fleet"
     subtitle="From nimble coastal explorers to high-performance offshore vessels. Find the perfect boat for your Skiathos adventure."
-    ctaText="Book a Boat"
-    ctaHref="/contact/"
-    ctaSecondText="Special Offers"
-    ctaSecondHref="/blog/"
-    gradient="ocean"
-    size="medium"
-    showScrollHint={false}
-    backgroundImage="/images/stock/s2tock images.jpg"
+    showBreadcrumbs={false}
   />
-
-  <Breadcrumbs />
 
   <section class="section">
     <div class="container">
-      <SectionHeading
-        label="Explore Our Vessels"
-        title="Ready for the Aegean"
-        description="Every boat in our fleet is maintained to the highest safety standards and comes fully equipped for a day at sea."
-      />
-
-      <div class="grid-cards mt-12">
+      <div class="grid-cards">
         {boats.map((boat) => (
           <BoatCard
             name={boat.data.name}
             type={boat.data.type}
             priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
             slug={boat.id}
             image={boat.data.image}
             imagePlaceholder={boat.data.imagePlaceholder}
@@ -74,7 +67,7 @@ const pricingRows = rentalData?.data.pricingSummary || [];
         title="Standard Fleet Pricing"
         description="Base rates for our most popular vessels. Contact us for multi-day discounts and seasonal specials."
       />
-      <PricingTable rows={pricingRows} disclaimer="Prices exclude fuel unless stated. Security deposits vary by vessel type." />
+      <PricingTable rows={pricingRows} disclaimer="Prices might change based on seasonal availability. Fuel is not included in the price shown and is calculated at the end of the rental based on consumption. Security deposits vary by vessel type." />
     </div>
   </section>
 
@@ -89,12 +82,15 @@ const pricingRows = rentalData?.data.pricingSummary || [];
   </section>
 
   <CtaBanner
-    title="Which Boat is Right for You?"
-    subtitle="Tell us your group size and destination, and we'll recommend the best fit."
+    title="Your Adventure Starts Here"
+    subtitle="Browse the full fleet and reserve your boat in minutes. No booking fees, free cancellation up to 48h before."
     buttonText="Ask an Expert"
     buttonHref="/contact/"
     variant="dark"
+    backgroundImage="/images/stock/s18tock images.webp"
   />
+
+  <ReviewSlider reviews={testimonials} serviceFilter="Boat Rental" />
 </Layout>
 
 <style>

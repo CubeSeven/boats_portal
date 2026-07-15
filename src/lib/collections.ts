@@ -6,46 +6,15 @@ import path from 'node:path';
  * Enriches boat entries with images from the public folder
  */
 async function enrichBoats(boats: any[]) {
-  const publicImagesDir = path.join(process.cwd(), 'public/images/fleet');
-  let allFiles: string[] = [];
-  
-  try {
-    if (fs.existsSync(publicImagesDir)) {
-      allFiles = fs.readdirSync(publicImagesDir);
-    }
-  } catch (e) {
-    console.error('Error reading fleet images:', e);
-  }
-
   return boats.map(boat => {
-    const id = boat.id;
-    // Find all images that start with the boat id
-    // We match 'boat-id-' to avoid matching 'karel-ithaca' with 'karel-ithaca-pro'
-    const matched = allFiles
-      .filter(f => f.startsWith(id))
-      .sort((a, b) => {
-        // Try numerical sort if possible (e.g. boat-1.jpg vs boat-10.jpg)
-        const numA = parseInt(a.match(/(\d+)/)?.[0] || '0');
-        const numB = parseInt(b.match(/(\d+)/)?.[0] || '0');
-        return numA - numB;
-      })
-      .map(f => `/images/fleet/${f}`);
-
     const enriched = { ...boat };
-    
-    // 1. Update Gallery
-    // If we found images in the folder, use them. 
-    // We prioritize folder images over manual gallery entries for "dynamic" behavior
-    if (matched.length > 0) {
-      enriched.data.gallery = matched;
+    // Gallery comes from the content file's frontmatter — that's the source of truth.
+    // Remove hero image from gallery if present (it's already shown in the hero).
+    if (enriched.data.gallery && enriched.data.image) {
+      enriched.data.gallery = enriched.data.gallery.filter(
+        (img: string) => img !== enriched.data.image
+      );
     }
-
-    // 2. Update Main Image
-    // If the main image is a placeholder or doesn't exist, use the first matched image
-    if (matched.length > 0 && (!enriched.data.image || enriched.data.image.includes('placeholder'))) {
-      enriched.data.image = matched[0];
-    }
-
     return enriched;
   });
 }

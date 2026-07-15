@@ -1,9 +1,9 @@
 ---
 slug: "skiathos-to-volos"
-title: "Water Taxi Skiathos to Volos | Private Sea Transfer"
-seoTitle: "Water Taxi Skiathos to Volos | Fast Mainland Connection"
-description: "The fastest private connection between Skiathos and Volos. 24/7 water taxi service. Skip the ferry and reach the mainland in 60 minutes. Private boat for up to 8 pax."
-heroTitle: "Skiathos to Volos<br/>Water Taxi"
+title: "Transfer Skiathos to Volos | Private Sea Transfer"
+seoTitle: "Transfer Skiathos to Volos | Fast Mainland Connection"
+description: "The fastest private connection between Skiathos and Volos. 24/7 transfer service. Skip the ferry and reach the mainland in 60 minutes. Private boat for up to 8 pax."
+heroTitle: "Skiathos to Volos<br/>Transfer"
 heroSubtitle: "Your private bridge to the mainland. Direct, fast, and available 24/7. The ultimate solution for airport connections and tight schedules."
 fromLocation: "Skiathos"
 toLocation: "Volos"
@@ -11,6 +11,13 @@ originLat: 39.1629
 originLng: 23.4912
 destLat: 39.3572
 destLng: 22.9432
+waypoints:
+  - label: "Open Sea"
+    lat: 39.2500
+    lng: 23.2000
+  - label: "Approaching Mainland"
+    lat: 39.3200
+    lng: 23.0200
 duration: "~60 Minutes"
 distance: "35 Nautical Miles"
 pricing:
@@ -35,7 +42,7 @@ faqs:
 
 ## Fast, Reliable, Professional
 
-The Skiathos to Volos route is our most popular mainland connection. Whether you are catching a flight from Volos Airport (Nea Anchialos) or heading to the city for a business meeting, our water taxi saves you hours of waiting for ferry departures.
+The Skiathos to Volos route is our most popular mainland connection. Whether you are catching a flight from Volos Airport (Nea Anchialos) or heading to the city for a business meeting, our transfer saves you hours of waiting for ferry departures.
 
 We operate high-torque RIBs that maintain consistent speed even in moderate seas, ensuring your transfer stay on schedule. Our skippers monitor all flight arrivals at Volos to ensure we are at the dock exactly when you need us.
 

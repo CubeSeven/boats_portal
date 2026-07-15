@@ -6,7 +6,7 @@ pubDate: "2026-06-08"
 readTime: 5
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/mikros-aselinos.jpg"
+image: "/images/beaches/aselinos.jpg"
 tags: ["Mikros Aselinos", "beaches", "Skiathos", "northwest", "secluded", "boat rental", "quiet"]
 ---
 
@@ -22,8 +22,8 @@ A dirt road leads to the area, but it's rough and requires a 4x4 or quad bike. T
 ### By Boat
 Mikros Aselinos faces northwest into a small, sheltered cove. From Skiathos Port, a 30HP rental boat reaches Mikros Aselinos in approximately 40–45 minutes following the north coast route past Kastro, Ligaries, and Kechria.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 30–35 minutes. Cost: approximately €45–55.
+### Transfer
+A transfer from Skiathos Town takes about 30–35 minutes. Cost: approximately €45–55.
 
 ## The Beach
 
@@ -49,7 +49,7 @@ The cove offers decent shelter from northerlies. Anchor in 3–5 metres on sand.
 - **Ligaries** (3 km east) — turquoise-water cove
 - **Krifi Ammos** (3 km west) — hidden sandy cove, very isolated
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Part of our recommended northwest-coast route. 40–45 minutes from port. Weather-dependent.
 - **Skippered full-day northwest expedition:** Visit both Aselinos beaches, Kechria, Ligaries, and Kastro in a single day. Your captain handles navigation and weather assessment.

@@ -1,7 +1,7 @@
 ---
 slug: "lalaria-blue-caves"
 title: "Lalaria Beach & Blue Caves Private Tour"
-seoTitle: "Lalaria Beach & Blue Caves Private Boat Tour | Skiathos Boats"
+seoTitle: "Lalaria Beach & Blue Caves Private Boat Tour | Sea Skiathos"
 description: "Visit the iconic Lalaria beach and Blue Caves in Skiathos with a private boat and skipper. Skip the crowds and swim in crystal turquoise water."
 heroTitle: "Lalaria &<br/>Blue Caves"
 heroSubtitle: "The most iconic boat trip in the Aegean. White pebbles, natural sea arches, and caves where the water glows blue."
@@ -9,10 +9,6 @@ heroGradient: "turquoise"
 duration: "4–5 Hours"
 capacity: "Up to 10 persons"
 order: 1
-image: "/images/stock/s18tock images.jpg"
-gallery:
-  - "/images/stock/s19tock images.jpg"
-  - "/images/stock/s20tock images.jpg"
 itinerary:
   - time: "09:00"
     label: "Departure"
@@ -27,13 +23,13 @@ itinerary:
   - time: "11:00"
     label: "Blue Caves"
     description: "Explore the sea caves where the water glows electric blue. Perfect for swimming and photos."
-    lat: 39.2050
-    lng: 23.4750
+    lat: 39.2080
+    lng: 23.4860
   - time: "12:00"
-    label: "Kastro Cove"
-    description: "A final swimming stop beneath the medieval ruins of the ancient capital."
-    lat: 39.2075
-    lng: 23.4631
+    label: "Swim & Snorkel Stop"
+    description: "A final swimming stop at a sheltered north coast cove beneath the cliffs."
+    lat: 39.2130
+    lng: 23.4950
   - time: "13:30"
     label: "Return"
     description: "Arrive back at Skiathos port. Share photos and goodbye."
@@ -65,6 +61,9 @@ faqs:
     answer: "Lalaria is on the north coast and exposed to the north wind (Meltemi). If waves are high, we may suggest the South Coast alternatives. Safety is our priority."
   - question: "Can we go on the beach at Lalaria?"
     answer: "Yes, we anchor close to the shore and you can swim to the beach. Note that there are no facilities (no cafes, no shade) at Lalaria."
+image: "/images/tours/lalaria-blue-caves.webp"
+gallery: ["/images/tours/lalaria-blue-caves-gallery-1.webp", "/images/tours/lalaria-blue-caves-gallery-2.webp"]
+
 ---
 
 ## Lalaria: The Postcard of Skiathos

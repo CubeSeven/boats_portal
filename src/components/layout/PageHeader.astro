@@ -1,0 +1,96 @@
+---
+import Breadcrumbs from '../ui/Breadcrumbs.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  /** Show breadcrumb nav above the title (default: true) */
+  showBreadcrumbs?: boolean;
+  /** Override the auto-generated breadcrumb path */
+  breadcrumbPath?: string;
+  /** Small label above the title, e.g. "EXPLORE" */
+  label?: string;
+}
+
+const {
+  title,
+  subtitle,
+  showBreadcrumbs = true,
+  breadcrumbPath,
+  label,
+} = Astro.props;
+---
+
+<header class="page-header">
+  <div class="container">
+    {showBreadcrumbs && (
+      <Breadcrumbs currentPath={breadcrumbPath ?? Astro.url.pathname} />
+    )}
+
+    <div class="page-header__content">
+      {label && (
+        <span class="page-header__label">{label}</span>
+      )}
+      <h1 class="page-header__title">{title}</h1>
+      {subtitle && (
+        <p class="page-header__subtitle">{subtitle}</p>
+      )}
+    </div>
+  </div>
+</header>
+
+<style>
+  .page-header {
+    padding: 6rem 0 2.5rem;
+    background: var(--background);
+    position: relative;
+  }
+
+  .page-header__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 42rem;
+  }
+
+  .page-header__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .page-header__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--foreground);
+    margin: 0;
+  }
+
+  .page-header__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.6;
+    color: var(--muted-foreground);
+    max-width: 36rem;
+    margin: 0;
+  }
+
+  /* Breadcrumbs inside header: reduce top padding since header has its own */
+  .page-header :global(.breadcrumbs) {
+    padding: 0 0 1rem 0;
+  }
+
+  /* Mobile: tighten the top padding (header is fixed, no full hero) */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 5rem 0 2rem;
+    }
+
+    .page-header__content {
+      gap: 0.5rem;
+    }
+  }
+</style>

@@ -34,8 +34,8 @@ Drop anchor in 4–8 metres over sand, about 60–100 metres offshore. The bay c
 ### Rental Boat Access
 From Skiathos Port, a 30HP boat reaches Banana in 40–45 minutes following the south coast. You'll pass 10+ beaches along the way, making it an excellent day-trip route.
 
-### Water Taxi
-A water taxi from Skiathos Town takes roughly 25 minutes and costs approximately €40–55.
+### Transfer
+A transfer from Skiathos Town takes roughly 25 minutes and costs approximately €40–55.
 
 ## The Beach Experience
 
@@ -70,7 +70,7 @@ From your boat, you can anchor between the two and enjoy both worlds — the ene
 - **Agia Eleni** (3 minutes west by boat)
 - **Stop for lunch** at a seaside taverna near Koukounaries
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** The 30HP boats reach Banana comfortably. We'll map out your route and recommend the best anchoring spots.
 - **Skippered day trips:** Full-day excursion covering Banana, Mikri Banana, Koukounaries, and hidden coves. Your captain knows the quietest spots.

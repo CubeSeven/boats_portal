@@ -32,7 +32,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    author: z.string().default('Skiathos Boats Team'),
+    author: z.string().default('Sea Skiathos Team'),
     imagePlaceholder: z.enum(['dark', 'light', 'muted', 'ocean', 'sunset', 'turquoise']).default('dark'),
     image: z.string().optional(),
     gallery: z.array(z.string()).optional(),
@@ -151,6 +151,7 @@ const tours = defineCollection({
       lat: z.number().optional(),
       lng: z.number().optional(),
     })).optional(),
+    routePath: z.array(z.tuple([z.number(), z.number()])).optional(),
     includes: z.array(z.object({
       item: z.string(),
       included: z.boolean()
@@ -183,6 +184,11 @@ const routes = defineCollection({
     originLng: z.number(),
     destLat: z.number(),
     destLng: z.number(),
+    waypoints: z.array(z.object({
+      label: z.string().optional(),
+      lat: z.number(),
+      lng: z.number(),
+    })).optional(),
     duration: z.string(),
     distance: z.string(),
     pricing: z.array(z.object({
@@ -247,12 +253,63 @@ const faqs = defineCollection({
     question: z.string(),
     answer: z.string(),
     category: z.string().default('general'),
+    order: z.number().default(0),
   }),
 });
 
 const site = defineCollection({
   loader: glob({ pattern: '**/[^_]*.json', base: './src/content/site' }),
-  schema: z.object({}).passthrough(),
+  schema: z.object({
+    // main.json
+    id: z.string().optional(),
+    phone: z.string().optional(),
+    email: z.string().optional(),
+    whatsapp: z.string().optional(),
+    address: z.string().optional(),
+    socials: z.object({
+      instagram: z.string().optional(),
+      facebook: z.string().optional(),
+      tripadvisor: z.string().optional(),
+    }).optional(),
+    hero: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+    }).optional(),
+    whyUs: z.array(z.object({
+      icon: z.string(),
+      title: z.string(),
+      desc: z.string(),
+    })).optional(),
+    seo: z.object({
+      siteName: z.string().optional(),
+      defaultTitle: z.string().optional(),
+      defaultDescription: z.string().optional(),
+    }).optional(),
+    // rental.json
+    steps: z.array(z.object({
+      step: z.string(),
+      icon: z.string().optional(),
+      title: z.string(),
+      desc: z.string(),
+    })).optional(),
+    pricingSummary: z.array(z.object({
+      duration: z.string(),
+      price: z.string(),
+      notes: z.string().optional(),
+      highlight: z.boolean().optional(),
+    })).optional(),
+    // about.json
+    milestones: z.array(z.object({
+      year: z.string(),
+      title: z.string(),
+      desc: z.string(),
+    })).optional(),
+    values: z.array(z.object({
+      icon: z.string(),
+      title: z.string(),
+      desc: z.string(),
+    })).optional(),
+  }),
 });
 
 const legal = defineCollection({

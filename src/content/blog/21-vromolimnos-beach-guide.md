@@ -24,8 +24,8 @@ Vromolimnos (despite its name — "vromos" means "dirty" in Greek, a relic of hi
 ### By Boat
 The beach faces south into a wide, gently curved bay. The sandy bottom provides good anchoring in 3–6 metres of water. From Skiathos Port, a 30HP rental boat reaches Vromolimnos in approximately 20–25 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
 
 ## The Beach Experience
 
@@ -60,7 +60,7 @@ The bay is open but well-sheltered from northerly winds. Anchor in 3–5 metres 
 - **Tzaneria** (1.5 km east) — dive centre and small cove
 - **Kanapitsa** (2 km east) — watersports hub
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 20–25 minutes from port. Easy south-coast navigation. Good anchoring conditions.
 - **Skippered south-coast tour:** Visit Vromolimnos plus 3–4 neighbouring beaches in a half-day. Your captain handles everything.

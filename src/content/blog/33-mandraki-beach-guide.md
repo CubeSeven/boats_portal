@@ -22,8 +22,8 @@ A rough dirt road leads to Mandraki from the island's interior, but it's challen
 ### By Boat
 This is unquestionably the best way to visit Mandraki. The beach faces northwest into a wide bay. From Skiathos Port, a 30HP rental boat reaches Mandraki in approximately 40–50 minutes, navigating along the north coast past Kastro, Ligaries, and Kechria.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 35–40 minutes. Cost: approximately €50–65.
+### Transfer
+A transfer from Skiathos Town takes about 35–40 minutes. Cost: approximately €50–65.
 
 ## The Beach
 
@@ -54,7 +54,7 @@ The bay is wide and sandy-bottomed. Anchor in 3–6 metres on sand. The beach is
 
 The stretch of coastline from Mandraki west to Agistros and Elia is one of the least-visited parts of Skiathos. By boat, you can explore multiple beaches in a single trip — most of them completely empty. This is prime territory for a full-day self-drive adventure or a skippered tour that gets you away from every other tourist on the island.
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** The western route is one of our recommended full-day itineraries. 40–50 minutes from port. Pack lunch, water, and snorkelling gear.
 - **Skippered west-coast expedition:** Our most adventurous day trip. Explore Mandraki, Elia, Agistros, and Krifi Ammos with a captain who knows every cove and the best anchoring spots.

@@ -6,7 +6,7 @@ pubDate: "2026-05-20"
 readTime: 5
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/elias.jpg"
+image: "/images/beaches/vromolimnos.jpg"
 tags: ["Elias", "Elia", "beaches", "Skiathos", "secluded", "west coast", "boat rental"]
 ---
 
@@ -22,8 +22,8 @@ There is no proper road to Elias. Some adventurous visitors reach it via dirt tr
 ### By Boat
 Elias is best reached by sea. It faces west-southwest into a protected cove. From Skiathos Port, a 30HP rental boat reaches Elias in approximately 50–55 minutes, navigating the full length of the north coast and around the western tip of the island. The journey itself is spectacular — you'll see the entire wild, undeveloped northern coastline.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 40–45 minutes. Cost: approximately €55–70.
+### Transfer
+A transfer from Skiathos Town takes about 40–45 minutes. Cost: approximately €55–70.
 
 ## The Beach
 
@@ -49,7 +49,7 @@ The cove offers good shelter once inside. Anchor in 3–5 metres on sand. The co
 - **Krifi Ammos** (approximately 3 km west) — hidden sandy cove, very isolated
 - **Kechria** (5 km east) — pine-backed pebbled cove with snorkelling
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** One of our most recommended full-day adventures. Pack everything you need for the day — there are no shops out here.
 - **Skippered west-coast discovery tour:** Full-day expedition covering Elias, Mandraki, Agistros, and Krifi Ammos. Your captain navigates the exposed coastline and finds the best spots.

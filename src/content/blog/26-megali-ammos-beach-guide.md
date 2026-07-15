@@ -24,8 +24,8 @@ Megali Ammos (meaning "Big Sand") is the closest major beach to Skiathos Town, j
 ### By Boat
 Megali Ammos faces southeast into a long, open bay. Anchoring is in 3–6 metres on sand. From Skiathos Port, a rental boat reaches Megali Ammos in just 5–8 minutes — practically around the corner.
 
-### Water Taxi
-A water taxi from the port takes under 5 minutes. Cost: approximately €15–20.
+### Transfer
+A transfer from the port takes under 5 minutes. Cost: approximately €15–20.
 
 ## The Beach
 
@@ -57,10 +57,10 @@ The bay is open to the southeast. In northerly winds (the prevailing direction),
 - **Vassilias** (3 km west) — organized sandy cove
 - **Skiathos Town** (2 km east) — Old Port and Bourtzi peninsula
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Just 5–8 minutes from port. The shortest boat trip you can take.
-- **Quick water taxi:** Direct transfers from the port. Actually faster than walking.
+- **Quick transfer:** Direct transfers from the port. Actually faster than walking.
 - **Sunset cruise stop:** Combine an evening at Megali Ammos beach bars with a sunset cruise back to port.
 
 ## Best Time to Visit

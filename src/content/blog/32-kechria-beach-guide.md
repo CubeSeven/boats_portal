@@ -6,7 +6,7 @@ pubDate: "2026-05-18"
 readTime: 6
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/kechria.jpg"
+image: "/images/beaches/aselinos.jpg"
 tags: ["Kechria", "beaches", "Skiathos", "north coast", "snorkelling", "boat rental", "remote"]
 ---
 
@@ -22,8 +22,8 @@ Kechria is accessible by a rough dirt track from the interior of the island. It'
 ### By Boat
 This is by far the best way to reach Kechria. The beach faces northwest into a protected cove. From Skiathos Port, a 30HP rental boat reaches Kechria in approximately 35–40 minutes, going west along the north coast past Kastro and Ligaries. The approach from the water is spectacular — the pine-covered mountains dropping straight into the sea.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 30 minutes. Cost: approximately €45–55.
+### Transfer
+A transfer from Skiathos Town takes about 30 minutes. Cost: approximately €45–55.
 
 ## The Beach
 
@@ -49,7 +49,7 @@ The cove offers good shelter from northerly winds due to the surrounding hills. 
 - **Megali Aselinos** (3 km west) — long, wild sandy beach
 - **Krifi Ammos** (further west) — isolated sandy cove
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 35–40 minutes from port. We provide detailed north-coast navigation guidance. Weather-dependent — only recommended in calm conditions.
 - **Skippered full-day north-coast expedition:** The ultimate Skiathos boat trip — Lalaria, Kastro, Ligaries, Kechria, Aselinos. Lunch at the Kechria taverna. Your captain handles everything.

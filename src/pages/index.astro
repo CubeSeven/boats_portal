@@ -4,7 +4,7 @@ import HeroSection from '../components/sections/HeroSection.astro';
 import SectionHeading from '../components/ui/SectionHeading.astro';
 import ServiceCard from '../components/cards/ServiceCard.astro';
 import BoatCard from '../components/cards/BoatCard.astro';
-import TestimonialCard from '../components/cards/TestimonialCard.astro';
+import ReviewSlider from '../components/sections/ReviewSlider.astro';
 import BlogCard from '../components/cards/BlogCard.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import LocationHighlights from '../components/sections/LocationHighlights.astro';
@@ -30,30 +30,30 @@ const site = await getSiteSettings();
 
 const allTestimonials = await getCollection('testimonials');
 const testimonials = allTestimonials
-  .filter(t => t.data.featured)
-  .slice(0, 3)
-  .map(t => t.data);
+  .map((entry) => entry.data)
+  .sort((a, b) => (b.featured === true ? 1 : 0) - (a.featured === true ? 1 : 0))
+  .slice(0, 10);
 
 // Use the first 3 tours as featured on home
 const featuredTours = allTours.slice(0, 3);
 ---
 
 <Layout
-  title={site?.seo.defaultTitle}
-  description={site?.seo.defaultDescription}
+  title={site?.seo?.defaultTitle}
+  description={site?.seo?.defaultDescription}
 >
 
   <!-- ① HERO ────────────────────────────────── -->
   <HeroSection
-    title={site?.hero.title || "Explore Skiathos by Sea"}
-    subtitle={site?.hero.subtitle || "Premium boat rental and sea experiences in the Aegean."}
+    title={site?.hero?.title || "Explore Skiathos by Sea"}
+    subtitle={site?.hero?.subtitle || "Premium boat rental and sea experiences in the Aegean."}
     ctaText="Rent a Boat"
     ctaHref="/boat-rental/"
     ctaSecondText="Browse Tours"
     ctaSecondHref="/private-boat-tours/"
     gradient="moody"
     size="full"
-    backgroundImage="/images/stock/s26tock images.jpg"
+    backgroundImage="/images/stock/s1tock images.webp"
   />
 
   <!-- ② SERVICE PILLARS ──────────────────────── -->
@@ -92,6 +92,8 @@ const featuredTours = allTours.slice(0, 3);
             name={boat.data.name}
             type={boat.data.type}
             priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
             slug={boat.id}
             image={boat.data.image}
             imagePlaceholder={boat.data.imagePlaceholder}
@@ -114,29 +116,10 @@ const featuredTours = allTours.slice(0, 3);
   <FeaturedTours tours={featuredTours} />
 
   <!-- ⑤ WHY CHOOSE US ────────────────────────── -->
-  <WhyChooseUs items={site?.whyUs} />
+  <WhyChooseUs items={site?.whyUs ?? []} />
 
-  <!-- ⑥ TESTIMONIALS ─────────────────────────── -->
-  <section class="section" id="reviews">
-    <div class="container">
-      <SectionHeading
-        label="Guest Reviews"
-        title="What Our Guests Say"
-        description="Over 800 five-star reviews on Google, TripAdvisor, and Booking.com. Here's what our guests keep coming back for."
-      />
-      <div class="grid-cards mt-12">
-        {testimonials.map((t) => (
-          <TestimonialCard
-            quote={t.quote}
-            author={t.author}
-            location={t.location}
-            rating={t.rating}
-            service={t.service}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- ⑥ REVIEWS ─────────────────────────── -->
+  <ReviewSlider reviews={testimonials} />
 
   <!-- ⑦ LOCATION HIGHLIGHTS ──────────────────── -->
   <LocationHighlights locations={locationHighlights} />
@@ -160,7 +143,7 @@ const featuredTours = allTours.slice(0, 3);
             excerpt={post.data.description}
             slug={post.id}
             pubDate={post.data.pubDate.toISOString()}
-            readTime={post.data.readTime}
+            readTime={String(post.data.readTime)}
             category={post.data.category}
             image={post.data.image}
             imagePlaceholder={post.data.imagePlaceholder}
@@ -179,6 +162,7 @@ const featuredTours = allTours.slice(0, 3);
     secondButtonText="View All Services"
     secondButtonHref="/boat-rental/"
     variant="dark"
+    backgroundImage="/images/stock/s10tock images.webp"
   />
 
 </Layout>

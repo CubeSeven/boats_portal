@@ -18,12 +18,13 @@ interface Service {
 }
 
 interface Props {
+  [key: string]: any;
   title: string;
   seoTitle?: string;
   description: string;
   heroTitle: string;
   heroSubtitle?: string;
-  heroGradient?: 'ocean' | 'sunset' | 'turquoise';
+  heroGradient?: string;
   locationName: string;
   image?: string;
   gallery?: string[];
@@ -67,10 +68,10 @@ const locationBoats = allBoats.filter(b => boats.includes(b.id));
     ctaHref="/contact/"
     ctaSecondText="All Locations"
     ctaSecondHref="/locations/"
-    gradient={heroGradient}
+    gradient={heroGradient as any}
     size="medium"
     showScrollHint={false}
-    backgroundImage={image}
+    backgroundImage={image ?? "/images/stock/s15tock images.webp"}
   />
 
   <Breadcrumbs />
@@ -83,7 +84,7 @@ const locationBoats = allBoats.filter(b => boats.includes(b.id));
     </section>
 
     <!-- Map -->
-    <section class="location-map-section reveal">
+    <section class="location-map-section">
       <h2>Location on the Map</h2>
       {latitude != null && longitude != null ? (
         <LocationMap lat={latitude} lng={longitude} label={locationName} height="300px" zoom={mapZoom} />
@@ -129,6 +130,8 @@ const locationBoats = allBoats.filter(b => boats.includes(b.id));
               name={boat.data.name}
               type={boat.data.type}
               priceFrom={boat.data.priceFrom}
+            priceHalfDay={boat.data.priceHalfDay}
+            priceFullDay={boat.data.priceFullDay}
               slug={boat.id}
               image={boat.data.image}
               imagePlaceholder={boat.data.imagePlaceholder}
@@ -160,6 +163,7 @@ const locationBoats = allBoats.filter(b => boats.includes(b.id));
     buttonText="Book Now"
     buttonHref="/contact/"
     variant="dark"
+    backgroundImage={image ?? "/images/stock/s15tock images.webp"}
   />
 </Layout>
 

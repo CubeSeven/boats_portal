@@ -2,10 +2,10 @@
 import ServicePage from '../../layouts/ServicePage.astro';
 import PricingTable from '../../components/sections/PricingTable.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
-import { Check } from 'lucide-react';
 import { getEntry, render } from 'astro:content';
 
 const entry = await getEntry('activities', 'jet-ski-rental');
+if (!entry) throw new Error('Activity "jet-ski-rental" not found');
 const { Content } = await render(entry);
 const data = entry.data;
 
@@ -24,6 +24,7 @@ const faqs = data.faqs || [];
   heroSubtitle={data.heroSubtitle}
   heroGradient={data.heroGradient as any}
   faqs={faqs}
+  backgroundImage={data.image}
 >
   <section>
     <SectionHeading
@@ -40,7 +41,7 @@ const faqs = data.faqs || [];
         <ul>
           {features.map(p => (
             <li>
-              <span class="perk-icon"><Check size={16} /></span>
+              <span class="perk-icon"><svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
               <span>{p}</span>
             </li>
           ))}

@@ -6,7 +6,7 @@ pubDate: "2026-05-22"
 readTime: 6
 category: "destination"
 imagePlaceholder: "sunset"
-image: "/images/beaches/kastro.jpg"
+image: "/images/beaches/aselinos.jpg"
 tags: ["Kastro", "beaches", "Skiathos", "castle", "history", "north coast", "boat rental"]
 ---
 
@@ -24,8 +24,8 @@ A dirt road from the island's interior leads to the castle ruins above, with a s
 ### By Boat
 This is the ideal way to visit. The beach faces north-northeast and is set into a small bay. From Skiathos Port, a 30HP rental boat reaches Kastro Beach in approximately 30–35 minutes along the north coast. The approach from the water reveals the full drama of the castle ruins towering above the beach.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 25 minutes. Cost: approximately €40–50.
+### Transfer
+A transfer from Skiathos Town takes about 25 minutes. Cost: approximately €40–50.
 
 ## The Beach
 
@@ -56,7 +56,7 @@ The cove offers reasonable shelter from southerly winds, but it faces north — 
 - **Lalaria** (8 km east, 25 minutes by boat) — the famous boat-only beach
 - **Aselinos** (5 km west) — wild, long sandy beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Our team provides full north-coast navigation guidance. Kastro is a highlight of the north-coast route. Weather-dependent.
 - **Skippered history-and-beach tour:** Visit Kastro, explore the ruins (your captain can guide you up to the castle), then swim at the beach. Combine with Lalaria and Kechria.

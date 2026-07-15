@@ -22,8 +22,8 @@ A very challenging dirt track leads to Megas Gialos from the interior. The road 
 ### By Boat
 Megas Gialos faces north and is exposed. It can only be visited by boat in calm conditions (wind under 2 Beaufort). From Skiathos Port, a rental boat reaches Megas Gialos in approximately 20–25 minutes by heading east, then north around the airport peninsula.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 18 minutes in calm conditions. Cost: approximately €25–35.
+### Transfer
+A transfer from Skiathos Town takes about 18 minutes in calm conditions. Cost: approximately €25–35.
 
 ## The Beach
 
@@ -47,7 +47,7 @@ Megas Gialos is for adventurers. The difficulty of reaching it — by land or se
 - **Lalaria** (accessible by continuing north around Cape Gournes, ~20 minutes) — the famous boat-only beach
 - **Skiathos Town** (return south, 20 minutes)
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** For experienced, weather-trained self-drivers only. Not recommended for first-time boat operators.
 - **Skippered north-coast expedition:** Your captain will choose the best north-coast destinations based on the day's conditions.

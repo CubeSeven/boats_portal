@@ -24,8 +24,8 @@ Tzaneria is a small, attractive sandy cove on Skiathos's south coast, approximat
 ### By Boat
 Tzaneria faces south into a small cove. From Skiathos Port, a 30HP rental boat reaches Tzaneria in approximately 18–22 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 15 minutes. Cost: approximately €25–35.
+### Transfer
+A transfer from Skiathos Town takes about 15 minutes. Cost: approximately €25–35.
 
 ## The Beach
 
@@ -57,7 +57,7 @@ Anchor in 3–5 metres on sand in the cove. The cove is small — space for a fe
 - **Achladies** (2.5 km east) — larger family beach
 - **Sklithri** (1.5 km east) — the taverna-on-the-sand dining beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 18–22 minutes from port. Combine with dive centre activities.
 - **Skippered south-coast tour:** Visit Tzaneria and neighbouring coves. We can coordinate with the dive centre for those who want to dive.

@@ -6,7 +6,7 @@ pubDate: "2026-06-02"
 readTime: 4
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/psarochoma.jpg"
+image: "/images/beaches/kalamaki.jpg"
 tags: ["Psarochoma", "beaches", "Skiathos", "isolated", "north coast", "boat rental", "snorkelling"]
 ---
 
@@ -22,8 +22,8 @@ An unmarked footpath descends from the road near the airport area. The hike is a
 ### By Boat
 Psarochoma faces northeast and is exposed. It can only be visited in calm conditions (wind under 2 Beaufort). From Skiathos Port, a rental boat reaches Psarochoma in approximately 15–20 minutes, going east from the port and then north along the coast past the airport peninsula.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 15 minutes in calm conditions. Cost: approximately €20–30.
+### Transfer
+A transfer from Skiathos Town takes about 15 minutes in calm conditions. Cost: approximately €20–30.
 
 ## The Beach
 
@@ -47,7 +47,7 @@ The rocky edges of the cove offer good snorkelling. The water is deep and clear.
 - **Lalaria** (accessible by continuing north around Cape Gournes, ~20 minutes) — the famous boat-only beach
 - **Skiathos Town** (return south, 15 minutes)
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** For experienced, weather-aware self-drivers only. Our team provides a full safety briefing.
 - **Skippered north-coast exploration:** Your captain will determine the best north-coast stops for the day based on conditions. Psarochoma is visited when the weather cooperates.

@@ -1,7 +1,7 @@
 ---
 slug: "23-troulos-beach-guide"
 title: "Troulos Beach Skiathos: The Sheltered Gem of the South Coast"
-description: "Troulos is one of Skiathos's best family beaches — sheltered, shallow, sandy, and fully organized. Your complete guide to visiting by boat, water taxi, or land."
+description: "Troulos is one of Skiathos's best family beaches — sheltered, shallow, sandy, and fully organized. Your complete guide to visiting by boat, transfer, or land."
 pubDate: "2026-05-09"
 readTime: 6
 category: "destination"
@@ -28,8 +28,8 @@ The name "Troulos" means "dome" in Greek — a reference to the rounded shape of
 ### By Boat
 Troulos Bay faces south and is naturally protected by headlands on both sides. The sandy bottom holds anchors well in 3–6 metres of water. From Skiathos Port, a 30HP rental boat reaches Troulos in approximately 25–30 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 20 minutes. Cost: approximately €35–45.
+### Transfer
+A transfer from Skiathos Town takes about 20 minutes. Cost: approximately €35–45.
 
 ## The Beach Experience
 
@@ -61,7 +61,7 @@ The bay offers excellent shelter. Anchor in 3–5 metres on sand. The horseshoe 
 - **Vromolimnos** (2.5 km east) — livelier with beach bars
 - **Koukounaries** (3 km west) — the island's most famous beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 25–30 minutes from port. Easy anchoring in the sheltered bay. Perfect for beginners.
 - **Family skippered day trip:** Half-day tour covering Troulos, Maratha, and Koukounaries. A stress-free way to see the best south-coast beaches.

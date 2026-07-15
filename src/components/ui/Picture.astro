@@ -39,11 +39,11 @@ const hasSmallWebP = fs.existsSync(webpSmallPath);
   hasWebP ? (
     <picture>
       {hasSmallWebP && (
-        <source srcset={webpSmallSrc} media="(max-width: 640px)" type="image/webp" />
+        <source srcset={encodeURI(webpSmallSrc)} media="(max-width: 640px)" type="image/webp" />
       )}
-      <source srcset={webpSrc} type="image/webp" />
+      <source srcset={encodeURI(webpSrc)} type="image/webp" />
       <img
-        src={src}
+        src={encodeURI(src)}
         alt={alt}
         class={className}
         loading={loading}
@@ -54,7 +54,7 @@ const hasSmallWebP = fs.existsSync(webpSmallPath);
     </picture>
   ) : (
     <img
-      src={src}
+      src={encodeURI(src)}
       alt={alt}
       class={className}
       loading={loading}

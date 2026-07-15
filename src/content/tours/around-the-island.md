@@ -9,10 +9,6 @@ heroGradient: "ocean"
 duration: "Full Day (8h)"
 capacity: "Up to 10 persons"
 order: 2
-image: "/images/stock/s16tock images.jpg"
-gallery:
-  - "/images/stock/s17tock images.jpg"
-  - "/images/stock/s18tock images.jpg"
 itinerary:
   - time: "09:00"
     label: "Departure"
@@ -57,7 +53,7 @@ includes:
     included: true
 pricing:
   - duration: "Grand Tour (8.5h)"
-    price: "From €450"
+    price: "From €500"
     notes: "Best value for 1 day"
     highlight: true
 faqs:
@@ -65,6 +61,9 @@ faqs:
     answer: "Yes! Weather permitting, we complete a full 360-degree circumnavigation of Skiathos, showing you every coast, every landmark, and every beach."
   - question: "What happens if the north coast is too wavy?"
     answer: "If the Meltemi wind is too strong, we will stay on the south coast and visit more hidden coves and islands there. You still get a full day of private boating."
+image: "/images/tours/around-the-island.webp"
+gallery: ["/images/tours/around-the-island-gallery-1.webp", "/images/tours/around-the-island-gallery-2.webp", "/images/tours/around-the-island-gallery-3.webp"]
+
 ---
 
 ## The Complete Skiathos Experience

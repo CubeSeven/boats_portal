@@ -24,8 +24,8 @@ Maratha is a small, charming sandy beach on Skiathos's south coast, 11 km southw
 ### By Boat
 Maratha faces south into a gentle, open bay. The sandy bottom provides good anchoring in 3–6 metres of water. The pine forest behind the beach makes for a stunning approach from the water. From Skiathos Port, a 30HP rental boat reaches Maratha in approximately 30–35 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 25 minutes. Cost: approximately €35–45.
+### Transfer
+A transfer from Skiathos Town takes about 25 minutes. Cost: approximately €35–45.
 
 ## The Beach
 
@@ -52,7 +52,7 @@ The bay is open but generally calm in the prevailing northerly winds. Anchor in 
 - **Banana** (3 km west) — party and watersports hub
 - **Katharina** (1 km west, between Maratha and Koukounaries) — tiny, secluded beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 30–35 minutes from port along the south coast. Easy navigation. Perfect for a quiet beach day away from the crowds.
 - **Skippered beach-hopping tour:** Combine Maratha with Koukounaries, Banana, and Troulos. Spend as much time at each as you want.

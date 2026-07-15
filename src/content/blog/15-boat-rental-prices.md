@@ -1,7 +1,7 @@
 ---
 slug: "15-boat-rental-prices"
 title: "Skiathos Boat Rental Prices 2026: The Complete Cost Guide"
-description: "Real pricing for boat rental, private tours, water taxi, and watersports in Skiathos for the 2026 season — including hidden costs, deposits, and how to get the best deal."
+description: "Real pricing for boat rental, private tours, transfer, and watersports in Skiathos for the 2026 season — including hidden costs, deposits, and how to get the best deal."
 pubDate: "2026-08-01"
 readTime: 8
 category: "guide"
@@ -17,31 +17,35 @@ Most websites give you vague "from" prices. We're going to give you real numbers
 
 ## Boat Rental Prices (Self-Drive)
 
+We keep pricing simple and flat across the fleet — four tiers, no hidden variables.
+
 ### No-License Boats (≤30HP)
 
 | Duration | Price | Notes |
 |---|---|---|
-| Half day (4h) | €60–70 | Morning or afternoon slot |
-| Full day (8h) | €80–100 | Most popular |
-| 2 days | €150–180 | Fuel deposit required |
-| Weekly | €420–500 | Significant discount |
+| Half day (4h) | €130 | Morning or afternoon slot |
+| Full day (8h) | €180 | Most popular |
 
-### With-License Boats (50HP+)
+### License-Required Boats & Small RIBs
 
 | Duration | Price | Notes |
 |---|---|---|
-| Half day (4h) | €90–120 | |
-| Full day (8h) | €130–180 | Peak season upper range |
-| 2 days | €230–320 | |
-| Weekly | €700–950 | |
+| Half day (4h) | €250 | |
+| Full day (8h) | €350 | Includes standard 50–150HP models |
 
-### RIB / High-Power (200HP)
+### Large RIBs (200HP+)
 
 | Duration | Price | Notes |
 |---|---|---|
-| Half day | €180 | |
-| Full day | €250–300 | |
-| Weekly | €1,400+ | Contact for quote |
+| Half day (4h) | €450 | |
+| Full day (8h) | €650 | Includes skipper option |
+
+### Top Boats (Tropida Genesis 33, Legend A40, Omega 42)
+
+| Duration | Price | Notes |
+|---|---|---|
+| Half day (4h) | €800 | |
+| Full day (8h) | €1,200 | Premium yacht & high-end RIB class |
 
 ## Private Tour Prices
 
@@ -50,12 +54,12 @@ Private boat tours are priced per boat (not per person), which makes them surpri
 | Tour | Duration | Price |
 |---|---|---|
 | Lalaria & Blue Caves | 4–5h | €350–420 |
-| Mamma Mia (Skopelos) | Full day | €500–600 |
+| Mamma Mia (Skopelos) | Full day | €600–700 |
 | Sunset Cruise | 3h | €280–350 |
-| Around the Island | 6–7h | €450–550 |
+| Around the Island | 6–7h | €500–600 |
 | Tsougria & Arkos | 4h | €300–380 |
 
-## Water Taxi Prices
+## Transfer Prices
 
 Water taxi prices are per boat (up to 8 passengers) — not per person. For groups, splitting the fare makes it competitive with ferry tickets, especially when you factor in the door-to-door convenience: Price (per boat, up to 8 pax) |
 |---|---|

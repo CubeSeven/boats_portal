@@ -6,7 +6,7 @@ pubDate: "2026-05-23"
 readTime: 5
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/krifi-ammos.jpg"
+image: "/images/beaches/lalaria.jpg"
 tags: ["Krifi Ammos", "beaches", "Skiathos", "hidden", "remote", "north coast", "boat rental"]
 ---
 
@@ -22,8 +22,8 @@ A hiking trail from the Agia Eleni area traverses the island's interior to reach
 ### By Boat
 The beach faces northwest into a small, sheltered cove. From Skiathos Port, a 30HP rental boat reaches Krifi Ammos in approximately 45–50 minutes, navigating along the north and west coasts. The cove is small and easy to miss if you don't know what to look for — keep a close eye on the coastline west of Aselinos.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 35–40 minutes. Cost: approximately €50–65.
+### Transfer
+A transfer from Skiathos Town takes about 35–40 minutes. Cost: approximately €50–65.
 
 ## The Beach
 
@@ -50,7 +50,7 @@ The cove is small and partially sheltered by headlands. Anchor in 3–5 metres o
 - **Elia** (3 km southwest) — exotic secluded cove
 - **Agistros** (4 km south) — lush green western cove
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** For experienced self-drivers who want the ultimate hidden beach. 45–50 minutes from port. Pack everything you need.
 - **Skippered remote-beach expedition:** Our most exclusive day tour. Hit 4–5 remote beaches in a single day, including Krifi Ammos. Your captain knows every cove on the north coast.

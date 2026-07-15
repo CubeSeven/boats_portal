@@ -25,8 +25,8 @@ There is absolutely no road to Lalaria. The cliffs behind the beach are vertical
 #### 1. Day-Trip Excursion Boats (€15–20 per person)
 Organized excursion boats depart the Old Port of Skiathos daily in summer (weather permitting). Trips typically leave at 10:00am and return around 4:00pm. The boat ride takes 45 minutes each way along the dramatic north coast. Includes a stop for swimming at the sea caves. The downside: you're on their schedule.
 
-#### 2. Water Taxi (€60–80 per boat)
-A private water taxi from Skiathos Port reaches Lalaria in approximately 30–35 minutes. You decide your timing. Perfect for early morning visits when the beach is empty and the light is magical for photography.
+#### 2. Transfer (€60–80 per boat)
+A private transfer from Skiathos Port reaches Lalaria in approximately 30–35 minutes. You decide your timing. Perfect for early morning visits when the beach is empty and the light is magical for photography.
 
 #### 3. Rent Your Own Boat (Most Flexible)
 Take a 30HP rental boat from Skiathos Port. The route goes east past the airport, then north around Cape Gournes. The north coast can be choppy — only attempt in calm weather (wind under 3 Beaufort). Journey time: 35–40 minutes. Anchor offshore in sand patches between the pebbles. This gives you complete freedom to stay as long as you want and explore the sea caves at your own pace.
@@ -55,7 +55,7 @@ Since you're already on the north coast by boat, combine with:
 - **Glyfoneri Beach** (on the way back, eastern side) — a quiet, rocky cove
 - **Aselinos Beach** (far northwest) — for a full north-coast tour
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boats (30HP):** Reaches Lalaria from our base in 35–40 minutes. We provide a thorough briefing on north-coast navigation and weather assessment.
 - **Skippered tours:** Let our captain take you there stress-free. Includes stops at the sea caves and Kastro. Half-day or full-day options.

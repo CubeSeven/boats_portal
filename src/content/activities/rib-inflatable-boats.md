@@ -1,12 +1,12 @@
 ---
 slug: rib-inflatable-boats
 title: RIB & Inflatable Boats
-seoTitle: RIB Rental Skiathos | 200HP Inflatable Boat Hire | Skiathos Boats
+seoTitle: RIB Rental Skiathos | 200HP Inflatable Boat Hire | Sea Skiathos
 description: Rent a high-speed RIB in Skiathos. Our premium fleet reaches Skopelos in 35 minutes. Wakeboard tow point included. License required or add our skipper.
 heroTitle: High-Speed RIB<br/>Rental Skiathos
 heroSubtitle: Cover the whole Sporades archipelago in one day. Our performance RIBs are the fastest way to explore the Aegean — with room for 10.
 heroGradient: sunset
-icon: shield-check
+icon: ship
 href: /boat-rental/rib-inflatable-boats/
 price: From €290/day
 accent: ocean
@@ -27,8 +27,8 @@ specs:
     value: 2 × 120L
 pricing:
   - duration: Half Day (4 hours)
-    price: From €200
-    notes: Tomahawk RIB
+    price: Contact Us
+    notes: Inquire for availability & rates
   - duration: Full Day (8 hours)
     price: From €290
     notes: Tomahawk RIB

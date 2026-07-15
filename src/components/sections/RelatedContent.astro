@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { getFleet } from '../../lib/collections';
 import BoatCard from '../cards/BoatCard.astro';
 import ServiceCard from '../cards/ServiceCard.astro';
+import TourCard from '../cards/TourCard.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Props {
@@ -48,7 +49,7 @@ try {
     const allTours = await getCollection('tours');
     relatedItems = allTours
       .filter(item => item.id !== currentId)
-      .sort((a, b) => {
+      .sort((a: any, b: any) => {
         // If we have a heroGradient or category in the future, use it.
         // For now, prioritize by order similarity
         return Math.random() - 0.5;
@@ -58,7 +59,7 @@ try {
     const allServices = await getCollection(collection as any);
     relatedItems = allServices
       .filter((item: any) => item.id !== currentId)
-      .sort((a, b) => {
+      .sort((a: any, b: any) => {
         // Strict category match priority
         const aMatch = (a.data as any).category === category;
         const bMatch = (b.data as any).category === category;
@@ -70,12 +71,12 @@ try {
   } else if (collection === 'blog') {
     const allPosts = await getCollection('blog');
     relatedItems = allPosts
-      .filter(item => {
+      .filter((item: any) => {
         const itemId = item.id.split('/').pop()?.replace('.md', '') || item.id;
         const normCurrentId = currentId?.split('/').pop()?.replace('.md', '') || currentId;
         return itemId !== normCurrentId;
       })
-      .sort((a, b) => {
+      .sort((a: any, b: any) => {
         // Strict category match priority
         const aCat = a.data.category.toLowerCase();
         const bCat = b.data.category.toLowerCase();
@@ -122,6 +123,8 @@ const isMuted = true; // Use muted background for variety
                 name={item.data.name}
                 type={item.data.type}
                 priceFrom={item.data.priceFrom}
+            priceHalfDay={item.data.priceHalfDay}
+            priceFullDay={item.data.priceFullDay}
                 slug={item.id}
                 image={item.data.image}
                 imagePlaceholder={item.data.imagePlaceholder}
@@ -133,14 +136,13 @@ const isMuted = true; // Use muted background for variety
           
           if (collection === 'tours') {
             return (
-              <ServiceCard
-                icon="map-pin"
+              <TourCard
                 title={item.data.title}
                 description={item.data.description}
                 href={`/private-boat-tours/${item.id}/`}
                 price={item.data.pricing?.[0]?.price || 'From €???'}
                 image={item.data.image}
-                accent="ocean"
+                badge={item.data.duration}
               />
             );
           }

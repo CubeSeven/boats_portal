@@ -14,12 +14,13 @@ const phoneClean = site?.phone?.replace(/ /g, '') || '';
 interface FaqItem { question: string; answer: string; }
 
 interface Props {
+  [key: string]: any;
   title: string;
   seoTitle?: string;
   description: string;
   heroTitle: string;
   heroSubtitle?: string;
-  heroGradient?: 'ocean' | 'sunset' | 'turquoise' | 'moody' | 'airy' | 'neutral' | 'dark';
+  heroGradient?: string;
   faqs?: FaqItem[];
   ctaTitle?: string;
   ctaSubtitle?: string;
@@ -27,6 +28,7 @@ interface Props {
   canonicalUrl?: string;
   category?: string;
   id?: string;
+  backgroundImage?: string;
 }
 
 const {
@@ -43,6 +45,7 @@ const {
   canonicalUrl,
   category,
   id,
+  backgroundImage = '/images/stock/s17tock images.webp',
 } = Astro.props;
 ---
 
@@ -58,10 +61,10 @@ const {
     ctaHref="/contact/"
     ctaSecondText="View Fleet"
     ctaSecondHref="/fleet/"
-    gradient={heroGradient}
+    gradient={heroGradient as any}
     size="medium"
     showScrollHint={false}
-    backgroundImage="/images/stock/s10tock images.jpg"
+    backgroundImage={backgroundImage}
   />
 
   <Breadcrumbs />
@@ -81,7 +84,10 @@ const {
     {showBookingWidget && (
       <aside class="service-page-sidebar">
         <div class="sidebar-sticky">
-          <BookingWidget />
+          <BookingWidget 
+            initialService={category === 'watersports' ? 'watersports' : (category === 'boat-rental' ? 'boat-rental' : '')} 
+            initialSubId={category === 'watersports' ? id : ''} 
+          />
         </div>
       </aside>
     )}
@@ -92,7 +98,7 @@ const {
     currentId={id} 
     category={category}
     title="Other Services & Activities"
-    subtitle="From water taxi transfers to thrilling watersports — explore more sea experiences."
+    subtitle="From transfer transfers to thrilling watersports — explore more sea experiences."
   />
 
   <CtaBanner
@@ -103,6 +109,7 @@ const {
     secondButtonText="Call Us"
     secondButtonHref={phoneClean ? `tel:${phoneClean}` : 'tel:+30XXXXXXXXXX'}
     variant="dark"
+    backgroundImage="/images/stock/s17tock images.webp"
   />
 </Layout>
 

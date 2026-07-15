@@ -6,12 +6,12 @@ import PricingTable from '../components/sections/PricingTable.astro';
 import FaqAccordion from '../components/sections/FaqAccordion.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import BookingWidget from '../components/sections/BookingWidget.astro';
-import { Users, Zap, Ruler, Anchor, CheckCircle2 } from 'lucide-react';
 import RelatedContent from '../components/sections/RelatedContent.astro';
 import Gallery from '../components/sections/Gallery.astro';
 
 
 interface Props {
+  [key: string]: any;
   name: string;
   type: 'no-license' | 'with-license' | 'rib' | 'yacht';
   length: string;
@@ -58,16 +58,16 @@ const typeLabels = {
 };
 
 const pricing = [
-  priceHalfDay && { duration: 'Half Day (4 hours)', price: `From €${priceHalfDay}`, notes: 'Fuel not included' },
   { duration: 'Full Day (8 hours)', price: `From €${priceFullDay}`, notes: 'Best value', highlight: true },
+  { duration: 'Half Day (4 hours)', price: 'Contact Us', notes: 'Enquire for availability & pricing' },
   priceWeekly && { duration: 'Weekly (7 days)', price: `From €${priceWeekly}`, notes: 'Contact for discount' },
 ].filter(Boolean) as any[];
 
 const specs = [
-  { label: 'Capacity', value: `${capacity} Persons`, icon: Users },
-  { label: 'Power', value: `${horsepower} HP`, icon: Zap },
-  { label: 'Length', value: length, icon: Ruler },
-  { label: 'Type', value: typeLabels[type], icon: Anchor },
+  { label: 'Capacity', value: `${capacity} Persons`, iconSvg: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
+  { label: 'Power', value: `${horsepower} HP`, iconSvg: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>' },
+  { label: 'Length', value: length, iconSvg: '<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/>' },
+  { label: 'Type', value: typeLabels[type], iconSvg: '<path d="M12 6v16"/><path d="m19 13 2-1a9 9 0 0 1-18 0l2 1"/><path d="M9 11h6"/><circle cx="12" cy="4" r="2"/>' },
 ];
 ---
 
@@ -86,89 +86,119 @@ const specs = [
       "availability": available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "url": `${Astro.site}fleet/${Astro.props.id || ''}`
     },
-    "brand": { "@type": "Brand", "name": "Skiathos Boats" },
+    "brand": { "@type": "Brand", "name": "Sea Skiathos" },
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Length", "value": length },
       { "@type": "PropertyValue", "name": "Capacity", "value": `${capacity} Persons` },
       { "@type": "PropertyValue", "name": "Horsepower", "value": `${horsepower} HP` }
     ]
   })} />
-  <HeroSection
-    title={name}
-    subtitle={typeLabels[type]}
-    ctaText="Check Availability"
-    ctaHref="/contact/"
-    ctaSecondText="Back to Fleet"
-    ctaSecondHref="/fleet/"
-    gradient={imagePlaceholder}
-    size="medium"
-    backgroundImage={image}
-  />
-
   <Breadcrumbs />
 
   <div class="boat-page container">
     <main class="boat-main">
       
-      <!-- Quick Specs Bar -->
-      <section class="specs-bar reveal">
-        {specs.map(spec => (
-          <div class="spec-item">
-            <spec.icon size={20} className="spec-icon" />
-            <div class="spec-info">
-              <span class="spec-label">{spec.label}</span>
-              <span class="spec-value">{spec.value}</span>
-            </div>
-          </div>
-        ))}
-      </section>
-
-      <!-- Content Grid -->
-      <div class="content-grid">
-        <div class="description-section reveal">
-          <h2>About the {name}</h2>
-          <p class="lead">{description}</p>
-          
-          <div class="prose">
-            <slot />
-          </div>
-
-          <div class="features-section">
-            <h3>Key Features</h3>
-            <ul class="features-list">
-              {features.map(feature => (
-                <li>
-                  <CheckCircle2 size={18} className="feature-icon" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div class="pricing-section reveal">
-          <h2>Rental Pricing</h2>
-          <PricingTable rows={pricing} disclaimer="Prices vary by season. Fuel is calculated at the end of the rental based on consumption." />
-          
-          {!available && (
-            <div class="notice-box warning">
-              <p><strong>Note:</strong> This boat is currently under maintenance or fully booked for the upcoming week. Please contact us for alternative options.</p>
-            </div>
-          )}
-        </div>
-      </div>
-
+      <!-- 1. Gallery (Moved up) -->
       {gallery && gallery.length > 0 && (
         <div class="gallery-wrapper reveal">
-          <Gallery items={gallery} title={galleryTitle || `Inside the ${name}`} />
+          <Gallery items={gallery} title="" />
         </div>
       )}
+
+      <header class="boat-header">
+        <h1 class="boat-title">{name}</h1>
+        <div class="boat-meta">
+          <span class="boat-type-badge">{typeLabels[type]}</span>
+          {available ? (
+            <span class="status-badge available">Available Now</span>
+          ) : (
+            <span class="status-badge booked">Fully Booked / Maintenance</span>
+          )}
+        </div>
+      </header>
+
+      <!-- 2. Combined Specs and Key Features Grid -->
+      <section class="specs-features-grid reveal">
+        <div class="specs-grid">
+          {specs.map(spec => (
+            <div class="spec-card">
+              <div class="spec-card-header">
+                <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spec-card-icon" aria-hidden="true" set:html={spec.iconSvg} />
+                <span class="spec-card-label">{spec.label}</span>
+              </div>
+              <span class="spec-card-value">{spec.value}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="features-box">
+          <h3 class="features-box-title">On-Board Amenities</h3>
+          <ul class="features-pill-grid">
+            {features.map(feature => (
+              <li class="feature-pill">
+                <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="feature-pill-icon" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. Collapsible Description -->
+      <section class="description-section reveal">
+        <details class="description-details group">
+          <summary class="description-summary">
+            <span class="description-title-wrap">
+              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="description-title-icon" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              <h2 class="description-title">About the {name}</h2>
+            </span>
+            <span class="description-toggle-icon">
+              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="description-content">
+            <p class="lead">{description}</p>
+            <div class="prose">
+              <slot />
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4. Pricing Section -->
+      <section class="pricing-section reveal">
+        <h2>Rental Pricing</h2>
+        <PricingTable rows={pricing} disclaimer="Prices might change based on seasonal availability. Fuel is not included in the price shown and is calculated at the end of the rental based on consumption." />
+        
+        {!available && (
+          <div class="notice-box warning">
+            <p><strong>Note:</strong> This boat is currently under maintenance or fully booked for the upcoming week. Please contact us for alternative options.</p>
+          </div>
+        )}
+      </section>
+
+      <!-- 5. Wind & Waves Widget -->
+      <section class="weather-section reveal">
+        <h2>Wind & Waves in Skiathos</h2>
+        <p class="weather-subtitle">Real-time marine weather conditions for safe navigation around Skiathos.</p>
+        <div class="windy-embed">
+          <iframe
+            title="Windy.com — wind & wave forecast Skiathos"
+            src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=%C2%B0C&metricWind=default&zoom=10&overlay=wind&product=ecmwf&level=surface&lat=39.069&lon=23.487&detailLat=39.165&detailLon=23.487&detail=true&message=true"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: var(--radius-lg);"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
 
     </main>
 
     <aside class="boat-sidebar">
       <div class="sidebar-sticky">
-        <BookingWidget services={[`Rent ${name}`, 'General Inquiry']} />
+        <BookingWidget initialService="boat-rental" initialSubId={id} />
         
         <div class="safety-box">
           <h4>Safety & Support</h4>
@@ -192,6 +222,7 @@ const specs = [
     buttonText="Request Booking"
     buttonHref="/contact/"
     variant={imagePlaceholder === 'dark' ? 'navy' : 'ocean'}
+    backgroundImage={image}
   />
 </Layout>
 
@@ -200,7 +231,7 @@ const specs = [
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 4rem;
   }
 
@@ -210,38 +241,119 @@ const specs = [
 
   .boat-main { display: flex; flex-direction: column; gap: 3rem; }
 
-  /* Specs Bar */
-  .specs-bar {
+  /* Boat Header */
+  .boat-header { display: flex; flex-direction: column; gap: 0.5rem; }
+  .boat-title { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 400; color: var(--foreground); margin: 0; letter-spacing: normal; }
+  .boat-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+  .boat-type-badge { background: var(--muted); padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; color: var(--muted-foreground); border: 1px solid var(--border); }
+  .status-badge { font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-badge.available { background: oklch(0.96 0.04 140); border: 1px solid oklch(0.85 0.05 140); color: oklch(0.3 0.1 140); }
+  .status-badge.booked { background: oklch(0.96 0.04 30); border: 1px solid oklch(0.85 0.05 30); color: oklch(0.3 0.1 30); }
+
+  /* Gallery */
+  .gallery-wrapper { display: flex; flex-direction: column; gap: 1rem; }
+  .gallery-wrapper :global(.gallery-section) { margin-top: 0; }
+
+  /* Specs & Features Grid */
+  .specs-features-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+  .specs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+  @media (min-width: 768px) { .specs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+  .spec-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem 3rem;
-    background: var(--foreground);
-    padding: 1.5rem 2.5rem;
-    border-radius: var(--radius-xl);
-    color: white;
+    flex-direction: column;
+    gap: 0.35rem;
   }
+  .spec-card-header { display: flex; align-items: center; gap: 0.5rem; color: var(--muted-foreground); }
+  .spec-card-icon { color: var(--foreground); flex-shrink: 0; }
+  .spec-card-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .spec-card-value { font-size: 1.1rem; font-weight: 800; color: var(--foreground); line-height: 1.2; }
 
-  .spec-item { display: flex; align-items: center; gap: 0.85rem; }
-  .spec-icon { color: var(--foreground); }
-  .spec-info { display: flex; flex-direction: column; }
-  .spec-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
-  .spec-value { font-size: 1rem; font-weight: 700; }
+  .features-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+  }
+  .features-box-title { margin: 0 0 0.85rem; }
+  .features-pill-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0; }
+  .feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+  }
+  .feature-pill-icon { color: var(--foreground); flex-shrink: 0; }
 
-  /* Content Grid */
-  .content-grid { display: flex; flex-direction: column; gap: 4rem; }
-  
-  .lead { font-size: 1.15rem; line-height: 1.6; color: var(--foreground); margin-bottom: 2rem; }
-  
-  .features-section { margin-top: 3rem; }
-  .features-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
-  .features-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; color: var(--muted-foreground); }
-  .feature-icon { color: oklch(0.6 0.2 150); flex-shrink: 0; }
+  /* Collapsible Description */
+  .description-details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    overflow: hidden;
+  }
+  .description-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    transition: background 0.2s ease;
+  }
+  .description-summary::-webkit-details-marker { display: none; }
+  .description-summary:hover { background: var(--muted); }
+  .description-title-wrap { display: flex; align-items: center; gap: 0.75rem; }
+  .description-title { font-size: 1.25rem; color: var(--foreground); margin: 0; }
+  .description-title-icon { color: var(--muted-foreground); flex-shrink: 0; }
+  .description-toggle-icon {
+    color: var(--muted-foreground);
+    transition: transform 0.3s ease;
+    display: inline-flex;
+  }
+  .description-details[open] .description-toggle-icon { transform: rotate(180deg); }
+  .description-content {
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted-foreground);
+    line-height: 1.7;
+  }
+  .description-content .lead {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--foreground);
+    margin: 1rem 0 1.25rem;
+    font-weight: 500;
+  }
+  .description-content .prose :global(p) { margin: 0 0 1rem; }
+  .description-content .prose :global(p:last-child) { margin-bottom: 0; }
+
+  /* Pricing */
+  .pricing-section { display: flex; flex-direction: column; gap: 1.5rem; }
+  .pricing-section h2 { margin: 0; }
+
+  /* Weather Section */
+  .weather-section { display: flex; flex-direction: column; gap: 0.5rem; }
+  .weather-section h2 { margin: 0; }
+  .weather-subtitle { font-size: 0.9rem; color: var(--muted-foreground); margin: 0 0 1rem; }
+  .windy-embed { width: 100%; overflow: hidden; border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--card); }
 
   .notice-box { margin-top: 1.5rem; padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; }
   .notice-box.warning { background: oklch(0.95 0.05 60); border: 1px solid oklch(0.8 0.1 60); color: oklch(0.3 0.1 60); }
 
   .sidebar-sticky { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 2rem; }
-  
+
   .safety-box { background: var(--accent); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); }
   .safety-box h4 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--foreground); }
   .safety-box p { margin: 0; font-size: 0.85rem; line-height: 1.5; color: var(--muted-foreground); }

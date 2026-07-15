@@ -22,8 +22,8 @@ A small, poorly marked track descends from the coast road between Kolios and Tro
 ### By Boat
 Kalamaki faces south into a small bay. From Skiathos Port, a 30HP rental boat reaches Kalamaki in approximately 25–30 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 20 minutes. Cost: approximately €30–40.
+### Transfer
+A transfer from Skiathos Town takes about 20 minutes. Cost: approximately €30–40.
 
 ## The Beach
 
@@ -47,7 +47,7 @@ The bay offers good southern exposure and decent shelter. Anchor in 3–5 metres
 - **Vromolimnos** (2 km east) — beach bars and watersports
 - **Agia Paraskevi** (3 km east) — large organized beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 25–30 minutes from port. A quick, quiet stop on the south-coast route.
 - **Skippered quiet-beach tour:** Your captain will take you to the south coast's most peaceful coves — Kalamaki among them.

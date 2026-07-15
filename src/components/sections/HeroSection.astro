@@ -8,7 +8,7 @@ interface Props {
   ctaHref?: string;
   ctaSecondText?: string;
   ctaSecondHref?: string;
-  gradient?: 'moody' | 'airy' | 'neutral' | 'dark' | 'ocean' | 'sunset' | 'turquoise';
+  gradient?: 'moody' | 'airy' | 'neutral' | 'dark' | 'ocean' | 'sunset' | 'turquoise' | 'light' | 'muted';
   size?: 'full' | 'medium';
   showScrollHint?: boolean;
   label?: string;
@@ -34,6 +34,8 @@ const gradientClasses = {
   moody: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950',
   neutral: 'bg-gradient-to-br from-neutral-100 via-white to-neutral-50',
   dark: 'bg-black',
+  light: 'bg-white',
+  muted: 'bg-muted/30',
   ocean: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950',
   sunset: 'bg-gradient-to-br from-black via-neutral-900 to-neutral-950',
   turquoise: 'bg-gradient-to-tr from-white via-neutral-50 to-neutral-100',
@@ -84,7 +86,7 @@ const sizeClasses = {
   </div>
 
   {showScrollHint && size === 'full' && (
-    <div class="absolute bottom-8 left-6 md:left-10 z-10 hero-reveal" style="animation-delay: 0.8s;" aria-hidden="true">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hero-reveal" style="animation-delay: 0.8s;" aria-hidden="true">
       <div class="hero-scroll-hint">
         <div class="hero-scroll-line"></div>
         <span class="hero-scroll-text">Scroll</span>

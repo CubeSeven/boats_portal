@@ -6,7 +6,7 @@ pubDate: "2026-05-26"
 readTime: 5
 category: "destination"
 imagePlaceholder: "sunset"
-image: "/images/beaches/sklithri.jpg"
+image: "/images/beaches/plakes.jpg"
 tags: ["Sklithri", "beaches", "Skiathos", "taverna", "seafood", "boat rental", "dining"]
 ---
 
@@ -24,8 +24,8 @@ Sklithri (sometimes spelled Sklithri) is a narrow, partly-organized sandy beach 
 ### By Boat
 Sklithri faces south into a narrow cove. The beach is small and the anchorage is modest. From Skiathos Port, a rental boat reaches Sklithri in approximately 12–15 minutes.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 10 minutes. Cost: approximately €20–30.
+### Transfer
+A transfer from Skiathos Town takes about 10 minutes. Cost: approximately €20–30.
 
 ## The Beach
 
@@ -55,7 +55,7 @@ The cove is small and narrow. Drop anchor in 3–4 metres. Space is very limited
 - **Tzaneria** (1.5 km west) — dive centre
 - **Vassilias** (2 km east) — organized sandy cove
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 12–15 minutes from port. Anchor and swim before lunch at the taverna.
 - **Skippered dining cruise:** Our captain takes you to Sklithri for a long, leisurely lunch, then explores nearby coves in the afternoon. One of our most popular half-day options.

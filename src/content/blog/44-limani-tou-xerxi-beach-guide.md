@@ -6,7 +6,7 @@ pubDate: "2026-05-30"
 readTime: 5
 category: "destination"
 imagePlaceholder: "muted"
-image: "/images/beaches/limani-tou-xerxi.jpg"
+image: "/images/beaches/xanemos.jpg"
 tags: ["Limani tou Xerxi", "beaches", "Skiathos", "history", "Persian", "boat rental", "snorkelling"]
 ---
 
@@ -22,8 +22,8 @@ Limani tou Xerxi is walkable from Skiathos Town — approximately 20 minutes hea
 ### By Boat
 The beach faces east into a sheltered natural harbour. From Skiathos Port, a rental boat reaches Limani tou Xerxi in just 5–8 minutes by heading east out of the port and into the bay.
 
-### Water Taxi
-A water taxi from the port takes under 5 minutes. Cost: approximately €15–20.
+### Transfer
+A transfer from the port takes under 5 minutes. Cost: approximately €15–20.
 
 ## The Beach
 
@@ -51,7 +51,7 @@ The bay is a natural harbour — exceptionally well-sheltered. Anchor in 3–5 m
 - **Xanemos** (on the other side of the airport peninsula, accessible by continuing around the coast) — sandy, nudist-friendly
 - **Lalaria** (25 minutes north by boat) — the famous boat-only beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** 5–8 minutes from port. The closest stop for a quick dip with a side of history.
 - **Skippered historical tour:** Visit Limani tou Xerxi, hear the full story of the Persian fleet disaster, then snorkel among the rocks that caused it.

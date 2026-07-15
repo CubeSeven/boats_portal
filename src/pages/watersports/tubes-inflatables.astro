@@ -5,6 +5,7 @@ import SectionHeading from '../../components/ui/SectionHeading.astro';
 import { getEntry, render } from 'astro:content';
 
 const entry = await getEntry('activities', 'tubes-inflatables');
+if (!entry) throw new Error('Activity "tubes-inflatables" not found');
 const { Content } = await render(entry);
 const data = entry.data;
 

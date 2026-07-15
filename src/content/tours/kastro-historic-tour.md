@@ -9,10 +9,6 @@ heroGradient: "sunset"
 duration: "5–6 Hours"
 capacity: "Up to 8 persons"
 order: 3
-image: "/images/stock/s17tock images.jpg"
-gallery:
-  - "/images/stock/s18tock images.jpg"
-  - "/images/stock/s19tock images.jpg"
 itinerary:
   - time: "09:00"
     label: "Departure"
@@ -60,6 +56,9 @@ faqs:
     answer: "It is a moderate 15-minute climb on a stony path. We recommend closed-toe shoes rather than flip-flops."
   - question: "Is it safe to swim at Kastro?"
     answer: "Yes, it is a very deep and clear cove. Very protected on calm days, but can be wavy if the north wind is strong."
+image: "/images/tours/kastro-historic-tour.webp"
+gallery: ["/images/tours/kastro-historic-tour-gallery-1.webp", "/images/tours/kastro-historic-tour-gallery-2.webp"]
+
 ---
 
 ## Where History Meets the Sea

@@ -5,23 +5,28 @@ type: "yacht"
 length: "12.5 m"
 capacity: 12
 horsepower: 700
-priceFrom: 1990
-priceHalfDay: 1300
-priceFullDay: 1990
+priceFrom: 1200
+priceFullDay: 1200
 imagePlaceholder: "ocean"
 image: "/images/fleet/legend-a40-1.jpg"
-gallery: ["/images/fleet/legend-a40-1.jpg", "/images/fleet/legend-a40-3.jpg", "/images/fleet/legend-a40-4.jpg", "/images/fleet/legend-a40-5.jpg", "/images/fleet/legend-a40-6.jpg"]
+gallery: ["/images/fleet/legend-a40-3.jpg", "/images/fleet/legend-a40-4.jpg", "/images/fleet/legend-a40-5.jpg", "/images/fleet/legend-a40-6.jpg"]
 order: 1
 features:
-  - "Exclusive Chase Boat"
-  - "High-Performance Hull"
-  - "Social Seating Area"
-  - "Skipper Mandatory"
   - "2 Cabins"
+  - "Galley Kitchen"
+  - "Lounge Area"
+  - "Bow Thruster"
+  - "Electric Toilet"
+  - "Teak Deck"
+  - "Outdoor Shower"
+  - "Snorkelling Equipment"
+  - "Ice Box"
+  - "Bathing Platform"
+  - "External Speakers"
+  - "Bimini"
   - "Host / Hostess on Request"
 description: "A 12.5-metre luxury motor yacht with twin 350HP engines, two cabins, and space for 12 guests. Galley kitchen, lounge area, sun deck — this is the boat you book when you want the day to feel like an event. Skipper included."
 ---
-
 ## Spacious and Stylish
 
 The Legend A40 is the boat you book when a normal RIB won't cut it. Two cabins (yes, actual beds), a galley kitchen, a lounge that seats 12, and a deck layout designed for entertaining. It's not a ferry ride with snacks — it's a private venue on the water that happens to move.

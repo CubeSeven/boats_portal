@@ -1,7 +1,7 @@
 ---
 slug: "airport-sea-transfers"
 title: "Skiathos Airport Sea Transfers | Direct Hotel Connection"
-seoTitle: "Skiathos Airport Water Taxi | Fast Sea Transfers"
+seoTitle: "Skiathos Airport Transfer | Fast Sea Transfers"
 description: "Direct boat transfers from Skiathos Airport area to your hotel or villa. Skip the taxi lines and traffic. Arrive in style with our private sea shuttle."
 heroTitle: "Airport Sea<br/>Transfers"
 heroSubtitle: "The most scenic arrival in Skiathos. Connect from the airport area directly to your seaside hotel or villa. fast, private, and refreshing."
@@ -11,6 +11,10 @@ originLat: 39.1785
 originLng: 23.5032
 destLat: 39.1629
 destLng: 23.4912
+waypoints:
+  - label: "Coastal Approach"
+    lat: 39.1750
+    lng: 23.4970
 duration: "10–30 Minutes"
 distance: "Various"
 pricing:

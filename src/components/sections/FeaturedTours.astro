@@ -1,20 +1,13 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-import type { Tour } from '../../lib/types';
+import TourCard from '../cards/TourCard.astro';
 
 interface Props {
-  tours: any[]; // Using any for now to avoid tour data complexity in index.astro mapping
+  tours: any[];
 }
 
 const { tours } = Astro.props;
-
-const tourGradients: Record<string, string> = {
-  turquoise: 'linear-gradient(135deg, oklch(0.35 0.12 220), oklch(0.62 0.14 195))',
-  sunset: 'linear-gradient(135deg, oklch(0.28 0.10 265), oklch(0.55 0.20 30))',
-  ocean: 'linear-gradient(135deg, oklch(0.22 0.08 235), oklch(0.48 0.18 215))',
-};
 ---
-
 <section class="section" id="tours">
   <div class="container">
     <SectionHeading
@@ -24,35 +17,14 @@ const tourGradients: Record<string, string> = {
     />
     <div class="grid-cards">
       {tours.map((tour) => (
-        <div class="reveal">
-          <a href={`/private-boat-tours/${tour.id}/`} class="tour-card card group overflow-visible">
-            <div class="card-content">
-              <div
-                class="h-[220px] relative overflow-hidden"
-                style={tour.data.image
-                  ? `background-image: url('${tour.data.image}'); background-size: cover; background-position: center;`
-                  : `background: ${tourGradients[tour.data.heroGradient] ?? tourGradients.ocean};`}
-              >
-                {!tour.data.image && <div class="absolute inset-0 placeholder-neutral transition-transform duration-[var(--duration-slow)] group-hover:scale-105"></div>}
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6">
-                  <span class="text-white text-[0.65rem] font-bold tracking-widest uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-sm border border-white/20">
-                    {tour.data.duration}
-                  </span>
-                </div>
-              </div>
-              <div class="card-body">
-                <h3 class="text-lg font-bold tracking-tight">{tour.data.title}</h3>
-                <p class="text-sm text-muted-foreground line-clamp-2">{tour.data.description}</p>
-                <div class="card-footer px-0 pb-0 shadow-none border-t border-border/50">
-                  <span class="text-sm font-extrabold text-foreground">{tour.data.pricing[0]?.price}</span>
-                  <span class="text-xs font-semibold text-foreground opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                    Book Now →
-                  </span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <TourCard
+          title={tour.data.title}
+          description={tour.data.description}
+          href={`/private-boat-tours/${tour.id}/`}
+          price={tour.data.pricing?.[0]?.price}
+          image={tour.data.image}
+          badge={tour.data.duration}
+        />
       ))}
     </div>
     <div class="flex justify-center mt-10">

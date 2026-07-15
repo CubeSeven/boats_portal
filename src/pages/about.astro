@@ -13,7 +13,7 @@ const values = aboutData?.data.values || [];
 ---
 
 <Layout 
-  title="Our Story | About Skiathos Boats"
+  title="Our Story | About Sea Skiathos"
   description="Born and raised on the waters of Skiathos. Learn about our history, our values, and why we are the island's most trusted boat rental and tour company."
 >
   <HeroSection
@@ -22,7 +22,7 @@ const values = aboutData?.data.values || [];
     gradient="dark"
     size="medium"
     showScrollHint={false}
-    backgroundImage="/images/stock/s7tock images.jpg"
+    backgroundImage="/images/stock/s2tock images.webp"
   />
 
   <Breadcrumbs />
@@ -40,12 +40,15 @@ const values = aboutData?.data.values || [];
             Our story began over 30 years ago. Growing up in Skiathos Town, the sea wasn't just a view—it was our playground, our pantry, and eventually, our passion. What started with one small wooden boat helping friends reach Lalaria has grown into the island's most comprehensive maritime service.
           </p>
           <p>
-            Today, Skiathos Boats represents the perfect blend of traditional maritime knowledge and modern safety standards. We are still family-run, still local, and still as excited to see the dolphins as we were in 1995.
+            We are not just another middleman. In fact, we actively eliminate middlemen by connecting you directly to the operators' booking systems, ensuring a seamless experience. Because we have direct access to each business's live schedule, we guarantee the services and pricing we offer. You don't just book a trip with us—we take complete responsibility for your booking and support you through every single step of your experience.
+          </p>
+          <p>
+            If you want to mix and match any of our services—a self-drive rental in the morning, a private sunset cruise in the evening, or airport transfers—we make the entire process seamless.
           </p>
         </div>
         
         <div class="flex flex-col gap-8 mt-12">
-          {milestones.map(m => (
+          {milestones.map((m: any) => (
             <div class="flex gap-6 group">
               <span class="text-2xl font-bold text-foreground opacity-20 group-hover:opacity-100 transition-opacity min-w-[80px]">{m.year}</span>
               <div class="flex flex-col gap-1">
@@ -77,7 +80,7 @@ const values = aboutData?.data.values || [];
       />
       
       <div class="grid-cards mt-16 text-center">
-        {values.map(v => (
+        {values.map((v: any) => (
           <div class="reveal">
             <div class="card group bg-white/5 border-white/10 p-12 text-center">
               <div class="card-content">

@@ -6,7 +6,7 @@ pubDate: "2026-05-21"
 readTime: 5
 category: "destination"
 imagePlaceholder: "muted"
-image: "/images/beaches/agistros.jpg"
+image: "/images/beaches/glyfoneri.jpg"
 tags: ["Agistros", "beaches", "Skiathos", "west coast", "secluded", "boat rental", "green"]
 ---
 
@@ -22,8 +22,8 @@ Reachable only by rough dirt tracks from the island's interior. 4x4 or quad bike
 ### By Boat
 Agistros faces west, set into a gentle cove. From Skiathos Port, a 30HP rental boat reaches Agistros in approximately 45–50 minutes following the north and west coast. The beach is visible from the water by its distinctive green backdrop — you cannot miss it.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 35–40 minutes. Cost: approximately €50–65.
+### Transfer
+A transfer from Skiathos Town takes about 35–40 minutes. Cost: approximately €50–65.
 
 ## The Beach
 
@@ -49,7 +49,7 @@ The cove is reasonably sheltered. Anchor in 3–5 metres on sand. Like most west
 - **Kechria** (4 km east) — pine-backed cove with excellent snorkelling
 - **Krifi Ammos** (4 km west) — very isolated sandy beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Part of our recommended western-coast expedition route. 45–50 minutes from port.
 - **Skippered multi-beach west-coast tour:** Visit Agistros alongside Mandraki, Elias, and Kechria in a single full-day outing.

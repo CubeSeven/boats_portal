@@ -6,7 +6,7 @@ pubDate: "2026-05-24"
 readTime: 5
 category: "destination"
 imagePlaceholder: "turquoise"
-image: "/images/beaches/ligaries.jpg"
+image: "/images/beaches/maratha.jpg"
 tags: ["Ligaries", "beaches", "Skiathos", "northwest", "turquoise", "boat rental", "snorkelling"]
 ---
 
@@ -22,8 +22,8 @@ A rough dirt road leads to Ligaries from the island's interior. The drive is cha
 ### By Boat
 This is the best and most scenic way to arrive. Ligaries faces northwest into a small, partly-sheltered cove. From Skiathos Port, a 30HP rental boat reaches Ligaries in approximately 30–35 minutes following the north coast past Kastro.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 25 minutes. Cost: approximately €40–50.
+### Transfer
+A transfer from Skiathos Town takes about 25 minutes. Cost: approximately €40–50.
 
 ## The Beach
 
@@ -49,7 +49,7 @@ The cove offers partial shelter from northerly winds. Anchor in 3–5 metres on 
 - **Mikros Aselinos** (3 km west) — small, quiet sandy cove
 - **Megali Aselinos** (4 km west) — long, wild sandy beach
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Part of our north-coast route. 30–35 minutes from port. Combine with Kastro and Kechria.
 - **Skippered north-coast beach tour:** Visit Ligaries along with Kastro, Kechria, and Aselinos. Includes snorkelling stops.

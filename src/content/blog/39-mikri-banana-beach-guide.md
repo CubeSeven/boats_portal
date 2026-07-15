@@ -6,7 +6,7 @@ pubDate: "2026-05-25"
 readTime: 5
 category: "destination"
 imagePlaceholder: "ocean"
-image: "/images/beaches/mikri-banana.jpg"
+image: "/images/beaches/banana.jpg"
 tags: ["Mikri Banana", "beaches", "Skiathos", "nudist", "secluded", "boat rental", "southwest"]
 ---
 
@@ -22,8 +22,8 @@ There is a footpath from Banana Beach (5-minute walk along the coast through the
 ### By Boat
 Mikri Banana faces southwest into a small cove adjacent to the larger Banana bay. From Skiathos Port, a 30HP rental boat reaches Mikri Banana in approximately 40–45 minutes. The approach is the same as Banana Beach — the smaller cove is just to the west.
 
-### Water Taxi
-A water taxi from Skiathos Town takes about 30 minutes. Cost: approximately €40–50.
+### Transfer
+A transfer from Skiathos Town takes about 30 minutes. Cost: approximately €40–50.
 
 ## The Beach
 
@@ -48,7 +48,7 @@ The small cove offers some shelter. Anchor in 3–5 metres on sand. The cove is 
 - **Agia Eleni** (1 km west) — organized beach with a quiet western end
 - **Xenia** (1.5 km east) — quiet beach near Koukounaries
 
-## What Skiathos Boats Offers
+## What Sea Skiathos Offers
 
 - **Self-drive no-license boat rental:** Combine Mikri Banana with Banana and Koukounaries in a single south-coast day trip.
 - **Skippered day trip:** Your captain will drop you at Mikri Banana and collect you when you're ready. Stress-free.

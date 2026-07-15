@@ -1,7 +1,7 @@
 ---
 slug: "kolios-beach"
-title: "Kolios Beach Boat Rental Base | Skiathos Boats"
-seoTitle: "Kolios Beach Boat Hire & Watersports | Skiathos Boats"
+title: "Kolios Beach Boat Rental Base | Sea Skiathos"
+seoTitle: "Kolios Beach Boat Hire & Watersports | Sea Skiathos"
 description: "Rent a boat from Kolios Beach on the south coast of Skiathos. A tranquil starting point for exploring hidden coves, with calm waters and easy departures."
 heroTitle: "Kolios Beach<br/>Rental Point"
 heroSubtitle: "A peaceful, family-friendly beach on the south coast. The perfect base for a relaxed day of self-drive exploration."
@@ -30,10 +30,6 @@ services:
     href: "/private-boat-tours/"
     price: "From €200"
 order: 3
-image: "/images/stock/s23tock images.jpg"
-gallery:
-  - "/images/stock/s24tock images.jpg"
-  - "/images/stock/s25tock images.jpg"
 ---
 
 ## A Peaceful South Coast Departure
