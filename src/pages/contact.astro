@@ -26,10 +26,10 @@ const mapPins = allLocations
   }));
 
 const contactInfo = [
-  { icon: 'phone', label: 'Call or WhatsApp', value: siteData?.data.phone, link: `tel:${siteData?.data.phone?.replace(/ /g, '')}` },
-  { icon: 'mail', label: 'Email Us', value: siteData?.data.email, link: `mailto:${siteData?.data.email}` },
-  { icon: 'map-pin', label: 'Main Base', value: siteData?.data.address || 'Skiathos Old Port', link: '/locations/skiathos-old-port/' },
-];
+  siteData?.data.phone && { icon: 'phone', label: 'Call or WhatsApp', value: siteData.data.phone, link: `tel:${siteData.data.phone.replace(/ /g, '')}` },
+  siteData?.data.email && { icon: 'mail', label: 'Email Us', value: siteData.data.email, link: `mailto:${siteData.data.email}` },
+  siteData?.data.address && { icon: 'map-pin', label: 'Main Base', value: siteData.data.address, link: '/locations/skiathos-old-port/' },
+].filter(Boolean) as any[];
 ---
 
 <Layout 

@@ -106,8 +106,8 @@ const {
     subtitle={ctaSubtitle}
     buttonText="Book Now"
     buttonHref="/contact/"
-    secondButtonText="Call Us"
-    secondButtonHref={phoneClean ? `tel:${phoneClean}` : 'tel:+30XXXXXXXXXX'}
+    secondButtonText={phoneClean ? "Call Us" : undefined}
+    secondButtonHref={phoneClean ? `tel:${phoneClean}` : undefined}
     variant="dark"
     backgroundImage="/images/stock/white_sailboat_on_blue_sea.webp"
   />

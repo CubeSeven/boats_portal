@@ -1,13 +1,13 @@
 {
   "id": "main",
-  "phone": "+30 XXX XXX XXXX",
-  "email": "info@skiathosboats.com",
-  "whatsapp": "+30XXXXXXXXXX",
-  "address": "Skiathos Port, Skiathos 37002",
+  "phone": "",
+  "email": "",
+  "whatsapp": "",
+  "address": "Skiathos Port",
   "socials": {
-    "instagram": "https://instagram.com/skiathosboats",
-    "facebook": "https://facebook.com/skiathosboats",
-    "tripadvisor": "https://tripadvisor.com/skiathosboats"
+    "instagram": "",
+    "facebook": "",
+    "tripadvisor": ""
   },
   "hero": {
     "title": "Explore Skiathos<br/>by Sea",

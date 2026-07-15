@@ -8,6 +8,7 @@ import CtaBanner from '../components/sections/CtaBanner.astro';
 import BookingWidget from '../components/sections/BookingWidget.astro';
 import RouteMap from '../components/maps/RouteMap.astro';
 import RelatedContent from '../components/sections/RelatedContent.astro';
+import { getSiteSettings } from '../lib/collections';
 
 interface PricingRow {
   duration: string;
@@ -66,6 +67,9 @@ const {
   category,
   id,
 } = Astro.props;
+
+const site = await getSiteSettings();
+const phoneClean = site?.phone?.replace(/ /g, '') || '';
 ---
 
 <Layout title={seoTitle ?? title} description={description} canonicalUrl={canonicalUrl}>
@@ -171,8 +175,8 @@ const {
     subtitle="Available 24/7. Depart when you want. Up to 8 passengers per boat."
     buttonText="Request Transfer"
     buttonHref="/contact/"
-    secondButtonText="Call Us Now"
-    secondButtonHref="tel:+30XXXXXXXXXX"
+    secondButtonText={phoneClean ? "Call Us Now" : undefined}
+    secondButtonHref={phoneClean ? `tel:${phoneClean}` : undefined}
     variant="navy"
     backgroundImage="/images/stock/Small_boat_passing_islands_at_sea.webp"
   />

@@ -27,11 +27,11 @@ const footerLinks = {
 };
 
 const socials = [
-  { label: 'Facebook', href: site?.socials?.facebook || '#', icon: 'facebook' },
-  { label: 'Instagram', href: site?.socials?.instagram || '#', icon: 'instagram' },
-  { label: 'TripAdvisor', href: site?.socials?.tripadvisor || '#', icon: 'tripadvisor' },
-  { label: 'WhatsApp', href: site?.whatsapp ? `https://wa.me/${site.whatsapp.replace(/[^0-9]/g, '')}` : '#', icon: 'whatsapp' },
-];
+  { label: 'Facebook', href: site?.socials?.facebook || '', icon: 'facebook' },
+  { label: 'Instagram', href: site?.socials?.instagram || '', icon: 'instagram' },
+  { label: 'TripAdvisor', href: site?.socials?.tripadvisor || '', icon: 'tripadvisor' },
+  { label: 'WhatsApp', href: site?.whatsapp ? `https://wa.me/${site.whatsapp.replace(/[^0-9]/g, '')}` : '', icon: 'whatsapp' },
+].filter(s => s.href && s.href !== '#' && !s.href.endsWith('/'));
 ---
 
 <footer class="mt-24" role="contentinfo">
