@@ -23,43 +23,69 @@ const {
   backgroundImage,
 } = Astro.props;
 
+// Standardize color mappings to support elegant dark glass themes
 const variantClasses = {
-  dark: 'bg-black text-white',
-  light: 'bg-white text-black border border-border/50',
-  muted: 'bg-muted/30 text-foreground',
-  navy: 'bg-black text-white',
-  ocean: 'bg-black text-white',
-  turquoise: 'bg-muted/30 text-foreground',
+  dark: 'bg-black text-white border-white/5',
+  light: 'bg-white text-black border-neutral-200/50 shadow-md',
+  muted: 'bg-neutral-50/50 text-foreground border-neutral-200/50',
+  navy: 'bg-neutral-950 text-white border-white/5',
+  ocean: 'bg-neutral-900 text-white border-white/5',
+  turquoise: 'bg-neutral-900 text-white border-white/5',
 };
+
+const isDark = variant === 'dark' || variant === 'navy' || variant === 'ocean' || variant === 'turquoise';
 ---
 
-<div class="container hidden md:block">
-  <section class={`relative overflow-hidden my-12 md:my-32 rounded-[2rem] ${variantClasses[variant]}`} aria-label="Call to action">
+<div class="container">
+  <section 
+    class={`cta-section relative overflow-hidden my-16 md:my-32 rounded-[2rem] border p-8 md:p-16 lg:p-20 ${variantClasses[variant]}`} 
+    aria-label="Call to action"
+  >
+    {/* Background Image / Pattern */}
     {backgroundImage && (
       <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        <Picture src={backgroundImage} alt="" class="w-full h-full object-cover opacity-35" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/20"></div>
-      </div>
-    )}
-    {variant === 'dark' && !backgroundImage && (
-      <div class="absolute inset-0 pointer-events-none opacity-20" aria-hidden="true">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,_var(--color-gray-800),_transparent)]"></div>
+        <Picture src={backgroundImage} alt="" class="w-full h-full object-cover opacity-40 transition-transform duration-[8s] ease-out hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/30"></div>
       </div>
     )}
 
-    <div class="px-8 md:px-16 py-16 md:py-24 relative z-10">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-12">
-        <div class="flex flex-col gap-6 max-w-2xl reveal">
-          <h2 class="text-3xl md:text-5xl font-semibold tracking-tight leading-tight m-0 text-current">{title}</h2>
-          {subtitle && <p class="text-lg opacity-70 m-0 leading-relaxed font-normal">{subtitle}</p>}
+    {/* Elegant ambient glow for dark variant without bg image */}
+    {isDark && !backgroundImage && (
+      <div class="absolute inset-0 pointer-events-none z-0 opacity-30" aria-hidden="true">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,_rgba(255,255,255,0.15),_transparent_60%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_-20%,_rgba(255,255,255,0.08),_transparent_40%)]"></div>
+      </div>
+    )}
+
+    {/* Content Container */}
+    <div class="relative z-10">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-12">
+        <div class="flex flex-col gap-4 md:gap-6 max-w-3xl reveal">
+          <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight m-0 text-current">{title}</h2>
+          {subtitle && <p class="text-base md:text-lg opacity-85 m-0 leading-relaxed font-medium">{subtitle}</p>}
         </div>
         
-        <div class="flex gap-4 flex-wrap items-center reveal">
-          <a href={buttonHref} class={`btn ${variant === 'dark' ? 'bg-white text-black border-white hover:bg-transparent hover:text-white' : 'btn-primary'} px-8 py-4`}>
+        <div class="flex gap-4 flex-wrap items-center reveal shrink-0">
+          <a 
+            href={buttonHref} 
+            class={`btn px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-full shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
+              isDark 
+                ? 'bg-white text-black hover:bg-white/90 shadow-white/5' 
+                : 'btn-primary'
+            }`}
+          >
             {buttonText}
           </a>
+          
           {secondButtonText && (
-            <a href={secondButtonHref} class={`btn ${variant === 'dark' ? 'border-white/20 text-white hover:border-white' : 'btn-secondary'} px-8 py-4`}>
+            <a 
+              href={secondButtonHref} 
+              class={`btn-outline-glass px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
+                isDark 
+                  ? '' 
+                  : 'border-neutral-200 text-neutral-800 hover:bg-neutral-50'
+              }`}
+            >
               {secondButtonText}
             </a>
           )}
@@ -70,12 +96,22 @@ const variantClasses = {
 </div>
 
 <style>
-  section {
-    /* Subtle inner-glow for dark variant */
-    box-shadow: 0 40px 100px -30px rgba(0,0,0,0.1);
+  .cta-section {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.08);
   }
-  
-  .dark section {
-    box-shadow: 0 40px 100px -30px rgba(0,0,0,0.5);
+
+  /* Standardized Frosted Glass Button */
+  .btn-outline-glass {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-outline-glass:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.35);
   }
 </style>
