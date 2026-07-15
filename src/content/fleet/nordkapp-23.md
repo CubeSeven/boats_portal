@@ -23,7 +23,7 @@ description: "7 metres, 300HP, seats 9. Scandinavian design — clean lines, pre
 ---
 ## Modern Performance
 
-The Nordkapp 23 is Scandinavian design applied to the Aegean — clean, functional, and quietly premium. 300HP gets you where you're going fast; the hull keeps the ride smooth when the sea gets lively. Seats 9 without feeling cramped, and the finish quality is genuinely a step above most rentals.
+The Nordkapp 23 is Scandinavian design applied to the Aegean — clean, functional, and quietly premium. 300HP gets you where you're going fast; the hull keeps the ride smooth when the sea gets lively. Seats 9 without feeling cramped, and the finish quality is genuinely a step above standard rental vessels.
 
 ## Comfort & Style
 
