@@ -44,7 +44,7 @@ The bay offers good southern exposure and decent shelter. Anchor in 3–5 metres
 ### Nearby Beaches to Combine
 - **Kolios** (1 km east, 3 minutes by boat) — sandy cove with a traditional taverna
 - **Troulos** (1 km west, 3 minutes by boat) — sheltered family beach
-- **Vromolimnos** (2 km east) — beach bars and watersports
+- **Vromolimnos** (2 km east) — popular beach bars
 - **Agia Paraskevi** (3 km east) — large organized beach
 
 ## What Sea Skiathos Offers

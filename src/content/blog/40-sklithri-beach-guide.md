@@ -50,9 +50,9 @@ The taverna at Sklithri is one of Skiathos's most beloved seafood restaurants. I
 The cove is small and narrow. Drop anchor in 3–4 metres. Space is very limited — 2–3 boats maximum. An alternative is to anchor at nearby Achladies or Kanapitsa and walk (5–10 minutes along the coast).
 
 ### Nearby Beaches to Combine
-- **Achladies** (1 km east, 3 minutes by boat) — larger, family-friendly, watersports
-- **Kanapitsa** (1 km west, 3 minutes by boat) — watersports hub
-- **Tzaneria** (1.5 km west) — dive centre
+- **Achladies** (1 km east, 3 minutes by boat) — larger, family-friendly beach
+- **Kanapitsa** (1 km west, 3 minutes by boat) — popular beach cove
+- **Tzaneria** (1.5 km west) — quiet tree-lined cove
 - **Vassilias** (2 km east) — organized sandy cove
 
 ## What Sea Skiathos Offers

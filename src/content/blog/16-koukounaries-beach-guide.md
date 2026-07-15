@@ -48,7 +48,6 @@ A private transfer from Skiathos Town to Koukounaries takes about 25–30 minute
 Koukounaries is fully organized with:
 - Sunbeds and umbrellas for hire (€10–15 per set)
 - Multiple beach bars and tavernas
-- Water sports centre (jet skis, paddleboards, banana boats, parasailing)
 - Showers and changing rooms
 - Wheelchair-accessible boardwalks
 - Lifeguard on duty (peak season)

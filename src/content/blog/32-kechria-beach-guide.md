@@ -32,7 +32,7 @@ Kechria is a mix of pebbles and coarse sand, approximately 250 metres long. The 
 ### Facilities
 - Sunbeds and umbrellas (limited, €8–10 per set)
 - One traditional family-run taverna (the "modern facility" Greeka references) — fresh seafood, cold beer
-- No extensive watersports (this is a nature-first beach)
+- Nature-first beach — no extensive facilities
 - No showers (bring fresh water to rinse)
 
 ### Snorkelling

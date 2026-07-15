@@ -12,7 +12,7 @@ tags: ["Mikri Banana", "beaches", "Skiathos", "nudist", "secluded", "boat rental
 
 ## About Mikri Banana
 
-Mikri Banana (Little Banana) is the smaller, quieter sibling of Banana Beach, located just 300 metres west along Skiathos's southwestern coast. It's approximately 14 km from Skiathos Town. While Banana is famous for parties and watersports, Mikri Banana has carved out a reputation as Skiathos's premier naturist beach — a well-organized, relaxed, and judgment-free zone where clothing is entirely optional.
+Mikri Banana (Little Banana) is the smaller, quieter sibling of Banana Beach, located just 300 metres west along Skiathos's southwestern coast. It's approximately 14 km from Skiathos Town. While Banana is famous for its party scene, Mikri Banana has carved out a reputation as Skiathos's premier naturist beach — a well-organized, relaxed, and judgment-free zone where clothing is entirely optional.
 
 ## Getting There
 
@@ -43,7 +43,7 @@ Mikri Banana is defined by its relaxed, naturist-friendly ethos. There's no pres
 The small cove offers some shelter. Anchor in 3–5 metres on sand. The cove is small — space is limited, especially in peak season. You can also anchor in the larger Banana bay and walk to Mikri Banana (5 minutes along the coastal path).
 
 ### Nearby Beaches to Combine
-- **Banana Beach** (300m east, 2 minutes by boat or 5-minute walk) — for watersports, party atmosphere, and facilities
+- **Banana Beach** (300m east, 2 minutes by boat or 5-minute walk) — for party atmosphere and facilities
 - **Koukounaries** (1.5 km east) — the island's most famous beach
 - **Agia Eleni** (1 km west) — organized beach with a quiet western end
 - **Xenia** (1.5 km east) — quiet beach near Koukounaries

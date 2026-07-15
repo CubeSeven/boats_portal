@@ -42,15 +42,15 @@ Xenia is approximately 200 metres of soft golden sand with shallow, clear water.
 - Same sand, same water, same pine forest backdrop
 - Significantly fewer people — even in peak season
 - More relaxed atmosphere
-- Still close enough to walk to Koukounaries for watersports or lunch if you want them
+- Still close enough to walk to Koukounaries for facilities or lunch if you want them
 
 ## Boat Anchoring Tips
 
 The bay is open to the southwest. Anchor in 3–5 metres on sand. More space than Koukounaries, with fewer boats.
 
 ### Nearby Beaches to Combine
-- **Koukounaries** (500m east, 2 minutes by boat or 10-minute walk) — for watersports, restaurants, and facilities
-- **Banana** (1.5 km west, 5 minutes by boat) — party beach and watersports
+- **Koukounaries** (500m east, 2 minutes by boat or 10-minute walk) — for restaurants and facilities
+- **Banana** (1.5 km west, 5 minutes by boat) — popular party beach
 - **Agia Eleni** (1 km west) — organized beach with nudist-friendly sections
 - **Maratha** (3 km east) — quiet, pine-backed beach
 

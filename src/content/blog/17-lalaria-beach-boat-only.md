@@ -22,17 +22,17 @@ There is absolutely no road to Lalaria. The cliffs behind the beach are vertical
 
 ### Three Ways to Reach Lalaria by Boat
 
-#### 1. Day-Trip Excursion Boats (€15–20 per person)
-Organized excursion boats depart the Old Port of Skiathos daily in summer (weather permitting). Trips typically leave at 10:00am and return around 4:00pm. The boat ride takes 45 minutes each way along the dramatic north coast. Includes a stop for swimming at the sea caves. The downside: you're on their schedule.
-
-#### 2. Transfer (€60–80 per boat)
-A private transfer from Skiathos Port reaches Lalaria in approximately 30–35 minutes. You decide your timing. Perfect for early morning visits when the beach is empty and the light is magical for photography.
-
-#### 3. Rent Your Own Boat (Most Flexible)
+#### 1. Self-Drive Boat Rental (Most Flexible)
 Take a 30HP rental boat from Skiathos Port. The route goes east past the airport, then north around Cape Gournes. The north coast can be choppy — only attempt in calm weather (wind under 3 Beaufort). Journey time: 35–40 minutes. Anchor offshore in sand patches between the pebbles. This gives you complete freedom to stay as long as you want and explore the sea caves at your own pace.
 
+#### 2. Skippered Private Tour
+Let our captain take you there stress-free. A private tour includes stops at the sea caves and Kastro, with the flexibility to stay at Lalaria as long as you want. Half-day or full-day options available.
+
+#### 3. Water Taxi Transfer (€60–80 per boat)
+A private transfer from Skiathos Port reaches Lalaria in approximately 30–35 minutes. You decide your timing. Perfect for early morning visits when the beach is empty and the light is magical for photography.
+
 ### Important Weather Warning
-Lalaria faces northeast and is exposed to the meltemi winds. If the wind is above 3 Beaufort, the sea becomes rough and landing can be dangerous. Always check conditions before departing. Excursion boats cancel when conditions are unsafe — follow their lead.
+Lalaria faces northeast and is exposed to the meltemi winds. If the wind is above 3 Beaufort, the sea becomes rough and landing can be dangerous. Always check conditions before departing. We cancel when conditions are unsafe — your safety comes first.
 
 ## What to Expect on the Beach
 
@@ -43,7 +43,7 @@ Lalaria faces northeast and is exposed to the meltemi winds. If the wind is abov
 
 ## The Sea Caves
 
-Just east of the main beach, the coastline is riddled with sea grottoes that are only visible from the water. The excursion boats typically spend 15–20 minutes navigating through them. With your own boat, you can explore them properly:
+Just east of the main beach, the coastline is riddled with sea grottoes that are only visible from the water. With your own boat, you can explore them properly:
 
 - **The Blue Cave:** A cavern where sunlight reflects off the white limestone underwater, creating an intense blue glow. Best visited between 11am–2pm when the sun is high.
 - **Hidden cove:** A tiny pebble beach about 300m east of the main beach, only accessible by swimming or a small boat. Often completely deserted.
@@ -64,5 +64,5 @@ Since you're already on the north coast by boat, combine with:
 ## Best Time to Visit
 
 - **Early morning (before 9am):** The beach is empty, the water is glassy, and the light on the white cliffs is spectacular.
-- **June and September:** Most reliable weather on the north coast with fewer excursion boats.
-- **Avoid:** Days with north/northeast wind above 3 Beaufort. Afternoons in July–August when excursion boats arrive en masse.
+- **June and September:** Most reliable weather on the north coast with fewer visitors overall.
+- **Avoid:** Days with north/northeast wind above 3 Beaufort. Afternoons in July–August when the main beach gets busiest.

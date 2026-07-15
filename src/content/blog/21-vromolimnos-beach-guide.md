@@ -1,18 +1,18 @@
 ---
 slug: "21-vromolimnos-beach-guide"
 title: "Vromolimnos Beach Skiathos: The Lively South-Coast Hub (Boat Guide)"
-description: "Vromolimnos is one of Skiathos's most popular and well-organized beaches. Sandy, shallow, and lively with beach bars and watersports — here's your complete boat-access guide."
+description: "Vromolimnos is one of Skiathos's most popular and well-organized beaches. Sandy, shallow, and lively with beach bars and dining — here's your complete boat-access guide."
 pubDate: "2026-05-07"
 readTime: 6
 category: "destination"
 imagePlaceholder: "ocean"
 image: "/images/beaches/vromolimnos.jpg"
-tags: ["Vromolimnos", "beaches", "Skiathos", "beach bars", "watersports", "boat rental"]
+tags: ["Vromolimnos", "beaches", "Skiathos", "beach bars", "boat rental"]
 ---
 
 ## Vromolimnos at a Glance
 
-Vromolimnos (despite its name — "vromos" means "dirty" in Greek, a relic of historical algae blooms that no longer occur) is one of Skiathos's most popular beaches. Located on the south coast, 8 km from Skiathos Town, it's a beautiful crescent of golden sand with clear, shallow water. The beach is backed by pine and olive trees, with beach bars, watersports, and a lively but not overwhelming atmosphere.
+Vromolimnos (despite its name — "vromos" means "dirty" in Greek, a relic of historical algae blooms that no longer occur) is one of Skiathos's most popular beaches. Located on the south coast, 8 km from Skiathos Town, it's a beautiful crescent of golden sand with clear, shallow water. The beach is backed by pine and olive trees, with beach bars and a lively but not overwhelming atmosphere.
 
 ## Getting to Vromolimnos
 
@@ -28,13 +28,13 @@ The beach faces south into a wide, gently curved bay. The sandy bottom provides 
 A transfer from Skiathos Town takes about 18 minutes. Cost: approximately €30–40.
 
 ## The Beach Experience
-
-Vromolimnos has become especially popular with younger visitors thanks to its beach bars and watersports. The water is shallow and clear, making it safe for swimming and ideal for families with children, though the atmosphere leans more towards couples and groups of friends.
+  
+Vromolimnos has become especially popular with younger visitors thanks to its beach bars and excellent dining. The water is shallow and clear, making it safe for swimming and ideal for families with children, though the atmosphere leans more towards couples and groups of friends.
 
 ### Facilities
 - Sunbeds and umbrellas (€10–15 per set)
 - Two beach bars — one more relaxed, one with DJs in the afternoon
-- Watersports centre (jet skis, paddleboards, kayaks, banana boat)
+- Professional wakeboarding and water skiing lessons
 - Beachfront taverna with fresh seafood
 - Showers and changing rooms
 - Wheelchair-accessible boardwalk
@@ -42,13 +42,8 @@ Vromolimnos has become especially popular with younger visitors thanks to its be
 ### The Beach Bars
 Vromolimnos is known for its beach bar scene. Music starts around midday and builds through the afternoon. It's lively without being as intense as Banana Beach — more "cocktails and chill" than "full-on party." The bars serve food all day: salads, burgers, Greek mezze, and cocktails.
 
-### Watersports
-The watersports centre offers:
-- Jet ski rental (€35–70)
-- Paddleboards (€10/hr)
-- Kayaks (€10/hr)
-- Banana boat rides (€15/person)
-- Water skiing (€35–50)
+### Water Skiing & Wakeboarding
+Vromolimnos is our primary base for water skiing and wakeboarding. The bay features the island's only dedicated slalom water ski course. The morning water here is exceptionally calm, providing perfect conditions for both beginners taking their first lesson and advanced skiers running the slalom course.
 
 ## Boat Anchoring Tips
 
@@ -57,8 +52,8 @@ The bay is open but well-sheltered from northerly winds. Anchor in 3–5 metres 
 ### Nearby Beaches to Combine
 - **Kolios** (1 km east, 3 minutes by boat) — similar but slightly quieter
 - **Agia Paraskevi** (2 km east) — larger organized beach
-- **Tzaneria** (1.5 km east) — dive centre and small cove
-- **Kanapitsa** (2 km east) — watersports hub
+- **Tzaneria** (1.5 km east) — quiet tree-lined cove
+- **Kanapitsa** (2 km east) — sandy family beach
 
 ## What Sea Skiathos Offers
 
@@ -69,6 +64,6 @@ The bay is open but well-sheltered from northerly winds. Anchor in 3–5 metres 
 ## Best Time to Visit
 
 - **June and September:** Best balance of weather, atmosphere, and space.
-- **Morning:** The water is at its calmest. Perfect for swimming and watersports before the afternoon breeze picks up.
+- **Morning:** The water is at its calmest. Perfect for swimming and water skiing lessons before the afternoon breeze picks up.
 - **Late afternoon (after 4pm):** The crowd thins, the light is golden, and the beach bars are in full swing for sunset drinks.
 - **July–August:** Busy but manageable. Arrive before 10am for the best sunbed spots.

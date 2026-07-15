@@ -1,7 +1,7 @@
 ---
 slug: "29-ftelia-beach-guide"
 title: "Ftelia Beach Skiathos: The Small Harbour Beach Close to Town"
-description: "Ftelia is a compact, relaxed sandy beach just 2 km from Skiathos Town with a small harbour, watersports, and easy boat access. Your guide to this convenient cove."
+description: "Ftelia is a compact, relaxed sandy beach just 2 km from Skiathos Town with a small harbour and easy boat access. Your guide to this convenient cove."
 pubDate: "2026-05-15"
 readTime: 4
 category: "destination"
@@ -33,16 +33,11 @@ Ftelia is approximately 200 metres of sand. The small harbour adds character —
 
 ### Facilities
 - Sunbeds and umbrellas (€8–10 per set)
-- Small watersports rental (kayaks, paddleboards)
 - Taverna near the harbour
 - Beachfront cafe
 - Showers
 - Small boat harbour
 
-### Watersports
-- Kayaks (€10/hr)
-- Paddleboards (€10/hr)
-- Small boat hire available from the harbour
 
 ## Why Choose Ftelia
 
@@ -57,7 +52,7 @@ Anchor in 3–4 metres on sand in the bay. The harbour at the western end has li
 ### Nearby Beaches to Combine
 - **Megali Ammos** (500m east, 2 minutes by boat) — larger, livelier, beach bars
 - **Vassilias** (2.5 km west, 8 minutes by boat) — organized sandy cove
-- **Achladies** (3 km west) — full facilities and watersports
+- **Achladies** (3 km west) — full facilities
 - **Skiathos Town** (2 km east) — return to port for lunch or shopping
 
 ## What Sea Skiathos Offers

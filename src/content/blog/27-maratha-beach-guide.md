@@ -49,7 +49,7 @@ The bay is open but generally calm in the prevailing northerly winds. Anchor in 
 ### Nearby Beaches to Combine
 - **Troulos** (1.5 km east, 5 minutes by boat) — larger family beach
 - **Koukounaries** (2 km west, 5 minutes by boat) — the island's most famous beach
-- **Banana** (3 km west) — party and watersports hub
+- **Banana** (3 km west) — popular party beach
 - **Katharina** (1 km west, between Maratha and Koukounaries) — tiny, secluded beach
 
 ## What Sea Skiathos Offers

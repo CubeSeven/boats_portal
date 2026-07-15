@@ -1,13 +1,13 @@
 ---
 slug: "20-kanapitsa-beach-guide"
-title: "Kanapitsa Beach Skiathos: Watersports, Boat Access, and Local Guide"
-description: "Kanapitsa Beach is a beautiful organized cove on Skiathos's south coast with excellent watersports and boat access. Here's how to make the most of your visit."
+title: "Kanapitsa Beach Skiathos: Sheltered Cove with Boat Access"
+description: "Kanapitsa Beach is a beautiful organized cove on Skiathos's south coast with calm, sheltered water and excellent boat access. Here's how to make the most of your visit."
 pubDate: "2026-05-06"
 readTime: 6
 category: "destination"
 imagePlaceholder: "turquoise"
 image: "/images/beaches/kanapitsa.jpg"
-tags: ["Kanapitsa", "beaches", "Skiathos", "watersports", "boat rental", "snorkelling"]
+tags: ["Kanapitsa", "beaches", "Skiathos", "jet ski", "boat rental", "snorkelling"]
 ---
 
 ## About Kanapitsa Beach
@@ -31,26 +31,17 @@ A transfer from Skiathos Town reaches Kanapitsa in about 12 minutes. Cost is app
 
 ## The Beach Experience
 
-Kanapitsa is approximately 300 metres of golden sand with clear, calm water. The cove shape shelters it from wind, so the sea is often glassy smooth — excellent for watersports and swimming.
+Kanapitsa is approximately 300 metres of golden sand with clear, calm water. The cove shape shelters it from wind, so the sea is often glassy smooth — excellent for swimming.
 
 ### Facilities
 - Sunbeds and umbrellas (€8–15 per set)
-- Watersports centre
 - Two tavernas directly on the beach
 - Beach bar
 - Showers
 - Small boat dock
 
-### Watersports at Kanapitsa
-One of the island's main watersports hubs:
-- Jet skis
-- Water skiing and wakeboarding
-- Paddleboards and kayaks
-- Pedal boats
-- Banana boat and tube rides
-- Snorkelling gear rental
-
-The calm, sheltered water makes Kanapitsa particularly good for learning water skiing or wakeboarding.
+### Jet Ski & RIB Boat Rental
+Kanapitsa is our main base for jet ski rental and performance RIB powerboats. The sheltered bay provides direct open-water access to the south, where you can speed across the water safely. You can rent a jet ski here or depart on one of our guided open-water jet ski tours.
 
 ### Snorkelling
 The rocky edges of the cove — particularly the eastern headland — offer good snorkelling. You'll see small fish, sea urchins, and occasional octopus. Visibility ranges from 5–15 metres depending on conditions.
@@ -60,14 +51,14 @@ The rocky edges of the cove — particularly the eastern headland — offer good
 Anchor in 3–5 metres on sand in the centre of the cove. The bay is well-protected from wind. Watch for swim buoys marking the swimming zone — stay outside them. The eastern side of the cove is slightly quieter.
 
 ### Nearby to Combine by Boat
-- **Tzaneria Beach** (500m west, 2 minutes by boat) — smaller cove with a diving club
+- **Tzaneria Beach** (500m west, 2 minutes by boat) — smaller quiet cove
 - **Vromolimnos** (1.5 km west) — popular organized beach
 - **Kolios** (2 km west) — another sandy cove
 - **Achladies** (2 km east) — larger, family-friendly beach
 
 ## Tzaneria — Kanapitsa's Quiet Neighbour
 
-Just around the headland to the west is Tzaneria Beach — a smaller, more intimate cove that's popular with scuba divers. Tzaneria has a dive centre offering PADI courses and guided dives. Even if you're not diving, the snorkelling around the rocky headland between Kanapitsa and Tzaneria is excellent.
+Just around the headland to the west is Tzaneria Beach — a smaller, more intimate cove that's popular with scuba divers. The snorkelling around the rocky headland between Kanapitsa and Tzaneria is excellent.
 
 ## What Sea Skiathos Offers
 

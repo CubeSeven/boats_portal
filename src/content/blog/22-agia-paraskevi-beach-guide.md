@@ -1,13 +1,13 @@
 ---
 slug: "22-agia-paraskevi-beach-guide"
 title: "Agia Paraskevi Beach Skiathos: The All-Rounder with a Church by the Sea"
-description: "Agia Paraskevi is a large, well-organized sandy beach on Skiathos's south coast with a charming namesake church. Watersports, boat access, beach bars — your complete guide."
+description: "Agia Paraskevi is a large, well-organized sandy beach on Skiathos's south coast with a charming namesake church. Boat access and beach bars — your complete guide."
 pubDate: "2026-05-08"
 readTime: 6
 category: "destination"
 imagePlaceholder: "sunset"
 image: "/images/beaches/agia-paraskevi.jpg"
-tags: ["Agia Paraskevi", "beaches", "Skiathos", "family", "watersports", "boat rental"]
+tags: ["Agia Paraskevi", "beaches", "Skiathos", "family", "boat rental"]
 ---
 
 ## About Agia Paraskevi Beach
@@ -37,18 +37,10 @@ The small white and blue chapel at the eastern edge of the beach adds a postcard
 ### Facilities
 - Sunbeds and umbrellas (€8–12 per set)
 - Multiple beach bars
-- Watersports centre
 - Traditional taverna directly on the beach
 - Showers and changing rooms
 - Lifeguard on duty (peak season)
 - Wheelchair-accessible boardwalk
-
-### Watersports
-- Jet skis (€35–70 per session)
-- Paddleboards and kayaks
-- Pedal boats
-- Banana boat and tube rides
-- Water skiing
 
 ## Family-Friendly Features
 
@@ -64,7 +56,7 @@ Agia Paraskevi is particularly good for families:
 Anchor in 3–5 metres on the sandy bottom. The beach faces southwest and is generally calm. In a strong southerly wind, the bay can develop a swell — check the forecast. The western end tends to be slightly quieter for anchoring.
 
 ### Nearby Beaches to Combine
-- **Vromolimnos** (next beach west, 3 minutes by boat) — beach bars and watersports
+- **Vromolimnos** (next beach west, 3 minutes by boat) — popular beach bars and dining
 - **Kolios** (1.5 km east) — a quieter sandy cove
 - **Platanias** (1 km east) — long sandy beach with hotels
 - **Troulos** (2 km west) — popular family beach

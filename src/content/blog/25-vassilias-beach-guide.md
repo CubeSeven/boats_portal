@@ -1,13 +1,13 @@
 ---
 slug: "25-vassilias-beach-guide"
 title: "Vassilias Beach Skiathos: The Compact Cove Close to Town"
-description: "Vassilias is a small, well-organized sandy cove just 6 km from Skiathos Town. Watersports, sunbeds, easy boat access — everything you need for a quick beach escape."
+description: "Vassilias is a small, well-organized sandy cove just 6 km from Skiathos Town. Sunbeds, easy boat access — everything you need for a quick beach escape."
 pubDate: "2026-05-11"
 readTime: 5
 category: "destination"
 imagePlaceholder: "light"
 image: "/images/beaches/vassilias.jpg"
-tags: ["Vassilias", "beaches", "Skiathos", "watersports", "boat rental", "quick trip"]
+tags: ["Vassilias", "beaches", "Skiathos", "boat rental", "quick trip"]
 ---
 
 ## About Vassilias Beach
@@ -33,15 +33,10 @@ Vassilias is approximately 200 metres of golden sand in a compact, well-protecte
 
 ### Facilities
 - Sunbeds and umbrellas (€8–12 per set)
-- Watersports rental (paddleboards, kayaks, pedal boats)
 - Beachfront taverna
 - Small beach bar for drinks and snacks
 - Showers
 
-### Watersports
-- Paddleboards (€10/hr)
-- Kayaks (€10/hr)
-- Pedal boats (€12/hr)
 
 ## Why Choose Vassilias
 
@@ -55,9 +50,9 @@ Small cove, limited anchoring space. Drop in 3–4 metres on sand. Best to arriv
 
 ### Nearby Beaches to Combine
 - **Megali Ammos** (3 km east, back toward town) — the closest beach to Skiathos Town
-- **Achladies** (1 km west, 3 minutes by boat) — larger, with more facilities and watersports
+- **Achladies** (1 km west, 3 minutes by boat) — larger, with more facilities
 - **Ftelia** (2 km east) — small, quiet beach with a small harbour
-- **Kanapitsa** (3 km west) — major watersports hub
+- **Kanapitsa** (3 km west) — popular beach cove
 
 ## What Sea Skiathos Offers
 

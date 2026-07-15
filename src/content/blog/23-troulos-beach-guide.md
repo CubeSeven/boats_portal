@@ -39,17 +39,9 @@ The bay is approximately 400 metres wide. The water deepens very gradually — y
 - Sunbeds and umbrellas (€8–12 per set)
 - Two beachfront tavernas — one specializing in fresh seafood
 - Beach bar serving drinks and light snacks
-- Watersports (paddleboards, kayaks, pedal boats)
 - Showers and changing rooms
 - Supermarket and souvenir shop behind the beach
 
-### Watersports
-Troulos has a more modest watersports setup than some of its neighbours, which actually adds to its relaxed atmosphere:
-- Stand-up paddleboards (€10/hr)
-- Kayaks (€10/hr)
-- Pedal boats (€12/hr)
-
-Jet skis and high-speed activities are deliberately absent here — this is a peaceful swimming beach.
 
 ## Boat Anchoring Tips
 

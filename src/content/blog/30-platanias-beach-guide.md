@@ -1,13 +1,13 @@
 ---
 slug: "30-platanias-beach-guide"
 title: "Platanias Beach Skiathos: The Long Sandy Stretch with Hotel Backdrop"
-description: "Platanias is a long, well-organized sandy beach on Skiathos's south coast with hotels, watersports, and a crystal-clear sea. Your complete guide to visiting by boat or land."
+description: "Platanias is a long, well-organized sandy beach on Skiathos's south coast with hotels and a crystal-clear sea. Your complete guide to visiting by boat or land."
 pubDate: "2026-05-16"
 readTime: 5
 category: "destination"
 imagePlaceholder: "ocean"
 image: "/images/beaches/platanias.jpg"
-tags: ["Platanias", "beaches", "Skiathos", "hotels", "watersports", "boat rental"]
+tags: ["Platanias", "beaches", "Skiathos", "hotels", "boat rental"]
 ---
 
 ## About Platanias Beach
@@ -33,16 +33,11 @@ Platanias is approximately 500 metres of golden sand. The water is exceptionally
 
 ### Facilities
 - Sunbeds and umbrellas (€8–12 per set, often included for hotel guests)
-- Watersports (paddleboards, kayaks, pedal boats)
 - Multiple tavernas and cafes behind the beach
 - Beach bars serving drinks and food
 - Showers
 - Hotels with pools directly behind (some open to non-guests)
 
-### Watersports
-- Paddleboards (€10/hr)
-- Kayaks (€10/hr)
-- Pedal boats (€12/hr)
 
 ## Boat Anchoring Tips
 
@@ -51,7 +46,7 @@ Anchor in 3–5 metres on sand. The beach is long and open — plenty of anchori
 ### Nearby Beaches to Combine
 - **Kolios** (300m west, 2 minutes by boat) — smaller cove with a traditional taverna
 - **Agia Paraskevi** (700m east, 3 minutes by boat) — large organized beach with a church
-- **Vromolimnos** (1 km west) — beach bars and watersports
+- **Vromolimnos** (1 km west) — popular beach bars
 - **Troulos** (2.5 km west) — sheltered family beach
 
 ## What Sea Skiathos Offers

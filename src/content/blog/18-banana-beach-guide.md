@@ -1,18 +1,18 @@
 ---
 slug: "18-banana-beach-guide"
-title: "Banana Beach Skiathos: Party, Watersports, and Boat Access Guide"
-description: "Skiathos's famous party beach — Banana. How to visit by boat, what to expect, watersports options, and the quieter Mikri Banana next door for a completely different vibe."
+title: "Banana Beach Skiathos: Party Beach and Boat Access Guide"
+description: "Skiathos's famous party beach — Banana. How to visit by boat, what to expect, and the quieter Mikri Banana next door for a completely different vibe."
 pubDate: "2026-05-04"
 readTime: 7
 category: "destination"
 imagePlaceholder: "sunset"
 image: "/images/beaches/banana.jpg"
-tags: ["Banana Beach", "beaches", "Skiathos", "watersports", "party beach", "boat rental"]
+tags: ["Banana Beach", "beaches", "Skiathos", "party beach", "boat rental"]
 ---
 
 ## Banana Beach at a Glance
 
-Banana Beach (sometimes called Krassa Bay) is Skiathos's premier party and watersports destination. Located on the southwestern tip of the island, 13 km from Skiathos Town, it's a long sandy beach backed by pine forests with a vibrant, youthful atmosphere. If Koukounaries is the family favourite, Banana is the adrenaline alternative.
+Banana Beach (sometimes called Krassa Bay) is Skiathos's premier party destination. Located on the southwestern tip of the island, 13 km from Skiathos Town, it's a long sandy beach backed by pine forests with a vibrant, youthful atmosphere. If Koukounaries is the family favourite, Banana is the adrenaline alternative.
 
 ## Getting There by Land
 
@@ -40,21 +40,16 @@ A transfer from Skiathos Town takes roughly 25 minutes and costs approximately �
 ## The Beach Experience
 
 ### Atmosphere and Crowd
-Banana attracts a younger, livelier crowd. The beach bars play music all day, ramping up into late afternoon parties. The southern section is more active with watersports; the central area has sunbeds and umbrellas; the northern end is slightly quieter.
+Banana attracts a younger, livelier crowd. The beach bars play music all day, ramping up into late afternoon parties. The southern section is more active; the central area has sunbeds and umbrellas; the northern end is slightly quieter.
 
 ### Facilities
 - Sunbeds and umbrellas (€10–15 per set)
 - Two beach bars with full food and drink menus
-- Watersports centre offering jet skis, water skiing, wakeboarding, banana boat rides, paddleboards, and kayaks
 - Volleyball net on the beach
 - Showers
 
-### Watersports at Banana
-This is the place for watersports on Skiathos:
-- **Jet ski rental:** 15–30 minute sessions, €40–80
-- **Banana boat rides:** €15 per person
-- **Water skiing and wakeboarding:** Lessons available, €30–50 per session
-- **Stand-up paddleboards and kayaks:** €10–15 per hour
+### Jet Ski & Parasailing
+Banana Beach is our main base for jet ski hire and parasailing. Our experienced team runs high-speed jet ski sessions in a dedicated zone offshore, and our parasailing boat departs regularly, offering the best aerial views of the southwestern coast.
 
 ## Mikri Banana (Little Banana) — The Quieter Sister
 
@@ -74,7 +69,7 @@ From your boat, you can anchor between the two and enjoy both worlds — the ene
 
 - **Self-drive no-license boat rental:** The 30HP boats reach Banana comfortably. We'll map out your route and recommend the best anchoring spots.
 - **Skippered day trips:** Full-day excursion covering Banana, Mikri Banana, Koukounaries, and hidden coves. Your captain knows the quietest spots.
-- **Equipment delivery:** We can arrange watersports equipment delivered to your rental boat — paddleboards, snorkelling gear, and more.
+- **Equipment delivery:** We can arrange beach equipment delivered to your rental boat — paddleboards, snorkelling gear, and more.
 - **Water taxi service:** Direct transfers to Banana or any south-coast beach. Flexible pickup times.
 
 ## Best Time to Visit

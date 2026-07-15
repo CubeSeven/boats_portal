@@ -46,7 +46,7 @@ The cove is small and offers good shelter. Anchor in 3–5 metres. Space is limi
 
 ### Nearby Beaches to Combine
 - **Kolios** (1 km east, 3 minutes by boat) — sandy cove with a traditional taverna
-- **Vromolimnos** (1.5 km east) — beach bars and watersports
+- **Vromolimnos** (1.5 km east) — popular beach bars
 - **Troulos** (2 km west) — sheltered family beach
 - **Agia Paraskevi** (3 km east) — large organized beach
 

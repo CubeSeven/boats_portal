@@ -1,13 +1,13 @@
 ---
 slug: "19-achladies-beach-guide"
 title: "Achladies Beach Skiathos: Close to Town, Easy by Boat, Family-Friendly"
-description: "Achladies is one of Skiathos's most convenient beaches — just 5 km from town, fully organized, with watersports and excellent boat access. Your complete guide."
+description: "Achladies is one of Skiathos's most convenient beaches — just 5 km from town, fully organized, with excellent boat access. Your complete guide."
 pubDate: "2026-05-05"
 readTime: 5
 category: "destination"
 imagePlaceholder: "ocean"
 image: "/images/beaches/achladies.jpg"
-tags: ["Achladies", "beaches", "Skiathos", "family", "watersports", "boat rental"]
+tags: ["Achladies", "beaches", "Skiathos", "family", "boat rental"]
 ---
 
 ## Why Choose Achladies Beach
@@ -33,29 +33,20 @@ Achladies is a sandy beach approximately 400 metres long, backed by hotels and a
 
 ### Facilities
 - Sunbeds and umbrellas for hire (€8–12 per set)
-- Watersports centre offering jet skis, paddleboards, pedal boats, and banana boat rides
 - Several beachfront tavernas and cafes
 - Beach bars serving drinks and snacks
 - Showers and changing facilities
 - Hotels with pools directly behind the beach (some allow non-guests for a fee)
-
-### Watersports
-Achladies has a well-equipped watersports centre:
-- Jet ski rental (€35–70 per session)
-- Pedal boats (€10–15 per hour)
-- Stand-up paddleboards (€10 per hour)
-- Kayaks (€10 per hour)
-- Banana boat rides (€15 per person)
 
 ## Boat Anchoring Tips
 
 The bay is a natural cove with good protection. Anchor in 3–5 metres over sand, approximately 30–60 metres from shore. The water is shallow enough to wade ashore in most spots. Keep an eye on occasional traffic from other boats.
 
 ### Nearby Beaches to Combine
-- **Vassilias Beach** (1 km east, back toward town) — another organized cove
+- **Vassilias Beach** (1.5 km east, back toward town) — another organized cove
 - **Megali Ammos** (3 km east) — the closest beach to town
-- **Kanapitsa** (2 km west) — well-organized with watersports
-- **Tzaneria** (just past Kanapitsa, 3 km west) — popular with divers
+- **Kanapitsa** (2 km west) — well-organized family beach
+- **Tzaneria** (just past Kanapitsa, 3 km west) — quiet tree-lined cove
 
 ## What Sea Skiathos Offers
 
@@ -67,5 +58,5 @@ The bay is a natural cove with good protection. Anchor in 3–5 metres over sand
 
 - **Anytime June–September:** Achladies is consistently pleasant. The water stays shallow and warm.
 - **Mornings:** Calmest water, best for families.
-- **Afternoons:** Can get a light onshore breeze — good for watersports, less so for sunbathing.
+- **Afternoons:** Can get a light onshore breeze — refreshing, though less ideal for sunbathing.
 - **Weekends:** Slightly busier with local Greek visitors in addition to tourists.

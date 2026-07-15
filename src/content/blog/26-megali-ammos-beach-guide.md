@@ -1,7 +1,7 @@
 ---
 slug: "26-megali-ammos-beach-guide"
 title: "Megali Ammos Beach Skiathos: The Closest Beach to Town — Complete Guide"
-description: "Megali Ammos is Skiathos's most accessible beach — just 2 km from town. Long, sandy, organized, with beach bars, watersports, and excellent boat access. Here's everything to know."
+description: "Megali Ammos is Skiathos's most accessible beach — just 2 km from town. Long, sandy, organized, with beach bars and excellent boat access. Here's everything to know."
 pubDate: "2026-05-12"
 readTime: 5
 category: "destination"
@@ -35,18 +35,12 @@ Megali Ammos is approximately 600 metres of sand. The water is clear and shallow
 - Sunbeds and umbrellas (€8–12 per set)
 - Multiple beach bars — some with DJs in the afternoon
 - Several tavernas and restaurants directly on or behind the beach
-- Watersports (jet skis, paddleboards, kayaks)
 - Showers and changing rooms
 - Lifeguard on duty (peak season)
 
 ### Beach Bars and Atmosphere
 Megali Ammos has one of the more active beach bar scenes on the island. Several bars play music throughout the day, and it's a popular sunset drinks spot. The atmosphere is lively but not as intense as Banana.
 
-### Watersports
-- Jet skis (€35–70)
-- Paddleboards (€10/hr)
-- Kayaks (€10/hr)
-- Banana boat rides (€15/person)
 
 ## Boat Anchoring Tips
 

@@ -34,7 +34,6 @@ Agia Eleni is approximately 400 metres of soft sand with clear, shallow water. T
 ### Facilities
 - Sunbeds and umbrellas (€8–12 per set) — mainly in the eastern half
 - One beach bar
-- Watersports (kayaks, paddleboards)
 - Showers
 - Wheelchair-accessible boardwalk
 
@@ -48,7 +47,7 @@ Anchor in 3–5 metres on sand. The bay is open to the southwest but generally c
 
 ### Nearby Beaches to Combine
 - **Koukounaries** (1.5 km east, 5 minutes by boat) — the famous pine-backed beach
-- **Banana** (2 km east) — party and watersports
+- **Banana** (2 km east) — popular party beach
 - **Mikri Banana** (2.5 km east) — nudist-friendly, more secluded
 - **Xenia** (1 km east) — quiet beach near Koukounaries
 - **Agistros** (approximately 2 km further west) — secluded, lush green setting

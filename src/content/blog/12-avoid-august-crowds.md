@@ -12,7 +12,7 @@ tags: ["August", "crowds", "quiet beaches", "tips", "Skiathos"]
 
 ## August in Skiathos: The Real Picture
 
-Skiathos is one of the most visited islands in Greece, and August sees the island at absolute capacity. Koukounaries, Banana Beach, and Lalaria (by caique) can feel more like Ibiza than the Aegean.
+Skiathos is one of the most visited islands in Greece, and August sees the island at absolute capacity. Koukounaries, Banana Beach, and Lalaria can feel more like Ibiza than the Aegean.
 
 But here's the thing no travel blog tells you: **5 minutes offshore, nobody is there.**
 
@@ -32,7 +32,7 @@ The northern coastline of Skiathos — Megali Aselinos, Kechria, Mandraki, the c
 Reasons:
 - No road access to most north coast beaches
 - Exposed to the Meltemi — but only exposed beaches, coves are sheltered
-- Caique tours don't go there
+- Tour boats don't go there
 - 30–40 minute boat ride discourages most visitors
 
 ## Timing Strategy

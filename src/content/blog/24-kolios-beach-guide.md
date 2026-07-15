@@ -34,17 +34,11 @@ Kolios is approximately 250 metres of golden sand with unusually clear water —
 ### Facilities
 - Sunbeds and umbrellas (€8–12 per set)
 - One traditional seaside taverna — grilled fish, Greek salads, local wine — right at the water's edge
-- Watersports (paddleboards, kayaks)
 - Showers
 
 ### The Taverna
 The taverna at Kolios is one of the more authentic on the south coast. It's family-run, serves fresh-caught fish (ask what came in that morning), and has tables practically on the sand. It's worth planning your boat trip around lunch here.
 
-### Watersports
-- Paddleboards (€10/hr)
-- Kayaks (€10/hr)
-
-Smaller selection than neighbouring beaches, which contributes to Kolios's more peaceful atmosphere.
 
 ### Snorkelling
 The rocky headland at the eastern end of the cove is the highlight for snorkellers. You'll find small schools of fish, sea anemones, and the occasional octopus. Visibility is usually 5–15 metres.
@@ -55,7 +49,7 @@ Kolios provides excellent shelter. The cove is deep enough for multiple boats to
 
 ### Nearby Beaches to Combine
 - **Platanias** (300m east, 2 minutes by boat) — long sandy beach with hotels
-- **Vromolimnos** (1 km west, 3 minutes by boat) — lively beach bars and watersports
+- **Vromolimnos** (1 km west, 3 minutes by boat) — lively beach bars
 - **Agia Paraskevi** (1.5 km west) — large organized beach
 - **Troulos** (3 km west) — sheltered family beach
 
