@@ -664,24 +664,53 @@ const FLEET_CHIP_LABELS: Record<string, string> = {
 
   #booking-modal .addon-card {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.75rem;
-    padding: 0.85rem;
+    padding: 0.85rem 1rem;
     border: 1.5px solid var(--border);
     border-radius: var(--radius-lg);
     background: var(--card);
     cursor: pointer;
-    transition: border-color 0.15s;
+    transition: all 0.2s ease;
+    user-select: none;
   }
 
-  #booking-modal .addon-card:hover { border-color: var(--foreground); }
+  #booking-modal .addon-card:hover { 
+    border-color: var(--foreground); 
+  }
+
+  #booking-modal .addon-card.selected {
+    border-color: var(--foreground);
+    background: var(--muted);
+  }
 
   #booking-modal .addon-card input[type="checkbox"] {
-    margin-top: 0.2rem;
-    accent-color: var(--foreground);
+    display: none;
+  }
+
+  #booking-modal .addon-card-check {
     width: 16px;
     height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  #booking-modal .addon-card.selected .addon-card-check {
+    background: var(--foreground);
+    border-color: var(--foreground);
+  }
+
+  #booking-modal .addon-card.selected .addon-card-check::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--background);
+    border-radius: 50%;
   }
 
   #booking-modal .addon-card-content { display: flex; flex-direction: column; gap: 0.15rem; }
@@ -696,20 +725,6 @@ const FLEET_CHIP_LABELS: Record<string, string> = {
     font-size: 0.7rem;
     color: var(--muted-foreground);
     line-height: 1.3;
-  }
-
-  #booking-modal .addon-select-wrap {
-    margin: -0.25rem 0 0.75rem 1.8rem;
-  }
-
-  #booking-modal .form-select {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--background);
-    font-size: 0.78rem;
-    color: var(--foreground);
   }
 
   #booking-modal .form-section-title {
@@ -1157,13 +1172,15 @@ const FLEET_CHIP_LABELS: Record<string, string> = {
     let html = `
       <div class="step-addons">
         <div class="summary"><strong>${serviceName}</strong> · ${selectedSubOptionName}</div>
-        <span class="form-section-title">Optional Extras</span>`;
+        <span class="form-section-title">Optional Extras</span>
+        <div class="addons-grid" style="display: grid; gap: 0.75rem; margin-bottom: 0.5rem;">`;
 
     // Skipper for boat rental
     if (selectedServiceId === 'boat-rental') {
       html += `
-        <label class="addon-card">
+        <label class="addon-card ${addSkipper ? 'selected' : ''}" id="card-skipper">
           <input type="checkbox" id="addon-skipper-check" ${addSkipper ? 'checked' : ''} />
+          <div class="addon-card-check"></div>
           <div class="addon-card-content">
             <span class="addon-card-name">Professional Skipper (+€150/day)</span>
             <span class="addon-card-desc">Add a licensed captain to navigate and drive the boat for you</span>
@@ -1171,25 +1188,26 @@ const FLEET_CHIP_LABELS: Record<string, string> = {
         </label>`;
     }
 
-    // Watersports cross-sell
+    // Watersports flat items list (no sub items!)
     if (selectedServiceId !== 'watersports') {
-      html += `
-        <label class="addon-card">
-          <input type="checkbox" id="addon-wsp-check" ${selectedWatersports.length > 0 ? 'checked' : ''} />
-          <div class="addon-card-content">
-            <span class="addon-card-name">Add Watersports Activity</span>
-            <span class="addon-card-desc">Add a Jet Ski, SUP, wakeboard or other activity to your booking</span>
-          </div>
-        </label>
-        <div id="addon-wsp-select-wrap" class="addon-select-wrap" style="${selectedWatersports.length > 0 ? '' : 'display:none;'}">
-          <select id="addon-wsp-select" class="form-select">
-            <option value="">Choose activity...</option>
-            ${WSPORTS.map(w => `<option value="${w.id}" ${selectedWatersports.includes(w.id) ? 'selected' : ''}>${w.title} (${w.price})</option>`).join('')}
-          </select>
-        </div>`;
+      WSPORTS.forEach(w => {
+        const isSel = selectedWatersports.includes(w.id);
+        html += `
+          <label class="addon-card ${isSel ? 'selected' : ''}" data-wsp-id="${w.id}">
+            <input type="checkbox" class="wsp-flat-check" value="${w.id}" ${isSel ? 'checked' : ''} />
+            <div class="addon-card-check"></div>
+            <div class="addon-card-content">
+              <span class="addon-card-name">${w.title}</span>
+              <span class="addon-card-desc">Add-on activity option · ${w.price || 'Ask for price'}</span>
+            </div>
+          </label>`;
+      });
     }
 
     html += `
+        </div>
+      </div>
+      
       <div class="addon-custom-field">
         <label for="bf-custom-extras">Special Requests & Extras</label>
         <textarea id="bf-custom-extras" placeholder="Champagne, drinks, towels, snorkeling gear, custom routing requests...">${customExtrasText}</textarea>
@@ -1198,8 +1216,7 @@ const FLEET_CHIP_LABELS: Record<string, string> = {
       <div class="addons-actions">
         <button type="button" class="outline-btn" id="back-to-details">← Back to Details</button>
         <button type="button" class="submit-btn" id="submit-from-addons">Send Request</button>
-      </div>
-    </div>`;
+      </div>`;
 
     body.innerHTML = html;
     bindStep4Events(serviceName);
@@ -1208,34 +1225,34 @@ const FLEET_CHIP_LABELS: Record<string, string> = {
 
   function bindStep4Events(serviceName) {
     const skipperCheck = body.querySelector('#addon-skipper-check');
-    const wspCheck = body.querySelector('#addon-wsp-check');
-    const wspSelectWrap = body.querySelector('#addon-wsp-select-wrap');
-    const wspSelect = body.querySelector('#addon-wsp-select');
+    const skipperCard = body.querySelector('#card-skipper');
     const customExtrasInput = body.querySelector('#bf-custom-extras');
     const backBtn = body.querySelector('#back-to-details');
     const submitBtn = body.querySelector('#submit-from-addons');
+    const wspChecks = body.querySelectorAll('.wsp-flat-check');
 
-    if (skipperCheck) {
-      skipperCheck.addEventListener('change', () => { addSkipper = skipperCheck.checked; });
+    if (skipperCheck && skipperCard) {
+      skipperCheck.addEventListener('change', () => { 
+        addSkipper = skipperCheck.checked; 
+        skipperCard.classList.toggle('selected', addSkipper);
+      });
     }
 
-    if (wspCheck) {
-      wspCheck.addEventListener('change', () => {
-        if (wspCheck.checked) {
-          wspSelectWrap.style.display = 'block';
+    wspChecks.forEach(chk => {
+      chk.addEventListener('change', () => {
+        const id = chk.value;
+        const card = chk.closest('.addon-card');
+        if (chk.checked) {
+          if (!selectedWatersports.includes(id)) {
+            selectedWatersports.push(id);
+          }
+          if (card) card.classList.add('selected');
         } else {
-          wspSelectWrap.style.display = 'none';
-          selectedWatersports = [];
-          if (wspSelect) wspSelect.value = '';
+          selectedWatersports = selectedWatersports.filter(x => x !== id);
+          if (card) card.classList.remove('selected');
         }
       });
-    }
-
-    if (wspSelect) {
-      wspSelect.addEventListener('change', () => {
-        selectedWatersports = wspSelect.value ? [wspSelect.value] : [];
-      });
-    }
+    });
 
     if (customExtrasInput) {
       customExtrasInput.addEventListener('input', () => { customExtrasText = customExtrasInput.value; });
