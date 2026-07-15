@@ -23,107 +23,84 @@ const {
   backgroundImage,
 } = Astro.props;
 
-// Determine if we should display the special layout
-const hasModernLayout = !!backgroundImage;
+// Standardize color mappings to support elegant dark glass themes
+const variantClasses = {
+  dark: 'bg-black text-white border-white/5',
+  light: 'bg-white text-black border-neutral-200/50 shadow-md',
+  muted: 'bg-neutral-50/50 text-foreground border-neutral-200/50',
+  navy: 'bg-neutral-950 text-white border-white/5',
+  ocean: 'bg-neutral-900 text-white border-white/5',
+  turquoise: 'bg-neutral-900 text-white border-white/5',
+};
+
+const isDark = variant === 'dark' || variant === 'navy' || variant === 'ocean' || variant === 'turquoise';
 ---
 
-{hasModernLayout ? (
-  <div class="container">
-    <section class="cta-banner-modern relative overflow-hidden rounded-[2.5rem] bg-[#121212] text-white border border-white/5 my-16 md:my-32 flex flex-col justify-between" aria-label="Call to action">
-      {/* Subtle ambient light inside card */}
-      <div class="absolute inset-0 pointer-events-none z-0 opacity-20" aria-hidden="true">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,_rgba(255,255,255,0.08),_transparent_60%)]"></div>
+<div class="container">
+  <section 
+    class={`cta-section relative overflow-hidden my-16 md:my-32 rounded-[2rem] border p-8 md:p-16 lg:p-20 ${variantClasses[variant]}`} 
+    aria-label="Call to action"
+  >
+    {/* Background Image / Pattern */}
+    {backgroundImage && (
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <Picture src={backgroundImage} alt="" class="w-full h-full object-cover opacity-40 transition-transform duration-[8s] ease-out hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/30"></div>
       </div>
+    )}
 
-      {/* Top Grid */}
-      <div class="relative p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1fr] gap-8 lg:gap-12 items-center z-10">
-        {/* Left: Title & Subtitle */}
-        <div class="flex flex-col gap-4 reveal">
-          <span class="text-[0.7rem] font-bold tracking-[0.2em] text-cyan-400 uppercase">SEA EXPERIENCE</span>
-          <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight m-0 text-white">{title}</h2>
-          {subtitle && <p class="text-sm md:text-base opacity-75 leading-relaxed m-0 font-medium">{subtitle}</p>}
-        </div>
-
-        {/* Center: Standing image box */}
-        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-lg reveal">
-          <Picture src={backgroundImage} alt="" class="w-full h-full object-cover opacity-85 transition-transform duration-[8s] ease-out hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        </div>
-
-        {/* Right: Feature List */}
-        <div class="flex flex-col gap-3.5 lg:pl-6 reveal">
-          <div class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-            <span class="text-xs font-bold tracking-widest uppercase text-white/90">SELF-DRIVE RENTALS</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-            <span class="text-xs font-bold tracking-widest uppercase text-white/90">SKIPPERED CHARTERS</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-            <span class="text-xs font-bold tracking-widest uppercase text-white/90">PRIVATE SEA TAXIS</span>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-            <span class="text-xs font-bold tracking-widest uppercase text-white/90">WATERSPORTS ACTIVITIES</span>
-          </div>
-        </div>
+    {/* Elegant ambient glow for dark variant without bg image */}
+    {isDark && !backgroundImage && (
+      <div class="absolute inset-0 pointer-events-none z-0 opacity-30" aria-hidden="true">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,_rgba(255,255,255,0.15),_transparent_60%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_-20%,_rgba(255,255,255,0.08),_transparent_40%)]"></div>
       </div>
+    )}
 
-      {/* Bottom Accent Bar */}
-      <div class="relative bg-cyan-400 px-8 md:px-16 py-5 flex flex-col sm:flex-row justify-between items-center gap-4 z-10 border-t border-cyan-300/20">
-        <span class="text-xs font-black tracking-[0.15em] text-black uppercase text-center sm:text-left">READY TO EXPLORE SKIATHOS BY SEA?</span>
-        <div class="flex gap-5 items-center flex-wrap justify-center">
+    {/* Content Container */}
+    <div class="relative z-10">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-12">
+        <div class="flex flex-col gap-4 md:gap-6 max-w-3xl reveal">
+          <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight m-0 text-current">{title}</h2>
+          {subtitle && <p class="text-base md:text-lg opacity-85 m-0 leading-relaxed font-medium">{subtitle}</p>}
+        </div>
+        
+        <div class="flex gap-4 flex-wrap items-center reveal shrink-0">
+          <a 
+            href={buttonHref} 
+            class={`btn px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-full shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
+              isDark 
+                ? 'bg-white text-black hover:bg-white/90 shadow-white/5' 
+                : 'btn-primary'
+            }`}
+          >
+            {buttonText}
+          </a>
+          
           {secondButtonText && (
-            <a href={secondButtonHref} class="text-xs font-extrabold uppercase tracking-wider text-black/75 hover:text-black transition-colors no-underline">
+            <a 
+              href={secondButtonHref} 
+              class={`btn-outline-glass px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 hover:-translate-y-0.5 ${
+                isDark 
+                  ? '' 
+                  : 'border-neutral-200 text-neutral-800 hover:bg-neutral-50'
+              }`}
+            >
               {secondButtonText}
             </a>
           )}
-          <a href={buttonHref} class="inline-flex items-center gap-2 bg-black text-cyan-400 hover:bg-black/95 px-6 py-3 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 shadow-md no-underline">
-            {buttonText}
-            <span class="text-sm font-normal">→</span>
-          </a>
         </div>
       </div>
-    </section>
-  </div>
-) : (
-  <div class="container">
-    <section class="relative overflow-hidden my-16 md:my-32 rounded-[2rem] border p-8 md:p-16 lg:p-20 bg-black text-white border-white/5" aria-label="Call to action">
-      <div class="absolute inset-0 pointer-events-none z-0 opacity-30" aria-hidden="true">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,_rgba(255,255,255,0.12),_transparent_60%)]"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_-20%,_rgba(255,255,255,0.06),_transparent_40%)]"></div>
-      </div>
-
-      <div class="relative z-10">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-12">
-          <div class="flex flex-col gap-4 md:gap-6 max-w-3xl reveal">
-            <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight m-0 text-white">{title}</h2>
-            {subtitle && <p class="text-base md:text-lg opacity-85 m-0 leading-relaxed font-medium">{subtitle}</p>}
-          </div>
-          
-          <div class="flex gap-4 flex-wrap items-center reveal shrink-0">
-            <a href={buttonHref} class="btn px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-full shadow-lg transition-all duration-300 hover:-translate-y-0.5 bg-white text-black hover:bg-white/90 shadow-white/5 no-underline">
-              {buttonText}
-            </a>
-            {secondButtonText && (
-              <a href={secondButtonHref} class="btn-outline-glass px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 hover:-translate-y-0.5 no-underline">
-                {secondButtonText}
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-)}
+    </div>
+  </section>
+</div>
 
 <style>
-  .cta-banner-modern, .cta-section {
-    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.25);
+  .cta-section {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.08);
   }
 
+  /* Standardized Frosted Glass Button */
   .btn-outline-glass {
     background: rgba(255, 255, 255, 0.15);
     color: white;
