@@ -6,7 +6,7 @@ description: Rent a classic pedalo at Koukounaries Beach. Relaxed, human-powered
 heroTitle: Pedalo Hire<br/>in Skiathos
 heroSubtitle: Slow down and cycle on the water. Rent a classic pedalo boat for a relaxed, self-powered cruise around Koukounaries bay.
 heroGradient: ocean
-icon: bike
+icon: pedalo
 href: /watersports/pedalo/
 price: From €20
 accent: ocean

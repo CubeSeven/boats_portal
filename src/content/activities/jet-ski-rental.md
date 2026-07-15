@@ -6,7 +6,7 @@ description: Rent a high-speed Jet Ski in Skiathos at Koukounaries Beach. New Wa
 heroTitle: Jet Ski Rental<br/>in Skiathos
 heroSubtitle: Speed, spray, and pure adrenaline. Zip across the sapphire waters of Koukounaries on our latest Yamaha WaveRunners.
 heroGradient: ocean
-icon: rocket
+icon: jetski
 href: /watersports/jet-ski-rental/
 price: From €50
 accent: ocean
