@@ -65,8 +65,8 @@ const currentPath = Astro.url.pathname;
 <header id="site-header" class="sticky top-0 z-[100] bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 py-4 text-foreground shadow-sm" role="banner">
   <div class="container flex items-center justify-between gap-6">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 no-underline shrink-0 text-current" aria-label="Sea Skiathos — Home">
-      <img src="/sea_skiathos.svg" width="36" height="36" class="h-9 w-auto shrink-0" alt="Sea Skiathos" />
+    <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + '/'} class="flex items-center gap-2 no-underline shrink-0 text-current" aria-label="Sea Skiathos — Home">
+      <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/sea_skiathos.svg`} width="36" height="36" class="h-9 w-auto shrink-0" alt="Sea Skiathos" />
       <span class="font-sans text-xl font-medium text-current tracking-tight uppercase">Sea<strong class="font-black">Skiathos</strong></span>
     </a>
 

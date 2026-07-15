@@ -50,8 +50,8 @@ const socials = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12">
         <!-- Brand Column -->
         <div class="flex flex-col gap-5">
-          <a href="/" class="flex items-center gap-2 no-underline text-white" aria-label="Sea Skiathos — Home">
-            <img src="/sea_skiathos.svg" width="40" height="40" class="h-10 w-auto shrink-0 invert" alt="Sea Skiathos" />
+          <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + '/'} class="flex items-center gap-2 no-underline text-white" aria-label="Sea Skiathos — Home">
+            <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/sea_skiathos.svg`} width="40" height="40" class="h-10 w-auto shrink-0 invert" alt="Sea Skiathos" />
             <span class="font-sans text-xl font-medium tracking-tight uppercase">Sea<strong class="font-black">Skiathos</strong></span>
           </a>
           <p class="text-xs leading-relaxed m-0 text-white/40 max-w-[300px] uppercase font-bold tracking-widest">
