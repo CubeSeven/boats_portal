@@ -62,7 +62,7 @@ faqs:
   - question: What type of yachts are available?
     answer: We currently charter both motor yachts (faster, air-conditioned, suitable for day trips and short hops) and sailing yachts (slower, more romantic, ideal for multi-day charters with an experienced crew). All yachts come with a full professional crew including skipper and deckhand. Contact us for the current charter fleet.
   - question: Is a minimum charter period required?
-    answer: Most yacht charters operate on a full-day minimum (8 hours). For the larger sailing yachts, we recommend a minimum 2-day charter to justify the setup and truly experience the Sporades. Multi-day charters can be extended up to a full week on request — contact us for a bespoke quote.
+    answer: Most yacht charters operate on a full-day minimum (8 hours). For the larger sailing yachts, we recommend a minimum 2-day charter to justify the setup and truly experience the Sporades. Weekly bareboat or crewed charters are also available through our partner network for guests with sailing qualifications.
   - question: What is included in a luxury charter?
     answer: "All luxury charter packages include: professional skipper and crew, fuel for the agreed itinerary, all safety equipment, welcome drinks and light canapés, premium sound system, snorkelling gear, paddleboards, and sun deck cushions. Catering packages (lunch, dinner, sunset grazing boards) are available as add-ons."
   - question: Can we anchor overnight for a multi-day charter?

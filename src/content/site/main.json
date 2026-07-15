@@ -14,12 +14,12 @@
     "subtitle": "Rent a self-drive boat, book an exclusive private tour, or jump on a 24/7 transfer. The Aegean is waiting."
   },
   "whyUs": [
-    { "icon": "anchor", "title": "Direct Fleet, Guaranteed Prices", "desc": "We own and maintain every boat in our fleet. The price and availability you get from us is direct and guaranteed — no markup, no surprise charges." },
-    { "icon": "shieldcheck", "title": "No Hidden Fees, No Middlemen", "desc": "No booking commissions, no platform markups, no surprise charges. You book directly with us for the best rate on the island." },
-    { "icon": "phone", "title": "One Team, Fully Responsible", "desc": "We are accountable for your experience from the moment you book until you return to the dock. One direct point of contact, always available." },
-    { "icon": "rows", "title": "Mix & Match Any Service", "desc": "Boat rental in the morning, a private tour in the afternoon, a transfer at midnight — combine any of our services into one seamless plan." },
-    { "icon": "unlock", "title": "Direct Owner, Not a Broker", "desc": "We own and operate our fleet. We do not act as a broker or third-party agent, meaning you get direct-from-owner service and support." },
-    { "icon": "lifebuoy", "title": "Support Throughout Your Trip", "desc": "We don't disappear after you book. We support you throughout the entire experience — itinerary planning, weather routing, special requests, and last-minute changes." }
+    { "icon": "anchor", "title": "Curated Fleet, Guaranteed Prices", "desc": "We hand-pick every boat, service, and tour we offer. The price and availability you get from us is the price and availability of the operator — we honor every booking request we send out." },
+    { "icon": "shieldcheck", "title": "No Hidden Fees, No Middlemen", "desc": "No platform commissions, no third-party markups, no surprise charges. We work directly with each operator's booking system and pass the real price through to you." },
+    { "icon": "phone", "title": "One Team, Fully Responsible", "desc": "We are accountable for your booking from the first message to the day you step off the boat. One point of contact, no run-around between companies." },
+    { "icon": "rows", "title": "Mix & Match Any Service", "desc": "Boat rental in the morning, a private tour in the afternoon, a transfer at midnight — combine any of our services into one seamless plan. If it's available, we'll put it together for you." },
+    { "icon": "unlock", "title": "Direct Access, Not a Broker", "desc": "We don't act as an agent adding a layer between you and the business. We eliminate that layer — connecting you straight to the operator while we handle every detail of the coordination." },
+    { "icon": "lifebuoy", "title": "Support Throughout Your Trip", "desc": "We don't disappear after you click 'book'. We support you throughout the entire experience — itinerary changes, weather, special requests, last-minute add-ons — we're on the line." }
   ],
   "seo": {
     "siteName": "Sea Skiathos",

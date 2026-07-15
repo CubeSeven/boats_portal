@@ -13,7 +13,7 @@ tags: ["prices", "cost", "2026", "boat rental", "Skiathos", "budget"]
 
 ## The Honest Skiathos Boat Rental Price Guide for 2026
 
-Most websites give you vague "from" prices. We're going to give you real numbers — the actual costs you'll encounter, including the parts often omitted from upfront cost guides.
+Most websites give you vague "from" prices. We're going to give you real numbers — the actual costs you'll encounter, including the parts other operators don't advertise.
 
 ## Boat Rental Prices (Self-Drive)
 

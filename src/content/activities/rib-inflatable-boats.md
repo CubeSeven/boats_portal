@@ -55,6 +55,6 @@ faqs:
     answer: RIBs are considerably more seaworthy than open-hull boats. The inflatable sponsons add stability in chop, and the deep-V hull tracks well in rough water. That said, we operate all vessels subject to weather conditions — above Beaufort 5, we do not go out.
 ---
 
-A RIB is the most versatile boat on the water. Faster than any conventional hull, more stable than an open boat, and capable of handling conditions that would turn standard dayboats back to port. Our performance RIBs represent the pinnacle of performance.
+A RIB is the most versatile boat on the water. Faster than any conventional hull, more stable than an open boat, and capable of handling conditions that would turn most rentals back to port. Our performance RIBs represent the pinnacle of performance.
 
-With up to 350HP available, you'll cover ground at speeds that save you half the time of a standard day out. Reach Skopelos in 35 minutes, Alonissos in 65, or spend the day island-hopping across the northern Sporades.
+With up to 350HP available, you'll cover ground that takes other boats twice as long. Reach Skopelos in 35 minutes, Alonissos in 65, or spend the day island-hopping across the northern Sporades.

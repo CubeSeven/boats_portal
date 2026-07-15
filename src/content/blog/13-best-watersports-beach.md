@@ -20,23 +20,23 @@ Skiathos' most famous beach is also its best for first-timers. The shallow, calm
 
 **Best for:** SUP, Canoe, Pedalos, Beginner water ski
 **Not ideal for:** Jet ski (too shallow), Parasailing (calm air)
-**Facilities:** ★★★★★ (sunbeds, restaurants, parking)
+**Facilities:** ★★★★★ (full range of operators, restaurants, parking)
 
 ## Banana Beach — Best All-Rounder
 
-Banana Beach (actually two beaches — Big and Little Banana, separated by a rocky headland) has the widest range of watersports in Skiathos and the best infrastructure for setting up a full day of activities.
+Banana Beach (actually two beaches — Big and Little Banana, separated by a rocky headland) has the widest range of watersports in Skiathos, the most operators on one stretch of coast, and the best infrastructure for setting up a full day of activities.
 
 **Best for:** Everything — jet ski, parasailing, banana boat, tubes, wake ski
 **Entry point for:** Our jet ski and parasailing operations
-**Facilities:** ★★★★☆ (sunbeds, taverna, parking)
+**Facilities:** ★★★★☆ (multiple operators, decent taverna, sunbeds galore)
 
 ## Vromolimnos — Best for Water Ski & Wakeboard
 
-Vromolimnos is the only beach on Skiathos with a dedicated slalom water ski course — not a casual setup, but a properly marked course with buoys. The water is calm in the morning and deep enough for safe speeds.
+Vromolimnos is the only beach on Skiathos with a dedicated slalom water ski course — not a casual setup, but a properly marked course with buoys. The water is calm in the morning, deep enough for safe speeds, and the operator here (a former competition skier) is genuinely expert-level.
 
 **Best for:** Water ski, wakeboard, slalom skiing
 **Our base:** We operate wakeboard and water ski lessons from here
-**Facilities:** ★★★☆☆ (sunbeds, beachfront taverna)
+**Facilities:** ★★★☆☆ (one operator, limited food)
 
 ## Kanapitsa — Best for Jet Ski (Serious)
 
@@ -55,4 +55,4 @@ The sheltered bay at Kanapitsa opens to the south — enough fetch for proper je
 | Jet Ski | Kanapitsa & Banana | Open water access |
 | Wakeboard | Vromolimnos | Expert instruction |
 | Water Ski | Vromolimnos | Slalom course |
-| Tubes | Banana Beach | Dedicated tow-boats | [Book watersports →](/watersports/)
+| Tubes | Banana Beach | Most operators | [Book watersports →](/watersports/)
