@@ -32,6 +32,4 @@ We implement a variety of security measures to maintain the safety of your perso
 We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties except to provide the services you requested (e.g., processing a payment).
 
 ## 5. Contact Us
-If you have any questions regarding this privacy policy, you may contact us at:
-- Email: info@skiathosboats.com
-- Phone: +30 XXX XXX XXXX
+If you have any questions regarding this privacy policy, please reach out to us using our contact page.

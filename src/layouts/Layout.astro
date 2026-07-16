@@ -25,15 +25,13 @@ const {
 const siteName = site?.seo?.siteName || 'Sea Skiathos';
 const siteUrl = 'https://skiathosboats.com';
 
-const schema = {
+const schema: any = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": siteName,
   "description": description,
   "url": siteUrl,
   "image": `${siteUrl}${ogImage}`,
-  "telephone": site?.phone || "+30 XXX XXX XXXX",
-  "email": site?.email || "info@skiathosboats.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": site?.address?.split(',')[0] || "Skiathos Port",
@@ -64,6 +62,9 @@ const schema = {
     "worstRating": "1"
   }
 };
+
+if (site?.phone) schema.telephone = site.phone;
+if (site?.email) schema.email = site.email;
 ---
 
 <!doctype html>
